@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c20k3ugnp8t46"]
+
+[ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="1_ueq8k"]
+[ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="2_xsa0b"]
+[ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
+
+[sub_resource type="Gradient" id="Gradient_xsa0b"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xsa0b"]
+gradient = SubResource("Gradient_xsa0b")
+width = 32
+height = 32
+
+[node name="DebugWorld" type="Node2D" unique_id=2108904853]
+
+[node name="Player" parent="." unique_id=386552564 instance=ExtResource("1_ueq8k")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1089025268]
+
+[node name="enemy" type="Sprite2D" parent="." unique_id=1184446523]
+position = Vector2(321, -166)
+texture = SubResource("GradientTexture2D_xsa0b")
+
+[node name="DmgHitbox" type="Area2D" parent="enemy" unique_id=1756867950]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_xsa0b")
+team = 2
+iframe_group = "7645662615471"
+metadata/_custom_type_script = "uid://3ai8v5acr4am"
+
+[node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
+position = Vector2(152, 8)

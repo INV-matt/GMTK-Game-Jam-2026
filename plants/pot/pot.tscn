@@ -45,8 +45,6 @@ position = Vector2(0, -24)
 scale = Vector2(0.1, 0.1)
 texture = SubResource("AtlasTexture_ispg6")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1156761822]
-
 [node name="growth_progress" type="ProgressBar" parent="." unique_id=1434540315]
 unique_name_in_owner = true
 offset_left = -50.0
