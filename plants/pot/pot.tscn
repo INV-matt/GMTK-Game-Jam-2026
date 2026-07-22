@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bcxdguaoswcyf"]
 
 [ext_resource type="Script" uid="uid://bttxmfiam1ehj" path="res://plants/pot/pot.gd" id="1_828tj"]
+[ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="2_wnhti"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://plants/pot/Lone_Pot-Sheet.png" id="3_wnhti"]
 [ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://plants/sunflower/Sunflower_Station-Sheet-2.png" id="4_828tj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbm84"]
-size = Vector2(80, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
+radius = 12.0
+height = 72.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0ont"]
 atlas = ExtResource("3_wnhti")
@@ -28,9 +30,11 @@ region = Rect2(954, 0, 954, 870)
 
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
 script = ExtResource("1_828tj")
+plant = ExtResource("2_wnhti")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110216107]
-shape = SubResource("RectangleShape2D_wbm84")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yw30f")
 
 [node name="pot_icon" type="AnimatedSprite2D" parent="." unique_id=1597572287]
 unique_name_in_owner = true
@@ -41,6 +45,7 @@ animation = &"0dmg"
 
 [node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
 unique_name_in_owner = true
+visible = false
 position = Vector2(0, -24)
 scale = Vector2(0.1, 0.1)
 texture = SubResource("AtlasTexture_ispg6")
