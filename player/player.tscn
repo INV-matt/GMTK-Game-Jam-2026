@@ -368,6 +368,4 @@ one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=400499545]
 sprite_frames = SubResource("SpriteFrames_utduo")
-animation = &"idle_side"
-autoplay = "idle_front"
-frame_progress = 0.62502676
+animation = &"idle_front"
