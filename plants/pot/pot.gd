@@ -2,6 +2,8 @@ extends CharacterBody2D
 class_name Pot
 
 @onready var plant_icon: Sprite2D = %plant_icon
+@onready var pot_icon: AnimatedSprite2D = %pot_icon
+
 @onready var growth_progress: ProgressBar = %growth_progress
 
 @export var plant: PlantResource:
@@ -19,7 +21,9 @@ func update_stats() -> void:
   if !is_node_ready(): return
   
   growth_progress.visible = false
+  
   plant_icon.visible = false
+  
   growth = 0.0
   growth_stage = 0
   fully_grown = false
@@ -37,7 +41,9 @@ var growth: float = 0:
 var growth_stage: int = 0:
   set(value):
     growth_stage = value
-    plant.grown(self, value)
+    
+    if plant:
+      plant.grown(self, value)
 
 func _ready() -> void:
   update_stats()
@@ -50,9 +56,9 @@ func advance_growth():
   
   plant_icon.visible = true
   
-  var stage_tex: Texture2D = plant.stage_textures[growth_stage - 1]
+  var stage_tex: Texture2D = plant.growth_stage_textures[growth_stage - 1]
   plant_icon.texture = stage_tex
-  plant_icon.offset.y = (128 - stage_tex.get_height()) / 2.0
+  #plant_icon.offset.y = (128 - stage_tex.get_height()) / 2.0
   
   if growth_stage >= plant.growth_stages:
     fully_grown = true
