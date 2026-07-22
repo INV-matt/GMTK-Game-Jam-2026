@@ -1,16 +1,31 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://lxyvloc2urdi"]
 
-[ext_resource type="Texture2D" uid="uid://cosotffptsqhn" path="res://icon.svg" id="1_mywb8"]
-[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_yeygs"]
+[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resources/plant_resource.gd" id="1_yeygs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3g0j6"]
-atlas = ExtResource("1_mywb8")
-region = Rect2(32, 40, 64, 64)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yeygs"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mywb8"]
+atlas = SubResource("CompressedTexture2D_yeygs")
+region = Rect2(48, 96, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y8in1"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yu1s"]
+atlas = SubResource("CompressedTexture2D_y8in1")
+region = Rect2(24, 48, 80, 80)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_426ej"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlvjn"]
+atlas = SubResource("CompressedTexture2D_426ej")
 
 [resource]
 script = ExtResource("1_yeygs")
 name = "Sunflower"
 desc = "When planted the sunflower gives a little passive healing to you and nearby plants"
-image = SubResource("AtlasTexture_3g0j6")
-stationary = false
+stage_textures = Array[Texture2D]([SubResource("AtlasTexture_mywb8"), SubResource("AtlasTexture_0yu1s"), SubResource("AtlasTexture_dlvjn")])
+growth_time = 3.0
 metadata/_custom_type_script = "uid://cey2j6m6u71a8"

@@ -22,13 +22,9 @@ func update_stats() -> void:
   plant_icon.visible = false
   growth = 0.0
   growth_stage = 0
+  fully_grown = false
   
-  plant_icon.visible = true
-  plant_icon.texture = plant.image
-  plant_icon.scale = Vector2(
-    64.0 / plant.image.get_width(),
-    64.0 / plant.image.get_height(),
-  )
+  if !plant: return
   
   growth_progress.visible = true
   growth_progress.max_value = plant.growth_time
@@ -37,16 +33,40 @@ var growth: float = 0:
   set(value):
     growth = value
     growth_progress.value = value
-var growth_stage: int = 0
+    
+var growth_stage: int = 0:
+  set(value):
+    growth_stage = value
+    plant.grown(self, value)
 
 func _ready() -> void:
   update_stats()
 
+var fully_grown: bool = false
+
+func advance_growth():
+  growth -= plant.growth_time
+  growth_stage += 1
+  
+  plant_icon.visible = true
+  
+  var stage_tex: Texture2D = plant.stage_textures[growth_stage - 1]
+  plant_icon.texture = stage_tex
+  plant_icon.offset.y = (128 - stage_tex.get_height()) / 2.0
+  
+  if growth_stage >= plant.growth_stages:
+    fully_grown = true
+    growth_progress.visible = false
+
+func update_growth(delta: float) -> void:
+  if fully_grown: return
+  
+  growth += delta
+  
+  if growth >= plant.growth_time:
+    advance_growth()
+
 func _process(delta: float) -> void:
   if plant:
-    growth += delta
-    if growth >= plant.growth_time and growth_stage < plant.growth_stages:
-      growth -= plant.growth_time
-      growth_stage += 1
-    
+    update_growth(delta)
     plant.process(delta, self, growth_stage)
