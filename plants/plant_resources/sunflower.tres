@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://lxyvloc2urdi"]
+
+[ext_resource type="Texture2D" uid="uid://cosotffptsqhn" path="res://icon.svg" id="1_mywb8"]
+[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_yeygs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g0j6"]
+atlas = ExtResource("1_mywb8")
+region = Rect2(32, 40, 64, 64)
+
+[resource]
+script = ExtResource("1_yeygs")
+name = "Sunflower"
+desc = "When planted the sunflower gives a little passive healing to you and nearby plants"
+image = SubResource("AtlasTexture_3g0j6")
+stationary = false
+metadata/_custom_type_script = "uid://cey2j6m6u71a8"
