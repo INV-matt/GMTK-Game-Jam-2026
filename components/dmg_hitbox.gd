@@ -12,7 +12,6 @@ func _ready() -> void:
 
 func deal_dmg(to_what: Hurtbox) -> void:
   var parent: Node = to_what.get_parent()
-  #var hp_comp: HpComp = Qol.find_hp_comp(parent)
   var hp_comp: HpComp
 
   for node: Node in parent.get_children():
