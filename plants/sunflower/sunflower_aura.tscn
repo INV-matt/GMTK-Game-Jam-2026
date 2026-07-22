@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://bgmj8085qi2n"]
+
+[ext_resource type="Texture2D" uid="uid://byf05ypc53g3c" path="res://plants/sunflower/Sun_Flower_Heal_space-Sheet.png" id="1_715y4"]
+[ext_resource type="Script" uid="uid://bqdmeltbf2dy1" path="res://plants/sunflower/sunflower_aura.gd" id="1_p2ddm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2ddm"]
+atlas = ExtResource("1_715y4")
+region = Rect2(0, 0, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0itqv"]
+atlas = ExtResource("1_715y4")
+region = Rect2(2519, 0, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcvg3"]
+atlas = ExtResource("1_715y4")
+region = Rect2(5038, 0, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgl8u"]
+atlas = ExtResource("1_715y4")
+region = Rect2(7557, 0, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjwbl"]
+atlas = ExtResource("1_715y4")
+region = Rect2(0, 1337, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xwlw"]
+atlas = ExtResource("1_715y4")
+region = Rect2(2519, 1337, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dca8q"]
+atlas = ExtResource("1_715y4")
+region = Rect2(5038, 1337, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5v33"]
+atlas = ExtResource("1_715y4")
+region = Rect2(7557, 1337, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko1ln"]
+atlas = ExtResource("1_715y4")
+region = Rect2(0, 2674, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfls8"]
+atlas = ExtResource("1_715y4")
+region = Rect2(2519, 2674, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjdt5"]
+atlas = ExtResource("1_715y4")
+region = Rect2(5038, 2674, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gxth"]
+atlas = ExtResource("1_715y4")
+region = Rect2(7557, 2674, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw5ov"]
+atlas = ExtResource("1_715y4")
+region = Rect2(0, 4011, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrpyt"]
+atlas = ExtResource("1_715y4")
+region = Rect2(2519, 4011, 2519, 1337)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu0pf"]
+atlas = ExtResource("1_715y4")
+region = Rect2(5038, 4011, 2519, 1337)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbm84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2ddm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0itqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcvg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgl8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjwbl")
+}],
+"loop": 1,
+"name": &"stage1",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xwlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dca8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5v33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko1ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfls8")
+}],
+"loop": 1,
+"name": &"stage2",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjdt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gxth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qw5ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrpyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu0pf")
+}],
+"loop": 1,
+"name": &"stage3",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aoqm3"]
+radius = 128.85449
+
+[node name="sunflower_aura" type="Area2D" unique_id=269421888]
+script = ExtResource("1_p2ddm")
+
+[node name="animated_sprite" type="AnimatedSprite2D" parent="." unique_id=1193726413]
+unique_name_in_owner = true
+z_index = -10
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_wbm84")
+animation = &"stage3"
+frame_progress = 0.6624884
+
+[node name="collider" type="CollisionShape2D" parent="." unique_id=321162233]
+unique_name_in_owner = true
+scale = Vector2(0.99999994, 0.53999996)
+shape = SubResource("CircleShape2D_aoqm3")
+disabled = true

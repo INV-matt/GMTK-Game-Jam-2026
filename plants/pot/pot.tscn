@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bcxdguaoswcyf"]
+
+[ext_resource type="Script" uid="uid://bttxmfiam1ehj" path="res://plants/pot/pot.gd" id="1_828tj"]
+[ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://plants/pot/Lone_Pot-Sheet.png" id="3_wnhti"]
+[ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://plants/sunflower/Sunflower_Station-Sheet-2.png" id="4_828tj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbm84"]
+size = Vector2(80, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0ont"]
+atlas = ExtResource("3_wnhti")
+region = Rect2(0, 0, 745, 306)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbm84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0ont")
+}],
+"loop": 1,
+"name": &"0dmg",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ispg6"]
+atlas = ExtResource("4_828tj")
+region = Rect2(954, 0, 954, 870)
+
+[node name="pot" type="CharacterBody2D" unique_id=1943167055]
+script = ExtResource("1_828tj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110216107]
+shape = SubResource("RectangleShape2D_wbm84")
+
+[node name="pot_icon" type="AnimatedSprite2D" parent="." unique_id=1597572287]
+unique_name_in_owner = true
+position = Vector2(1.4210855e-14, 3.8146973e-06)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_wbm84")
+animation = &"0dmg"
+
+[node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
+unique_name_in_owner = true
+position = Vector2(0, -24)
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_ispg6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1156761822]
+
+[node name="growth_progress" type="ProgressBar" parent="." unique_id=1434540315]
+unique_name_in_owner = true
+offset_left = -50.0
+offset_top = 24.0
+offset_right = 46.0
+offset_bottom = 32.0
+show_percentage = false
