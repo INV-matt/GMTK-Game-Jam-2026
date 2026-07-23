@@ -27,6 +27,7 @@ collision_layer = 0
 collision_mask = 4
 script = ExtResource("2_mpdl1")
 piercing = 1
+lifetime = 5.0
 custom_shape = SubResource("CapsuleShape2D_wbm84")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"
 

@@ -3,9 +3,10 @@ class_name Pot
 
 @onready var plant_icon: Sprite2D = %plant_icon
 @onready var pot_icon: AnimatedSprite2D = %pot_icon
-
 @onready var growth_progress: ProgressBar = %growth_progress
 @onready var hp_comp: HpComp = %hp_comp
+@onready var interaction_comp: InteractionComp = %interaction_comp
+@onready var plantables: Node2D = %plantables
 
 var is_dead = false
 
@@ -62,6 +63,30 @@ var growth_stage: int = 0:
 func _ready() -> void:
   update_stats()
   hp_comp.died.connect(on_death)
+  
+  var idx: int = 0
+  for i in Qol.plantable:
+    var interact: InteractionComp = InteractionComp.new()
+    interact.global_position = Vector2(((1 - len(Qol.plantable)) / 2.0 + idx) * 128, -64)
+    interact.radius = 32
+    interact.interacted.connect(func():
+      plant = i
+      plantables.visible = false
+      for f in plantables.get_children():
+        f.queue_free()
+      print(i)
+    )
+    interact.active = false
+    
+    var icon: Sprite2D = Sprite2D.new()
+    icon.texture = i.growth_stage_textures[len(i.growth_stage_textures) - 1]
+    icon.scale = Vector2(.1, .1)
+    
+    interact.add_child(icon)
+    
+    idx += 1
+    
+    plantables.add_child(interact)
 
 var fully_grown: bool = false
 
@@ -78,7 +103,6 @@ func advance_growth():
   
   var stage_tex: Texture2D = plant.growth_stage_textures[growth_stage - 1]
   plant_icon.texture = stage_tex
-  #plant_icon.offset.y = (128 - stage_tex.get_height()) / 2.0
   
   if growth_stage >= len(plant.growth_stage_textures):
     fully_grown = true
@@ -97,7 +121,6 @@ func _process(delta: float) -> void:
     update_growth(delta)
     plant.process(delta, self, growth_stage)
 
-
 func on_death() -> void:
   if is_dead: return
   is_dead = true
@@ -105,20 +128,27 @@ func on_death() -> void:
   
   queue_free()
   
-  plant.unplanted(self)
-  if plant.give_ability:
-    Qol.player.abilities.erase(plant.ability)
-    Qol.player.ability_list_changed.emit()
+  if plant:
+    plant.unplanted(self)
+    if plant.give_ability:
+      Qol.player.abilities.erase(plant.ability)
+      Qol.player.ability_list_changed.emit()
 
   print("Plant died")
 
 var push_dist: float = 75
 
 func _physics_process(_delta: float) -> void:
-  if Qol.player and (!plant or !plant.stationary):
+  if Qol.player and !(plant and plant.stationary):
     var diff: Vector2 = global_position - Qol.player.global_position
     var dist: float = diff.length_squared()
 
     if dist <= push_dist * push_dist :
       velocity = diff.normalized() * 30.0
       move_and_slide()
+
+func _on_interaction_comp_interacted() -> void:
+  if !plant:
+    plantables.visible = !plantables.visible
+    for i: InteractionComp in plantables.get_children():
+      i.active = plantables.visible
