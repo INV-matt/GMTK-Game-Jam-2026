@@ -105,10 +105,11 @@ func on_death() -> void:
   
   queue_free()
   
-  plant.unplanted(self)
-  if plant.give_ability:
-    Qol.player.abilities.erase(plant.ability)
-    Qol.player.ability_list_changed.emit()
+  if plant:
+    plant.unplanted(self)
+    if plant.give_ability:
+      Qol.player.abilities.erase(plant.ability)
+      Qol.player.ability_list_changed.emit()
 
   print("Plant died")
 

@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://c20k3ugnp8t46"]
 
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="1_ueq8k"]
-[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="3_5nnnn"]
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
-[ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="4_fb3c3"]
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="4_ogbem"]
 [ext_resource type="PackedScene" uid="uid://bmgifpiy0gluy" path="res://enemy/enemy_fast.tscn" id="5_dihwf"]
 [ext_resource type="PackedScene" uid="uid://dcc6w0y38sail" path="res://enemy/enemy_tank.tscn" id="5_fb3c3"]
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://ability_ui/ability_ui.tscn" id="5_fuoxs"]
-[ext_resource type="Resource" uid="uid://cuqqq0wjip7ww" path="res://plants/lavender/lavender.tres" id="5_p626q"]
 [ext_resource type="PackedScene" uid="uid://dfvqnd5to5toi" path="res://enemy/waves/wave_manager.tscn" id="7_fuoxs"]
+[ext_resource type="PackedScene" uid="uid://65mi2p2klkd4" path="res://components/interaction_comp.tscn" id="8_5nnnn"]
 
 [node name="DebugWorld" type="Node2D" unique_id=2108904853]
 y_sort_enabled = true
@@ -22,15 +20,12 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
-plant = ExtResource("4_fb3c3")
 
 [node name="pot2" parent="." unique_id=705694566 instance=ExtResource("3_8xvt7")]
 position = Vector2(152, 8)
-plant = ExtResource("3_5nnnn")
 
 [node name="pot3" parent="." unique_id=638896623 instance=ExtResource("3_8xvt7")]
 position = Vector2(-8, 120)
-plant = ExtResource("5_p626q")
 
 [node name="pot4" parent="." unique_id=1996164501 instance=ExtResource("3_8xvt7")]
 position = Vector2(-184, 56)
@@ -52,3 +47,6 @@ position = Vector2(832, -419)
 position = Vector2(776, 56)
 
 [node name="WaveManager" parent="." unique_id=158709167 instance=ExtResource("7_fuoxs")]
+
+[node name="interaction_comp" parent="." unique_id=1806337126 instance=ExtResource("8_5nnnn")]
+position = Vector2(-592, 8)
