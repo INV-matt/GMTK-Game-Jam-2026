@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dmtmkf5hguqyr"]
+
+[ext_resource type="Texture2D" uid="uid://bg54t0a1q8ymu" path="res://assets/sprites/Tomato-Sheet.png" id="1_7gfsh"]
+[ext_resource type="Script" uid="uid://duxnswt8rdyst" path="res://abilities/tomato_ability/tomato_splatter.gd" id="1_iaj7f"]
+[ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="3_vt3e0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm84"]
+atlas = ExtResource("1_7gfsh")
+region = Rect2(854, 328, 854, 328)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbm84"]
+radius = 38.0
+height = 223.0
+
+[node name="tomato_splatter" type="Node2D" unique_id=1462709457]
+script = ExtResource("1_iaj7f")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=833633811]
+unique_name_in_owner = true
+z_index = -7
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_wbm84")
+
+[node name="hitbox" type="Area2D" parent="sprite" unique_id=687418151]
+unique_name_in_owner = true
+z_index = -1
+rotation = 1.5707964
+scale = Vector2(3.3333333, 3.3333333)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_vt3e0")
+iframe_length = 0.25
+lifetime = 20.0
+custom_shape = SubResource("CapsuleShape2D_wbm84")
+metadata/_custom_type_script = "uid://3ai8v5acr4am"
+
+[node name="Timer" type="Timer" parent="." unique_id=963485695]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="expired" from="sprite/hitbox" to="." method="_on_hitbox_expired"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="9_svi63"]
 [ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="10_8u7lf"]
 [ext_resource type="Resource" uid="uid://cuqqq0wjip7ww" path="res://plants/lavender/lavender.tres" id="11_4yv2v"]
+[ext_resource type="Resource" uid="uid://c4rre62tr73ji" path="res://plants/tomato/tomato.tres" id="12_8u7lf"]
 
 [node name="DebugWorld" type="Node2D" unique_id=2108904853]
 y_sort_enabled = true
@@ -20,7 +21,6 @@ y_sort_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034672585]
 
 [node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("5_fuoxs")]
-visible = false
 
 [node name="seed_mngr" parent="CanvasLayer" unique_id=2037225531 instance=ExtResource("2_5nnnn")]
 
@@ -32,15 +32,16 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
+position = Vector2(-400, -224)
 
 [node name="pot2" parent="." unique_id=705694566 instance=ExtResource("3_8xvt7")]
-position = Vector2(152, 8)
+position = Vector2(-248, -216)
 
 [node name="pot3" parent="." unique_id=638896623 instance=ExtResource("3_8xvt7")]
-position = Vector2(-8, 120)
+position = Vector2(-400, -80)
 
 [node name="pot4" parent="." unique_id=1996164501 instance=ExtResource("3_8xvt7")]
-position = Vector2(-200, -400)
+position = Vector2(-248, -379)
 
 [node name="pot5" parent="." unique_id=1691764149 instance=ExtResource("3_8xvt7")]
 position = Vector2(-400, -376)
@@ -77,3 +78,11 @@ plant = ExtResource("10_8u7lf")
 [node name="seed_packet6" parent="." unique_id=525031083 instance=ExtResource("9_svi63")]
 position = Vector2(-176, 392)
 plant = ExtResource("11_4yv2v")
+
+[node name="seed_packet7" parent="." unique_id=791447283 instance=ExtResource("9_svi63")]
+position = Vector2(-40, 376)
+plant = ExtResource("12_8u7lf")
+
+[node name="seed_packet8" parent="." unique_id=873359176 instance=ExtResource("9_svi63")]
+position = Vector2(-136, 288)
+plant = ExtResource("12_8u7lf")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b212pucf44le5"]
+
+[ext_resource type="Script" uid="uid://cbbg7d5lodbo6" path="res://abilities/tomato_ability/tomato_projectile.gd" id="1_8got1"]
+[ext_resource type="Texture2D" uid="uid://bg54t0a1q8ymu" path="res://assets/sprites/Tomato-Sheet.png" id="1_jwlaa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm84"]
+atlas = ExtResource("1_jwlaa")
+region = Rect2(-100, 328, 854, 328)
+
+[node name="tomato_projectile" type="CharacterBody2D" unique_id=1548760435]
+script = ExtResource("1_8got1")
+
+[node name="shadow" type="Sprite2D" parent="." unique_id=106912529]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 8)
+scale = Vector2(0.1, 0.015)
+texture = SubResource("AtlasTexture_wbm84")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=371489935]
+unique_name_in_owner = true
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_wbm84")
