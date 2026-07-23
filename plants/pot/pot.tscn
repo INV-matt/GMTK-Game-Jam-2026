@@ -29,6 +29,8 @@ atlas = ExtResource("4_828tj")
 region = Rect2(954, 0, 954, 870)
 
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
+collision_layer = 9
+collision_mask = 3
 script = ExtResource("1_828tj")
 plant = ExtResource("2_wnhti")
 

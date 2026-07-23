@@ -20,31 +20,31 @@ radius = 15.0
 radius = 250.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p200p"]
-radius = 25.0
+radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1wwld"]
-radius = 12.0
+radius = 25.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=478211698 node_paths=PackedStringArray("sprite")]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_ppra6")
-SPEED = 100.0
-MAX_HEALTH = 10.0
 sprite = NodePath("Sprite2D")
-size = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903732457]
 texture = SubResource("GradientTexture2D_p200p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010759488]
 shape = SubResource("CircleShape2D_y5vj3")
+debug_color = Color(0.8786114, 0.20543274, 0.6770189, 0.41960785)
 
 [node name="TargetPlayerZone" type="Area2D" parent="." unique_id=702166902]
 collision_layer = 0
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetPlayerZone" unique_id=1574453606]
 shape = SubResource("CircleShape2D_pmsee")
+debug_color = Color(0, 0.6392157, 0.34901962, 0.14901961)
 
 [node name="HpComp" type="Node" parent="." unique_id=982802460 node_paths=PackedStringArray("hp_bar")]
 script = ExtResource("2_p200p")
@@ -52,7 +52,7 @@ use_hp_bar = true
 hp_bar = NodePath("../ProgressBar")
 metadata/_custom_type_script = "uid://d1jlu0g173ory"
 
-[node name="DmgHitbox" type="Area2D" parent="." unique_id=163459591]
+[node name="PlayerHitbox" type="Area2D" parent="." unique_id=163459591]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_pmsee")

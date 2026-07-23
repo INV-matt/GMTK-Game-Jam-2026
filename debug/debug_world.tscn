@@ -1,46 +1,27 @@
 [gd_scene format=3 uid="uid://c20k3ugnp8t46"]
 
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="1_ueq8k"]
-[ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="2_xsa0b"]
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="4_ogbem"]
+[ext_resource type="PackedScene" uid="uid://bmgifpiy0gluy" path="res://enemy/enemy_fast.tscn" id="5_dihwf"]
 [ext_resource type="PackedScene" uid="uid://dcc6w0y38sail" path="res://enemy/enemy_tank.tscn" id="5_fb3c3"]
-
-[sub_resource type="Gradient" id="Gradient_xsa0b"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xsa0b"]
-gradient = SubResource("Gradient_xsa0b")
-width = 32
-height = 32
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
-size = Vector2(32, 32)
 
 [node name="DebugWorld" type="Node2D" unique_id=2108904853]
 y_sort_enabled = true
 
 [node name="Player" parent="." unique_id=386552564 instance=ExtResource("1_ueq8k")]
+position = Vector2(-379, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1089025268]
-
-[node name="enemy" type="Sprite2D" parent="." unique_id=1184446523]
-position = Vector2(321, -166)
-texture = SubResource("GradientTexture2D_xsa0b")
-
-[node name="DmgHitbox" type="Area2D" parent="enemy" unique_id=1756867950]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("2_xsa0b")
-team = 2
-iframe_group = "7645662615471"
-custom_shape = SubResource("RectangleShape2D_yw30f")
-metadata/_custom_type_script = "uid://3ai8v5acr4am"
+zoom = Vector2(0.5, 0.5)
 
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
-position = Vector2(152, 8)
 
 [node name="Enemy" parent="." unique_id=478211698 instance=ExtResource("4_ogbem")]
-position = Vector2(-510, -205)
+position = Vector2(-920, -469)
 
 [node name="EnemyTank" parent="." unique_id=420677822 instance=ExtResource("5_fb3c3")]
-position = Vector2(-386, 259)
+position = Vector2(949, 534)
+
+[node name="EnemyFast" parent="." unique_id=1221767539 instance=ExtResource("5_dihwf")]
+position = Vector2(832, -419)
