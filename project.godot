@@ -25,6 +25,10 @@ Signals="*uid://doy3dc6tgqq0u"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [input]
 
 move_left={

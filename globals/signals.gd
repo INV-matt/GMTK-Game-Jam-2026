@@ -5,3 +5,12 @@ signal spawned_enemy(pos: Vector2)
 
 @warning_ignore("unused_signal")
 signal started_wave(wave: int)
+
+@warning_ignore("unused_signal")
+signal start_game()
+
+@warning_ignore("unused_signal")
+signal open_options()
+
+@warning_ignore("unused_signal")
+signal close_options()
