@@ -159,6 +159,7 @@ func create_plantables():
     var icon: Sprite2D = Sprite2D.new()
     icon.texture = i.packet_sprite
     icon.scale = Vector2(.4, .4)
+    icon.z_index = 30
     
     interact.add_child(icon)
     

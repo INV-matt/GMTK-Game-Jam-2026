@@ -35,7 +35,7 @@ func _process(_delta: float) -> void:
   var progress: float = 1.0
   
   icon.position = shake
-  shake = -shake * .8
+  shake = Vector2.from_angle(randf_range(0, PI * 4)) * shake.length() * .8
   
   if ability.cooldown:
     countdown.text = "%.1f" % ability.cooldown.time_left
@@ -44,7 +44,7 @@ func _process(_delta: float) -> void:
   (icon.material as ShaderMaterial).set_shader_parameter("progress", progress)
   
   if progress >= 1.0 and !was_ready:
-    shake = Vector2.from_angle(randf_range(0, PI * 4)) * 10
+    shake = Vector2.from_angle(randf_range(0, PI * 4)) * 30
   
   was_ready = progress >= 1.0
 
