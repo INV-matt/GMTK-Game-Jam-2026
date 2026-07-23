@@ -1,11 +1,11 @@
 [gd_resource type="Resource" format=3 uid="uid://bddwvcmxgn3pw"]
 
-[ext_resource type="Texture2D" uid="uid://colnm174k7wli" path="res://abilities/Abilty_UI_icons-Sheet-1.png" id="1_1d8iu"]
+[ext_resource type="Texture2D" uid="uid://colnm174k7wli" path="res://assets/sprites/Abilty_UI_icons-Sheet-1.png" id="1_1d8iu"]
 [ext_resource type="Script" uid="uid://c4svoo5n7bth0" path="res://abilities/roses_ability/roses_ability.gd" id="2_banmd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_828tj"]
 atlas = ExtResource("1_1d8iu")
-region = Rect2(0, 0, 962, 0)
+region = Rect2(0, 0, 962, 648)
 
 [resource]
 script = ExtResource("2_banmd")

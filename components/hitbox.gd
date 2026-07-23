@@ -27,7 +27,7 @@ func _ready() -> void:
     t.timeout.connect(expired.emit)
     add_child(t)
   
-  if iframe_group == "":
+  if !Engine.is_editor_hint() and iframe_group == "":
     iframe_group = str(get_instance_id())
   
   collision_layer = 0

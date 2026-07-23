@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Qol="*uid://drw6b2doqer3r"
 Globals="*uid://dwg8kyue3nxjc"
 
 [display]

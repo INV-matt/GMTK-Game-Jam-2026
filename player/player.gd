@@ -3,7 +3,13 @@ class_name Player
 
 @export var SPEED = 300.0
 
-@export var ability: Ability
+@warning_ignore("unused_signal")
+signal ability_list_changed
+
+@export var abilities: Array[Ability]
+@export var primary_ability_idx: int = 0
+@export var secondary_ability_idx: int = 1
+@export var tertiary_ability_idx: int = 2
 
 @onready var hp_comp: HpComp = %HpComp
 @onready var death_timer: Timer = %DeathTimer
@@ -47,5 +53,10 @@ func handle_respawn() -> void:
   global_position = Vector2(0, 0) # TODO: make it spawn in its original spawn point, not on the greenhouse
 
 func _process(_delta: float) -> void:
-  if ability and Input.is_action_pressed("primary"):
-    ability.use_ability(self, get_global_mouse_position())
+  # ts is disgusting
+  if len(abilities) > primary_ability_idx and Input.is_action_pressed("primary"):
+    abilities[primary_ability_idx].use_ability(self, get_global_mouse_position())
+  if len(abilities) > secondary_ability_idx and Input.is_action_pressed("secondary"):
+    abilities[secondary_ability_idx].use_ability(self, get_global_mouse_position())
+  if len(abilities) > tertiary_ability_idx and Input.is_action_pressed("tertiary"):
+    abilities[tertiary_ability_idx].use_ability(self, get_global_mouse_position())

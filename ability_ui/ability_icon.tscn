@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cnvk0rkj0bwqg"]
+
+[ext_resource type="Texture2D" uid="uid://colnm174k7wli" path="res://assets/sprites/Abilty_UI_icons-Sheet-1.png" id="1_c47ew"]
+[ext_resource type="Script" uid="uid://eqn41yj3b65e" path="res://ability_ui/ability_icon.gd" id="1_jobo3"]
+[ext_resource type="Resource" uid="uid://bddwvcmxgn3pw" path="res://abilities/roses_ability/roses_ability.tres" id="2_jobo3"]
+[ext_resource type="Shader" uid="uid://d4cpuy71jimyu" path="res://ability_ui/ability_icon.gdshader" id="3_y4qu4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4qu4"]
+shader = ExtResource("3_y4qu4")
+shader_parameter/progress = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plnsn"]
+atlas = ExtResource("1_c47ew")
+region = Rect2(0, 0, 962, 648)
+
+[node name="ability_icon" type="Control" unique_id=99417584]
+custom_minimum_size = Vector2(96.2, 64.8)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jobo3")
+ability = ExtResource("2_jobo3")
+
+[node name="icon" type="TextureRect" parent="." unique_id=1317943573]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_y4qu4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 865.8
+offset_bottom = 583.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_plnsn")
+
+[node name="countdown" type="RichTextLabel" parent="." unique_id=631612515]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "13.0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgmj8085qi2n"]
 
-[ext_resource type="Texture2D" uid="uid://byf05ypc53g3c" path="res://plants/sunflower/Sun_Flower_Heal_space-Sheet.png" id="1_715y4"]
+[ext_resource type="Texture2D" uid="uid://byf05ypc53g3c" path="res://assets/sprites/Sun_Flower_Heal_space-Sheet.png" id="1_715y4"]
 [ext_resource type="Script" uid="uid://bqdmeltbf2dy1" path="res://plants/sunflower/sunflower_aura.gd" id="1_p2ddm"]
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="3_0itqv"]
 
@@ -149,7 +149,6 @@ collision_mask = 2
 script = ExtResource("3_0itqv")
 damage = -1.0
 team = 2
-iframe_group = "4733356028586"
 iframe_length = 0.25
 custom_shape = SubResource("CircleShape2D_rcvg3")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"

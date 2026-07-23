@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://ct5ehol4o2vkq" path="res://assets/sprites/Terracota_Idle_Sheet.png" id="4_yw30f"]
+[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="5_qjkh3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
 radius = 24.13
@@ -382,5 +383,6 @@ offset_left = -40.0
 offset_top = 32.0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("5_qjkh3")
 value = 99.96
 show_percentage = false
