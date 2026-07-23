@@ -15,6 +15,7 @@ enum Teams {
 
 var attacker: Node
 
+@export var custom_shape: Shape2D
 var shape: CollisionShape2D
 
 func _ready() -> void:
@@ -23,10 +24,12 @@ func _ready() -> void:
   
   collision_layer = 0
   
-  if shape == null:
-    shape = CollisionShape2D.new()
-    shape.shape = RectangleShape2D.new()
-    (shape.shape as RectangleShape2D).size = size
+  if shape:
+    shape.queue_free()
+    shape = null
+    
+  shape = CollisionShape2D.new()
+  shape.shape = custom_shape
 
   add_child(shape)
 
@@ -34,12 +37,11 @@ signal hit(what: Hurtbox)
 
 func _process(_delta: float) -> void:
   collision_mask = team
-  #(shape.shape as CapsuleShape2D).size = size
+  
+  if shape:
+    shape.shape = custom_shape
   
   for i: Hurtbox in get_overlapping_areas():
     if i.active and (not iframe_group in i.iframes or i.iframes[iframe_group] <= 0):
       i.hit(self)
       hit.emit(i)
-      
-      # if attacker and attacker is Player and i.get_parent() is Enemy:
-      #   attacker.trinket_on_hit(i.get_parent())
