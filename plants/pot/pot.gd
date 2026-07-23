@@ -80,7 +80,7 @@ func advance_growth():
   plant_icon.texture = stage_tex
   #plant_icon.offset.y = (128 - stage_tex.get_height()) / 2.0
   
-  if growth_stage >= plant.growth_stages:
+  if growth_stage >= len(plant.growth_stage_textures):
     fully_grown = true
     growth_progress.visible = false
 
@@ -104,5 +104,21 @@ func on_death() -> void:
   hp_comp.disabled = true
   
   queue_free()
+  
+  plant.unplanted(self)
+  if plant.give_ability:
+    Qol.player.abilities.erase(plant.ability)
+    Qol.player.ability_list_changed.emit()
 
   print("Plant died")
+
+var push_dist: float = 75
+
+func _physics_process(_delta: float) -> void:
+  if Qol.player and (!plant or !plant.stationary):
+    var diff: Vector2 = global_position - Qol.player.global_position
+    var dist: float = diff.length_squared()
+
+    if dist <= push_dist * push_dist :
+      velocity = diff.normalized() * 30.0
+      move_and_slide()

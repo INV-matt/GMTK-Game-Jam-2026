@@ -5,14 +5,6 @@
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="3_pmsee"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="4_p200p"]
 
-[sub_resource type="Gradient" id="Gradient_p200p"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p200p"]
-gradient = SubResource("Gradient_p200p")
-width = 40
-height = 40
-fill_from = Vector2(1, 0.17546408)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_y5vj3"]
 radius = 15.0
 
@@ -25,16 +17,20 @@ radius = 15.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_1wwld"]
 radius = 25.0
 
+[sub_resource type="Gradient" id="Gradient_p200p"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p200p"]
+gradient = SubResource("Gradient_p200p")
+width = 40
+height = 40
+fill_from = Vector2(1, 1)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=478211698]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_ppra6")
 SPEED = 50.0
 size = 200
-
-[node name="sprite" type="Sprite2D" parent="." unique_id=1903732457]
-unique_name_in_owner = true
-texture = SubResource("GradientTexture2D_p200p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010759488]
 shape = SubResource("CircleShape2D_y5vj3")
@@ -61,8 +57,6 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_pmsee")
 team = 2
-iframe_group = "3825020776879"
-lifetime = 5.0
 custom_shape = SubResource("CircleShape2D_p200p")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"
 
@@ -74,6 +68,10 @@ script = ExtResource("4_p200p")
 team = 4
 custom_shape = SubResource("CircleShape2D_1wwld")
 metadata/_custom_type_script = "uid://bfuubedgq33em"
+
+[node name="sprite" type="Sprite2D" parent="Hurtbox" unique_id=1903732457]
+unique_name_in_owner = true
+texture = SubResource("GradientTexture2D_p200p")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1230430412]
 visible = false
