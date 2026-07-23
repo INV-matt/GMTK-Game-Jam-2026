@@ -11,6 +11,9 @@ gradient = SubResource("Gradient_xsa0b")
 width = 32
 height = 32
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
+size = Vector2(32, 32)
+
 [node name="DebugWorld" type="Node2D" unique_id=2108904853]
 y_sort_enabled = true
 
@@ -28,6 +31,7 @@ collision_mask = 2
 script = ExtResource("2_xsa0b")
 team = 2
 iframe_group = "7645662615471"
+custom_shape = SubResource("RectangleShape2D_yw30f")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"
 
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
