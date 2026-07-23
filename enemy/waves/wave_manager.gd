@@ -7,6 +7,7 @@ var current_wave: int = 0:
   set(value):
     budget = calculate_budget(value)
     current_wave = value
+    Signals.started_wave.emit(value)
 
 
 @export var enemy_types: Dictionary[PackedScene, int]
@@ -22,6 +23,7 @@ var elapsed_time: float
 func _ready() -> void:
   current_wave = 1
   elapsed_time = TIME_BETWEEN_ENEMIES
+  Signals.enemy_died.connect(on_enemy_died)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,13 +62,28 @@ func spawn_enemy() -> void:
 
   #print("Spawned %s at pos %s" % [enemy_node.name, enemy_node.global_position])
   Signals.spawned_enemy.emit(pos) # TODO: possibly implement ui indicator telling the player where the enemy spawned (like a small arrow)
-
+  on_enemy_spawned()
   add_child(enemy_node)
-  
+
 
 func calculate_budget(value: int) -> int:
   return value * (value + 1)
 
 func next_wave() -> void:
+  enemy_alive = 0
+  enemy_total = 0
+  Signals.enemy_change.emit(0, 0)
   current_wave += 1
   Signals.started_wave.emit(current_wave)
+
+
+var enemy_alive: int = 0
+var enemy_total: int = 0
+func on_enemy_spawned() -> void:
+  enemy_alive += 1
+  enemy_total += 1
+  Signals.enemy_change.emit(enemy_alive, enemy_total)
+
+func on_enemy_died() -> void:
+  enemy_alive = max(enemy_alive - 1, 0)
+  Signals.enemy_change.emit(enemy_alive, enemy_total)

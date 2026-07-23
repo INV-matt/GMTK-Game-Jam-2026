@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cnvk0rkj0bwqg"]
 
 [ext_resource type="Texture2D" uid="uid://colnm174k7wli" path="res://assets/sprites/Abilty_UI_icons-Sheet-1.png" id="1_c47ew"]
-[ext_resource type="Script" uid="uid://eqn41yj3b65e" path="res://ability_ui/ability_icon.gd" id="1_jobo3"]
+[ext_resource type="Script" uid="uid://eqn41yj3b65e" path="res://player_ui/ability_icon.gd" id="1_jobo3"]
 [ext_resource type="Resource" uid="uid://bddwvcmxgn3pw" path="res://abilities/roses_ability/roses_ability.tres" id="2_jobo3"]
-[ext_resource type="Shader" uid="uid://d4cpuy71jimyu" path="res://ability_ui/ability_icon.gdshader" id="3_y4qu4"]
+[ext_resource type="Shader" uid="uid://d4cpuy71jimyu" path="res://player_ui/ability_icon.gdshader" id="3_y4qu4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y4qu4"]
 shader = ExtResource("3_y4qu4")

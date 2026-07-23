@@ -14,3 +14,8 @@ signal open_options()
 
 @warning_ignore("unused_signal")
 signal close_options()
+
+@warning_ignore("unused_signal")
+signal enemy_change(alive: int, total_in_wave: int)
+@warning_ignore("unused_signal")
+signal enemy_died()
