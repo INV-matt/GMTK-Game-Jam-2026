@@ -7,6 +7,9 @@ const ABILITY_ICON = preload("uid://cnvk0rkj0bwqg")
 
 var player: Player
 
+func _ready() -> void:
+  Signals.start_game.connect(on_game_start)
+
 func _process(_delta: float) -> void:
   if !player:
     player = Qol.player
@@ -22,3 +25,5 @@ func update_ability_tray() -> void:
     icon.ability = i
     ability_tray.add_child(icon)
     ability_tray.move_child(icon, 0)
+
+func on_game_start() -> void: visible = true

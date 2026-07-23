@@ -39,6 +39,7 @@ position = Vector2(-184, 56)
 position = Vector2(-104, -72)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034672585]
+visible = false
 
 [node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("5_fuoxs")]
 
