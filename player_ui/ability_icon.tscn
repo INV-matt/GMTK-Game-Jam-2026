@@ -13,6 +13,13 @@ shader_parameter/progress = 0.0
 atlas = ExtResource("1_c47ew")
 region = Rect2(0, 0, 962, 648)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kc775"]
+load_path = "res://.godot/imported/UI_imput_icons-Sheet.png-f2febebf94e5ce9c1fc62cb3266ad1f9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm84"]
+atlas = SubResource("CompressedTexture2D_kc775")
+region = Rect2(0, 240, 290, 238)
+
 [node name="ability_icon" type="Control" unique_id=99417584]
 custom_minimum_size = Vector2(96.2, 64.8)
 layout_mode = 3
@@ -33,6 +40,23 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.1, 0.1)
 texture = SubResource("AtlasTexture_plnsn")
+
+[node name="button_hint" type="TextureRect" parent="icon" unique_id=697978956]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_top = -248.00003
+offset_right = 258.0
+offset_bottom = 228.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_wbm84")
 
 [node name="countdown" type="RichTextLabel" parent="." unique_id=631612515]
 unique_name_in_owner = true
