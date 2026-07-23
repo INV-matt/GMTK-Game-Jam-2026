@@ -3,12 +3,10 @@ class_name Player
 
 @export var SPEED = 300.0
 
+@warning_ignore("unused_signal")
 signal ability_list_changed
 
-@export var abilities: Array[Ability]:
-  set(value):
-    abilities = value
-    ability_list_changed.emit()
+@export var abilities: Array[Ability]
 @export var primary_ability_idx: int = 0
 @export var secondary_ability_idx: int = 1
 @export var tertiary_ability_idx: int = 2

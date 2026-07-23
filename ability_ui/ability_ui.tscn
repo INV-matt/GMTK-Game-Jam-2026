@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bm4fx0hm4nhdf"]
 
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="1_lrr4h"]
+[ext_resource type="Script" uid="uid://bcoflqu8mymsl" path="res://ability_ui/ability_ui.gd" id="2_plnsn"]
 
 [node name="ability_ui" type="Control" unique_id=44532813]
 layout_mode = 3
@@ -10,3 +11,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lrr4h")
+script = ExtResource("2_plnsn")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=632685667]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1686581935]
+layout_mode = 2
+alignment = 2
+
+[node name="ability_tray" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=944177523]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2

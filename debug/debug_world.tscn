@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="1_ueq8k"]
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="2_xsa0b"]
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
+[ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="4_fb3c3"]
+[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://ability_ui/ability_ui.tscn" id="4_ogbem"]
+[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="5_dihwf"]
 
 [sub_resource type="Gradient" id="Gradient_xsa0b"]
 
@@ -37,3 +40,19 @@ metadata/_custom_type_script = "uid://3ai8v5acr4am"
 
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
 position = Vector2(152, 8)
+plant = ExtResource("4_fb3c3")
+
+[node name="pot2" parent="." unique_id=638896623 instance=ExtResource("3_8xvt7")]
+position = Vector2(0, 168)
+
+[node name="pot3" parent="." unique_id=1996164501 instance=ExtResource("3_8xvt7")]
+position = Vector2(-280, 56)
+plant = ExtResource("5_dihwf")
+
+[node name="pot4" parent="." unique_id=1691764149 instance=ExtResource("3_8xvt7")]
+position = Vector2(-168, -144)
+plant = ExtResource("5_dihwf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034672585]
+
+[node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("4_ogbem")]

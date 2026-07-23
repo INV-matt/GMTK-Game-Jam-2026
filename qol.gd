@@ -44,3 +44,11 @@ func pause_game() -> void:
   
 func unpause_game() -> void:
   get_tree().paused = false
+
+func tree_root() -> Window:
+  return get_tree().get_root()
+
+var player: Player
+
+func _process(_delta: float) -> void:
+  if !player: player = find_with_criteria(tree_root(), func(x: Node): return x is Player)

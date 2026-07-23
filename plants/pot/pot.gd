@@ -11,11 +11,18 @@ class_name Pot
     if plant:
       plant.unplanted(self)
     
-    plant = value
-    
+    if value:
+      plant = value.duplicate(true)
+    else:
+      if plant.give_ability:
+        Qol.player.abilities.erase(plant.ability)
+        Qol.player.ability_list_changed.emit()
+      plant = null 
+   
     if plant:
       plant.planted(self)
-      update_stats()
+    
+    update_stats()
 
 func update_stats() -> void:
   if !is_node_ready(): return
@@ -55,6 +62,11 @@ var fully_grown: bool = false
 func advance_growth():
   growth -= plant.growth_time
   growth_stage += 1
+  
+  if plant.give_ability and growth_stage == 1:
+    # IMPORTANT: Pass the ability as a reference, this is necessary
+    Qol.player.abilities.append(plant.ability)
+    Qol.player.ability_list_changed.emit()
   
   plant_icon.visible = true
   

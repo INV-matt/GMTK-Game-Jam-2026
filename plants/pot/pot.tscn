@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bcxdguaoswcyf"]
 
 [ext_resource type="Script" uid="uid://bttxmfiam1ehj" path="res://plants/pot/pot.gd" id="1_828tj"]
-[ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="2_828tj"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://plants/pot/Lone_Pot-Sheet.png" id="3_wnhti"]
 [ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://assets/sprites/Rose_Station-Sheet.png" id="4_828tj"]
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="5_wnhti"]
@@ -31,7 +30,6 @@ region = Rect2(0, 791, 641, 791)
 
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
 script = ExtResource("1_828tj")
-plant = ExtResource("2_828tj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110216107]
 rotation = 1.5707964
