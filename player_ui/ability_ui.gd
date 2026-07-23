@@ -20,10 +20,14 @@ func update_ability_tray() -> void:
   for i in ability_tray.get_children():
     i.queue_free()
   
+  var idx: int = 0
   for i in player.abilities:
     var icon: AbilityIcon = ABILITY_ICON.instantiate()
     icon.ability = i
+    icon.ability_idx = idx
     ability_tray.add_child(icon)
     ability_tray.move_child(icon, 0)
+    
+    idx += 1
 
 func on_game_start() -> void: visible = true

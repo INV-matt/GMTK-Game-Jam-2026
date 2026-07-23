@@ -149,16 +149,18 @@ func create_plantables():
     interact.global_position = Vector2(((1 - len(available)) / 2.0 + idx) * 80, 64)
     interact.radius = 32
     interact.interacted.connect(func():
-      Qol.seed_mngr.remove_seed(i)
-      plant = i
-      plantables.visible = false
-      for f in plantables.get_children():
-        f.queue_free()
+      if !plant:
+        Qol.seed_mngr.remove_seed(i)
+        plant = i
+        plantables.visible = false
+        for f in plantables.get_children():
+          f.queue_free()
     )
     
     var icon: Sprite2D = Sprite2D.new()
     icon.texture = i.packet_sprite
     icon.scale = Vector2(.4, .4)
+    icon.z_index = 30
     
     interact.add_child(icon)
     
