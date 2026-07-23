@@ -8,6 +8,6 @@ class_name SeedPacket
 func _ready() -> void:
   sprite.texture = plant.packet_sprite
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
   Qol.seed_mngr.add_seed(plant)
   queue_free()
