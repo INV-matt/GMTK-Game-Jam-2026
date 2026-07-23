@@ -44,6 +44,7 @@ plant = ExtResource("4_fb3c3")
 
 [node name="pot2" parent="." unique_id=638896623 instance=ExtResource("3_8xvt7")]
 position = Vector2(0, 168)
+plant = ExtResource("5_dihwf")
 
 [node name="pot3" parent="." unique_id=1996164501 instance=ExtResource("3_8xvt7")]
 position = Vector2(-280, 56)
@@ -51,7 +52,7 @@ plant = ExtResource("5_dihwf")
 
 [node name="pot4" parent="." unique_id=1691764149 instance=ExtResource("3_8xvt7")]
 position = Vector2(-168, -144)
-plant = ExtResource("5_dihwf")
+plant = ExtResource("4_fb3c3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034672585]
 

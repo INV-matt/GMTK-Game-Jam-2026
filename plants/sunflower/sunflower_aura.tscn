@@ -149,7 +149,6 @@ collision_mask = 2
 script = ExtResource("3_0itqv")
 damage = -1.0
 team = 2
-iframe_group = "4733356028586"
 iframe_length = 0.25
 custom_shape = SubResource("CircleShape2D_rcvg3")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"
