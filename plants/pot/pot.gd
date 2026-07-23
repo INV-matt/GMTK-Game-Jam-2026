@@ -3,9 +3,10 @@ class_name Pot
 
 @onready var plant_icon: Sprite2D = %plant_icon
 @onready var pot_icon: AnimatedSprite2D = %pot_icon
-
+@onready var plantables: HBoxContainer = %plantables
 @onready var growth_progress: ProgressBar = %growth_progress
 @onready var hp_comp: HpComp = %hp_comp
+@onready var interaction_comp: InteractionComp = %interaction_comp
 
 var is_dead = false
 
@@ -62,6 +63,12 @@ var growth_stage: int = 0:
 func _ready() -> void:
   update_stats()
   hp_comp.died.connect(on_death)
+  
+  for i in Qol.plantable:
+    var icon: TextureRect = TextureRect.new()
+    icon.texture = i.growth_stage_textures[len(i.growth_stage_textures) - 1]
+    
+    plantables.add_child(icon)
 
 var fully_grown: bool = false
 
@@ -123,3 +130,7 @@ func _physics_process(_delta: float) -> void:
     if dist <= push_dist * push_dist :
       velocity = diff.normalized() * 30.0
       move_and_slide()
+
+func _on_interaction_comp_interacted() -> void:
+  plantables.visible = !plantables.visible
+  interaction_comp.active = false

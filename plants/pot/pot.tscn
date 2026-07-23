@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="5_wnhti"]
 [ext_resource type="PackedScene" uid="uid://65mi2p2klkd4" path="res://components/interaction_comp.tscn" id="6_g0hop"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
+[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="7_ispg6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnhti"]
 radius = 14.0
@@ -40,6 +41,7 @@ collision_mask = 3
 script = ExtResource("1_828tj")
 
 [node name="interaction_comp" parent="." unique_id=1806337126 node_paths=PackedStringArray("tooltip") instance=ExtResource("6_g0hop")]
+unique_name_in_owner = true
 tooltip_string = "Plant"
 tooltip = NodePath("../interaction_label")
 
@@ -76,6 +78,7 @@ offset_left = -40.0
 offset_top = 24.0
 offset_right = 40.0
 offset_bottom = 32.0
+theme = ExtResource("7_ispg6")
 show_percentage = false
 
 [node name="hp_comp" type="Node" parent="." unique_id=1084646044 node_paths=PackedStringArray("hp_bar")]
@@ -91,6 +94,7 @@ offset_left = -40.0
 offset_top = 16.0
 offset_right = 40.0
 offset_bottom = 24.0
+theme = ExtResource("7_ispg6")
 value = 99.96
 show_percentage = false
 
@@ -99,6 +103,20 @@ offset_left = -64.0
 offset_top = -48.0
 offset_right = 64.0
 offset_bottom = -24.0
+theme = ExtResource("7_ispg6")
 text = "hello"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="plantables" type="HBoxContainer" parent="." unique_id=436862717]
+unique_name_in_owner = true
+visible = false
+offset_left = -111.99999
+offset_top = -100.0
+offset_right = 2127.9998
+offset_bottom = 499.99994
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("7_ispg6")
+alignment = 1
+
+[connection signal="interacted" from="interaction_comp" to="." method="_on_interaction_comp_interacted"]

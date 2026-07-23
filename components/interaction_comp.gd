@@ -10,6 +10,7 @@ class_name InteractionComp
 @export var tooltip: RichTextLabel
 
 var player_inside: bool = false
+var active: bool = true
 
 signal interacted
 
@@ -22,11 +23,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
   if !Engine.is_editor_hint() and tooltip:
-    tooltip.modulate.a = tooltip.modulate.a * .9 + target_a * .1
+    tooltip.modulate.a = tooltip.modulate.a * .9 + (target_a if active else 0.0) * .1
   
   (collision.shape as CircleShape2D).radius = radius
   
-  if !Engine.is_editor_hint() and Input.is_action_just_pressed("interact"):
+  if !Engine.is_editor_hint() and player_inside and active and Input.is_action_just_pressed("interact"):
     interacted.emit()
 
 func _on_body_entered(_body: Node2D) -> void:
