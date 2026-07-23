@@ -23,6 +23,10 @@ func find_hp_comp(from: Node) -> Node:
   )
 
 func create_timer(time: float, timeout: Callable) -> Timer:
+  if time <= 0.0:
+    timeout.call()
+    return
+  
   var t: Timer = Timer.new()
   t.autostart = true
   t.wait_time = time

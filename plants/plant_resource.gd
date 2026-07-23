@@ -5,12 +5,11 @@ class_name PlantResource
 @export_multiline() var desc: String = "Plant description"
 
 @export var stationary: bool = true
-@export_range(0.0, 50.0, 0.5, "or_greater") var health: float = 10.0
+@export_range(0.0, 50.0, 0.5, "or_greater") var health: float = 100.0
 
 @export_group("Growth")
 @export var sprite_offset: Vector2 = Vector2.ZERO
 @export var growth_stage_textures: Array[Texture2D]
-@export_range(1, 5, 1, "or_greater") var growth_stages: int = 3
 @export_range(1.0, 30.0, 0.5, "or_greater") var growth_time: float = 30.0
 
 @export_group("Abilities")

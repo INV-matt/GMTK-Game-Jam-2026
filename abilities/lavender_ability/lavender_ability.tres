@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://b3m3cju5aalr2"]
+
+[ext_resource type="Texture2D" uid="uid://colnm174k7wli" path="res://assets/sprites/Abilty_UI_icons-Sheet-1.png" id="1_fx0kf"]
+[ext_resource type="Script" uid="uid://b81aoi7vt2tbn" path="res://abilities/lavender_ability/lavender_ability.gd" id="2_146io"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx0kf"]
+atlas = ExtResource("1_fx0kf")
+region = Rect2(962, 0, 962, 648)
+
+[resource]
+script = ExtResource("2_146io")
+ability_name = "Lavender Ability"
+icon = SubResource("AtlasTexture_fx0kf")
+metadata/_custom_type_script = "uid://q72vwqcaw71u"
