@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dfvqnd5to5toi"]
+
+[ext_resource type="Script" uid="uid://qfesgsqgwsj4" path="res://enemy/waves/wave_manager.gd" id="1_c8nl1"]
+[ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="2_vxa6s"]
+[ext_resource type="PackedScene" uid="uid://bmgifpiy0gluy" path="res://enemy/enemy_fast.tscn" id="3_pfeq5"]
+
+[node name="WaveManager" type="Node" unique_id=158709167]
+script = ExtResource("1_c8nl1")
+enemy_types = Dictionary[PackedScene, int]({
+ExtResource("2_vxa6s"): 1,
+ExtResource("3_pfeq5"): 5
+})
+MINIMUM_DISTANCE = 800
+MAXIMUM_DISTANCE = 2000

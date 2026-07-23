@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://dwg8kyue3nxjc"
+Signals="*uid://doy3dc6tgqq0u"
 
 [display]
 
@@ -69,11 +70,6 @@ tertiary={
 [layer_names]
 
 2d_physics/layer_1="environment"
-2d_physics/layer_2="player"
-2d_physics/layer_3="enemies"
-
-[layer_names]
-
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
 
