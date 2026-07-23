@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bttxmfiam1ehj" path="res://plants/pot/pot.gd" id="1_828tj"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://plants/pot/Lone_Pot-Sheet.png" id="3_wnhti"]
-[ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://assets/sprites/Rose_Station-Sheet.png" id="4_828tj"]
-[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="5_wnhti"]
+[ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://plants/sunflower/Sunflower_Station-Sheet-2.png" id="4_828tj"]
+[ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="5_wnhti"]
+[ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
+[ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://plants/roses/Rose_Station-Sheet.png" id="4_828tj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
 radius = 12.0
@@ -28,12 +30,19 @@ animations = [{
 atlas = ExtResource("4_828tj")
 region = Rect2(0, 791, 641, 791)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnhti"]
+radius = 14.0
+height = 78.0
+
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
+collision_layer = 9
+collision_mask = 3
 script = ExtResource("1_828tj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110216107]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_yw30f")
+debug_color = Color(0.6310452, 0.5172754, 0.32363147, 0.41960785)
 
 [node name="pot_icon" type="AnimatedSprite2D" parent="." unique_id=1597572287]
 unique_name_in_owner = true
@@ -56,3 +65,24 @@ offset_right = 46.0
 offset_bottom = 32.0
 theme = ExtResource("5_wnhti")
 show_percentage = false
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1489787306]
+rotation = 1.5707964
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("5_wnhti")
+custom_shape = SubResource("CapsuleShape2D_wnhti")
+metadata/_custom_type_script = "uid://bfuubedgq33em"
+
+[node name="hp_comp" type="Node" parent="." unique_id=1084646044 node_paths=PackedStringArray("hp_bar")]
+unique_name_in_owner = true
+script = ExtResource("6_q0ont")
+use_hp_bar = true
+hp_bar = NodePath("../hp_bar")
+metadata/_custom_type_script = "uid://d1jlu0g173ory"
+
+[node name="hp_bar" type="ProgressBar" parent="." unique_id=932237325]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+value = 99.96

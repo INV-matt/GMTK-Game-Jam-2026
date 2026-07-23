@@ -18,6 +18,7 @@ signal ability_list_changed
 var is_dead: bool = false
 
 func _ready() -> void:
+  Globals.PLAYER = self
   hp_comp.hurt.connect(on_hit)
   hp_comp.died.connect(on_death)
   hp_comp.healed.connect(on_heal)
@@ -34,16 +35,20 @@ func on_heal(amt: float) -> void:
   print("Healed %s, health remaining: %s" % [-amt, hp_comp.hp])
 
 func on_hit(amt: float) -> void:
+  #if is_dead: return
   print("Hit %s, health remaining: %s" % [amt, hp_comp.hp])
 
 func on_death() -> void:
+  if is_dead: return
   print("You died")
   is_dead = true
+  hp_comp.disabled = true
   death_timer.start()
 
 func handle_respawn() -> void:
   print("Respawning")
   is_dead = false
+  hp_comp.disabled = false
   hp_comp.full_heal()
   global_position = Vector2(0, 0) # TODO: make it spawn in its original spawn point, not on the greenhouse
 
