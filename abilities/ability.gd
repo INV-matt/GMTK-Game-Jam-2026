@@ -8,4 +8,4 @@ class_name Ability
 
 #implement this function in its children
 @warning_ignore("unused_parameter")
-func apply_effect(player: PlantResource, dir: Vector2) -> void: pass
+func apply_effect(plant_stage: int, player: Player, dir: Vector2) -> void: pass

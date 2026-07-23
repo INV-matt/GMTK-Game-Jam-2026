@@ -3,7 +3,10 @@
 extends Hitbox
 class_name DmgHitbox
 
+@export var piercing: int = -1
 @export var damage: float = 10
+
+var pierced: int = 0
 
 func _ready() -> void:
   super._ready()
@@ -24,3 +27,7 @@ func deal_dmg(to_what: Hurtbox) -> void:
     return
   
   hp_comp.damage(damage)
+  pierced += 1
+  
+  if pierced > piercing:
+    queue_free()

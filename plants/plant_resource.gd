@@ -14,8 +14,8 @@ class_name PlantResource
 @export_range(1.0, 30.0, 0.5, "or_greater") var growth_time: float = 15.0
 
 @export_group("Abilities")
-@export var give_abilities: bool = false
-@export var stage_abilities: Array[Ability]
+@export var give_ability: bool = false
+@export var ability: Ability
 
 @warning_ignore("unused_parameter")
 func planted(pot: Pot) -> void:
