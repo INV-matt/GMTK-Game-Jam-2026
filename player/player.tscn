@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cpxllxa1xe7k3"]
 
 [ext_resource type="Script" uid="uid://n8fcaaksuqjl" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="Resource" uid="uid://bddwvcmxgn3pw" path="res://abilities/roses_ability/roses_ability.tres" id="2_qjkh3"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://ct5ehol4o2vkq" path="res://assets/sprites/Terracota_Idle_Sheet.png" id="4_yw30f"]
@@ -341,7 +340,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=386552564]
 script = ExtResource("1_oul6g")
-ability = ExtResource("2_qjkh3")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1828331245]
 position = Vector2(0, -37)

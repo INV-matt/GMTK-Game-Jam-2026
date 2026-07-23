@@ -6,7 +6,7 @@ class_name Ability
 @export_multiline() var description: String
 @export var icon: Texture2D
 
-var plant_stage: int = 2
+var plant_stage: int = 0
 
 var is_ready: bool = true
 
