@@ -3,6 +3,8 @@
 extends Node
 class_name HpComp
 
+var disabled: bool = false
+
 func _process(_delta: float) -> void:
   if !use_hp_bar or !hp_bar:
     return
@@ -53,6 +55,8 @@ func full_heal(show_num: bool = true) -> void:
   damage(-max_hp, show_num)
 
 func damage(amt: float, show_num: bool = true) -> void:
+  if disabled: return
+  
   if amt == 0.0:
     return
   

@@ -40,19 +40,21 @@ debug_color = Color(0.8786114, 0.20543274, 0.6770189, 0.41960785)
 
 [node name="TargetPlayerZone" type="Area2D" parent="." unique_id=702166902]
 collision_layer = 0
-collision_mask = 5
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetPlayerZone" unique_id=1574453606]
 shape = SubResource("CircleShape2D_pmsee")
 debug_color = Color(0, 0.6392157, 0.34901962, 0.14901961)
 
 [node name="HpComp" type="Node" parent="." unique_id=982802460 node_paths=PackedStringArray("hp_bar")]
+unique_name_in_owner = true
 script = ExtResource("2_p200p")
 use_hp_bar = true
 hp_bar = NodePath("../ProgressBar")
 metadata/_custom_type_script = "uid://d1jlu0g173ory"
 
 [node name="PlayerHitbox" type="Area2D" parent="." unique_id=163459591]
+unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_pmsee")
@@ -62,6 +64,7 @@ custom_shape = SubResource("CircleShape2D_p200p")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=689252300]
+unique_name_in_owner = true
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("4_p200p")

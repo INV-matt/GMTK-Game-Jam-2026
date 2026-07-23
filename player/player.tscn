@@ -338,13 +338,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=386552564 node_paths=PackedStringArray("hp_comp", "death_timer", "sprite")]
-collision_layer = 4
+[node name="Player" type="CharacterBody2D" unique_id=386552564]
+collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_oul6g")
-hp_comp = NodePath("HpComp")
-death_timer = NodePath("DeathTimer")
-sprite = NodePath("AnimatedSprite2D")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1828331245]
 position = Vector2(0, -37)
@@ -359,16 +356,19 @@ metadata/_custom_type_script = "uid://bfuubedgq33em"
 shape = SubResource("CircleShape2D_yw30f")
 
 [node name="HpComp" type="Node" parent="." unique_id=1496722611 node_paths=PackedStringArray("hp_bar")]
+unique_name_in_owner = true
 script = ExtResource("3_g1dw6")
 use_hp_bar = true
 hp_bar = NodePath("../ProgressBar")
 metadata/_custom_type_script = "uid://d1jlu0g173ory"
 
 [node name="DeathTimer" type="Timer" parent="." unique_id=358401912]
+unique_name_in_owner = true
 wait_time = 5.0
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=400499545]
+unique_name_in_owner = true
 position = Vector2(0, -37)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_utduo")

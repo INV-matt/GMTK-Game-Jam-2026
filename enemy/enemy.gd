@@ -18,9 +18,9 @@ var following_player: bool
 func _ready() -> void:
   target = DEFAULT_TARGET
   following_player = false
-  hp_comp = $HpComp
-  player_hitbox = $PlayerHitbox
-  hurtbox = $Hurtbox
+  hp_comp = %HpComp
+  player_hitbox = %PlayerHitbox
+  hurtbox = %Hurtbox
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
     var vec_to_player = Globals.PLAYER.global_position - global_position
     if direction.length_squared() > vec_to_player.length_squared(): direction = vec_to_player
   
-  velocity = direction.normalized() * SPEED
+  velocity = direction.normalized() * SPEED * delta * 60
   move_and_slide()
 
 

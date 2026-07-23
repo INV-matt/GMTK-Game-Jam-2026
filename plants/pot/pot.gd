@@ -6,6 +6,9 @@ class_name Pot
 
 @onready var growth_progress: ProgressBar = %growth_progress
 
+@onready var hp_comp: HpComp = %hp_comp
+var is_dead = false
+
 @export var plant: PlantResource:
   set(value):
     if plant:
@@ -47,6 +50,7 @@ var growth_stage: int = 0:
 
 func _ready() -> void:
   update_stats()
+  hp_comp.died.connect(on_death)
 
 var fully_grown: bool = false
 
@@ -76,3 +80,13 @@ func _process(delta: float) -> void:
   if plant:
     update_growth(delta)
     plant.process(delta, self, growth_stage)
+
+
+func on_death() -> void:
+  if is_dead: return
+  is_dead = true
+  hp_comp.disabled = true
+  
+  queue_free()
+
+  print("Plant died")
