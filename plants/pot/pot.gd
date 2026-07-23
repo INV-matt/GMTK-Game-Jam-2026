@@ -36,6 +36,8 @@ func update_stats() -> void:
   
   growth_progress.visible = true
   growth_progress.max_value = plant.growth_time
+  
+  plant_icon.position = Vector2(plant.sprite_offset.x, plant.sprite_offset.y - 24)
 
 var growth: float = 0:
   set(value):

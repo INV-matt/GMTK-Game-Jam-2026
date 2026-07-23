@@ -367,7 +367,7 @@ unique_name_in_owner = true
 wait_time = 5.0
 one_shot = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=400499545]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=400499545]
 unique_name_in_owner = true
 position = Vector2(0, -37)
 scale = Vector2(0.3, 0.3)
