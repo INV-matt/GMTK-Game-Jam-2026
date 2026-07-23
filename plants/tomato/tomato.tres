@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://c4rre62tr73ji"]
+
+[ext_resource type="Script" uid="uid://bfk5ayo0oky1o" path="res://abilities/tomato_ability/tomato_ability.gd" id="1_04jax"]
+[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_bvume"]
+[ext_resource type="Texture2D" uid="uid://bcs4gdpicson3" path="res://assets/sprites/Tomato_Seed_Packet.png" id="1_hpt0j"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c5yha"]
+load_path = "res://.godot/imported/Tomato_Abilty_UI_icon.png-a46dd29695792a7b36f5b6f587be3fca.ctex"
+
+[sub_resource type="Resource" id="Resource_d54xa"]
+script = ExtResource("1_04jax")
+ability_name = "Tomato Toss"
+icon = SubResource("CompressedTexture2D_c5yha")
+metadata/_custom_type_script = "uid://cey2j6m6u71a8"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvume"]
+load_path = "res://.godot/imported/Tomato-Sheet.png-3299a281e15dd9a6caa3cc5d32db6c6f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpt0j"]
+atlas = SubResource("CompressedTexture2D_bvume")
+region = Rect2(0, 0, 854, 328)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_04jax"]
+load_path = "res://.godot/imported/Tomato-Sheet.png-3299a281e15dd9a6caa3cc5d32db6c6f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5yha"]
+atlas = SubResource("CompressedTexture2D_04jax")
+region = Rect2(854, 0, 854, 328)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d54xa"]
+load_path = "res://.godot/imported/Tomato-Sheet.png-3299a281e15dd9a6caa3cc5d32db6c6f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_530fh"]
+atlas = SubResource("CompressedTexture2D_d54xa")
+region = Rect2(1708, -20, 854, 328)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0hop"]
+atlas = ExtResource("1_hpt0j")
+region = Rect2(45, 21, 158, 158)
+
+[resource]
+script = ExtResource("1_bvume")
+name = "Tomato"
+packet_sprite = SubResource("AtlasTexture_g0hop")
+sprite_offset = Vector2(3, 5)
+growth_stage_textures = Array[Texture2D]([SubResource("AtlasTexture_hpt0j"), SubResource("AtlasTexture_c5yha"), SubResource("AtlasTexture_530fh")])
+growth_time = 3.0
+give_ability = true
+ability = SubResource("Resource_d54xa")
+metadata/_custom_type_script = "uid://cey2j6m6u71a8"

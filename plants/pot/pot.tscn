@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bttxmfiam1ehj" path="res://plants/pot/pot.gd" id="1_828tj"]
 [ext_resource type="Script" uid="uid://bfn4wjryc2sey" path="res://components/interaction_comp.gd" id="2_g0hop"]
-[ext_resource type="Texture2D" uid="uid://dpcr0mvdjxkvc" path="res://assets/sprites/Lavender_Station-Sheet.png" id="3_q0ont"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://assets/sprites/Lone_Pot-Sheet.png" id="3_wnhti"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="5_wnhti"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
@@ -31,9 +30,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_828tj"]
-atlas = ExtResource("3_q0ont")
-region = Rect2(0, 0, 684, 849)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4u7gl"]
+load_path = "res://.godot/imported/Tomato-Sheet.png-3299a281e15dd9a6caa3cc5d32db6c6f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jlr2"]
+atlas = SubResource("CompressedTexture2D_4u7gl")
+region = Rect2(1708, -20, 854, 328)
 
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
 collision_mask = 3
@@ -72,10 +74,9 @@ animation = &"0dmg"
 
 [node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
 unique_name_in_owner = true
-visible = false
-position = Vector2(0, -22)
+position = Vector2(3, 5)
 scale = Vector2(0.1, 0.1)
-texture = SubResource("AtlasTexture_828tj")
+texture = SubResource("AtlasTexture_4jlr2")
 
 [node name="growth_progress" type="ProgressBar" parent="." unique_id=1434540315]
 unique_name_in_owner = true

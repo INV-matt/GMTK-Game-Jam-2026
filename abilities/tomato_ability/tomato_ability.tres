@@ -1,0 +1,10 @@
+[gd_resource type="Resource" format=3 uid="uid://cnnu4yhcgbgup"]
+
+[ext_resource type="Texture2D" uid="uid://do54k4guh4xsc" path="res://assets/sprites/Tomato_Abilty_UI_icon.png" id="1_rmtww"]
+[ext_resource type="Script" uid="uid://bfk5ayo0oky1o" path="res://abilities/tomato_ability/tomato_ability.gd" id="2_tjo0m"]
+
+[resource]
+script = ExtResource("2_tjo0m")
+ability_name = "Tomato Toss"
+icon = ExtResource("1_rmtww")
+metadata/_custom_type_script = "uid://cey2j6m6u71a8"

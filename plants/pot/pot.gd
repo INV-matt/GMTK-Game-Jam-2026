@@ -97,16 +97,17 @@ func _process(delta: float) -> void:
     update_growth(delta)
     plant.process(delta, self, growth_stage)
   
-  var diff: Vector2 = Qol.player.global_position - global_position
-  if diff.length_squared() > 100 * 100:
-    var inside: bool = false
-    for i: InteractionComp in plantables.get_children():
-      if i.player_inside:
-        inside = true
-        break
-    
-    if !inside:
-      hide_plantables()
+  if Qol.player:
+    var diff: Vector2 = Qol.player.global_position - global_position
+    if diff.length_squared() > 100 * 100:
+      var inside: bool = false
+      for i: InteractionComp in plantables.get_children():
+        if i.player_inside:
+          inside = true
+          break
+      
+      if !inside:
+        hide_plantables()
 
 func on_death() -> void:
   if is_dead: return
@@ -156,8 +157,8 @@ func create_plantables():
     )
     
     var icon: Sprite2D = Sprite2D.new()
-    icon.texture = i.growth_stage_textures[len(i.growth_stage_textures) - 1]
-    icon.scale = Vector2(.1, .1)
+    icon.texture = i.packet_sprite
+    icon.scale = Vector2(.4, .4)
     
     interact.add_child(icon)
     
