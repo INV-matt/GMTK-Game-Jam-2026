@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://lxyvloc2urdi"]
 
-[ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://plants/sunflower/Sunflower_Station-Sheet-2.png" id="1_70jrp"]
+[ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://assets/sprites/Sunflower_Station-Sheet-2.png" id="1_70jrp"]
 [ext_resource type="Script" uid="uid://nlre7hudml4c" path="res://plants/sunflower/sunflower.gd" id="2_70jrp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbnwm"]

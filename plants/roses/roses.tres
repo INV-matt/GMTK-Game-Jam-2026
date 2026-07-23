@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cny6rblyix2du"]
 
-[ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://plants/roses/Rose_Station-Sheet.png" id="1_03plb"]
+[ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://assets/sprites/Rose_Station-Sheet.png" id="1_03plb"]
 [ext_resource type="Resource" uid="uid://bddwvcmxgn3pw" path="res://abilities/roses_ability/roses_ability.tres" id="1_mfjlr"]
 [ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_q4du4"]
 

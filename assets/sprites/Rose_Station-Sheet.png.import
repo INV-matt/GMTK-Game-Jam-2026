@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://desaj4j2c651j"
-path="res://.godot/imported/Rose_Station-Sheet.png-c82e817b71f9d0a355f8c61887c32b83.ctex"
+path="res://.godot/imported/Rose_Station-Sheet.png-f6549965f21737d27a91cf1a3f28f187.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plants/roses/Rose_Station-Sheet.png"
-dest_files=["res://.godot/imported/Rose_Station-Sheet.png-c82e817b71f9d0a355f8c61887c32b83.ctex"]
+source_file="res://assets/sprites/Rose_Station-Sheet.png"
+dest_files=["res://.godot/imported/Rose_Station-Sheet.png-f6549965f21737d27a91cf1a3f28f187.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://colnm174k7wli"
-path="res://.godot/imported/Abilty_UI_icons-Sheet-1.png-0215bf5838a572a644f1c50d8f874ddc.ctex"
+uid="uid://byf05ypc53g3c"
+path="res://.godot/imported/Sun_Flower_Heal_space-Sheet.png-5217aa89868e51196d8cee341862dc94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abilities/Abilty_UI_icons-Sheet-1.png"
-dest_files=["res://.godot/imported/Abilty_UI_icons-Sheet-1.png-0215bf5838a572a644f1c50d8f874ddc.ctex"]
+source_file="res://assets/sprites/Sun_Flower_Heal_space-Sheet.png"
+dest_files=["res://.godot/imported/Sun_Flower_Heal_space-Sheet.png-5217aa89868e51196d8cee341862dc94.ctex"]
 
 [params]
 
