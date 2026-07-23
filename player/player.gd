@@ -3,7 +3,12 @@ class_name Player
 
 @export var SPEED = 300.0
 
-@export var ability: Ability
+signal ability_list_changed
+
+@export var abilities: Array[Ability]:
+  set(value):
+    abilities = value
+    ability_list_changed.emit()
 
 @onready var hp_comp: HpComp = %HpComp
 @onready var death_timer: Timer = %DeathTimer
