@@ -5,8 +5,8 @@ class_name Pot
 @onready var pot_icon: AnimatedSprite2D = %pot_icon
 
 @onready var growth_progress: ProgressBar = %growth_progress
-
 @onready var hp_comp: HpComp = %hp_comp
+
 var is_dead = false
 
 @export var plant: PlantResource:
@@ -44,6 +44,8 @@ func update_stats() -> void:
   growth_progress.max_value = plant.growth_time
   
   plant_icon.position = Vector2(plant.sprite_offset.x, plant.sprite_offset.y - 24)
+  
+  hp_comp.max_hp = plant.health
 
 var growth: float = 0:
   set(value):
@@ -60,7 +62,6 @@ var growth_stage: int = 0:
 func _ready() -> void:
   update_stats()
   hp_comp.died.connect(on_death)
-  hp_comp.max_hp = plant.health
 
 var fully_grown: bool = false
 

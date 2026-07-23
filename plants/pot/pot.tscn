@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bttxmfiam1ehj" path="res://plants/pot/pot.gd" id="1_828tj"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://plants/pot/Lone_Pot-Sheet.png" id="3_wnhti"]
-[ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://plants/sunflower/Sunflower_Station-Sheet-2.png" id="4_828tj"]
+[ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://assets/sprites/Rose_Station-Sheet.png" id="4_828tj"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="5_wnhti"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
-[ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://plants/roses/Rose_Station-Sheet.png" id="4_828tj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
 radius = 12.0
@@ -59,11 +58,10 @@ texture = SubResource("AtlasTexture_828tj")
 
 [node name="growth_progress" type="ProgressBar" parent="." unique_id=1434540315]
 unique_name_in_owner = true
-offset_left = -50.0
+offset_left = -40.0
 offset_top = 24.0
-offset_right = 46.0
+offset_right = 40.0
 offset_bottom = 32.0
-theme = ExtResource("5_wnhti")
 show_percentage = false
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1489787306]
@@ -83,6 +81,9 @@ metadata/_custom_type_script = "uid://d1jlu0g173ory"
 
 [node name="hp_bar" type="ProgressBar" parent="." unique_id=932237325]
 visible = false
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = -40.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 24.0
 value = 99.96
+show_percentage = false

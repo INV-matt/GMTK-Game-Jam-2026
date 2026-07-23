@@ -1,23 +1,13 @@
 [gd_scene format=3 uid="uid://c20k3ugnp8t46"]
 
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="1_ueq8k"]
+[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="3_5nnnn"]
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
 [ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="4_fb3c3"]
-[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://ability_ui/ability_ui.tscn" id="4_ogbem"]
-[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="5_dihwf"]
-
-[sub_resource type="Gradient" id="Gradient_xsa0b"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xsa0b"]
-gradient = SubResource("Gradient_xsa0b")
-width = 32
-height = 32
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
-size = Vector2(32, 32)
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="4_ogbem"]
 [ext_resource type="PackedScene" uid="uid://bmgifpiy0gluy" path="res://enemy/enemy_fast.tscn" id="5_dihwf"]
 [ext_resource type="PackedScene" uid="uid://dcc6w0y38sail" path="res://enemy/enemy_tank.tscn" id="5_fb3c3"]
+[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://ability_ui/ability_ui.tscn" id="5_fuoxs"]
 
 [node name="DebugWorld" type="Node2D" unique_id=2108904853]
 y_sort_enabled = true
@@ -31,30 +21,31 @@ position_smoothing_enabled = true
 
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
 
-[node name="Enemy" parent="." unique_id=478211698 instance=ExtResource("4_ogbem")]
-position = Vector2(-920, -469)
-
-[node name="pot" parent="." unique_id=1943167055 instance=ExtResource("3_8xvt7")]
+[node name="pot2" parent="." unique_id=705694566 instance=ExtResource("3_8xvt7")]
 position = Vector2(152, 8)
-plant = ExtResource("4_fb3c3")
+plant = ExtResource("3_5nnnn")
 
-[node name="pot2" parent="." unique_id=638896623 instance=ExtResource("3_8xvt7")]
+[node name="pot3" parent="." unique_id=638896623 instance=ExtResource("3_8xvt7")]
 position = Vector2(0, 168)
 plant = ExtResource("5_dihwf")
 
-[node name="pot3" parent="." unique_id=1996164501 instance=ExtResource("3_8xvt7")]
+[node name="pot4" parent="." unique_id=1996164501 instance=ExtResource("3_8xvt7")]
 position = Vector2(-280, 56)
 plant = ExtResource("5_dihwf")
 
-[node name="pot4" parent="." unique_id=1691764149 instance=ExtResource("3_8xvt7")]
-position = Vector2(-168, -144)
+[node name="pot5" parent="." unique_id=1691764149 instance=ExtResource("3_8xvt7")]
+position = Vector2(-120, -128)
 plant = ExtResource("4_fb3c3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034672585]
 
-[node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("4_ogbem")]
+[node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("5_fuoxs")]
+
 [node name="EnemyTank" parent="." unique_id=420677822 instance=ExtResource("5_fb3c3")]
 position = Vector2(949, 534)
 
 [node name="EnemyFast" parent="." unique_id=1221767539 instance=ExtResource("5_dihwf")]
 position = Vector2(832, -419)
+
+[node name="Enemy" parent="." unique_id=1211782421 instance=ExtResource("4_ogbem")]
+position = Vector2(776, 56)

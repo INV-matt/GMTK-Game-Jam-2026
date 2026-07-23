@@ -12,7 +12,7 @@ enum Teams {
 @export var team: Teams = Teams.Player
 @export var iframe_group: String = ""
 @export var iframe_length: float = .5
-@export var lifetime: float = 5
+@export var lifetime: float = -1
 
 var attacker: Node
 
@@ -55,6 +55,10 @@ func _process(_delta: float) -> void:
   
   if shape:
     shape.shape = custom_shape
+    if team == Teams.Player:
+      shape.debug_color = Color(0.0, 1.0, 0.0, 0.42)
+    else:
+      shape.debug_color = Color(1.0, 0.0, 0.0, 0.42)
   
   for i: Hurtbox in get_overlapping_areas():
     if i.active and (not iframe_group in i.iframes or i.iframes[iframe_group] <= 0):

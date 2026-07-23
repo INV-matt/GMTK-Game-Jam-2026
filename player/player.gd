@@ -18,7 +18,6 @@ signal ability_list_changed
 var is_dead: bool = false
 
 func _ready() -> void:
-  Globals.PLAYER = self
   hp_comp.hurt.connect(on_hit)
   hp_comp.died.connect(on_death)
   hp_comp.healed.connect(on_heal)
