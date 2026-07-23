@@ -51,6 +51,7 @@ var growth_stage: int = 0:
 func _ready() -> void:
   update_stats()
   hp_comp.died.connect(on_death)
+  hp_comp.max_hp = plant.health
 
 var fully_grown: bool = false
 
