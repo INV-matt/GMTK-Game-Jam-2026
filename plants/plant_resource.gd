@@ -19,16 +19,19 @@ class_name PlantResource
 
 @warning_ignore("unused_parameter")
 func planted(pot: Pot) -> void:
-  print("Planted")
+  pass # print("Planted")
 
 @warning_ignore("unused_parameter")
 func process(delta: float, pot: Pot, stage: int) -> void:
-  print("Process")
+  pass # print("Process")
 
 @warning_ignore("unused_parameter")
 func grown(pot: Pot, stage: int) -> void:
-  print("Grown to stage: %s" % stage)
+  if give_ability:
+    ability.plant_stage = stage
+  
+  # print("Grown to stage: %s" % stage)
 
 @warning_ignore("unused_parameter")
 func unplanted(pot: Pot) -> void:
-  print("Unplanted")
+  pass # print("Unplanted")

@@ -9,6 +9,8 @@ radius = 8.0
 height = 64.0
 
 [node name="rose_petal" type="CharacterBody2D" unique_id=1294622087]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_i52gp")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=706256037]

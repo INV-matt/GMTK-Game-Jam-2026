@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpxllxa1xe7k3"]
 
 [ext_resource type="Script" uid="uid://n8fcaaksuqjl" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Resource" uid="uid://bddwvcmxgn3pw" path="res://abilities/roses_ability/roses_ability.tres" id="2_qjkh3"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://ct5ehol4o2vkq" path="res://assets/sprites/Terracota_Idle_Sheet.png" id="4_yw30f"]
@@ -338,11 +339,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=386552564 node_paths=PackedStringArray("hp_comp", "death_timer", "sprite")]
+[node name="Player" type="CharacterBody2D" unique_id=386552564]
 script = ExtResource("1_oul6g")
-hp_comp = NodePath("HpComp")
-death_timer = NodePath("DeathTimer")
-sprite = NodePath("AnimatedSprite2D")
+ability = ExtResource("2_qjkh3")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1828331245]
 position = Vector2(0, -37)
@@ -357,16 +356,19 @@ metadata/_custom_type_script = "uid://bfuubedgq33em"
 shape = SubResource("CircleShape2D_yw30f")
 
 [node name="HpComp" type="Node" parent="." unique_id=1496722611 node_paths=PackedStringArray("hp_bar")]
+unique_name_in_owner = true
 script = ExtResource("3_g1dw6")
 use_hp_bar = true
 hp_bar = NodePath("../ProgressBar")
 metadata/_custom_type_script = "uid://d1jlu0g173ory"
 
 [node name="DeathTimer" type="Timer" parent="." unique_id=358401912]
+unique_name_in_owner = true
 wait_time = 5.0
 one_shot = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=400499545]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=400499545]
+unique_name_in_owner = true
 position = Vector2(0, -37)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_utduo")
