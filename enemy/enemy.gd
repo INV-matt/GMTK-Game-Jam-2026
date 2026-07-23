@@ -38,4 +38,5 @@ func on_player_exited(body: Node2D) -> void:
    if body is Player: following_player = false
 
 func _on_hp_comp_died() -> void:
+  Signals.enemy_died.emit()
   queue_free()

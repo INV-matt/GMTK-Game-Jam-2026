@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm4fx0hm4nhdf"]
 
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="1_lrr4h"]
-[ext_resource type="Script" uid="uid://bcoflqu8mymsl" path="res://ability_ui/ability_ui.gd" id="2_plnsn"]
+[ext_resource type="Script" uid="uid://bcoflqu8mymsl" path="res://player_ui/ability_ui.gd" id="2_plnsn"]
 
 [node name="ability_ui" type="Control" unique_id=44532813]
 layout_mode = 3

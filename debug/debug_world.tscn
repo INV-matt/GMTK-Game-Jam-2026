@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="4_ogbem"]
 [ext_resource type="PackedScene" uid="uid://bmgifpiy0gluy" path="res://enemy/enemy_fast.tscn" id="5_dihwf"]
 [ext_resource type="PackedScene" uid="uid://dcc6w0y38sail" path="res://enemy/enemy_tank.tscn" id="5_fb3c3"]
-[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://ability_ui/ability_ui.tscn" id="5_fuoxs"]
+[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="5_fuoxs"]
 [ext_resource type="PackedScene" uid="uid://dfvqnd5to5toi" path="res://enemy/waves/wave_manager.tscn" id="7_fuoxs"]
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="9_svi63"]
 [ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="10_8u7lf"]
