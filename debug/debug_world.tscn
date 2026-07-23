@@ -19,3 +19,4 @@ position_smoothing_enabled = true
 plant = ExtResource("3_dihwf")
 
 [node name="WaveManager" parent="." unique_id=158709167 instance=ExtResource("4_ogbem")]
+TIME_BETWEEN_ENEMIES = 0.2

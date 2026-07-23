@@ -12,22 +12,26 @@ var current_wave: int = 0:
 @export var enemy_types: Dictionary[PackedScene, int]
 @export_range(500, 2000, 10, "or_greater") var MINIMUM_DISTANCE: int
 @export_range(1000, 5000, 10, "or_greater") var MAXIMUM_DISTANCE: int
+@export_range(0, 5, 0.1, "prefer_slider") var TIME_BETWEEN_ENEMIES: float = 0.5
 
-var elapsed_time = 1.
+var elapsed_time: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
   current_wave = 1
+  elapsed_time = TIME_BETWEEN_ENEMIES
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
   if budget > 0:
     if elapsed_time < 0:
-      elapsed_time = 1.
+      elapsed_time = TIME_BETWEEN_ENEMIES
       spawn_enemy()
     else:
       elapsed_time -= delta
+
+  #if Input.is_action_just_pressed("ui_accept"): current_wave += 1
 
 func spawn_enemy() -> void:
   var possible_enemies: Array[PackedScene]
@@ -56,4 +60,8 @@ func spawn_enemy() -> void:
   
 
 func calculate_budget(value: int) -> int:
-  return value * (value + 1) / 2
+  return value * (value + 1)
+
+func next_wave() -> void:
+  current_wave += 1
+  Signals.started_wave.emit(current_wave)
