@@ -25,9 +25,7 @@ func deal_dmg(to_what: Hurtbox) -> void:
   pierced += 1
   
   if pierced > piercing and piercing >= 0:
-    if shape:
-      shape.set_deferred("disabled", true)
-    expired.emit()
+    expire()
   
   if !hp_comp:
     push_error("Could not find health component on node %s" % parent)
