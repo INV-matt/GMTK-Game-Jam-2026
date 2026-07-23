@@ -33,6 +33,7 @@ func on_hit(amt: float) -> void:
   print("Hit %s, health remaining: %s" % [amt, hp_comp.hp])
 
 func on_death() -> void:
+  if is_dead: return
   print("You died")
   is_dead = true
   death_timer.start()

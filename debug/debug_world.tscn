@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="2_xsa0b"]
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="4_ogbem"]
+[ext_resource type="PackedScene" uid="uid://dcc6w0y38sail" path="res://enemy/enemy_tank.tscn" id="5_fb3c3"]
 
 [sub_resource type="Gradient" id="Gradient_xsa0b"]
 
@@ -40,3 +41,6 @@ position = Vector2(152, 8)
 
 [node name="Enemy" parent="." unique_id=478211698 instance=ExtResource("4_ogbem")]
 position = Vector2(-510, -205)
+
+[node name="EnemyTank" parent="." unique_id=420677822 instance=ExtResource("5_fb3c3")]
+position = Vector2(-386, 259)

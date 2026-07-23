@@ -3,10 +3,13 @@ extends CharacterBody2D
 @export var SPEED: float
 @export var MAX_HEALTH: float
 @export var DEFAULT_TARGET: Vector2
+@export var sprite: Sprite2D
+@export_range(1, 200, 1, "greater than") var size: int
 
-@export var hp_comp: HpComp
-@export var hitbox: DmgHitbox
-@export var hurtbox: Hurtbox
+
+var hp_comp: HpComp
+var hitbox: DmgHitbox
+var hurtbox: Hurtbox
 
 var target: Vector2
 var following_player: bool
@@ -15,6 +18,14 @@ var following_player: bool
 func _ready() -> void:
   target = DEFAULT_TARGET
   following_player = false
+  hp_comp = $HpComp
+  hitbox = $DmgHitbox
+  hurtbox = $Hurtbox
+
+  #hitbox.size = Vector2(size, size)
+  #(hitbox.custom_shape as CircleShape2D).radius = size
+  #hurtbox.size = 0.5 * Vector2(size, size)
+  #(hitbox.custom_shape as CircleShape2D).radius = 0.5 * size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
