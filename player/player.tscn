@@ -5,11 +5,12 @@
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://ct5ehol4o2vkq" path="res://assets/sprites/Terracota_Idle_Sheet.png" id="4_yw30f"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
+radius = 24.13
+height = 122.61
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_yw30f"]
 radius = 24.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s8um6"]
-size = Vector2(50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
 atlas = ExtResource("4_yw30f")
@@ -343,14 +344,17 @@ hp_comp = NodePath("HpComp")
 death_timer = NodePath("DeathTimer")
 sprite = NodePath("AnimatedSprite2D")
 
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1828331245]
+position = Vector2(0, -37)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_rkbax")
+size = Vector2(48, 120)
+custom_shape = SubResource("CapsuleShape2D_yw30f")
+metadata/_custom_type_script = "uid://bfuubedgq33em"
+
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1655863829]
 shape = SubResource("CircleShape2D_yw30f")
-
-[node name="DebugSprite" type="Sprite2D" parent="." unique_id=188558620]
-visible = false
-position = Vector2(0, -40)
-scale = Vector2(0.1, 0.1)
-texture = SubResource("PlaceholderTexture2D_s8um6")
 
 [node name="HpComp" type="Node" parent="." unique_id=1496722611]
 script = ExtResource("3_g1dw6")
@@ -361,17 +365,9 @@ wait_time = 5.0
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=400499545]
-position = Vector2(0, -40)
+position = Vector2(0, -37)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_utduo")
 animation = &"idle_front"
 autoplay = "idle_front"
 frame_progress = 0.051932037
-
-[node name="Hurtbox" type="Area2D" parent="." unique_id=1828331245]
-position = Vector2(0, -37)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("2_rkbax")
-size = Vector2(48, 120)
-metadata/_custom_type_script = "uid://bfuubedgq33em"
