@@ -12,6 +12,7 @@
 y_sort_enabled = true
 
 [node name="WaveManager" parent="." unique_id=158709167 instance=ExtResource("7_fuoxs")]
+process_mode = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034672585]
 
@@ -39,14 +40,17 @@ position = Vector2(-200, -400)
 position = Vector2(-400, -376)
 
 [node name="EnemyTank" parent="." unique_id=420677822 instance=ExtResource("5_fb3c3")]
+process_mode = 4
 position = Vector2(949, 534)
 collision_layer = 2
 collision_mask = 3
 
 [node name="EnemyFast" parent="." unique_id=1221767539 instance=ExtResource("5_dihwf")]
+process_mode = 4
 position = Vector2(832, -419)
 collision_layer = 2
 collision_mask = 3
 
 [node name="Enemy" parent="." unique_id=1211782421 instance=ExtResource("4_ogbem")]
+process_mode = 4
 position = Vector2(776, 56)

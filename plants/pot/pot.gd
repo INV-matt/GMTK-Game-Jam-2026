@@ -74,7 +74,9 @@ func _ready() -> void:
       plantables.visible = false
       for f in plantables.get_children():
         f.queue_free()
+      print(i)
     )
+    interact.active = false
     
     var icon: Sprite2D = Sprite2D.new()
     icon.texture = i.growth_stage_textures[len(i.growth_stage_textures) - 1]
@@ -118,11 +120,6 @@ func _process(delta: float) -> void:
   if plant:
     update_growth(delta)
     plant.process(delta, self, growth_stage)
-  
-  var diff: Vector2 = global_position - Qol.player.global_position
-  
-  if diff.length_squared() >= 100 * 100 :
-    plantables.visible = false
 
 func on_death() -> void:
   if is_dead: return
@@ -153,3 +150,5 @@ func _physics_process(_delta: float) -> void:
 func _on_interaction_comp_interacted() -> void:
   if !plant:
     plantables.visible = !plantables.visible
+    for i: InteractionComp in plantables.get_children():
+      i.active = plantables.visible
