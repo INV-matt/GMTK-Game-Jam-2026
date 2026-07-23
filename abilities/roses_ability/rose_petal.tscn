@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhj7xm6p75r6t"]
+
+[ext_resource type="Texture2D" uid="uid://cosotffptsqhn" path="res://icon.svg" id="1_6siaa"]
+
+[node name="rose_petal" type="CharacterBody2D" unique_id=1294622087]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=706256037]
+scale = Vector2(0.5, 0.125)
+texture = ExtResource("1_6siaa")

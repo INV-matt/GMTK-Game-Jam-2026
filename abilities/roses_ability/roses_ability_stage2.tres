@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://dmxh0kmp1mgkw"]
+
+[ext_resource type="Script" uid="uid://c4svoo5n7bth0" path="res://abilities/roses_ability/roses_ability.gd" id="1_6htvo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gt81o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_828tj"]
+atlas = SubResource("CompressedTexture2D_gt81o")
+region = Rect2(0, 0, 1017, 0)
+
+[resource]
+script = ExtResource("1_6htvo")
+stage = 2
+ability_name = "Piercing Petal (Stage 1)"
+icon = SubResource("AtlasTexture_828tj")
+metadata/_custom_type_script = "uid://q72vwqcaw71u"
