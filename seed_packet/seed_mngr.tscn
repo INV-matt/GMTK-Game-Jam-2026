@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://v3w4qsk5yw1a"]
+
+[ext_resource type="Script" uid="uid://ddk40wljcjgoo" path="res://seed_packet/seed_mngr.gd" id="1_mh5xy"]
+
+[node name="seed_mngr" type="Node" unique_id=2037225531]
+script = ExtResource("1_mh5xy")
