@@ -13,6 +13,8 @@ var current_wave: int = 0:
 @export_range(500, 2000, 10, "or_greater") var MINIMUM_DISTANCE: int
 @export_range(1000, 5000, 10, "or_greater") var MAXIMUM_DISTANCE: int
 @export_range(0, 5, 0.1, "prefer_slider") var TIME_BETWEEN_ENEMIES: float = 0.5
+@export var HEALTH_INCREASE_WAVES: float = 10
+@export_range(1, 20, 1, "or_greater") var WAVES_BETWEEN_HEALTH_INCREASE: int = 10
 
 var elapsed_time: float
 
@@ -31,7 +33,7 @@ func _process(delta: float) -> void:
     else:
       elapsed_time -= delta
 
-  #if Input.is_action_just_pressed("ui_accept"): current_wave += 1
+  if Input.is_action_just_pressed("ui_accept"): current_wave += 1
 
 func spawn_enemy() -> void:
   var possible_enemies: Array[PackedScene]
@@ -52,6 +54,9 @@ func spawn_enemy() -> void:
   var rho = randf_range(MINIMUM_DISTANCE, MAXIMUM_DISTANCE)
   var pos = rho * Vector2(cos(theta), sin(theta))
   enemy_node.global_position = pos
+
+  var health_increase = HEALTH_INCREASE_WAVES * int(current_wave / WAVES_BETWEEN_HEALTH_INCREASE)
+  enemy_node.MAX_HEALTH += health_increase
 
   #print("Spawned %s at pos %s" % [enemy_node.name, enemy_node.global_position])
   Signals.spawned_enemy.emit(pos) # TODO: possibly implement ui indicator telling the player where the enemy spawned (like a small arrow)

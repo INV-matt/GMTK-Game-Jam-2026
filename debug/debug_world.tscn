@@ -38,11 +38,15 @@ position = Vector2(-120, -128)
 
 [node name="EnemyTank" parent="." unique_id=420677822 instance=ExtResource("5_fb3c3")]
 position = Vector2(949, 534)
+size = 25
 
 [node name="EnemyFast" parent="." unique_id=1221767539 instance=ExtResource("5_dihwf")]
 position = Vector2(832, -419)
+size = 25
 
 [node name="Enemy" parent="." unique_id=1211782421 instance=ExtResource("4_ogbem")]
 position = Vector2(776, 56)
+SPEED = 100.0
+size = 25
 
 [node name="WaveManager" parent="." unique_id=158709167 instance=ExtResource("7_fuoxs")]
