@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Qol="*uid://drw6b2doqer3r"
+Signals="*uid://doy3dc6tgqq0u"
 
 [display]
 
