@@ -18,7 +18,7 @@ func planted(pot: Pot) -> void:
 
 @warning_ignore("unused_parameter")
 func process(delta: float, pot: Pot, stage: int) -> void:
-  print("Process")
+  pass # print("Process")
 
 @warning_ignore("unused_parameter")
 func grown(pot: Pot, stage: int) -> void:

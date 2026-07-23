@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dnw0kia48axt5"]
+
+[ext_resource type="Script" uid="uid://c3wax5bupk70h" path="res://enemy/enemy.gd" id="1_ppra6"]
+[ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="2_p200p"]
+[ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="3_pmsee"]
+[ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="4_p200p"]
+
+[sub_resource type="Gradient" id="Gradient_p200p"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p200p"]
+gradient = SubResource("Gradient_p200p")
+width = 40
+height = 40
+fill_from = Vector2(1, 0.17546408)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p200p"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmsee"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p200p"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wwld"]
+radius = 12.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=478211698 node_paths=PackedStringArray("hp_comp", "hitbox", "hurtbox")]
+script = ExtResource("1_ppra6")
+SPEED = 100.0
+MAX_HEALTH = 10.0
+hp_comp = NodePath("HpComp")
+hitbox = NodePath("DmgHitbox")
+hurtbox = NodePath("Hurtbox")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1903732457]
+texture = SubResource("GradientTexture2D_p200p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010759488]
+visible = false
+shape = SubResource("CapsuleShape2D_p200p")
+
+[node name="TargetPlayerZone" type="Area2D" parent="." unique_id=702166902]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetPlayerZone" unique_id=1574453606]
+shape = SubResource("CircleShape2D_pmsee")
+
+[node name="HpComp" type="Node" parent="." unique_id=982802460 node_paths=PackedStringArray("hp_bar")]
+script = ExtResource("2_p200p")
+use_hp_bar = true
+hp_bar = NodePath("../ProgressBar")
+metadata/_custom_type_script = "uid://d1jlu0g173ory"
+
+[node name="DmgHitbox" type="Area2D" parent="." unique_id=163459591]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_pmsee")
+team = 2
+iframe_group = "3825020776879"
+custom_shape = SubResource("CircleShape2D_p200p")
+metadata/_custom_type_script = "uid://3ai8v5acr4am"
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=689252300]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("4_p200p")
+team = 4
+custom_shape = SubResource("CircleShape2D_1wwld")
+metadata/_custom_type_script = "uid://bfuubedgq33em"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1230430412]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+value = 99.96
+
+[connection signal="body_entered" from="TargetPlayerZone" to="." method="on_player_entered"]
+[connection signal="body_exited" from="TargetPlayerZone" to="." method="on_player_exited"]
