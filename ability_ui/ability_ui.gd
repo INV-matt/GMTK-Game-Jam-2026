@@ -1,7 +1,7 @@
 extends Control
 class_name AbilityUI
 
-const ABILITY_ICON = preload("uid://cnvk0rkj0bwqg")
+const ABILITY_ICON = preload("uid://cnvk0rkj0bwqg") # TODO: put game scene here, this is the debug scene
 
 @onready var ability_tray: HBoxContainer = %ability_tray
 
