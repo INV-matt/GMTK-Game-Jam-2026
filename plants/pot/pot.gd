@@ -19,6 +19,7 @@ var is_dead = false
     if plant:
       plant.planted(self)
       update_stats()
+      
 
 func update_stats() -> void:
   if !is_node_ready(): return
