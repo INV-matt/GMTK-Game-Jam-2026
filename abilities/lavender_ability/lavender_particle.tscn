@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dfyd1os38ckwx"]
+
+[ext_resource type="Script" uid="uid://c7f8qy4dodk6c" path="res://abilities/lavender_ability/lavender_particle.gd" id="1_o1udn"]
+
+[sub_resource type="Curve" id="Curve_aoqm3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.070227, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jd3ek"]
+curve = SubResource("Curve_aoqm3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wbm84"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 0, 0)
+scale_min = 8.0
+scale_max = 8.0
+color = Color(0.6156863, 0.5019608, 1, 1)
+alpha_curve = SubResource("CurveTexture_jd3ek")
+
+[node name="lavender_particle" type="GPUParticles2D" unique_id=1470490811]
+z_index = -5
+emitting = false
+amount = 32
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wbm84")
+script = ExtResource("1_o1udn")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
