@@ -356,8 +356,10 @@ metadata/_custom_type_script = "uid://bfuubedgq33em"
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1655863829]
 shape = SubResource("CircleShape2D_yw30f")
 
-[node name="HpComp" type="Node" parent="." unique_id=1496722611]
+[node name="HpComp" type="Node" parent="." unique_id=1496722611 node_paths=PackedStringArray("hp_bar")]
 script = ExtResource("3_g1dw6")
+use_hp_bar = true
+hp_bar = NodePath("../ProgressBar")
 metadata/_custom_type_script = "uid://d1jlu0g173ory"
 
 [node name="DeathTimer" type="Timer" parent="." unique_id=358401912]
@@ -371,3 +373,12 @@ sprite_frames = SubResource("SpriteFrames_utduo")
 animation = &"idle_front"
 autoplay = "idle_front"
 frame_progress = 0.051932037
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1955288155]
+visible = false
+offset_left = -40.0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 99.96
+show_percentage = false

@@ -1,8 +1,8 @@
-extends Area2D
+extends Node2D
 class_name SunflowerAura
 
 @onready var animated_sprite: AnimatedSprite2D = %animated_sprite
-@onready var collider: CollisionShape2D = %collider
+@onready var collider: DmgHitbox = %collider
 
 var target_scale: float = 0
 
