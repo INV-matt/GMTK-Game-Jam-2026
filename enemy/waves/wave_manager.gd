@@ -1,4 +1,5 @@
 extends Node
+class_name WaveMngr
 
 var budget: int = 0
 var current_wave: int = 0:

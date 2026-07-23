@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bcd41okr0r845"]
+
+[ext_resource type="Script" uid="uid://dewbp7q5g384u" path="res://seed_packet/seed_packet.gd" id="1_n4wk7"]
+[ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="2_7pdce"]
+[ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="2_nli1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbm84"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm84"]
+atlas = ExtResource("2_7pdce")
+region = Rect2(0, 0, 158, 158)
+
+[node name="seed_packet" type="Area2D" unique_id=426246522]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_n4wk7")
+plant = ExtResource("2_nli1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1270051973]
+shape = SubResource("RectangleShape2D_wbm84")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1581578716]
+unique_name_in_owner = true
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_wbm84")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

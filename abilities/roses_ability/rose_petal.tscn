@@ -1,21 +1,17 @@
 [gd_scene format=3 uid="uid://dhj7xm6p75r6t"]
 
-[ext_resource type="Texture2D" uid="uid://cosotffptsqhn" path="res://icon.svg" id="1_6siaa"]
 [ext_resource type="Script" uid="uid://cq3cjm12jrk61" path="res://abilities/roses_ability/rose_petal.gd" id="1_i52gp"]
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="2_mpdl1"]
+[ext_resource type="Texture2D" uid="uid://cfwvnx07g50xd" path="res://assets/sprites/Rose_Petal.png" id="3_i52gp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbm84"]
 radius = 8.0
-height = 64.0
+height = 51.0
 
 [node name="rose_petal" type="CharacterBody2D" unique_id=1294622087]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_i52gp")
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=706256037]
-scale = Vector2(0.5, 0.125)
-texture = ExtResource("1_6siaa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=880032996]
 rotation = 1.5707964
@@ -30,5 +26,10 @@ piercing = 1
 lifetime = 5.0
 custom_shape = SubResource("CapsuleShape2D_wbm84")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=706256037]
+position = Vector2(4, 0)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_i52gp")
 
 [connection signal="expired" from="DmgHitbox" to="." method="_on_dmg_hitbox_expired"]

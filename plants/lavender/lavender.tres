@@ -37,9 +37,17 @@ load_path = "res://.godot/imported/Lavender_Station-Sheet.png-1b9b56d76cf994cf16
 atlas = SubResource("CompressedTexture2D_lcym3")
 region = Rect2(0, 849, 684, 849)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ectno"]
+load_path = "res://.godot/imported/Seed_Packets-Sheet.png-37f417aa0f27f6221362618b76684941.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boy7l"]
+atlas = SubResource("CompressedTexture2D_ectno")
+region = Rect2(0, 158, 158, 158)
+
 [resource]
 script = ExtResource("1_kblpm")
 name = "Lavender"
+packet_sprite = SubResource("AtlasTexture_boy7l")
 sprite_offset = Vector2(0, -22)
 growth_stage_textures = Array[Texture2D]([SubResource("AtlasTexture_ectno"), SubResource("AtlasTexture_vjfx8"), SubResource("AtlasTexture_3pabc")])
 growth_time = 3.0

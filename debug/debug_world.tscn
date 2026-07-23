@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://c20k3ugnp8t46"]
 
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="1_ueq8k"]
+[ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="2_5nnnn"]
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="4_ogbem"]
 [ext_resource type="PackedScene" uid="uid://bmgifpiy0gluy" path="res://enemy/enemy_fast.tscn" id="5_dihwf"]
 [ext_resource type="PackedScene" uid="uid://dcc6w0y38sail" path="res://enemy/enemy_tank.tscn" id="5_fb3c3"]
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://ability_ui/ability_ui.tscn" id="5_fuoxs"]
 [ext_resource type="PackedScene" uid="uid://dfvqnd5to5toi" path="res://enemy/waves/wave_manager.tscn" id="7_fuoxs"]
+[ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="9_svi63"]
+[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="10_8u7lf"]
+[ext_resource type="Resource" uid="uid://cuqqq0wjip7ww" path="res://plants/lavender/lavender.tres" id="11_4yv2v"]
 
 [node name="DebugWorld" type="Node2D" unique_id=2108904853]
 y_sort_enabled = true
@@ -17,6 +21,8 @@ y_sort_enabled = true
 
 [node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("5_fuoxs")]
 visible = false
+
+[node name="seed_mngr" parent="CanvasLayer" unique_id=2037225531 instance=ExtResource("2_5nnnn")]
 
 [node name="Player" parent="." unique_id=386552564 instance=ExtResource("1_ueq8k")]
 position = Vector2(-379, 0)
@@ -49,3 +55,25 @@ size = 25
 
 [node name="Enemy" parent="." unique_id=1211782421 instance=ExtResource("4_ogbem")]
 position = Vector2(776, 56)
+
+[node name="seed_packet" parent="." unique_id=426246522 instance=ExtResource("9_svi63")]
+position = Vector2(-480, 280)
+plant = ExtResource("10_8u7lf")
+
+[node name="seed_packet2" parent="." unique_id=1094892741 instance=ExtResource("9_svi63")]
+position = Vector2(-696, 272)
+
+[node name="seed_packet3" parent="." unique_id=1185622239 instance=ExtResource("9_svi63")]
+position = Vector2(-304, 288)
+plant = ExtResource("11_4yv2v")
+
+[node name="seed_packet4" parent="." unique_id=638802432 instance=ExtResource("9_svi63")]
+position = Vector2(-608, 360)
+
+[node name="seed_packet5" parent="." unique_id=1458917767 instance=ExtResource("9_svi63")]
+position = Vector2(-408, 392)
+plant = ExtResource("10_8u7lf")
+
+[node name="seed_packet6" parent="." unique_id=525031083 instance=ExtResource("9_svi63")]
+position = Vector2(-176, 392)
+plant = ExtResource("11_4yv2v")

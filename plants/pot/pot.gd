@@ -63,30 +63,6 @@ var growth_stage: int = 0:
 func _ready() -> void:
   update_stats()
   hp_comp.died.connect(on_death)
-  
-  var idx: int = 0
-  for i in Qol.plantable:
-    var interact: InteractionComp = InteractionComp.new()
-    interact.global_position = Vector2(((1 - len(Qol.plantable)) / 2.0 + idx) * 128, -64)
-    interact.radius = 32
-    interact.interacted.connect(func():
-      plant = i
-      plantables.visible = false
-      for f in plantables.get_children():
-        f.queue_free()
-      print(i)
-    )
-    interact.active = false
-    
-    var icon: Sprite2D = Sprite2D.new()
-    icon.texture = i.growth_stage_textures[len(i.growth_stage_textures) - 1]
-    icon.scale = Vector2(.1, .1)
-    
-    interact.add_child(icon)
-    
-    idx += 1
-    
-    plantables.add_child(interact)
 
 var fully_grown: bool = false
 
@@ -120,6 +96,17 @@ func _process(delta: float) -> void:
   if plant:
     update_growth(delta)
     plant.process(delta, self, growth_stage)
+  
+  var diff: Vector2 = Qol.player.global_position - global_position
+  if diff.length_squared() > 100 * 100:
+    var inside: bool = false
+    for i: InteractionComp in plantables.get_children():
+      if i.player_inside:
+        inside = true
+        break
+    
+    if !inside:
+      hide_plantables()
 
 func on_death() -> void:
   if is_dead: return
@@ -147,8 +134,45 @@ func _physics_process(_delta: float) -> void:
       velocity = diff.normalized() * 30.0
       move_and_slide()
 
+func create_plantables():
+  plantables.visible = true
+  
+  var available: Array[PlantResource] = []
+  for i in Qol.seed_mngr.seeds:
+    if Qol.seed_mngr.seeds[i] > 0:
+      available.append(i)
+  
+  var idx: int = 0
+  for i in available:
+    var interact: InteractionComp = InteractionComp.new()
+    interact.global_position = Vector2(((1 - len(available)) / 2.0 + idx) * 80, 64)
+    interact.radius = 32
+    interact.interacted.connect(func():
+      Qol.seed_mngr.remove_seed(i)
+      plant = i
+      plantables.visible = false
+      for f in plantables.get_children():
+        f.queue_free()
+    )
+    
+    var icon: Sprite2D = Sprite2D.new()
+    icon.texture = i.growth_stage_textures[len(i.growth_stage_textures) - 1]
+    icon.scale = Vector2(.1, .1)
+    
+    interact.add_child(icon)
+    
+    idx += 1
+    
+    plantables.add_child(interact)
+
+func hide_plantables():
+  plantables.visible = false
+  for f in plantables.get_children():
+    f.queue_free()
+
 func _on_interaction_comp_interacted() -> void:
   if !plant:
-    plantables.visible = !plantables.visible
-    for i: InteractionComp in plantables.get_children():
-      i.active = plantables.visible
+    if !plantables.visible:
+      create_plantables()
+    else :
+      hide_plantables()
