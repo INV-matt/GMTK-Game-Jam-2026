@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brejr64edyvqa"
-path="res://.godot/imported/Lone_Pot-Sheet.png-1c55372001bd961c0d893806bdeb3657.ctex"
+uid="uid://cfwvnx07g50xd"
+path="res://.godot/imported/Rose_Petal.png-d2dc29f0ce2a18cf2fec889112957ce6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plants/pot/Lone_Pot-Sheet.png"
-dest_files=["res://.godot/imported/Lone_Pot-Sheet.png-1c55372001bd961c0d893806bdeb3657.ctex"]
+source_file="res://assets/sprites/Rose_Petal.png"
+dest_files=["res://.godot/imported/Rose_Petal.png-d2dc29f0ce2a18cf2fec889112957ce6.ctex"]
 
 [params]
 
