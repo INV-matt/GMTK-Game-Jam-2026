@@ -17,11 +17,11 @@ y_sort_enabled = true
 
 [node name="WaveManager" parent="." unique_id=158709167 instance=ExtResource("7_fuoxs")]
 
-[node name="seed_mngr" parent="." unique_id=2037225531 instance=ExtResource("2_5nnnn")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034672585]
 
 [node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("5_fuoxs")]
+
+[node name="seed_mngr" parent="CanvasLayer" unique_id=2037225531 instance=ExtResource("2_5nnnn")]
 
 [node name="Player" parent="." unique_id=386552564 instance=ExtResource("1_ueq8k")]
 position = Vector2(-379, 0)

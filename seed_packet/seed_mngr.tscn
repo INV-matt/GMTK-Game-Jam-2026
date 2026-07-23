@@ -1,6 +1,55 @@
 [gd_scene format=3 uid="uid://v3w4qsk5yw1a"]
 
+[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="1_2sram"]
 [ext_resource type="Script" uid="uid://ddk40wljcjgoo" path="res://seed_packet/seed_mngr.gd" id="1_mh5xy"]
 
-[node name="seed_mngr" type="Node" unique_id=2037225531]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_akmrk"]
+load_path = "res://.godot/imported/Seed_Packets-Sheet.png-37f417aa0f27f6221362618b76684941.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1odq"]
+atlas = SubResource("CompressedTexture2D_akmrk")
+region = Rect2(0, 158, 158, 158)
+
+[node name="seed_mngr" type="Control" unique_id=364425271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2sram")
 script = ExtResource("1_mh5xy")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=905127266]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="seed_container" type="VBoxContainer" parent="MarginContainer" unique_id=1002665928]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/seed_container" unique_id=683440084]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/seed_container/HBoxContainer" unique_id=1699666869]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/seed_container/HBoxContainer/Control" unique_id=626743973]
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 158.0
+texture = SubResource("AtlasTexture_l1odq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/seed_container/HBoxContainer" unique_id=666075952]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "x8"
+vertical_alignment = 1
