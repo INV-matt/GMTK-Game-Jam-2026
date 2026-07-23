@@ -3,7 +3,10 @@
 extends Hitbox
 class_name DmgHitbox
 
+@export var piercing: int = -1
 @export var damage: float = 10
+
+var pierced: int = 0
 
 func _ready() -> void:
   super._ready()
@@ -13,11 +16,16 @@ func _ready() -> void:
 func deal_dmg(to_what: Hurtbox) -> void:
   var parent: Node = to_what.get_parent()
   var hp_comp: HpComp
-
+  
   for node: Node in parent.get_children():
     if node is HpComp:
       hp_comp = (node as HpComp)
       break
+  
+  pierced += 1
+  
+  if pierced > piercing and piercing >= 0:
+    expire()
   
   if !hp_comp:
     push_error("Could not find health component on node %s" % parent)

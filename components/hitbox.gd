@@ -12,6 +12,7 @@ enum Teams {
 @export var team: Teams = Teams.Player
 @export var iframe_group: String = ""
 @export var iframe_length: float = .5
+@export var lifetime: float = 5
 
 var attacker: Node
 
@@ -19,6 +20,13 @@ var attacker: Node
 var shape: CollisionShape2D
 
 func _ready() -> void:
+  if !Engine.is_editor_hint() and lifetime > 0:
+    var t: Timer = Timer.new()
+    t.autostart = true
+    t.wait_time = lifetime
+    t.timeout.connect(expired.emit)
+    add_child(t)
+  
   if iframe_group == "":
     iframe_group = str(get_instance_id())
   
@@ -33,7 +41,14 @@ func _ready() -> void:
 
   add_child(shape)
 
+@warning_ignore("unused_signal")
+signal expired
 signal hit(what: Hurtbox)
+
+func expire():
+  if shape:
+    shape.set_deferred("disabled", true)
+  expired.emit()
 
 func _process(_delta: float) -> void:
   collision_mask = team

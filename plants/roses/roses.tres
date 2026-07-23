@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cny6rblyix2du"]
+
+[ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://plants/roses/Rose_Station-Sheet.png" id="1_03plb"]
+[ext_resource type="Resource" uid="uid://bddwvcmxgn3pw" path="res://abilities/roses_ability/roses_ability.tres" id="1_mfjlr"]
+[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_q4du4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfjlr"]
+atlas = ExtResource("1_03plb")
+region = Rect2(0, 0, 641, 791)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_01d5x"]
+load_path = "res://.godot/imported/Rose_Station-Sheet.png-c82e817b71f9d0a355f8c61887c32b83.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfqi4"]
+atlas = SubResource("CompressedTexture2D_01d5x")
+region = Rect2(641, 0, 641, 791)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xpfc5"]
+load_path = "res://.godot/imported/Rose_Station-Sheet.png-c82e817b71f9d0a355f8c61887c32b83.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmis8"]
+atlas = SubResource("CompressedTexture2D_xpfc5")
+region = Rect2(0, 791, 641, 791)
+
+[resource]
+script = ExtResource("1_q4du4")
+name = "Roses"
+desc = "Roses give the ability to shoot their piercing petals at enemies"
+sprite_offset = Vector2(0, -12)
+growth_stage_textures = Array[Texture2D]([SubResource("AtlasTexture_mfjlr"), SubResource("AtlasTexture_tfqi4"), SubResource("AtlasTexture_hmis8")])
+growth_time = 3.0
+give_ability = true
+ability = ExtResource("1_mfjlr")
+metadata/_custom_type_script = "uid://cey2j6m6u71a8"
