@@ -26,8 +26,8 @@ height = 40
 fill_from = Vector2(1, 1)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=478211698]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_ppra6")
 SPEED = 50.0
 size = 200

@@ -1,6 +1,11 @@
 extends Node
 
 func _ready() -> void:
+  plantable = [
+    load("uid://cuqqq0wjip7ww"),
+    load("uid://cny6rblyix2du"),
+    load("uid://lxyvloc2urdi")
+  ]
   process_mode = Node.PROCESS_MODE_ALWAYS
 
 const MAIN_THEME = preload("uid://do3colsru7pqn")
@@ -56,3 +61,5 @@ var player: Player
 
 func _process(_delta: float) -> void:
   if !player: player = find_with_criteria(tree_root(), func(x: Node): return x is Player)
+
+var plantable: Array[PlantResource] = []

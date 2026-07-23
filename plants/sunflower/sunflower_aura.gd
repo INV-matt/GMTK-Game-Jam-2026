@@ -16,6 +16,8 @@ var target_scale: float = 0
     collider.set_deferred("disabled", false)
     
     if stage <= 0: return
+    
+    collider.active = true
   
     animated_sprite.visible = true
     animated_sprite.play("stage%s" % stage)
@@ -24,6 +26,7 @@ var target_scale: float = 0
 
 func _ready() -> void:
   stage = 0
+  collider.active = false
 
 func _process(_delta: float) -> void:
   animated_sprite.scale = animated_sprite.scale * .9 + Vector2.ONE * target_scale * .1

@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bcxdguaoswcyf"]
 
 [ext_resource type="Script" uid="uid://bttxmfiam1ehj" path="res://plants/pot/pot.gd" id="1_828tj"]
+[ext_resource type="Script" uid="uid://bfn4wjryc2sey" path="res://components/interaction_comp.gd" id="2_g0hop"]
 [ext_resource type="Texture2D" uid="uid://dpcr0mvdjxkvc" path="res://assets/sprites/Lavender_Station-Sheet.png" id="3_q0ont"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://plants/pot/Lone_Pot-Sheet.png" id="3_wnhti"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="5_wnhti"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
+[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="7_ispg6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnhti"]
 radius = 14.0
@@ -34,9 +36,19 @@ atlas = ExtResource("3_q0ont")
 region = Rect2(0, 0, 684, 849)
 
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
-collision_layer = 9
 collision_mask = 3
 script = ExtResource("1_828tj")
+
+[node name="interaction_comp" type="Area2D" parent="." unique_id=13702040 node_paths=PackedStringArray("tooltip")]
+unique_name_in_owner = true
+position = Vector2(0, 32)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_g0hop")
+radius = 45.5
+tooltip_string = "Plant"
+tooltip = NodePath("../interaction_label")
+metadata/_custom_type_script = "uid://bfn4wjryc2sey"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1489787306]
 rotation = 1.5707964
@@ -60,6 +72,7 @@ animation = &"0dmg"
 
 [node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
 unique_name_in_owner = true
+visible = false
 position = Vector2(0, -22)
 scale = Vector2(0.1, 0.1)
 texture = SubResource("AtlasTexture_828tj")
@@ -70,6 +83,7 @@ offset_left = -40.0
 offset_top = 24.0
 offset_right = 40.0
 offset_bottom = 32.0
+theme = ExtResource("7_ispg6")
 show_percentage = false
 
 [node name="hp_comp" type="Node" parent="." unique_id=1084646044 node_paths=PackedStringArray("hp_bar")]
@@ -85,5 +99,22 @@ offset_left = -40.0
 offset_top = 16.0
 offset_right = 40.0
 offset_bottom = 24.0
+theme = ExtResource("7_ispg6")
 value = 99.96
 show_percentage = false
+
+[node name="interaction_label" type="RichTextLabel" parent="." unique_id=383103188]
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 64.0
+offset_bottom = -24.0
+theme = ExtResource("7_ispg6")
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="plantables" type="Node2D" parent="." unique_id=1458141310]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="interacted" from="interaction_comp" to="." method="_on_interaction_comp_interacted"]

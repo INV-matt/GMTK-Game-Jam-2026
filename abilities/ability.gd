@@ -25,7 +25,10 @@ var cooldown: Timer
 func set_cooldown(time: float) -> void:
   is_ready = false
   
+  print(time)
+  
   if cooldown:
+    cooldown.timeout.emit()
     cooldown.queue_free()
     cooldown = null
   
