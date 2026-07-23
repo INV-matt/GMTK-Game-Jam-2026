@@ -16,21 +16,11 @@ class_name PlantResource
 @export var give_ability: bool = false
 @export var ability: Ability
 
-@warning_ignore("unused_parameter")
-func planted(pot: Pot) -> void:
-  pass # print("Planted")
-
-@warning_ignore("unused_parameter")
-func process(delta: float, pot: Pot, stage: int) -> void:
-  pass # print("Process")
-
-@warning_ignore("unused_parameter")
+@warning_ignore_start("unused_parameter")
+func planted(pot: Pot) -> void: pass
+func process(delta: float, pot: Pot, stage: int) -> void: pass
+func unplanted(pot: Pot) -> void: pass
 func grown(pot: Pot, stage: int) -> void:
   if give_ability:
     ability.plant_stage = stage
-  
-  # print("Grown to stage: %s" % stage)
-
-@warning_ignore("unused_parameter")
-func unplanted(pot: Pot) -> void:
-  pass # print("Unplanted")
+@warning_ignore_restore("unused_parameter")
