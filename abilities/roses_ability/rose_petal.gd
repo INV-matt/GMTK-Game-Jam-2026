@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name RosePetal
 
 const SPEED: float = 800
 
