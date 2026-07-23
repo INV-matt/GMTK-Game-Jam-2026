@@ -16,18 +16,21 @@ func _ready() -> void:
 func deal_dmg(to_what: Hurtbox) -> void:
   var parent: Node = to_what.get_parent()
   var hp_comp: HpComp
-
+  
   for node: Node in parent.get_children():
     if node is HpComp:
       hp_comp = (node as HpComp)
       break
+  
+  pierced += 1
+  
+  if pierced > piercing and piercing >= 0:
+    if shape:
+      shape.set_deferred("disabled", true)
+    expired.emit()
   
   if !hp_comp:
     push_error("Could not find health component on node %s" % parent)
     return
   
   hp_comp.damage(damage)
-  pierced += 1
-  
-  if pierced > piercing:
-    queue_free()

@@ -33,6 +33,8 @@ func _ready() -> void:
 
   add_child(shape)
 
+@warning_ignore("unused_signal")
+signal expired
 signal hit(what: Hurtbox)
 
 func _process(_delta: float) -> void:
