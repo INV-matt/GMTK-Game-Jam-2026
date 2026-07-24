@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
   
   velocity = direction.normalized() * SPEED * delta * 60
   
-  if !hit_something:
+  if !hit_something and !is_dead:
     move_and_slide()
 
 
@@ -42,12 +42,14 @@ func on_player_exited(body: Node2D) -> void:
 
 func _on_hp_comp_died() -> void:
   Signals.enemy_died.emit()
-  queue_free()
+  is_dead = true
 
 func _process(_delta: float) -> void:
   animation_tree.set("parameters/Walk/blend_position", velocity.normalized())
   animation_tree.set("parameters/conditions/attack", hit_something)
+  animation_tree.set("parameters/conditions/died", is_dead)
 
+var is_dead: bool = false
 var hit_something: bool = false
 
 func _on_player_hitbox_hit(_what: Hurtbox) -> void:
