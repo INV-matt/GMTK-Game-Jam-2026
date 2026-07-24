@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bn0kutc77y6mx"]
+
+[ext_resource type="Script" uid="uid://bi10agrhdfmx3" path="res://plants/sap/tree_sap.gd" id="1_s4bb1"]
+[ext_resource type="Texture2D" uid="uid://bojbfio7dmec3" path="res://assets/sprites/Tree_Sap_Station-Sheet.png" id="1_weylo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm84"]
+atlas = ExtResource("1_weylo")
+region = Rect2(854, 725, 854, 725)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbm84"]
+radius = 40.0
+height = 256.0
+
+[node name="tree_sap" type="Node2D" unique_id=312441317]
+script = ExtResource("1_s4bb1")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=340984656]
+unique_name_in_owner = true
+z_index = -8
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("AtlasTexture_wbm84")
+
+[node name="enemy_detect" type="Area2D" parent="." unique_id=563688993]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_detect" unique_id=2143585394]
+position = Vector2(0, 24)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wbm84")
+
+[connection signal="body_entered" from="enemy_detect" to="." method="_on_enemy_detect_body_entered"]
+[connection signal="body_exited" from="enemy_detect" to="." method="_on_enemy_detect_body_exited"]

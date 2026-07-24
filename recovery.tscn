@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="3_4dne6"]
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="3_x6o6c"]
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="6_8u4lp"]
-[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="7_8u4lp"]
+[ext_resource type="Resource" uid="uid://dxiuksgw4i84q" path="res://plants/sap/sap.tres" id="7_8u4lp"]
 
 [node name="recovery" type="Node2D" unique_id=220602187]
 

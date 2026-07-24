@@ -1,7 +1,9 @@
 extends CharacterBody2D
 class_name BaseEnemy
 
-@export var SPEED: float = 100
+@export var SPEED: float = 100:
+  get():
+    return SPEED * speed_mult
 @export var MAX_HEALTH: float = 100
 @export var DEFAULT_TARGET: Vector2
 @export_range(1, 200, 1, "or_greater") var size: int = 25
@@ -11,6 +13,8 @@ class_name BaseEnemy
 @onready var hp_comp: HpComp = %HpComp
 @onready var player_hitbox: DmgHitbox = %PlayerHitbox
 @onready var hurtbox: Hurtbox = %Hurtbox
+
+var speed_mult: float = 1.0
 
 var target: Vector2
 var following_player: bool
