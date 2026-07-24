@@ -20,4 +20,3 @@ func update_waves(wave: int) -> void:
 
 func update_enemy(left: int, tot: int) -> void:
   txt_enemy.text = ENEMY_TEXT % [left, tot]
-  print(left, tot)

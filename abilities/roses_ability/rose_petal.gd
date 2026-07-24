@@ -9,7 +9,7 @@ func _ready() -> void:
   rotation = direction.angle()
 
 func _physics_process(delta: float) -> void:
-  velocity = direction * delta * 60 * SPEED
+  velocity = direction * delta * 60 * SPEED * Globals.BULLET_SPEED_MULTIPLIER
   move_and_slide()
 
 func _on_dmg_hitbox_expired() -> void:

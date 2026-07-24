@@ -15,7 +15,7 @@ var spd: float = 0.0
 
 func _ready() -> void:
   start = global_position
-  spd = 500 / (start - target).length()
+  spd = 500 / (start - target).length() * Globals.BULLET_SPEED_MULTIPLIER
 
 func _process(delta: float) -> void:
   t = min(1.0, t + delta * spd)

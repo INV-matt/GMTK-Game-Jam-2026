@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Damage_3" format=3 uid="uid://oh6p78fmahs8"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_dmkf1"]
+[ext_resource type="Script" uid="uid://cpsmd4a31vo4g" path="res://upgrades/derived_upgrades/damage_3.gd" id="1_n5mwo"]
+
+[resource]
+script = ExtResource("1_n5mwo")
+name = "Damage 3"
+description = "Increase damage by 50%"
+metadata/_custom_type_script = "uid://cpsmd4a31vo4g"

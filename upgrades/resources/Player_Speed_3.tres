@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerSpeed_3" format=3 uid="uid://d4dw7mxt1anv4"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_oanpt"]
+[ext_resource type="Script" uid="uid://buc2f0x7nscmk" path="res://upgrades/derived_upgrades/player_speed_3.gd" id="2_cfnhg"]
+
+[resource]
+script = ExtResource("2_cfnhg")
+name = "Agility 3"
+description = "Increases player speed by 50%"
+metadata/_custom_type_script = "uid://buc2f0x7nscmk"

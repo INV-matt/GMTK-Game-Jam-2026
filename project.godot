@@ -19,11 +19,23 @@ config/icon="res://icon.svg"
 
 Qol="*uid://bish2xdvkgvur"
 Signals="*uid://doy3dc6tgqq0u"
+Globals="*uid://blgvu7ipj04tu"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://upgrades/derived_upgrades/": "blue",
+"res://upgrades/resources/": "gray"
+}
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 
@@ -75,6 +87,7 @@ interact={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 
