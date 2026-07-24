@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d0lfrcoj8ocwm"]
+
+[ext_resource type="Script" uid="uid://bnuv5fh6px031" path="res://plants/chili_pepper/fire_ring.gd" id="1_8hg1l"]
+[ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="2_1132k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0itqv"]
+radius = 126.0
+
+[node name="fire_ring" type="Node2D" unique_id=141651604]
+script = ExtResource("1_8hg1l")
+
+[node name="collider" type="Area2D" parent="." unique_id=478535320]
+scale = Vector2(1, 0.54)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_1132k")
+custom_shape = SubResource("CircleShape2D_0itqv")
+metadata/_custom_type_script = "uid://3ai8v5acr4am"
+
+[node name="animated_sprite" type="AnimatedSprite2D" parent="." unique_id=70174726]

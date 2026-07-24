@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ChiliPepper" format=3 uid="uid://bib634uxafbov"]
+
+[ext_resource type="Script" uid="uid://bjlmjrh7txmpf" path="res://plants/chili_pepper/chili_pepper.gd" id="1_8ml5j"]
+
+[resource]
+script = ExtResource("1_8ml5j")
+name = "Chili Pepper"
+desc = "It's red and hot! Creates a ring of fire around itself, damaging enemies over time."
+metadata/_custom_type_script = "uid://bjlmjrh7txmpf"
