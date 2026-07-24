@@ -11,6 +11,7 @@ func _ready() -> void:
   btn.pressed.connect(on_pressed)
 
 func inizialize(up: BaseUpgrade) -> void:
+  await get_tree().process_frame
   upgrade = up
   title.text = up.name
   desc.text = up.description

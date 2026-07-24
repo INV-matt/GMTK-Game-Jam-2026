@@ -16,11 +16,12 @@ func on_open() -> void:
   for node in btn_container.get_children(): node.queue_free()
   
   var upgrades: Array[BaseUpgrade] = Qol.game_mngr.choose_random_upgrades()
+  print(upgrades)
 
   for upgrade: BaseUpgrade in upgrades:
     var btn_upgrade: UpgradeButton = scn_upgrade_btn.instantiate() as UpgradeButton
+    btn_container.add_child(btn_upgrade)
     btn_upgrade.inizialize(upgrade)
-    btn_container.add_child.call_deferred(btn_upgrade) # it should be deferred, right?
 
 func on_close() -> void:
   visible = false
