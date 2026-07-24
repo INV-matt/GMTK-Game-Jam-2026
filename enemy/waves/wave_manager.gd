@@ -58,7 +58,7 @@ func spawn_enemy() -> void:
   var pos = rho * Vector2(cos(theta), sin(theta))
   enemy_node.global_position = pos
 
-  var health_increase = HEALTH_INCREASE_WAVES * int(current_wave / WAVES_BETWEEN_HEALTH_INCREASE)
+  var health_increase = HEALTH_INCREASE_WAVES * int(float(current_wave) / float(WAVES_BETWEEN_HEALTH_INCREASE))
   enemy_node.MAX_HEALTH += health_increase
 
   #print("Spawned %s at pos %s" % [enemy_node.name, enemy_node.global_position])

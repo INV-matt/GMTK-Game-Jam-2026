@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bv0qgb712vbh3"]
+
+[ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="1_h4ksw"]
+[ext_resource type="PackedScene" uid="uid://dfvqnd5to5toi" path="res://enemy/waves/wave_manager.tscn" id="1_p7xvm"]
+[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="1_x6o6c"]
+[ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="3_4dne6"]
+[ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="3_x6o6c"]
+[ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="6_8u4lp"]
+
+[node name="recovery" type="Node2D" unique_id=220602187]
+
+[node name="WaveManager" parent="." unique_id=158709167 instance=ExtResource("1_p7xvm")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2105191603]
+
+[node name="ability_ui" parent="CanvasLayer" unique_id=44532813 instance=ExtResource("1_x6o6c")]
+
+[node name="seed_mngr" parent="CanvasLayer" unique_id=364425271 instance=ExtResource("3_4dne6")]
+
+[node name="pot" parent="." unique_id=1943167055 instance=ExtResource("1_h4ksw")]
+position = Vector2(56, 48)
+
+[node name="Player" parent="." unique_id=386552564 instance=ExtResource("3_x6o6c")]
+position = Vector2(232, 192)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=876777589]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+
+[node name="seed_packet" parent="." unique_id=426246522 instance=ExtResource("6_8u4lp")]
+position = Vector2(104, 200)

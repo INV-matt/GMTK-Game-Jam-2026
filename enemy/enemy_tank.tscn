@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcc6w0y38sail"]
 
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="1_p5b7a"]
-[ext_resource type="Texture2D" uid="uid://byd0p8q3j7xio" path="res://assets/sprites/Tank_Enemy_-_Chubs-Sheet.png" id="2_g5w0q"]
+[ext_resource type="Texture2D" uid="uid://n2ptbsk5mpm5" path="res://assets/sprites/Tank_Enemy_-_Chubs-Sheet.png" id="2_g5w0q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jaa5s"]
 radius = 42.0
@@ -52,11 +52,8 @@ tracks/2/keys = {
 atlas = ExtResource("2_g5w0q")
 region = Rect2(0, 3780, 1091, 945)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pg0ft"]
-load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5qdc"]
-atlas = SubResource("CompressedTexture2D_pg0ft")
+atlas = ExtResource("2_g5w0q")
 region = Rect2(1091, 3780, 1091, 945)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v5g7f"]
@@ -539,9 +536,6 @@ offset_left = -40.0
 offset_top = 72.0
 offset_right = 40.0
 offset_bottom = 80.0
-
-[node name="AnimationTree" parent="." index="7" unique_id=663359280]
-active = false
 
 [node name="AnimationPlayer" parent="." index="8" unique_id=1814641663]
 libraries/ = SubResource("AnimationLibrary_plor4")

@@ -14,15 +14,12 @@ func _ready() -> void:
   button_hint.texture = button_hint.texture.duplicate()
   button_hint.visible = true
   if ability_idx == Qol.player.primary_ability_idx:
-    print("primary")
     (button_hint.texture as AtlasTexture).region.position.x = 0
     (button_hint.texture as AtlasTexture).region.position.y = 0
   elif ability_idx == Qol.player.secondary_ability_idx:
-    print("secondary")
     (button_hint.texture as AtlasTexture).region.position.x = 290
     (button_hint.texture as AtlasTexture).region.position.y = 0
   elif ability_idx == Qol.player.tertiary_ability_idx:
-    print("tertiary")
     (button_hint.texture as AtlasTexture).region.position.x = 0
     (button_hint.texture as AtlasTexture).region.position.y = 238
   else:
@@ -43,7 +40,8 @@ func _process(_delta: float) -> void:
 
   (icon.material as ShaderMaterial).set_shader_parameter("progress", progress)
   
-  if progress >= 1.0 and !was_ready:
+  # Shake both when the ability is used and when it recharges
+  if progress >= 1.0 != was_ready:
     shake = Vector2.from_angle(randf_range(0, PI * 4)) * 30
   
   was_ready = progress >= 1.0
