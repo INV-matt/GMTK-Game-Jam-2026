@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1nfv8y7g4833"
+path="res://.godot/imported/PHAC OST 004 Battle Theme A (1).ogg-67550b589276cc591b3447bf005e307e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/PHAC OST 004 Battle Theme A (1).ogg"
+dest_files=["res://.godot/imported/PHAC OST 004 Battle Theme A (1).ogg-67550b589276cc591b3447bf005e307e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
