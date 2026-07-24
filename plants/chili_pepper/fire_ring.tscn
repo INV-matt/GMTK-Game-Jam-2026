@@ -6,6 +6,32 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0itqv"]
 radius = 126.0
 
+[sub_resource type="Curve" id="Curve_8jbon"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.3482156, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pokdo"]
+curve = SubResource("Curve_8jbon")
+
+[sub_resource type="Gradient" id="Gradient_1132k"]
+colors = PackedColorArray(1, 0.4117647, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q633n"]
+gradient = SubResource("Gradient_1132k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jd3ek"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 0.537, 1)
+emission_shape = 1
+emission_sphere_radius = 126.47
+gravity = Vector3(0, -98, 0)
+scale_min = 2.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_q633n")
+alpha_curve = SubResource("CurveTexture_pokdo")
+turbulence_enabled = true
+turbulence_noise_scale = 1.0
+
 [node name="fire_ring" type="Node2D" unique_id=141651604]
 script = ExtResource("1_8hg1l")
 
@@ -18,5 +44,10 @@ script = ExtResource("2_1132k")
 custom_shape = SubResource("CircleShape2D_0itqv")
 metadata/_custom_type_script = "uid://3ai8v5acr4am"
 
-[node name="animated_sprite" type="AnimatedSprite2D" parent="." unique_id=70174726]
+[node name="particles" type="GPUParticles2D" parent="collider" unique_id=1377173377]
 unique_name_in_owner = true
+y_sort_enabled = true
+scale = Vector2(1, 1.8518518)
+amount = 192
+amount_ratio = 0.33
+process_material = SubResource("ParticleProcessMaterial_jd3ek")

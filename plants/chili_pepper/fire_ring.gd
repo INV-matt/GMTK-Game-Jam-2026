@@ -1,8 +1,8 @@
 extends Node2D
 class_name FireRing
 
-@onready var animated_sprite: AnimatedSprite2D = %animated_sprite
 @onready var collider: DmgHitbox = %collider
+@onready var particles: GPUParticles2D = %particles
 
 @export var base_damage: float = 4
 @export var tick_speed: float = 3
@@ -16,15 +16,15 @@ var target_scale: float = 0
 
     if !is_node_ready(): return
 
-    animated_sprite.visible = false
     collider.set_deferred("disabled", false)
+    particles.emitting = false
 
     if stage <= 0: return
 
     collider.active = true
+    particles.emitting = true
+    particles.amount_ratio = stage / 3.0
   
-    animated_sprite.visible = true
-    #animated_sprite.play("stage%s" % stage)
     target_scale = .1 + .05 * (stage - 1)
     collider.set_deferred("disabled", true)
     
@@ -49,5 +49,4 @@ func _ready() -> void:
   collider.damage = base_damage
 
 func _process(_delta: float) -> void:
-  animated_sprite.scale = animated_sprite.scale * .9 + Vector2.ONE * target_scale * .1
   collider.scale = collider.scale * .9 + Vector2(10, 5.4) * target_scale * .1
