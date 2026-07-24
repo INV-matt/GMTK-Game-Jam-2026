@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cuqqq0wjip7ww"]
 
 [ext_resource type="Script" uid="uid://b81aoi7vt2tbn" path="res://abilities/lavender_ability/lavender_ability.gd" id="1_ectno"]
-[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_kblpm"]
+[ext_resource type="Script" uid="uid://dchfkdb5xlvnb" path="res://plants/plant_resource.gd" id="1_kblpm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vjfx8"]
 load_path = "res://.godot/imported/Abilty_UI_icons-Sheet-1.png-e5acad4896716ed36cb0671aa16ce08e.ctex"

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://c4rre62tr73ji"]
 
 [ext_resource type="Script" uid="uid://bfk5ayo0oky1o" path="res://abilities/tomato_ability/tomato_ability.gd" id="1_04jax"]
-[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_bvume"]
+[ext_resource type="Script" uid="uid://dchfkdb5xlvnb" path="res://plants/plant_resource.gd" id="1_bvume"]
 [ext_resource type="Texture2D" uid="uid://bcs4gdpicson3" path="res://assets/sprites/Tomato_Seed_Packet.png" id="1_hpt0j"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c5yha"]
