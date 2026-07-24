@@ -1,7 +1,547 @@
 [gd_scene format=3 uid="uid://dcc6w0y38sail"]
 
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="1_p5b7a"]
+[ext_resource type="Texture2D" uid="uid://byd0p8q3j7xio" path="res://assets/sprites/Tank_Enemy_-_Chubs-Sheet.png" id="2_g5w0q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jaa5s"]
+radius = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5w0q"]
+radius = 42.0
+
+[sub_resource type="Animation" id="Animation_jaa5s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120.085, 0)]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgxbv"]
+atlas = ExtResource("2_g5w0q")
+region = Rect2(0, 3780, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pg0ft"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5qdc"]
+atlas = SubResource("CompressedTexture2D_pg0ft")
+region = Rect2(1091, 3780, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v5g7f"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj0bg"]
+atlas = SubResource("CompressedTexture2D_v5g7f")
+region = Rect2(2182, 3780, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s6oj5"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biyh7"]
+atlas = SubResource("CompressedTexture2D_s6oj5")
+region = Rect2(3273, 3780, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hd834"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ynqg"]
+atlas = SubResource("CompressedTexture2D_hd834")
+region = Rect2(4364, 3780, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0b7om"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es2ev"]
+atlas = SubResource("CompressedTexture2D_0b7om")
+region = Rect2(5455, 3780, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5jyia"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7tmg"]
+atlas = SubResource("CompressedTexture2D_5jyia")
+region = Rect2(0, 4725, 1091, 945)
+
+[sub_resource type="Animation" id="Animation_r6503"]
+resource_name = "attack"
+length = 0.98
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_cgxbv"), SubResource("AtlasTexture_p5qdc"), SubResource("AtlasTexture_jj0bg"), SubResource("AtlasTexture_biyh7"), SubResource("AtlasTexture_8ynqg"), SubResource("AtlasTexture_es2ev"), SubResource("AtlasTexture_c7tmg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset_hit"
+}]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g5w0q"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaa5s"]
+atlas = SubResource("CompressedTexture2D_g5w0q")
+region = Rect2(1091, 4725, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cgxbv"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg0ft"]
+atlas = SubResource("CompressedTexture2D_cgxbv")
+region = Rect2(2182, 4725, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p5qdc"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5g7f"]
+atlas = SubResource("CompressedTexture2D_p5qdc")
+region = Rect2(3273, 4725, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jj0bg"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6oj5"]
+atlas = SubResource("CompressedTexture2D_jj0bg")
+region = Rect2(4364, 4725, 1091, 945)
+
+[sub_resource type="Animation" id="Animation_26f8l"]
+resource_name = "death"
+length = 0.5599999999999999
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_jaa5s"), SubResource("AtlasTexture_pg0ft"), SubResource("AtlasTexture_v5g7f"), SubResource("AtlasTexture_s6oj5")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.56),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jaa5s"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd834"]
+atlas = SubResource("CompressedTexture2D_jaa5s")
+region = Rect2(0, 0, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ynqg"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b7om"]
+atlas = SubResource("CompressedTexture2D_8ynqg")
+region = Rect2(1091, 0, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_es2ev"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jyia"]
+atlas = SubResource("CompressedTexture2D_es2ev")
+region = Rect2(2182, 0, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c7tmg"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6503"]
+atlas = SubResource("CompressedTexture2D_c7tmg")
+region = Rect2(3273, 0, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_26f8l"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwiqt"]
+atlas = SubResource("CompressedTexture2D_26f8l")
+region = Rect2(4364, 0, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rsddg"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3brn"]
+atlas = SubResource("CompressedTexture2D_rsddg")
+region = Rect2(5455, 0, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i11s3"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plor4"]
+atlas = SubResource("CompressedTexture2D_i11s3")
+region = Rect2(0, 945, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ec6gh"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfceb"]
+atlas = SubResource("CompressedTexture2D_ec6gh")
+region = Rect2(1091, 945, 1091, 945)
+
+[sub_resource type="Animation" id="Animation_bwiqt"]
+resource_name = "walk_up"
+length = 1.12
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56666666, 0.7, 0.84, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_hd834"), SubResource("AtlasTexture_0b7om"), SubResource("AtlasTexture_5jyia"), SubResource("AtlasTexture_r6503"), SubResource("AtlasTexture_bwiqt"), SubResource("AtlasTexture_g3brn"), SubResource("AtlasTexture_plor4"), SubResource("AtlasTexture_nfceb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qsgxh"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r17jg"]
+atlas = SubResource("CompressedTexture2D_qsgxh")
+region = Rect2(2182, 945, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8ese"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbeys"]
+atlas = SubResource("CompressedTexture2D_j8ese")
+region = Rect2(3273, 945, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mjgt"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa6gm"]
+atlas = SubResource("CompressedTexture2D_5mjgt")
+region = Rect2(4364, 945, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xvtnn"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycdio"]
+atlas = SubResource("CompressedTexture2D_xvtnn")
+region = Rect2(5455, 945, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n8fe8"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhjl1"]
+atlas = SubResource("CompressedTexture2D_n8fe8")
+region = Rect2(0, 1890, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rc0qh"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi1e4"]
+atlas = SubResource("CompressedTexture2D_rc0qh")
+region = Rect2(1091, 1890, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvv8d"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnn8x"]
+atlas = SubResource("CompressedTexture2D_kvv8d")
+region = Rect2(2182, 1890, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nhjmo"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es3v2"]
+atlas = SubResource("CompressedTexture2D_nhjmo")
+region = Rect2(3273, 1890, 1091, 945)
+
+[sub_resource type="Animation" id="Animation_rsddg"]
+resource_name = "walk_left"
+length = 1.12
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_r17jg"), SubResource("AtlasTexture_bbeys"), SubResource("AtlasTexture_fa6gm"), SubResource("AtlasTexture_ycdio"), SubResource("AtlasTexture_vhjl1"), SubResource("AtlasTexture_wi1e4"), SubResource("AtlasTexture_vnn8x"), SubResource("AtlasTexture_es3v2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-74.885, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fc76s"]
+resource_name = "walk_right"
+length = 1.12
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_r17jg"), SubResource("AtlasTexture_bbeys"), SubResource("AtlasTexture_fa6gm"), SubResource("AtlasTexture_ycdio"), SubResource("AtlasTexture_vhjl1"), SubResource("AtlasTexture_wi1e4"), SubResource("AtlasTexture_vnn8x"), SubResource("AtlasTexture_es3v2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-21.415, 0)]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_biyh7"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26f8l"]
+atlas = SubResource("CompressedTexture2D_biyh7")
+region = Rect2(4364, 1890, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bwiqt"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsddg"]
+atlas = SubResource("CompressedTexture2D_bwiqt")
+region = Rect2(5455, 1890, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g3brn"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i11s3"]
+atlas = SubResource("CompressedTexture2D_g3brn")
+region = Rect2(0, 2835, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_plor4"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec6gh"]
+atlas = SubResource("CompressedTexture2D_plor4")
+region = Rect2(1091, 2835, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nfceb"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsgxh"]
+atlas = SubResource("CompressedTexture2D_nfceb")
+region = Rect2(2182, 2835, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r17jg"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8ese"]
+atlas = SubResource("CompressedTexture2D_r17jg")
+region = Rect2(3273, 2835, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bbeys"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mjgt"]
+atlas = SubResource("CompressedTexture2D_bbeys")
+region = Rect2(4364, 2835, 1091, 945)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fa6gm"]
+load_path = "res://.godot/imported/Tank_Enemy_-_Chubs-Sheet.png-61968a3faa0f0fbcb5961d77211c1da9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvtnn"]
+atlas = SubResource("CompressedTexture2D_fa6gm")
+region = Rect2(5455, 2835, 1091, 945)
+
+[sub_resource type="Animation" id="Animation_i11s3"]
+resource_name = "walk_up"
+length = 1.12
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84, 0.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_26f8l"), SubResource("AtlasTexture_rsddg"), SubResource("AtlasTexture_i11s3"), SubResource("AtlasTexture_ec6gh"), SubResource("AtlasTexture_qsgxh"), SubResource("AtlasTexture_j8ese"), SubResource("AtlasTexture_5mjgt"), SubResource("AtlasTexture_xvtnn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_plor4"]
+_data = {
+&"RESET": SubResource("Animation_jaa5s"),
+&"attack": SubResource("Animation_r6503"),
+&"death": SubResource("Animation_26f8l"),
+&"walk_down": SubResource("Animation_bwiqt"),
+&"walk_left": SubResource("Animation_rsddg"),
+&"walk_right": SubResource("Animation_fc76s"),
+&"walk_up": SubResource("Animation_i11s3")
+}
 
 [node name="EnemyTank" unique_id=478211698 instance=ExtResource("1_p5b7a")]
 SPEED = 25.0
 MAX_HEALTH = 150.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=2010759488]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_jaa5s")
+
+[node name="PlayerHitbox" parent="." index="3" unique_id=163459591]
+position = Vector2(0, 16)
+custom_shape = SubResource("CircleShape2D_g5w0q")
+
+[node name="Hurtbox" parent="." index="4" unique_id=689252300]
+position = Vector2(0, 16)
+custom_shape = SubResource("CircleShape2D_jaa5s")
+
+[node name="ProgressBar" parent="." index="6" unique_id=1230430412]
+offset_left = -40.0
+offset_top = 72.0
+offset_right = 40.0
+offset_bottom = 80.0
+
+[node name="AnimationTree" parent="." index="7" unique_id=663359280]
+active = false
+
+[node name="AnimationPlayer" parent="." index="8" unique_id=1814641663]
+libraries/ = SubResource("AnimationLibrary_plor4")

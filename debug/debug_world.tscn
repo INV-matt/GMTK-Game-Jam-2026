@@ -3,9 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="1_ueq8k"]
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="2_5nnnn"]
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="3_8xvt7"]
-[ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="4_ogbem"]
-[ext_resource type="PackedScene" uid="uid://bmgifpiy0gluy" path="res://enemy/enemy_fast.tscn" id="5_dihwf"]
-[ext_resource type="PackedScene" uid="uid://dcc6w0y38sail" path="res://enemy/enemy_tank.tscn" id="5_fb3c3"]
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="5_fuoxs"]
 [ext_resource type="PackedScene" uid="uid://dfvqnd5to5toi" path="res://enemy/waves/wave_manager.tscn" id="7_fuoxs"]
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="9_svi63"]
@@ -45,17 +42,6 @@ position = Vector2(-248, -379)
 
 [node name="pot5" parent="." unique_id=1691764149 instance=ExtResource("3_8xvt7")]
 position = Vector2(-400, -376)
-
-[node name="EnemyTank" parent="." unique_id=420677822 instance=ExtResource("5_fb3c3")]
-position = Vector2(949, 534)
-size = 25
-
-[node name="EnemyFast" parent="." unique_id=1221767539 instance=ExtResource("5_dihwf")]
-position = Vector2(832, -419)
-size = 25
-
-[node name="Enemy" parent="." unique_id=1211782421 instance=ExtResource("4_ogbem")]
-position = Vector2(776, 56)
 
 [node name="seed_packet" parent="." unique_id=426246522 instance=ExtResource("9_svi63")]
 position = Vector2(-480, 280)
