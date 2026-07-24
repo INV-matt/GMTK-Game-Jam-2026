@@ -5,7 +5,8 @@ extends Control
 
 func _ready() -> void:
   visible = false
-  Signals.open_upgrades.connect(on_open)
+  #Signals.open_upgrades.connect(on_open)
+  Signals.ended_wave.connect(on_open)
   Signals.close_upgrades.connect(on_close)
 
 func on_open() -> void:
@@ -18,6 +19,7 @@ func on_open() -> void:
 
   for upgrade: BaseUpgrade in upgrades:
     var btn_upgrade: UpgradeButton = scn_upgrade_btn.instantiate() as UpgradeButton
+    btn_upgrade.inizialize(upgrade)
     btn_container.add_child.call_deferred(btn_upgrade) # it should be deferred, right?
 
 func on_close() -> void:

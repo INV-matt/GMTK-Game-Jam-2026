@@ -8,10 +8,13 @@ class_name UpgradeButton
 @onready var desc: Label = %desc
 
 func _ready() -> void:
-  title.text = upgrade.name
-  desc.text = upgrade.description
-  btn.texture_normal = upgrade.icon
   btn.pressed.connect(on_pressed)
+
+func inizialize(up: BaseUpgrade) -> void:
+  upgrade = up
+  title.text = up.name
+  desc.text = up.description
+  btn.texture_normal = up.icon
 
 func on_pressed() -> void:
   Qol.game_mngr.handle_upgrade(upgrade)

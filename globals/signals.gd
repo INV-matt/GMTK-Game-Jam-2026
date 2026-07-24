@@ -4,6 +4,7 @@ extends Node
 
 signal spawned_enemy(pos: Vector2)
 signal started_wave(wave: int)
+signal ended_wave()
 signal start_game()
 signal open_options()
 signal close_options()

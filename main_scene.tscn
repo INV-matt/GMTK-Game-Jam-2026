@@ -5,10 +5,13 @@
 [ext_resource type="Script" uid="uid://d368p4knx57wt" path="res://globals/game_manager.gd" id="2_7ycvg"]
 [ext_resource type="Script" uid="uid://blkxugot78i1o" path="res://player_ui/health_ui.gd" id="3_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="3_gyfs4"]
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="3_mo76n"]
 [ext_resource type="Script" uid="uid://dms1ki4k2oy32" path="res://menus/settings_menu.gd" id="4_d5x1h"]
 [ext_resource type="Script" uid="uid://bhxuhe5c7010n" path="res://player_ui/enemy_ui.gd" id="4_hq1ik"]
 [ext_resource type="Script" uid="uid://dequulk8gc837" path="res://upgrades/upgrade_ui.gd" id="5_66tet"]
-[ext_resource type="PackedScene" uid="uid://by6wbcyexcmhn" path="res://upgrades/upgrade_button.tscn" id="5_nfk4m"]
+[ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="5_qwutr"]
+[ext_resource type="Resource" uid="uid://j32du8n4i1gi" path="res://upgrades/resources/Damage_2.tres" id="6_42l1d"]
+[ext_resource type="Resource" uid="uid://oh6p78fmahs8" path="res://upgrades/resources/Damage_3.tres" id="6_671wp"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -17,7 +20,9 @@ script = ExtResource("1_2c62f")
 
 [node name="game_manager" type="Node" parent="." unique_id=1394064700]
 unique_name_in_owner = true
+process_mode = 3
 script = ExtResource("2_7ycvg")
+starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("6_42l1d"), ExtResource("5_qwutr"), ExtResource("6_671wp")])
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=1522350986]
 
@@ -135,22 +140,9 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="upgrade_button" parent="hud/upgrade_ui/Panel/btn_container" unique_id=336027523 instance=ExtResource("5_nfk4m")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="upgrade_button2" parent="hud/upgrade_ui/Panel/btn_container" unique_id=977249310 instance=ExtResource("5_nfk4m")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="upgrade_button3" parent="hud/upgrade_ui/Panel/btn_container" unique_id=1064620950 instance=ExtResource("5_nfk4m")]
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 
 [node name="start_menu" parent="menu_manager" unique_id=1824902138 instance=ExtResource("2_2c62f")]
-visible = false
 
 [node name="settings_menu" type="CanvasLayer" parent="menu_manager" unique_id=1128695489]
 visible = false

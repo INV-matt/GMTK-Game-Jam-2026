@@ -1,20 +1,6 @@
 [gd_scene format=3 uid="uid://by6wbcyexcmhn"]
 
 [ext_resource type="Script" uid="uid://b3b5o2dju8o6y" path="res://upgrades/upgrade_button.gd" id="1_4o4m5"]
-[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="2_ebbir"]
-
-[sub_resource type="Gradient" id="Gradient_ebbir"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ebbir"]
-gradient = SubResource("Gradient_ebbir")
-
-[sub_resource type="Resource" id="Resource_4o4m5"]
-script = ExtResource("2_ebbir")
-name = "Prova"
-description = "Descrizione di prova.
-Unyoko Yindoda"
-icon = SubResource("GradientTexture2D_ebbir")
-metadata/_custom_type_script = "uid://diopoi01eerip"
 
 [sub_resource type="Gradient" id="Gradient_4o4m5"]
 
@@ -22,12 +8,12 @@ metadata/_custom_type_script = "uid://diopoi01eerip"
 gradient = SubResource("Gradient_4o4m5")
 
 [node name="upgrade_button" type="Control" unique_id=336027523]
+custom_minimum_size = Vector2(100, 200)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 100.0
 offset_bottom = 200.0
 script = ExtResource("1_4o4m5")
-upgrade = SubResource("Resource_4o4m5")
 
 [node name="Panel" type="Panel" parent="." unique_id=1568029272]
 layout_mode = 1
