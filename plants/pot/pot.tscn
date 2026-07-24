@@ -30,11 +30,11 @@ animations = [{
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wnhti"]
-load_path = "res://.godot/imported/Peper_Station-Sheet.png-7b3ed77ef6f44795dc381affc2d72fa3.ctex"
+load_path = "res://.godot/imported/Tree_Sap_Station-Sheet.png-4cecd1e6d27ebab1aeba98d906540535.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0hop"]
 atlas = SubResource("CompressedTexture2D_wnhti")
-region = Rect2(0, 0, 597, 576)
+region = Rect2(0, 725, 854, 725)
 
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
 collision_mask = 3
@@ -71,7 +71,7 @@ animation = &"0dmg"
 
 [node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
 unique_name_in_owner = true
-position = Vector2(0, -8)
+position = Vector2(3, -6)
 scale = Vector2(0.1, 0.1)
 texture = SubResource("AtlasTexture_g0hop")
 

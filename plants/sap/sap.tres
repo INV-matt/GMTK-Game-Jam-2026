@@ -1,0 +1,39 @@
+[gd_resource type="Resource" format=3 uid="uid://dxiuksgw4i84q"]
+
+[ext_resource type="Texture2D" uid="uid://i6juthvdogns" path="res://assets/sprites/Seed_Packets-Sheet2.png" id="1_eknh2"]
+[ext_resource type="Script" uid="uid://bbo334j1175la" path="res://plants/sap/sap.gd" id="2_eknh2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uoe4b"]
+load_path = "res://.godot/imported/Tree_Sap_Station-Sheet.png-4cecd1e6d27ebab1aeba98d906540535.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oq56"]
+atlas = SubResource("CompressedTexture2D_uoe4b")
+region = Rect2(0, 0, 854, 725)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lbwiv"]
+load_path = "res://.godot/imported/Tree_Sap_Station-Sheet.png-4cecd1e6d27ebab1aeba98d906540535.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0p3x"]
+atlas = SubResource("CompressedTexture2D_lbwiv")
+region = Rect2(854, 0, 854, 725)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_odf07"]
+load_path = "res://.godot/imported/Tree_Sap_Station-Sheet.png-4cecd1e6d27ebab1aeba98d906540535.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d2uf"]
+atlas = SubResource("CompressedTexture2D_odf07")
+region = Rect2(0, 725, 854, 725)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eknh2"]
+atlas = ExtResource("1_eknh2")
+region = Rect2(0, 159, 188, 159)
+
+[resource]
+script = ExtResource("2_eknh2")
+name = "Sap Tree"
+stationary = false
+packet_sprite = SubResource("AtlasTexture_eknh2")
+sprite_offset = Vector2(3, -6)
+growth_stage_textures = Array[Texture2D]([SubResource("AtlasTexture_7oq56"), SubResource("AtlasTexture_j0p3x"), SubResource("AtlasTexture_8d2uf")])
+growth_time = 3.0
+metadata/_custom_type_script = "uid://dchfkdb5xlvnb"
