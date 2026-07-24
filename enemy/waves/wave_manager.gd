@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
     else:
       elapsed_time -= delta
 
-  if Input.is_action_just_pressed("ui_accept"): current_wave += 1
+  if Input.is_action_just_pressed("ui_accept"): next_wave()
 
 func spawn_enemy() -> void:
   var possible_enemies: Array[PackedScene]
@@ -54,14 +54,13 @@ func spawn_enemy() -> void:
   var enemy_node: BaseEnemy = chosen.instantiate() as BaseEnemy
 
   var theta = randf() * 2 * PI
-  var rho = randf_range(MINIMUM_DISTANCE, MAXIMUM_DISTANCE)
+  var rho = randf_range(MINIMUM_DISTANCE * Globals.SAFE_ZONE_MULTIPLIER, MAXIMUM_DISTANCE)
   var pos = rho * Vector2(cos(theta), sin(theta))
   enemy_node.global_position = pos
 
   var health_increase = HEALTH_INCREASE_WAVES * int(current_wave / WAVES_BETWEEN_HEALTH_INCREASE)
   enemy_node.MAX_HEALTH += health_increase
 
-  #print("Spawned %s at pos %s" % [enemy_node.name, enemy_node.global_position])
   Signals.spawned_enemy.emit(pos) # TODO: possibly implement ui indicator telling the player where the enemy spawned (like a small arrow)
   on_enemy_spawned()
   add_child(enemy_node)
@@ -72,19 +71,24 @@ func calculate_budget(value: int) -> int:
 
 func next_wave() -> void:
   enemy_alive = 0
-  enemy_total = 0
+  enemy_total_wave = 0
   Signals.enemy_change.emit(0, 0)
   current_wave += 1
   Signals.started_wave.emit(current_wave)
 
 
 var enemy_alive: int = 0
-var enemy_total: int = 0
+var enemy_total_wave: int = 0
+#var enemy_killed: int = 0
 func on_enemy_spawned() -> void:
   enemy_alive += 1
-  enemy_total += 1
-  Signals.enemy_change.emit(enemy_alive, enemy_total)
+  enemy_total_wave += 1
+  Signals.enemy_change.emit(enemy_alive, enemy_total_wave)
 
 func on_enemy_died() -> void:
   enemy_alive = max(enemy_alive - 1, 0)
-  Signals.enemy_change.emit(enemy_alive, enemy_total)
+  Globals.enemy_killed += 1
+  Signals.enemy_change.emit(enemy_alive, enemy_total_wave)
+
+  if enemy_alive == 0:
+    Signals.ended_wave.emit()

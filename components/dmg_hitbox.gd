@@ -18,12 +18,17 @@ func deal_dmg(to_what: Hurtbox) -> void:
   var hp_comp: HpComp = Qol.find_hp_comp(parent)
   
   pierced += 1
+
+  var modified_piercing = piercing + Globals.BULLET_PIERCE_MODIFIER
   
-  if pierced > piercing and piercing >= 0:
+  if pierced > modified_piercing and piercing >= 0:
     expire()
   
   if !hp_comp:
     push_error("Could not find health component on node %s" % parent)
     return
+
+  var final_damage = damage
+  if team == Teams.Player: final_damage *= Globals.PLAYER_DAMAGE_MULTIPLIER
   
-  hp_comp.damage(damage)
+  hp_comp.damage(final_damage)

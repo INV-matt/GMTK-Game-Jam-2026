@@ -6,8 +6,10 @@ var max_tp_range: float = 300.0
 
 func apply_effect(player: Player, target: Vector2) -> void:
   var diff: Vector2 = target - player.global_position
+
+  var modified_tp_range = max_tp_range * Globals.PLAYER_SPEED_MULTIPLIER
   
-  var blink_by: Vector2 = (diff.normalized() * max_tp_range) if diff.length_squared() > max_tp_range * max_tp_range else diff
+  var blink_by: Vector2 = (diff.normalized() * modified_tp_range) if diff.length_squared() > modified_tp_range * modified_tp_range else diff
   
   var end_pos: Vector2 = player.global_position + blink_by
   

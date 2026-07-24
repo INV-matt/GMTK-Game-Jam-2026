@@ -26,7 +26,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
   if is_dead: return
   var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-  velocity = direction * SPEED * delta * 60
+  velocity = direction * SPEED * delta * 60 * Globals.PLAYER_SPEED_MULTIPLIER
 
   move_and_slide()
 

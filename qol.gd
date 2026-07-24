@@ -60,10 +60,12 @@ func tree_root() -> Window:
 var player: Player
 var wave_mngr: WaveMngr
 var seed_mngr: SeedMngr
+var game_mngr: GameMngr
 
 func _process(_delta: float) -> void:
   if !player: player = find_with_criteria(tree_root(), func(x: Node): return x is Player)
   if !wave_mngr: wave_mngr = find_with_criteria(tree_root(), func(x: Node): return x is WaveMngr)
   if !seed_mngr: seed_mngr = find_with_criteria(tree_root(), func(x: Node): return x is SeedMngr)
+  if !game_mngr: game_mngr = find_with_criteria(tree_root(), func(x: Node): return x is GameMngr)
 
 var plantable: Array[PlantResource] = []

@@ -2,15 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dbuvy64eqioq5" path="res://level_manager.gd" id="1_2c62f"]
 [ext_resource type="PackedScene" uid="uid://7l3epf0oy8g0" path="res://menus/start_menu.tscn" id="2_2c62f"]
+[ext_resource type="Script" uid="uid://d368p4knx57wt" path="res://globals/game_manager.gd" id="2_7ycvg"]
 [ext_resource type="Script" uid="uid://blkxugot78i1o" path="res://player_ui/health_ui.gd" id="3_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="3_gyfs4"]
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="3_mo76n"]
 [ext_resource type="Script" uid="uid://dms1ki4k2oy32" path="res://menus/settings_menu.gd" id="4_d5x1h"]
 [ext_resource type="Script" uid="uid://bhxuhe5c7010n" path="res://player_ui/enemy_ui.gd" id="4_hq1ik"]
+[ext_resource type="Script" uid="uid://dequulk8gc837" path="res://upgrades/upgrade_ui.gd" id="5_66tet"]
+[ext_resource type="Resource" uid="uid://dk4mtwgm8nmjw" path="res://upgrades/resources/Player_Speed_1.tres" id="5_671wp"]
+[ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="5_qwutr"]
+[ext_resource type="Resource" uid="uid://ctfjmbeickb5m" path="res://upgrades/resources/Bullet_Speed_1.tres" id="6_671wp"]
+[ext_resource type="Resource" uid="uid://bnou6pjqcse6n" path="res://upgrades/resources/Player_Health_1.tres" id="7_mo76n"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
 [node name="level_manager" type="Node" parent="." unique_id=1757262995]
 script = ExtResource("1_2c62f")
+
+[node name="game_manager" type="Node" parent="." unique_id=1394064700]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("2_7ycvg")
+starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("5_qwutr"), ExtResource("5_671wp"), ExtResource("6_671wp"), ExtResource("7_mo76n")])
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=1522350986]
 
@@ -18,6 +31,7 @@ script = ExtResource("1_2c62f")
 visible = false
 
 [node name="health_ui" type="Control" parent="hud" unique_id=1437993052]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,6 +72,7 @@ value = 100.0
 show_percentage = false
 
 [node name="enemy_ui" type="Control" parent="hud" unique_id=1846554976]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,6 +110,36 @@ text = "Wave: 3"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Enemies left: 6/7"
+
+[node name="upgrade_ui" type="Control" parent="hud" unique_id=1651740873]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_66tet")
+
+[node name="Panel" type="Panel" parent="hud/upgrade_ui" unique_id=1616782325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btn_container" type="HBoxContainer" parent="hud/upgrade_ui/Panel" unique_id=1890687126]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 

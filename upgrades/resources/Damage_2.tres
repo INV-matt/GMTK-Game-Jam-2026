@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Damage_2" format=3 uid="uid://j32du8n4i1gi"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_lnnqe"]
+[ext_resource type="Script" uid="uid://bxmnnywqrm56x" path="res://upgrades/derived_upgrades/damage_2.gd" id="1_wjbrd"]
+[ext_resource type="Resource" uid="uid://oh6p78fmahs8" path="res://upgrades/resources/Damage_3.tres" id="2_1fk2w"]
+
+[resource]
+script = ExtResource("1_wjbrd")
+name = "Damage 2"
+description = "Increase bullet damage by 30%"
+kill_to_unlock = 20
+descendant_upgrades = Array[ExtResource("1_lnnqe")]([ExtResource("2_1fk2w")])
+metadata/_custom_type_script = "uid://bxmnnywqrm56x"
