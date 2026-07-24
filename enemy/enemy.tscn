@@ -621,7 +621,6 @@ show_percentage = false
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=663359280]
 unique_name_in_owner = true
-active = false
 root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeStateMachine_pmsee")
 advance_expression_base_node = NodePath("..")
