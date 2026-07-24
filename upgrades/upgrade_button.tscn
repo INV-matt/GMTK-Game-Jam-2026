@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://by6wbcyexcmhn"]
+
+[ext_resource type="Script" uid="uid://b3b5o2dju8o6y" path="res://upgrades/upgrade_button.gd" id="1_4o4m5"]
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="2_ebbir"]
+
+[sub_resource type="Gradient" id="Gradient_ebbir"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ebbir"]
+gradient = SubResource("Gradient_ebbir")
+
+[sub_resource type="Resource" id="Resource_4o4m5"]
+script = ExtResource("2_ebbir")
+name = "Prova"
+description = "Descrizione di prova.
+Unyoko Yindoda"
+icon = SubResource("GradientTexture2D_ebbir")
+metadata/_custom_type_script = "uid://diopoi01eerip"
+
+[sub_resource type="Gradient" id="Gradient_4o4m5"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4o4m5"]
+gradient = SubResource("Gradient_4o4m5")
+
+[node name="upgrade_button" type="Control" unique_id=336027523]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 200.0
+script = ExtResource("1_4o4m5")
+upgrade = SubResource("Resource_4o4m5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1568029272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1991939816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=121558981]
+layout_mode = 2
+
+[node name="title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1712630670]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upgrade"
+
+[node name="desc" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=971168223]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 12
+text = "Lorem ipsum dolor sit amet"
+autowrap_mode = 2
+
+[node name="btn" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer" unique_id=783599275]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = SubResource("GradientTexture2D_4o4m5")

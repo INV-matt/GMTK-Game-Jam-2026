@@ -1,6 +1,6 @@
 extends Node
 
-var game_scene: PackedScene = preload("uid://c20k3ugnp8t46")
+var game_scene: PackedScene = preload("uid://c20k3ugnp8t46") # TODO: put game scene here, this is the debug scene
 
 func _ready() -> void:
   Signals.start_game.connect(on_start_game)

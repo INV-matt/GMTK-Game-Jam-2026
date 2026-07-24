@@ -1,7 +1,8 @@
 extends Node
 
-@export var PLAYER: Player
-
-func _ready():
-  if PLAYER == null:
-    print("WTF")
+var PLAYER_DAMAGE_MULTIPLIER: float = 1
+var PLAYER_SPEED_MULTIPLIER: float = 1
+var BULLET_SPEED_MULTIPLIER: float = 1
+var PLANT_HEALTH_MULTIPLIER: float = 1
+var SAFE_ZONE_MULTIPLIER: float = 1
+var GROW_SPEED_MULTIPLIER: float = 1
