@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GMTK Recovery"
-run/main_scene="uid://bv0qgb712vbh3"
+run/main_scene="uid://ty0tblji2he1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Qol="*uid://bish2xdvkgvur"
 Signals="*uid://doy3dc6tgqq0u"
-Globals="*uid://blgvu7ipj04tu"
+Globals="*uid://b8qd2unv6rnrq"
 
 [display]
 
