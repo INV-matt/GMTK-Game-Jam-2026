@@ -13,10 +13,10 @@ radius = 15.0
 radius = 250.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p200p"]
-radius = 15.0
+radius = 29.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ffra"]
-radius = 15.0
+radius = 29.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pmsee"]
 animation = &"attack"
@@ -290,7 +290,7 @@ region = Rect2(0, 872, 680, 436)
 
 [sub_resource type="Animation" id="Animation_26s8d"]
 resource_name = "walk_up"
-length = 1.1199999999999999
+length = 1.12
 loop_mode = 1
 step = 0.01
 tracks/0/type = "value"
@@ -315,7 +315,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(34.755, 0)]
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ipcql"]
@@ -392,7 +392,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-21.415, 0)]
+"values": [Vector2(19.19, 0)]
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vyqw8"]
@@ -520,7 +520,7 @@ region = Rect2(1360, 1308, 680, 436)
 
 [sub_resource type="Animation" id="Animation_mq6bd"]
 resource_name = "walk_up"
-length = 1.1199999999999999
+length = 1.12
 loop_mode = 1
 step = 0.01
 tracks/0/type = "value"
@@ -545,7 +545,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(42.05, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qvnj8"]
@@ -607,7 +607,7 @@ metadata/_custom_type_script = "uid://bfuubedgq33em"
 [node name="sprite" type="Sprite2D" parent="." unique_id=2027006385]
 unique_name_in_owner = true
 position = Vector2(7.9999995, 0)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 offset = Vector2(-120.085, 0)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1230430412]
@@ -621,6 +621,7 @@ show_percentage = false
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=663359280]
 unique_name_in_owner = true
+active = false
 root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeStateMachine_pmsee")
 advance_expression_base_node = NodePath("..")

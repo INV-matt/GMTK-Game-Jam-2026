@@ -471,7 +471,7 @@ tracks/1/keys = {
 "values": [Vector2(-74.607, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lqu7"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w0o27"]
 _data = {
 &"RESET": SubResource("Animation_wtg4x"),
 &"attack": SubResource("Animation_w0o27"),
@@ -491,4 +491,4 @@ active = false
 parameters/Walk/blend_position = Vector2(-0.015332222, 0.018018007)
 
 [node name="AnimationPlayer" parent="." index="8" unique_id=1814641663]
-libraries/ = SubResource("AnimationLibrary_2lqu7")
+libraries/ = SubResource("AnimationLibrary_w0o27")

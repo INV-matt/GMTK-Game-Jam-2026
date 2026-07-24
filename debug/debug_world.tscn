@@ -56,7 +56,6 @@ position = Vector2(832, -419)
 size = 25
 
 [node name="Enemy" parent="." unique_id=1211782421 instance=ExtResource("4_ogbem")]
-process_mode = 4
 position = Vector2(776, 56)
 
 [node name="seed_packet" parent="." unique_id=426246522 instance=ExtResource("9_svi63")]
