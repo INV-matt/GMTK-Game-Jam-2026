@@ -5,6 +5,8 @@ class_name BaseUpgrade
 @export_multiline var description: String
 @export var icon: Texture2D
 
+var descendant_upgrades: Array[BaseUpgrade]
+
 @warning_ignore_start("unused_parameter")
 
 # func upgrade_player(player: Player) -> void: pass
