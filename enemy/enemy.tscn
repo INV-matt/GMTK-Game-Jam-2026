@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnw0kia48axt5"]
 
-[ext_resource type="Script" uid="uid://c3wax5bupk70h" path="res://enemy/enemy.gd" id="1_ppra6"]
+[ext_resource type="Script" uid="uid://d1a2wwv21pev0" path="res://enemy/enemy.gd" id="1_ppra6"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="2_p200p"]
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="3_pmsee"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="4_p200p"]

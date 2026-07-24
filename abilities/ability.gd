@@ -10,7 +10,7 @@ var plant_stage: int = 0
 
 var is_ready: bool = true
 
-#implement this function in its children
+# implement this function in its children
 @warning_ignore("unused_parameter")
 func use_ability(player: Player, target: Vector2) -> void:
   if !is_ready: return
@@ -24,8 +24,6 @@ var cooldown: Timer
 
 func set_cooldown(time: float) -> void:
   is_ready = false
-  
-  print(time)
   
   if cooldown:
     cooldown.timeout.emit()

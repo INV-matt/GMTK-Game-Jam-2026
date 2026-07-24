@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cny6rblyix2du"]
 
 [ext_resource type="Script" uid="uid://c4svoo5n7bth0" path="res://abilities/roses_ability/roses_ability.gd" id="1_mfjlr"]
-[ext_resource type="Script" uid="uid://cey2j6m6u71a8" path="res://plants/plant_resource.gd" id="1_q4du4"]
+[ext_resource type="Script" uid="uid://dchfkdb5xlvnb" path="res://plants/plant_resource.gd" id="1_q4du4"]
 [ext_resource type="Texture2D" uid="uid://desaj4j2c651j" path="res://assets/sprites/Rose_Station-Sheet.png" id="2_01d5x"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tfqi4"]
@@ -22,18 +22,12 @@ metadata/_custom_type_script = "uid://q72vwqcaw71u"
 atlas = ExtResource("2_01d5x")
 region = Rect2(0, 0, 641, 791)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_01d5x"]
-load_path = "res://.godot/imported/Rose_Station-Sheet.png-c82e817b71f9d0a355f8c61887c32b83.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfqi4"]
-atlas = SubResource("CompressedTexture2D_01d5x")
+atlas = ExtResource("2_01d5x")
 region = Rect2(641, 0, 641, 791)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xpfc5"]
-load_path = "res://.godot/imported/Rose_Station-Sheet.png-c82e817b71f9d0a355f8c61887c32b83.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmis8"]
-atlas = SubResource("CompressedTexture2D_xpfc5")
+atlas = ExtResource("2_01d5x")
 region = Rect2(0, 791, 641, 791)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mfjlr"]

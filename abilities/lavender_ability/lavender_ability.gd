@@ -21,6 +21,4 @@ func apply_effect(player: Player, target: Vector2) -> void:
   
   player.global_position = end_pos
   
-  print(plant_stage)
-  
   set_cooldown(4.5 / plant_stage)
