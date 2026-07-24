@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cyevilxiude1r"
+path="res://.godot/imported/GJ 2026 - No Combat ambience - Prep time plants.ogg-9b57e0de62aacb0d78f08fd37c452625.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/GJ 2026 - No Combat ambience - Prep time plants.ogg"
+dest_files=["res://.godot/imported/GJ 2026 - No Combat ambience - Prep time plants.ogg-9b57e0de62aacb0d78f08fd37c452625.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

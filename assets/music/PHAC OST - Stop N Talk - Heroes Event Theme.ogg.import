@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bf7b8b3f0bn7h"
+path="res://.godot/imported/PHAC OST - Stop N Talk - Heroes Event Theme.ogg-dd2e97fcaf4c055269115230bcdcf9d6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/PHAC OST - Stop N Talk - Heroes Event Theme.ogg"
+dest_files=["res://.godot/imported/PHAC OST - Stop N Talk - Heroes Event Theme.ogg-dd2e97fcaf4c055269115230bcdcf9d6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
