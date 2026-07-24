@@ -57,3 +57,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = SubResource("GradientTexture2D_4o4m5")
+
+[node name="debug" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=222464833]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DEBUG BTN"

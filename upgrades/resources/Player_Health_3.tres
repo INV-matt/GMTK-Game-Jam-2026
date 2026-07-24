@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerHealth_3" format=3 uid="uid://beim84fcdkwmt"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_7jr17"]
+[ext_resource type="Script" uid="uid://cultbw7lmkau5" path="res://upgrades/derived_upgrades/player_health_3.gd" id="2_hl448"]
+
+[resource]
+script = ExtResource("2_hl448")
+name = "Health 3"
+description = "Increases player health by 25%"
+metadata/_custom_type_script = "uid://cultbw7lmkau5"

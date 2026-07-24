@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BulletSpeed_3" format=3 uid="uid://d3sid2qxvqg3"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_q6r3d"]
+[ext_resource type="Script" uid="uid://d2l08puw71raw" path="res://upgrades/derived_upgrades/bullet_speed_3.gd" id="2_q6r3d"]
+
+[resource]
+script = ExtResource("2_q6r3d")
+name = "Speed 3"
+description = "Increasess bullet speed by 50%, bullets can pierce one more enemy"
+metadata/_custom_type_script = "uid://d2l08puw71raw"

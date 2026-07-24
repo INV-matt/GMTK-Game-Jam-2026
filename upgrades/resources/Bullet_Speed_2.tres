@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BulletSpeed_2" format=3 uid="uid://bd5x1jgdv3h3g"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_baqly"]
+[ext_resource type="Resource" uid="uid://d3sid2qxvqg3" path="res://upgrades/resources/Bullet_Speed_3.tres" id="2_45hv4"]
+[ext_resource type="Script" uid="uid://dd3uw248cay8d" path="res://upgrades/derived_upgrades/bullet_speed_2.gd" id="2_c21tu"]
+
+[resource]
+script = ExtResource("2_c21tu")
+name = "Speed 2"
+description = "Increases bullet speed by 30%"
+descendant_upgrades = Array[ExtResource("1_baqly")]([ExtResource("2_45hv4")])
+metadata/_custom_type_script = "uid://dd3uw248cay8d"

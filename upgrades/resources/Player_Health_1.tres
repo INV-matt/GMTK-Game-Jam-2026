@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerHealth_1" format=3 uid="uid://bnou6pjqcse6n"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_vlqk6"]
+[ext_resource type="Script" uid="uid://bps0klglv2hl8" path="res://upgrades/derived_upgrades/player_health_1.gd" id="2_d5rlq"]
+[ext_resource type="Resource" uid="uid://daxugoy1cnngo" path="res://upgrades/resources/Player_Health_2.tres" id="2_wn4xd"]
+
+[resource]
+script = ExtResource("2_d5rlq")
+name = "Health 1"
+description = "Increases player health by 10%"
+descendant_upgrades = Array[ExtResource("1_vlqk6")]([ExtResource("2_wn4xd")])
+metadata/_custom_type_script = "uid://bps0klglv2hl8"

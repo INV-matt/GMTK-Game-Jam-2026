@@ -6,9 +6,11 @@ class_name UpgradeButton
 @onready var btn: TextureButton = %btn
 @onready var title: Label = %title
 @onready var desc: Label = %desc
+@onready var debug_btn: Button = %debug
 
 func _ready() -> void:
   btn.pressed.connect(on_pressed)
+  debug_btn.pressed.connect(on_pressed)
 
 func inizialize(up: BaseUpgrade) -> void:
   await get_tree().process_frame

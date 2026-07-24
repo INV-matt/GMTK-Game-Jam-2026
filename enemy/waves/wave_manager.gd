@@ -61,7 +61,6 @@ func spawn_enemy() -> void:
   var health_increase = HEALTH_INCREASE_WAVES * int(current_wave / WAVES_BETWEEN_HEALTH_INCREASE)
   enemy_node.MAX_HEALTH += health_increase
 
-  #print("Spawned %s at pos %s" % [enemy_node.name, enemy_node.global_position])
   Signals.spawned_enemy.emit(pos) # TODO: possibly implement ui indicator telling the player where the enemy spawned (like a small arrow)
   on_enemy_spawned()
   add_child(enemy_node)

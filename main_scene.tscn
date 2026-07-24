@@ -9,9 +9,10 @@
 [ext_resource type="Script" uid="uid://dms1ki4k2oy32" path="res://menus/settings_menu.gd" id="4_d5x1h"]
 [ext_resource type="Script" uid="uid://bhxuhe5c7010n" path="res://player_ui/enemy_ui.gd" id="4_hq1ik"]
 [ext_resource type="Script" uid="uid://dequulk8gc837" path="res://upgrades/upgrade_ui.gd" id="5_66tet"]
+[ext_resource type="Resource" uid="uid://dk4mtwgm8nmjw" path="res://upgrades/resources/Player_Speed_1.tres" id="5_671wp"]
 [ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="5_qwutr"]
-[ext_resource type="Resource" uid="uid://j32du8n4i1gi" path="res://upgrades/resources/Damage_2.tres" id="6_42l1d"]
-[ext_resource type="Resource" uid="uid://oh6p78fmahs8" path="res://upgrades/resources/Damage_3.tres" id="6_671wp"]
+[ext_resource type="Resource" uid="uid://ctfjmbeickb5m" path="res://upgrades/resources/Bullet_Speed_1.tres" id="6_671wp"]
+[ext_resource type="Resource" uid="uid://bnou6pjqcse6n" path="res://upgrades/resources/Player_Health_1.tres" id="7_mo76n"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -22,7 +23,7 @@ script = ExtResource("1_2c62f")
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("2_7ycvg")
-starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("6_42l1d"), ExtResource("5_qwutr"), ExtResource("6_671wp")])
+starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("5_qwutr"), ExtResource("5_671wp"), ExtResource("6_671wp"), ExtResource("7_mo76n")])
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=1522350986]
 
