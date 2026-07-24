@@ -24,7 +24,7 @@ var target_scale: float = 0
     collider.active = true
   
     animated_sprite.visible = true
-    animated_sprite.play("stage%s" % stage)
+    #animated_sprite.play("stage%s" % stage)
     target_scale = .1 + .05 * (stage - 1)
     collider.set_deferred("disabled", true)
     

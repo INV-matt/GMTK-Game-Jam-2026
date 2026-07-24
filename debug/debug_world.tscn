@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="10_8u7lf"]
 [ext_resource type="Resource" uid="uid://cuqqq0wjip7ww" path="res://plants/lavender/lavender.tres" id="11_4yv2v"]
 [ext_resource type="Resource" uid="uid://c4rre62tr73ji" path="res://plants/tomato/tomato.tres" id="12_8u7lf"]
+[ext_resource type="Resource" uid="uid://bib634uxafbov" path="res://plants/chili_pepper/chili_pepper.tres" id="14_nh06u"]
 
 [node name="DebugWorld" type="Node2D" unique_id=2108904853]
 y_sort_enabled = true
@@ -86,3 +87,7 @@ plant = ExtResource("12_8u7lf")
 [node name="seed_packet8" parent="." unique_id=873359176 instance=ExtResource("9_svi63")]
 position = Vector2(-136, 288)
 plant = ExtResource("12_8u7lf")
+
+[node name="seed_packet9" parent="." unique_id=1875214694 instance=ExtResource("9_svi63")]
+position = Vector2(37, 281)
+plant = ExtResource("14_nh06u")
