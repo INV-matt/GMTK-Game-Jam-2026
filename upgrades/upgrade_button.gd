@@ -14,4 +14,4 @@ func _ready() -> void:
   btn.pressed.connect(on_pressed)
 
 func on_pressed() -> void:
-  upgrade.upgrade_stats()
+  Qol.game_mngr.handle_upgrade(upgrade)

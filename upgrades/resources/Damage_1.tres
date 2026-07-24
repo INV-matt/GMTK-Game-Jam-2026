@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Damage_1" format=3 uid="uid://by5tamgopadrv"]
+
+[ext_resource type="Script" uid="uid://b0n5o23amahlk" path="res://upgrades/derived_upgrades/damage_1.gd" id="1_1k8ge"]
+
+[resource]
+script = ExtResource("1_1k8ge")
+name = "Damage 1"
+description = "Increase bullet damage by 20%"
+metadata/_custom_type_script = "uid://b0n5o23amahlk"
