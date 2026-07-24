@@ -37,6 +37,11 @@ func _process(delta: float) -> void:
       elapsed_time -= delta
 
   if Input.is_action_just_pressed("ui_accept"): next_wave()
+  
+  if enemy_alive > 0:
+    MusicMngr.play_track("battle")
+  else:
+    MusicMngr.play_track("chill")
 
 func spawn_enemy() -> void:
   var possible_enemies: Array[PackedScene]
