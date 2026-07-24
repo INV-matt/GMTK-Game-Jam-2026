@@ -7,10 +7,10 @@
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_828tj"]
-radius = 12.0
-height = 72.0
+radius = 15.0
+height = 81.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnhti"]
 radius = 12.0
 height = 72.0
 
@@ -29,12 +29,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4u7gl"]
-load_path = "res://.godot/imported/Tomato-Sheet.png-3299a281e15dd9a6caa3cc5d32db6c6f.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wnhti"]
+load_path = "res://.godot/imported/Peper_Station-Sheet.png-7b3ed77ef6f44795dc381affc2d72fa3.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jlr2"]
-atlas = SubResource("CompressedTexture2D_4u7gl")
-region = Rect2(1708, -20, 854, 328)
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0hop"]
+atlas = SubResource("CompressedTexture2D_wnhti")
+region = Rect2(0, 0, 597, 576)
 
 [node name="pot" type="CharacterBody2D" unique_id=1943167055]
 collision_mask = 3
@@ -59,7 +59,7 @@ metadata/_custom_type_script = "uid://bfuubedgq33em"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110216107]
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_yw30f")
+shape = SubResource("CapsuleShape2D_wnhti")
 debug_color = Color(0.6310452, 0.5172754, 0.32363147, 0.41960785)
 
 [node name="pot_icon" type="AnimatedSprite2D" parent="." unique_id=1597572287]
@@ -71,13 +71,15 @@ animation = &"0dmg"
 
 [node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
 unique_name_in_owner = true
-position = Vector2(3, 5)
+position = Vector2(0, -8)
 scale = Vector2(0.1, 0.1)
-texture = SubResource("AtlasTexture_4jlr2")
+texture = SubResource("AtlasTexture_g0hop")
 
-[node name="hp_comp" type="Node" parent="." unique_id=1587763591]
+[node name="hp_comp" type="Node" parent="." unique_id=1587763591 node_paths=PackedStringArray("hp_bar")]
 unique_name_in_owner = true
 script = ExtResource("6_q0ont")
+use_hp_bar = true
+hp_bar = NodePath("../hp_bar")
 metadata/_custom_type_script = "uid://d1jlu0g173ory"
 
 [node name="growth_progress" type="ProgressBar" parent="." unique_id=1434540315]
