@@ -5,9 +5,14 @@
 [ext_resource type="Script" uid="uid://d368p4knx57wt" path="res://globals/game_manager.gd" id="2_7ycvg"]
 [ext_resource type="Script" uid="uid://blkxugot78i1o" path="res://player_ui/health_ui.gd" id="3_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="3_gyfs4"]
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="3_mo76n"]
+[ext_resource type="Resource" uid="uid://bnou6pjqcse6n" path="res://upgrades/resources/Player_Health_1.tres" id="4_42l1d"]
 [ext_resource type="Script" uid="uid://dms1ki4k2oy32" path="res://menus/settings_menu.gd" id="4_d5x1h"]
 [ext_resource type="Script" uid="uid://bhxuhe5c7010n" path="res://player_ui/enemy_ui.gd" id="4_hq1ik"]
+[ext_resource type="Resource" uid="uid://ctfjmbeickb5m" path="res://upgrades/resources/Bullet_Speed_1.tres" id="5_2jcla"]
 [ext_resource type="Script" uid="uid://dequulk8gc837" path="res://upgrades/upgrade_ui.gd" id="5_66tet"]
+[ext_resource type="Resource" uid="uid://dk4mtwgm8nmjw" path="res://upgrades/resources/Player_Speed_1.tres" id="6_m35m6"]
+[ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="7_u0ygc"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -18,6 +23,7 @@ script = ExtResource("1_2c62f")
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("2_7ycvg")
+starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("4_42l1d"), ExtResource("5_2jcla"), ExtResource("6_m35m6"), ExtResource("7_u0ygc")])
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=1522350986]
 

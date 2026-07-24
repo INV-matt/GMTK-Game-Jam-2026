@@ -21,7 +21,7 @@ var is_dead = false
       if plant.give_ability:
         Qol.player.abilities.erase(plant.ability)
         Qol.player.ability_list_changed.emit()
-      plant = null 
+      plant = null
    
     if plant:
       plant.planted(self)
@@ -131,7 +131,7 @@ func _physics_process(_delta: float) -> void:
     var diff: Vector2 = global_position - Qol.player.global_position
     var dist: float = diff.length_squared()
 
-    if dist <= push_dist * push_dist :
+    if dist <= push_dist * push_dist:
       velocity = diff.normalized() * 30.0
       move_and_slide()
 
@@ -177,5 +177,5 @@ func _on_interaction_comp_interacted() -> void:
   if !plant:
     if !plantables.visible:
       create_plantables()
-    else :
+    else:
       hide_plantables()
