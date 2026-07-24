@@ -20,6 +20,7 @@ func _ready() -> void:
   target = DEFAULT_TARGET
   following_player = false
   hp_comp.max_hp = MAX_HEALTH
+  animation_tree.active = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

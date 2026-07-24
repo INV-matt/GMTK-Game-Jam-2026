@@ -627,7 +627,7 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
 parameters/conditions/died = false
-parameters/Walk/blend_position = Vector2(0.42078364, -0.036036015)
+parameters/Walk/blend_position = Vector2(0.022146463, -0.24324322)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1814641663]
 libraries/ = SubResource("AnimationLibrary_qvnj8")

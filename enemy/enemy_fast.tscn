@@ -1,7 +1,494 @@
 [gd_scene format=3 uid="uid://bmgifpiy0gluy"]
 
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="1_wtg4x"]
+[ext_resource type="Texture2D" uid="uid://cf85qcq8d0l5r" path="res://assets/sprites/Fast_Enemy_-_Mira_Mira_II-Sheet.png" id="2_w0o27"]
+
+[sub_resource type="Animation" id="Animation_wtg4x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120.085, 0)]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w0o27"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi7o5"]
+atlas = SubResource("CompressedTexture2D_w0o27")
+region = Rect2(1824, 1362, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qo5bw"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1wd"]
+atlas = SubResource("CompressedTexture2D_qo5bw")
+region = Rect2(2432, 1362, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6wg3y"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6svrr"]
+atlas = SubResource("CompressedTexture2D_6wg3y")
+region = Rect2(3040, 1362, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2lqu7"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3fce"]
+atlas = SubResource("CompressedTexture2D_2lqu7")
+region = Rect2(0, 1816, 608, 454)
+
+[sub_resource type="Animation" id="Animation_w0o27"]
+resource_name = "attack"
+length = 0.5599999999999999
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_mi7o5"), SubResource("AtlasTexture_1j1wd"), SubResource("AtlasTexture_6svrr"), SubResource("AtlasTexture_x3fce")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-116.865, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.26666668),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset_hit"
+}]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0o27"]
+atlas = ExtResource("2_w0o27")
+region = Rect2(608, 1816, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mi7o5"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo5bw"]
+atlas = SubResource("CompressedTexture2D_mi7o5")
+region = Rect2(1216, 1816, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1j1wd"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wg3y"]
+atlas = SubResource("CompressedTexture2D_1j1wd")
+region = Rect2(1824, 1816, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6svrr"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lqu7"]
+atlas = SubResource("CompressedTexture2D_6svrr")
+region = Rect2(2432, 1816, 608, 454)
+
+[sub_resource type="Animation" id="Animation_mi7o5"]
+resource_name = "death"
+length = 0.5599999999999999
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_w0o27"), SubResource("AtlasTexture_qo5bw"), SubResource("AtlasTexture_6wg3y"), SubResource("AtlasTexture_2lqu7")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.56),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83.11, 0)]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x3fce"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh2cb"]
+atlas = SubResource("CompressedTexture2D_x3fce")
+region = Rect2(0, 0, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wo14i"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv0ev"]
+atlas = SubResource("CompressedTexture2D_wo14i")
+region = Rect2(608, 0, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_db3pk"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcqh2"]
+atlas = SubResource("CompressedTexture2D_db3pk")
+region = Rect2(1216, 0, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f0llo"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0yws"]
+atlas = SubResource("CompressedTexture2D_f0llo")
+region = Rect2(1824, 0, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ln7ks"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asb6s"]
+atlas = SubResource("CompressedTexture2D_ln7ks")
+region = Rect2(2432, 0, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4tvr"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvneh"]
+atlas = SubResource("CompressedTexture2D_s4tvr")
+region = Rect2(3040, 0, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_415mf"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfbic"]
+atlas = SubResource("CompressedTexture2D_415mf")
+region = Rect2(0, 454, 608, 454)
+
+[sub_resource type="Animation" id="Animation_qo5bw"]
+resource_name = "walk_up"
+length = 0.98
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56666666, 0.7, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_lh2cb"), SubResource("AtlasTexture_tv0ev"), SubResource("AtlasTexture_kcqh2"), SubResource("AtlasTexture_s0yws"), SubResource("AtlasTexture_asb6s"), SubResource("AtlasTexture_kvneh"), SubResource("AtlasTexture_hfbic")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-72.245, 0)]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lh2cb"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo14i"]
+atlas = SubResource("CompressedTexture2D_lh2cb")
+region = Rect2(608, 454, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tv0ev"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db3pk"]
+atlas = SubResource("CompressedTexture2D_tv0ev")
+region = Rect2(1216, 454, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kcqh2"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0llo"]
+atlas = SubResource("CompressedTexture2D_kcqh2")
+region = Rect2(1824, 454, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s0yws"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln7ks"]
+atlas = SubResource("CompressedTexture2D_s0yws")
+region = Rect2(2432, 454, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_asb6s"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4tvr"]
+atlas = SubResource("CompressedTexture2D_asb6s")
+region = Rect2(3040, 454, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kvneh"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_415mf"]
+atlas = SubResource("CompressedTexture2D_kvneh")
+region = Rect2(0, 908, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hfbic"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evv6m"]
+atlas = SubResource("CompressedTexture2D_hfbic")
+region = Rect2(608, 908, 608, 454)
+
+[sub_resource type="Animation" id="Animation_1j1wd"]
+resource_name = "walk_left"
+length = 0.98
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_wo14i"), SubResource("AtlasTexture_db3pk"), SubResource("AtlasTexture_f0llo"), SubResource("AtlasTexture_ln7ks"), SubResource("AtlasTexture_s4tvr"), SubResource("AtlasTexture_415mf"), SubResource("AtlasTexture_evv6m")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-75.655, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6wg3y"]
+resource_name = "walk_right"
+length = 0.98
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_wo14i"), SubResource("AtlasTexture_db3pk"), SubResource("AtlasTexture_f0llo"), SubResource("AtlasTexture_ln7ks"), SubResource("AtlasTexture_s4tvr"), SubResource("AtlasTexture_415mf"), SubResource("AtlasTexture_evv6m")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-75.655, 0)]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evv6m"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5n2o"]
+atlas = SubResource("CompressedTexture2D_evv6m")
+region = Rect2(1216, 908, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lij6j"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e14ca"]
+atlas = SubResource("CompressedTexture2D_lij6j")
+region = Rect2(1824, 908, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qkx0m"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckppc"]
+atlas = SubResource("CompressedTexture2D_qkx0m")
+region = Rect2(2432, 908, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jvbpr"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3edy"]
+atlas = SubResource("CompressedTexture2D_jvbpr")
+region = Rect2(3040, 908, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ccnsi"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgwcy"]
+atlas = SubResource("CompressedTexture2D_ccnsi")
+region = Rect2(0, 1362, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qum50"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w6s2"]
+atlas = SubResource("CompressedTexture2D_qum50")
+region = Rect2(608, 1362, 608, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcrmv"]
+load_path = "res://.godot/imported/Fast_Enemy_-_Mira_Mira_II-Sheet.png-910b822b6914691d2641334640bcae1b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwaky"]
+atlas = SubResource("CompressedTexture2D_pcrmv")
+region = Rect2(1216, 1362, 608, 454)
+
+[sub_resource type="Animation" id="Animation_6svrr"]
+resource_name = "walk_up"
+length = 0.98
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_m5n2o"), SubResource("AtlasTexture_e14ca"), SubResource("AtlasTexture_ckppc"), SubResource("AtlasTexture_f3edy"), SubResource("AtlasTexture_kgwcy"), SubResource("AtlasTexture_7w6s2"), SubResource("AtlasTexture_kwaky")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-74.607, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lqu7"]
+_data = {
+&"RESET": SubResource("Animation_wtg4x"),
+&"attack": SubResource("Animation_w0o27"),
+&"death": SubResource("Animation_mi7o5"),
+&"walk_down": SubResource("Animation_qo5bw"),
+&"walk_left": SubResource("Animation_1j1wd"),
+&"walk_right": SubResource("Animation_6wg3y"),
+&"walk_up": SubResource("Animation_6svrr")
+}
 
 [node name="EnemyFast" unique_id=478211698 instance=ExtResource("1_wtg4x")]
 SPEED = 100.0
 MAX_HEALTH = 50.0
+
+[node name="AnimationTree" parent="." index="7" unique_id=663359280]
+active = false
+parameters/Walk/blend_position = Vector2(-0.015332222, 0.018018007)
+
+[node name="AnimationPlayer" parent="." index="8" unique_id=1814641663]
+libraries/ = SubResource("AnimationLibrary_2lqu7")
