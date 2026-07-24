@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="1_p5b7a"]
 [ext_resource type="Texture2D" uid="uid://byd0p8q3j7xio" path="res://assets/sprites/Tank_Enemy_-_Chubs-Sheet.png" id="2_g5w0q"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g5w0q"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jaa5s"]
 radius = 42.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jaa5s"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5w0q"]
 radius = 42.0
 
 [sub_resource type="Animation" id="Animation_jaa5s"]
@@ -521,6 +521,10 @@ _data = {
 [node name="EnemyTank" unique_id=478211698 instance=ExtResource("1_p5b7a")]
 SPEED = 25.0
 MAX_HEALTH = 150.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=2010759488]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_jaa5s")
 
 [node name="PlayerHitbox" parent="." index="3" unique_id=163459591]
 position = Vector2(0, 16)

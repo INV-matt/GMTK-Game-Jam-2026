@@ -6,16 +6,13 @@
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="4_p200p"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://d3njw231n6btx" path="res://enemy/walk_blend_space.tres" id="5_pmsee"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y5vj3"]
-radius = 15.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ffra"]
+radius = 29.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pmsee"]
 radius = 250.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p200p"]
-radius = 29.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5ffra"]
 radius = 29.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pmsee"]
@@ -567,7 +564,7 @@ SPEED = 50.0
 size = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010759488]
-shape = SubResource("CircleShape2D_y5vj3")
+shape = SubResource("CircleShape2D_5ffra")
 debug_color = Color(0.8786114, 0.20543274, 0.6770189, 0.41960785)
 
 [node name="TargetPlayerZone" type="Area2D" parent="." unique_id=702166902]
