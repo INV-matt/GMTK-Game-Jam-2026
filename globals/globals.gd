@@ -10,9 +10,6 @@ var PLANT_HEALTH_MULTIPLIER: float = 1
 var SAFE_ZONE_MULTIPLIER: float = 1
 var GROW_SPEED_MULTIPLIER: float = 1
 
-func _ready():
-  if PLAYER == null:
-    print("WTF")
 var enemy_killed = 0
 var upgrades_unlocked = 0:
   get:
@@ -21,5 +18,3 @@ var upgrades_unlocked = 0:
     return upgrades_unlocked
 func kills_for_next_upgrade() -> int:
   return 5 * int(pow(upgrades_unlocked + 1, 2))
-  # total: 5, 20, 45
-  # delta: 5, 15, 25, ...
