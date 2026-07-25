@@ -22,10 +22,10 @@ var elapsed_time: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  current_wave = 1
+  current_wave = 0
   elapsed_time = TIME_BETWEEN_ENEMIES
   Signals.enemy_died.connect(on_enemy_died)
-
+  next_wave()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -45,8 +45,8 @@ func _process(delta: float) -> void:
 
 func spawn_enemy() -> void:
   var possible_enemies: Array[PackedScene]
-  for key in enemy_types.keys():
-    if enemy_types.get(key, budget) <= budget: possible_enemies.push_back(key)
+  for key in enemy_types:
+    if enemy_types[key] <= budget: possible_enemies.push_back(key)
   
   if possible_enemies.size() == 0:
     print("No possible enemies: ")
@@ -75,15 +75,14 @@ func calculate_budget(value: int) -> int:
   return value * (value + 1)
 
 func next_wave() -> void:
-  enemy_alive = 0
-  enemy_total_wave = 0
-  Signals.enemy_change.emit(0, 0)
+  waves_spawned += 1
   current_wave += 1
   Signals.started_wave.emit(current_wave)
 
 
 var enemy_alive: int = 0
 var enemy_total_wave: int = 0
+var waves_spawned: int = 0
 #var enemy_killed: int = 0
 func on_enemy_spawned() -> void:
   enemy_alive += 1
@@ -96,4 +95,9 @@ func on_enemy_died() -> void:
   Signals.enemy_change.emit(enemy_alive, enemy_total_wave)
 
   if enemy_alive == 0:
-    Signals.ended_wave.emit()
+    while waves_spawned > 0:
+      Signals.ended_wave.emit()
+      print(waves_spawned)
+      waves_spawned -= 1
+      
+      await Signals.upgrade_ui_closed

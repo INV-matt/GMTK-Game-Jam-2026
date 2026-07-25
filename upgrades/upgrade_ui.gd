@@ -26,3 +26,4 @@ func on_open() -> void:
 func on_close() -> void:
   visible = false
   Qol.unpause_game()
+  Signals.upgrade_ui_closed.emit()
