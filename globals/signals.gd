@@ -28,4 +28,7 @@ signal rewards_opened()
 signal rewards_closed()
 signal reward_selected(reward: Reward)
 
+## Misc signals
+signal all_plants_died
+
 @warning_ignore_restore("unused_signal")

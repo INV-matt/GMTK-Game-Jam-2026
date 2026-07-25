@@ -77,7 +77,7 @@ func reset_hit():
   hit_something = false
 
 func on_velocity_computed(safe_velocity: Vector2) -> void:
-  target_velocity = safe_velocity * delta_pos * 20.0
+  target_velocity = safe_velocity * delta_pos * 30.0
 
 func get_plant_target() -> Vector2:
   var plants = get_tree().get_nodes_in_group("plants")

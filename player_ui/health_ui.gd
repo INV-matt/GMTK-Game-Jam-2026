@@ -36,3 +36,7 @@ func update_plant_bar() -> void:
       print("%s / %s" % [curr, total])
   bar_plant.value = clamp(curr, 0, total)
   bar_plant.max_value = total
+  
+  if total == 0:
+    Signals.all_plants_died.emit()
+    print("hi")
