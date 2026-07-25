@@ -25,6 +25,8 @@ func update_player_bar(amount: float) -> void:
   bar_player.max_value = Qol.player.hp_comp.max_hp
   bar_player.value = clamp(pl.hp_comp.hp, 0, Qol.player.hp_comp.max_hp)
 
+var has_lost: bool = false
+
 func update_plant_bar() -> void:
   var total = 0
   var curr = 0
@@ -33,6 +35,10 @@ func update_plant_bar() -> void:
     if hp_comp:
       total += hp_comp.max_hp
       curr += hp_comp.hp
-      print("%s / %s" % [curr, total])
   bar_plant.value = clamp(curr, 0, total)
   bar_plant.max_value = total
+  
+  if total == 0 and Qol.wave_mngr and Qol.wave_mngr.current_wave > 0 and !has_lost:
+    Signals.all_plants_died.emit()
+    has_lost = true
+    print("hi")

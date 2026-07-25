@@ -85,8 +85,6 @@ func atlas_to_texture(atlas: AtlasTexture) -> ImageTexture:
   var new_tex: Image = Image.create_empty(width, height, false, Image.FORMAT_BPTC_RGBA)
   new_tex.decompress()
   
-  print(width, " ", height)
-  
   var atlas_img: Image = atlas.atlas.get_image()
   
   var max_height: int = int(atlas_img.get_height())
