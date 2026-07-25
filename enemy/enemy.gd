@@ -7,7 +7,6 @@ class_name BaseEnemy
 @export var MAX_HEALTH: float = 100
 @export var DEFAULT_TARGET: Vector2
 @export_range(1, 200, 1, "or_greater") var size: int = 25
-@export var TIME_TARGET_UPDATE: float = 5.0
 
 @onready var animation_tree: AnimationTree = %AnimationTree
 @onready var sprite: Sprite2D = %sprite
@@ -21,8 +20,6 @@ var speed_mult: float = 1.0
 var target: Vector2
 var following_player: bool
 
-var timer_target: Timer
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
   target = get_plant_target()
@@ -34,10 +31,6 @@ func _ready() -> void:
   nav_agent.velocity_computed.connect(Callable(on_velocity_computed))
   nav_agent.max_speed = SPEED * 1.2
 
-  timer_target = Timer.new()
-  timer_target.wait_time = TIME_TARGET_UPDATE
-  timer_target.connect(retarget())
-
   
 var target_velocity: Vector2
 var delta_pos: float
@@ -46,21 +39,13 @@ var delta_pos: float
 func _physics_process(delta: float) -> void:
   delta_pos = SPEED * delta
 
-  if (following_player):
-    if (Qol.player.is_dead):
-      following_player = false
-      target = get_plant_target()
-      nav_agent.target_position = target
-    else:
-      target = Qol.player.global_position
-      nav_agent.target_position = target
+  calculate_target()
 
   if nav_agent.is_navigation_finished(): return
   var next_pos: Vector2 = nav_agent.get_next_path_position()
   var new_vel: Vector2 = global_position.direction_to(next_pos) * delta_pos
 
   nav_agent.set_velocity(new_vel)
-
   velocity = velocity * 0.8 + target_velocity * 0.2
 
   move_and_slide()
@@ -111,7 +96,13 @@ func get_plant_target() -> Vector2:
 
   return pos_min
 
-func calculate_target
+func calculate_target() -> void:
+  if (following_player):
+    if (Qol.player.is_dead):
+      following_player = false
+      target = get_plant_target()
+    else:
+      target = Qol.player.global_position
+  elif target != DEFAULT_TARGET: target = get_plant_target()
 
-func retarget() -> void:
-  target = get_plant_target()
+  nav_agent.target_position = target
