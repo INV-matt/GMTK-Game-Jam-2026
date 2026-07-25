@@ -13,5 +13,6 @@ signal close_upgrades()
 signal enemy_change(alive: int, total_in_wave: int)
 signal enemy_died()
 signal stats_change()
+signal upgrade_ui_closed()
 
 @warning_ignore_restore("unused_signal")
