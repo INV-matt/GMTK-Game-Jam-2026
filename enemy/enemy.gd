@@ -7,6 +7,7 @@ class_name BaseEnemy
 @export var MAX_HEALTH: float = 100
 @export var DEFAULT_TARGET: Vector2
 @export_range(1, 200, 1, "or_greater") var size: int = 25
+@export var TIME_TARGET_UPDATE: float = 5.0
 
 @onready var animation_tree: AnimationTree = %AnimationTree
 @onready var sprite: Sprite2D = %sprite
@@ -20,36 +21,35 @@ var speed_mult: float = 1.0
 var target: Vector2
 var following_player: bool
 
+var timer_target: Timer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  target = DEFAULT_TARGET
+  target = get_plant_target()
   following_player = false
   hp_comp.max_hp = MAX_HEALTH
   animation_tree.active = true
 
-  nav_agent.target_position = DEFAULT_TARGET
+  nav_agent.target_position = target
   nav_agent.velocity_computed.connect(Callable(on_velocity_computed))
   nav_agent.max_speed = SPEED * 1.2
 
+  timer_target = Timer.new()
+  timer_target.wait_time = TIME_TARGET_UPDATE
+  timer_target.connect(retarget())
+
+  
 var target_velocity: Vector2
-var delta_pos: float # |v*dt|
+var delta_pos: float
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-  # var direction: Vector2 = target - global_position
-  # if following_player and !Qol.player.is_dead:
-  #   var vec_to_player = Qol.player.global_position - global_position
-  #   if direction.length_squared() > vec_to_player.length_squared(): direction = vec_to_player
-  # velocity = direction.normalized() * SPEED * delta * 60
-  # if !hit_something and !is_dead:
-  #   move_and_slide()
-
   delta_pos = SPEED * delta
 
   if (following_player):
     if (Qol.player.is_dead):
       following_player = false
-      target = DEFAULT_TARGET
+      target = get_plant_target()
       nav_agent.target_position = target
     else:
       target = Qol.player.global_position
@@ -71,7 +71,7 @@ func on_player_entered(body: Node2D) -> void:
 func on_player_exited(body: Node2D) -> void:
    if body is Player:
     following_player = false
-    target = DEFAULT_TARGET
+    target = get_plant_target()
     nav_agent.target_position = target
 
 func _on_hp_comp_died() -> void:
@@ -94,3 +94,24 @@ func reset_hit():
 
 func on_velocity_computed(safe_velocity: Vector2) -> void:
   target_velocity = safe_velocity * delta_pos * 20.0
+
+func get_plant_target() -> Vector2:
+  var plants = get_tree().get_nodes_in_group("plants")
+  if plants.size() == 0:
+    return Vector2.ZERO
+
+  var min_dst: float = INF
+  var pos_min: Vector2 = Vector2.ZERO
+
+  for plant: Node2D in plants:
+    var dst = plant.global_position.distance_squared_to(global_position)
+    if dst < min_dst:
+      min_dst = dst
+      pos_min = plant.global_position
+
+  return pos_min
+
+func calculate_target
+
+func retarget() -> void:
+  target = get_plant_target()

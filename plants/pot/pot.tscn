@@ -36,7 +36,7 @@ load_path = "res://.godot/imported/Tree_Sap_Station-Sheet.png-4cecd1e6d27ebab1ae
 atlas = SubResource("CompressedTexture2D_wnhti")
 region = Rect2(0, 725, 854, 725)
 
-[node name="pot" type="CharacterBody2D" unique_id=1943167055]
+[node name="pot" type="CharacterBody2D" unique_id=1943167055 groups=["plants"]]
 collision_mask = 3
 script = ExtResource("1_828tj")
 
