@@ -16,6 +16,9 @@ y_sort_enabled = true
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("1_h4ksw")]
 position = Vector2(56, 48)
 
+[node name="pot2" parent="." unique_id=30374922 instance=ExtResource("1_h4ksw")]
+position = Vector2(-72, 48)
+
 [node name="Player" parent="." unique_id=386552564 instance=ExtResource("3_x6o6c")]
 position = Vector2(232, 192)
 
@@ -25,4 +28,8 @@ position_smoothing_enabled = true
 
 [node name="seed_packet" parent="." unique_id=426246522 instance=ExtResource("6_8u4lp")]
 position = Vector2(104, 200)
+plant = ExtResource("7_8u4lp")
+
+[node name="seed_packet2" parent="." unique_id=2123793455 instance=ExtResource("6_8u4lp")]
+position = Vector2(-64, 200)
 plant = ExtResource("7_8u4lp")

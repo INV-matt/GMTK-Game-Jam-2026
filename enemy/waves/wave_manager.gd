@@ -131,7 +131,7 @@ func on_enemy_died() -> void:
       await Signals.upgrade_ui_closed
       
     while waves_spawned > 0:
-      Signals.ended_wave.emit()
+      Signals.ended_wave.emit(current_wave - waves_spawned + 1)
       waves_spawned -= 1
     
     enemy_total_wave = 0
