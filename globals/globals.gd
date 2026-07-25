@@ -10,6 +10,8 @@ var PLANT_HEALTH_MULTIPLIER: float = 1
 var SAFE_ZONE_MULTIPLIER: float = 1
 var GROW_SPEED_MULTIPLIER: float = 1
 
+var DEBUG: bool = false
+
 var enemy_killed = 0
 var upgrades_unlocked = 0:
   get:

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bi7ahm3cybjw3" path="res://player_ui/enemy_ui.tscn" id="12_2jcla"]
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="12_42l1d"]
 [ext_resource type="PackedScene" uid="uid://cscpho4jnlr7y" path="res://player_ui/upgrade_ui.tscn" id="13_2jcla"]
+[ext_resource type="PackedScene" uid="uid://dh0xnfu4byre5" path="res://player_ui/debug_ui.tscn" id="14_m35m6"]
 [ext_resource type="PackedScene" uid="uid://d7656423bbia" path="res://menus/settings_menu.tscn" id="15_2jcla"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
@@ -40,6 +41,14 @@ offset_top = 88.0
 [node name="enemy_ui" parent="hud" unique_id=1133864387 instance=ExtResource("12_2jcla")]
 
 [node name="upgrade_ui" parent="hud" unique_id=447222242 instance=ExtResource("13_2jcla")]
+
+[node name="debug_ui" parent="hud" unique_id=1535893346 instance=ExtResource("14_m35m6")]
+process_mode = 3
+visible = false
+offset_left = 1018.0
+offset_top = 103.0
+offset_right = 1144.0
+offset_bottom = 126.0
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 process_mode = 3
