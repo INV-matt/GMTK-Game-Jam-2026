@@ -19,3 +19,5 @@ var upgrades_unlocked = 0:
     return upgrades_unlocked
 func kills_for_next_upgrade() -> int:
   return 5 * int(pow(upgrades_unlocked + 1, 2))
+
+var difficulty_mult: float = 1.0
