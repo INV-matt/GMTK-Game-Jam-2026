@@ -13,7 +13,7 @@ radius = 29.0
 radius = 250.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p200p"]
-radius = 29.0
+radius = 34.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pmsee"]
 animation = &"attack"
