@@ -16,5 +16,6 @@ signal stats_change()
 signal upgrade_ui_closed()
 signal killed_enough_enemies()
 signal kills_update(got: int, needed: int)
+signal wave_timer_update(time: float)
 
 @warning_ignore_restore("unused_signal")

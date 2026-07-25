@@ -25,19 +25,29 @@ func _ready() -> void:
   current_wave = 0
   elapsed_time = TIME_BETWEEN_ENEMIES
   Signals.enemy_died.connect(on_enemy_died)
-  next_wave()
   Signals.kills_update.emit(enemies_killed, kills_needed)
+
+var next_wave_in: float = 0.0
+var wave_has_spawned: bool = false
+var spawned_this_wave: int = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+  if wave_has_spawned:
+    next_wave_in -= delta
+    Signals.wave_timer_update.emit(next_wave_in)
+    if next_wave_in <= 0:
+      next_wave()
+  
   if budget > 0:
     if elapsed_time < 0:
       elapsed_time = TIME_BETWEEN_ENEMIES
       spawn_enemy()
     else:
       elapsed_time -= delta
-
-  if Input.is_action_just_pressed("ui_accept"): next_wave()
+  elif !wave_has_spawned:
+    wave_has_spawned = true
+    next_wave_in = spawned_this_wave / 20.0
   
   if enemy_alive > 0:
     MusicMngr.play_track("battle")
@@ -52,6 +62,7 @@ func spawn_enemy() -> void:
   if possible_enemies.size() == 0:
     print("No possible enemies: ")
     print("Budget: ", budget)
+    budget = 0
     return
     
   var chosen: PackedScene = possible_enemies.pick_random() as PackedScene
@@ -70,14 +81,19 @@ func spawn_enemy() -> void:
   Signals.spawned_enemy.emit(pos) # TODO: possibly implement ui indicator telling the player where the enemy spawned (like a small arrow)
   on_enemy_spawned()
   add_child(enemy_node)
+  
+  spawned_this_wave += enemy_node.MAX_HEALTH
 
 
 func calculate_budget(value: int) -> int:
   return value * (value + 1)
 
 func next_wave() -> void:
+  Signals.wave_timer_update.emit(0.0)
   waves_spawned += 1
   current_wave += 1
+  wave_has_spawned = false
+  spawned_this_wave = 0
   Signals.started_wave.emit(current_wave)
 
 
