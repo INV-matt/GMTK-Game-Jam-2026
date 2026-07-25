@@ -134,7 +134,7 @@ func on_enemy_died() -> void:
   
   Signals.kills_update.emit(enemies_killed, kills_needed)
 
-  if enemy_alive == 0:
+  if enemy_alive == 0 and !waves_finished:
     while upgrades_to_give > 0:
       Signals.killed_enough_enemies.emit()
       upgrades_to_give -= 1
