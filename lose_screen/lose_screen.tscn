@@ -210,7 +210,7 @@ tracks/8/path = NodePath(".")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(5.5),
+"times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -299,7 +299,7 @@ anchor_bottom = 1.0
 offset_left = 864.0
 offset_top = 156.0
 offset_right = 864.0
-offset_bottom = 156.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)
@@ -331,10 +331,12 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/content/MarginContainer/stat_holder" unique_id=468010700]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 24
 text = "Post-game stats"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="spacer2" type="Control" parent="VBoxContainer" unique_id=1574815973]
 layout_mode = 2
