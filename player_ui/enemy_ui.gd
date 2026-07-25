@@ -1,8 +1,8 @@
 extends Control
 
-const WAVE_TEXT: String = "Wave: %s"
-const ENEMY_TEXT: String = "Enemies left: %s/%s"
-const KILLS_TEXT: String = "Enemy kills: %s/%s"
+const WAVE_TEXT: String = "%s"
+const ENEMY_TEXT: String = "%s/%s"
+const KILLS_TEXT: String = "%s/%s"
 
 @onready var txt_waves: Label = %wave_counter
 @onready var txt_enemy: Label = %enemy_counter

@@ -1,7 +1,7 @@
 extends Control
 
-@onready var bar_player: ProgressBar = %player_bar
-@onready var bar_plant: ProgressBar = %plant_bar
+@onready var bar_player: TextureProgressBar = %player_bar
+@onready var bar_plant: TextureProgressBar = %plant_bar
 
 @onready var pl: Player = Qol.player
 var pl_connected = false
@@ -33,6 +33,5 @@ func update_plant_bar() -> void:
     if hp_comp:
       total += hp_comp.max_hp
       curr += hp_comp.hp
-      print("%s / %s" % [curr, total])
   bar_plant.value = clamp(curr, 0, total)
   bar_plant.max_value = total

@@ -3,18 +3,18 @@
 [ext_resource type="Script" uid="uid://bltdb3e414u56" path="res://level_manager.gd" id="1_2c62f"]
 [ext_resource type="PackedScene" uid="uid://7l3epf0oy8g0" path="res://menus/start_menu.tscn" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://d368p4knx57wt" path="res://globals/game_manager.gd" id="2_7ycvg"]
-[ext_resource type="Script" uid="uid://blkxugot78i1o" path="res://player_ui/health_ui.gd" id="3_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="3_gyfs4"]
 [ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="3_mo76n"]
 [ext_resource type="Resource" uid="uid://bnou6pjqcse6n" path="res://upgrades/resources/Player_Health_1.tres" id="4_42l1d"]
 [ext_resource type="Script" uid="uid://dms1ki4k2oy32" path="res://menus/settings_menu.gd" id="4_d5x1h"]
-[ext_resource type="Script" uid="uid://bhxuhe5c7010n" path="res://player_ui/enemy_ui.gd" id="4_hq1ik"]
 [ext_resource type="Resource" uid="uid://ctfjmbeickb5m" path="res://upgrades/resources/Bullet_Speed_1.tres" id="5_2jcla"]
-[ext_resource type="Script" uid="uid://dequulk8gc837" path="res://upgrades/upgrade_ui.gd" id="5_66tet"]
 [ext_resource type="Resource" uid="uid://dk4mtwgm8nmjw" path="res://upgrades/resources/Player_Speed_1.tres" id="6_m35m6"]
 [ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="7_u0ygc"]
 [ext_resource type="Script" uid="uid://ckm588bp6i5d2" path="res://hud.gd" id="8_2jcla"]
+[ext_resource type="PackedScene" uid="uid://chi3ep3cai88s" path="res://player_ui/health_ui.tscn" id="11_2jcla"]
+[ext_resource type="PackedScene" uid="uid://bi7ahm3cybjw3" path="res://player_ui/enemy_ui.tscn" id="12_2jcla"]
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="12_42l1d"]
+[ext_resource type="PackedScene" uid="uid://cscpho4jnlr7y" path="res://player_ui/upgrade_ui.tscn" id="13_2jcla"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -35,141 +35,11 @@ script = ExtResource("8_2jcla")
 [node name="seed_mngr" parent="hud" unique_id=364425271 instance=ExtResource("12_42l1d")]
 offset_top = 88.0
 
-[node name="health_ui" type="Control" parent="hud" unique_id=1437993052]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_8mm7a")
+[node name="health_ui" parent="hud" unique_id=1956581867 instance=ExtResource("11_2jcla")]
 
-[node name="bg" type="Panel" parent="hud/health_ui" unique_id=1808401499]
-layout_mode = 0
-offset_right = 300.0
-offset_bottom = 80.0
+[node name="enemy_ui" parent="hud" unique_id=1133864387 instance=ExtResource("12_2jcla")]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="hud/health_ui/bg" unique_id=1955311537]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 7.0
-offset_right = -10.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="player_bar" type="ProgressBar" parent="hud/health_ui/bg/VBoxContainer" unique_id=2119834226]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-value = 100.0
-show_percentage = false
-
-[node name="plant_bar" type="ProgressBar" parent="hud/health_ui/bg/VBoxContainer" unique_id=939606061]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-value = 100.0
-show_percentage = false
-
-[node name="enemy_ui" type="Control" parent="hud" unique_id=1846554976]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_hq1ik")
-
-[node name="bg" type="Panel" parent="hud/enemy_ui" unique_id=1468105670]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -300.0
-offset_bottom = 104.0
-grow_horizontal = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="hud/enemy_ui/bg" unique_id=1709301424]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.05
-anchor_right = 0.95
-anchor_bottom = 0.95
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="wave_counter" type="Label" parent="hud/enemy_ui/bg/VBoxContainer" unique_id=2128084308]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Wave: 3"
-
-[node name="enemy_counter" type="Label" parent="hud/enemy_ui/bg/VBoxContainer" unique_id=507818726]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Enemies left: 6/7"
-
-[node name="kills_needed" type="Label" parent="hud/enemy_ui/bg/VBoxContainer" unique_id=1989503183]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Enemy kills: 6/7"
-
-[node name="Label" type="Label" parent="hud/enemy_ui" unique_id=441271313]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "Next wave in"
-horizontal_alignment = 1
-
-[node name="wave_countdown" type="Label" parent="hud/enemy_ui" unique_id=1065310833]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 24.0
-offset_bottom = 91.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 48
-text = "0.0"
-horizontal_alignment = 1
-
-[node name="upgrade_ui" type="Control" parent="hud" unique_id=1651740873]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("5_66tet")
-
-[node name="Panel" type="Panel" parent="hud/upgrade_ui" unique_id=1616782325]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="btn_container" type="HBoxContainer" parent="hud/upgrade_ui/Panel" unique_id=1890687126]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.2
-anchor_right = 0.8
-anchor_bottom = 0.8
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+[node name="upgrade_ui" parent="hud" unique_id=447222242 instance=ExtResource("13_2jcla")]
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 
