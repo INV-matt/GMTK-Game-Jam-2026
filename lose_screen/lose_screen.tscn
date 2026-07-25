@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cynvhfbu8vrlt"]
 
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="1_2nexd"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbm84"]
+[ext_resource type="Shader" uid="uid://b5kkqthlfsu1x" path="res://lose_screen/lose_screen_blur.gdshader" id="2_gp1o1"]
+[ext_resource type="Script" uid="uid://drb5dr3ut25yb" path="res://lose_screen/lose_screen.gd" id="2_grjri"]
+[ext_resource type="Shader" uid="uid://8vs266vgbkrh" path="res://lose_screen/lose_screen_black.gdshader" id="4_y03jr"]
 
 [sub_resource type="Animation" id="Animation_gp1o1"]
 length = 0.001
@@ -30,6 +31,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(288, 160)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/strength")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:material:shader_parameter/strength")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_grjri"]
 resource_name = "you died"
@@ -41,7 +78,7 @@ tracks/0/path = NodePath("RichTextLabel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(1, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1, 1)]
@@ -53,10 +90,46 @@ tracks/1/path = NodePath("RichTextLabel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(1, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(576, 320), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/strength")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:material:shader_parameter/strength")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y03jr"]
@@ -65,7 +138,16 @@ _data = {
 &"you died": SubResource("Animation_grjri")
 }
 
-[node name="Control" type="Control" unique_id=1913292421]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbm84"]
+shader = ExtResource("2_gp1o1")
+shader_parameter/strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jd3ek"]
+shader = ExtResource("4_y03jr")
+shader_parameter/strength = 0.0
+
+[node name="lose_screen" type="Control" unique_id=1913292421]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,6 +155,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2nexd")
+script = ExtResource("2_grjri")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=264108553]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_y03jr")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=492886625]
 material = SubResource("ShaderMaterial_wbm84")
@@ -82,12 +169,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=264108553]
-libraries/ = SubResource("AnimationLibrary_y03jr")
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=296657032]
+material = SubResource("ShaderMaterial_jd3ek")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=923130848]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
