@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://rmg2fmg32306"]
+
+[ext_resource type="Script" uid="uid://its1mug5swt6" path="res://ping/ping.gd" id="1_26i78"]
+[ext_resource type="Shader" uid="uid://i5fdcfhdkl1o" path="res://ping/ping.gdshader" id="2_jhnxu"]
+[ext_resource type="Texture2D" uid="uid://bojbfio7dmec3" path="res://assets/sprites/Tree_Sap_Station-Sheet.png" id="3_dfjtp"]
+[ext_resource type="Texture2D" uid="uid://6wwwci3d02mv" path="res://icon.svg" id="3_ygesp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jd3ek"]
+shader = ExtResource("2_jhnxu")
+shader_parameter/ping_tex = ExtResource("3_dfjtp")
+shader_parameter/border_col = Vector3(1, 1, 1)
+shader_parameter/urgency = 1.0
+
+[node name="ping" type="VisibleOnScreenNotifier2D" unique_id=235871701]
+rect = Rect2(-24, -24, 48, 48)
+script = ExtResource("1_26i78")
+icon = ExtResource("3_dfjtp")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=620668249]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jd3ek")
+scale = Vector2(0.62499994, 0.62499994)
+texture = ExtResource("3_ygesp")
+
+[connection signal="screen_entered" from="." to="." method="_on_screen_entered"]
+[connection signal="screen_exited" from="." to="." method="_on_screen_exited"]
