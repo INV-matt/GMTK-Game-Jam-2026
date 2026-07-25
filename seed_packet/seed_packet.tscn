@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dewbp7q5g384u" path="res://seed_packet/seed_packet.gd" id="1_n4wk7"]
 [ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="2_7pdce"]
 [ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="2_nli1u"]
+[ext_resource type="PackedScene" uid="uid://rmg2fmg32306" path="res://ping/ping.tscn" id="4_nli1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbm84"]
 size = Vector2(64, 64)
@@ -24,5 +25,10 @@ shape = SubResource("RectangleShape2D_wbm84")
 unique_name_in_owner = true
 scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_wbm84")
+
+[node name="ping" parent="." unique_id=235871701 instance=ExtResource("4_nli1u")]
+unique_name_in_owner = true
+border_color = Color(0, 1, 0, 1)
+show_onscreen = false
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

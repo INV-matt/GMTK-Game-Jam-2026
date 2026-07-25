@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bwbuwmt7em805"]
+
+[ext_resource type="Script" uid="uid://dyqex438hqni3" path="res://reward_mngr/reward_display.gd" id="1_qerko"]
+[ext_resource type="Resource" uid="uid://dd6iriixdnoad" path="res://reward_mngr/rewards/seed_reward_sunflower.tres" id="2_u6gwo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tca2f"]
+load_path = "res://.godot/imported/Lone_Pot-Sheet.png-0d8bf2bf06a13668e900c9aad0ae4606.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4flhg"]
+atlas = SubResource("CompressedTexture2D_tca2f")
+region = Rect2(0, 0, 745, 306)
+
+[node name="reward_display" type="ColorRect" unique_id=1395118908]
+custom_minimum_size = Vector2(275.052, 436.786)
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.5)
+script = ExtResource("1_qerko")
+reward = ExtResource("2_u6gwo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1230783403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=636998834]
+layout_mode = 2
+
+[node name="reward_name" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=49661474]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Reward name"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1343209387]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="reward_icon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=413523341]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(257, -1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_4flhg")
+expand_mode = 5
+
+[node name="spacer2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1644116217]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="reward_description" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=2069544498]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reward desription"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="spacer3" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1968673995]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="." unique_id=955515744]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

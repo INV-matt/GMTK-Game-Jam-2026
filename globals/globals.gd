@@ -1,6 +1,5 @@
 extends Node
 
-@export var PLAYER: Player
 var PLAYER_DAMAGE_MULTIPLIER: float = 1
 var PLAYER_SPEED_MULTIPLIER: float = 1
 var PLAYER_HEALTH_MULTIPLIER: float = 1

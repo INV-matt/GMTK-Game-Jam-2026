@@ -1,0 +1,19 @@
+[gd_resource type="Resource" format=3 uid="uid://du72jhtw2ill5"]
+
+[ext_resource type="Resource" uid="uid://bib634uxafbov" path="res://plants/chili_pepper/chili_pepper.tres" id="1_0085m"]
+[ext_resource type="Script" uid="uid://d20wifmcnfqaq" path="res://reward_mngr/rewards/seed_packet_reward.gd" id="3_md76j"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7vkr"]
+load_path = "res://.godot/imported/Seed_Packets-Sheet2.png-8f442c08dab8163b1caca83d3b4d20fa.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5am2b"]
+atlas = SubResource("CompressedTexture2D_y7vkr")
+region = Rect2(0, 0, 188, 159)
+
+[resource]
+script = ExtResource("3_md76j")
+plant = ExtResource("1_0085m")
+icon = SubResource("AtlasTexture_5am2b")
+name = "Seed Packet (Chili Pepper)"
+description = "Spawn a chili pepper seed packet randomly on the map"
+metadata/_custom_type_script = "uid://yygn3t6o678j"

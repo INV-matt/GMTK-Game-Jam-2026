@@ -13,11 +13,11 @@ func planted(pot: Pot) -> void:
   fire_ring.stage = 0
   pot.add_child(fire_ring)
 
-func grown(pot: Pot, stage: int) -> void:
+func grown(_pot: Pot, stage: int) -> void:
   if !fire_ring: return
   fire_ring.stage = stage
 
-func unplanted(pot: Pot) -> void:
+func unplanted(_pot: Pot) -> void:
   if !fire_ring: return
 
   fire_ring.queue_free()

@@ -13,9 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://chi3ep3cai88s" path="res://player_ui/health_ui.tscn" id="11_2jcla"]
 [ext_resource type="PackedScene" uid="uid://bi7ahm3cybjw3" path="res://player_ui/enemy_ui.tscn" id="12_2jcla"]
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="12_42l1d"]
+
 [ext_resource type="PackedScene" uid="uid://cscpho4jnlr7y" path="res://player_ui/upgrade_ui.tscn" id="13_2jcla"]
-[ext_resource type="PackedScene" uid="uid://dh0xnfu4byre5" path="res://player_ui/debug_ui.tscn" id="14_m35m6"]
 [ext_resource type="PackedScene" uid="uid://d7656423bbia" path="res://menus/settings_menu.tscn" id="15_2jcla"]
+
+[ext_resource type="PackedScene" uid="uid://ddpt813aplg1v" path="res://reward_mngr/reward_mngr.tscn" id="14_m35m6"]
+[ext_resource type="PackedScene" uid="uid://cynvhfbu8vrlt" path="res://lose_screen/lose_screen.tscn" id="15_u0ygc"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -42,13 +45,9 @@ offset_top = 88.0
 
 [node name="upgrade_ui" parent="hud" unique_id=447222242 instance=ExtResource("13_2jcla")]
 
-[node name="debug_ui" parent="hud" unique_id=1535893346 instance=ExtResource("14_m35m6")]
-process_mode = 3
-visible = false
-offset_left = 1018.0
-offset_top = 103.0
-offset_right = 1144.0
-offset_bottom = 126.0
+[node name="reward_mngr" parent="hud" unique_id=1094337275 instance=ExtResource("14_m35m6")]
+
+[node name="lose_screen" parent="hud" unique_id=1913292421 instance=ExtResource("15_u0ygc")]
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 process_mode = 3
