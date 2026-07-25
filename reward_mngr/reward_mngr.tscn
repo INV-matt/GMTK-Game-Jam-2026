@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ddpt813aplg1v"]
+
+[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="1_jodpp"]
+[ext_resource type="Script" uid="uid://dp1ciui4fa3ha" path="res://reward_mngr/reward_mngr.gd" id="1_m0obp"]
+[ext_resource type="Script" uid="uid://yygn3t6o678j" path="res://reward_mngr/reward.gd" id="3_gyffc"]
+[ext_resource type="Resource" uid="uid://dd6iriixdnoad" path="res://reward_mngr/rewards/seed_reward_sunflower.tres" id="4_lj3c2"]
+[ext_resource type="Resource" uid="uid://c2jyoasd5oy36" path="res://reward_mngr/rewards/pot_reward.tres" id="5_pnlkj"]
+
+[node name="reward_mngr" type="Control" unique_id=1094337275]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_jodpp")
+script = ExtResource("1_m0obp")
+possible_rewards = Array[ExtResource("3_gyffc")]([ExtResource("4_lj3c2"), ExtResource("5_pnlkj")])
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=712789831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="rewards" type="HBoxContainer" parent="MarginContainer" unique_id=1498892092]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="reward_num" type="RichTextLabel" parent="MarginContainer" unique_id=1831720584]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Rewards left: 1"

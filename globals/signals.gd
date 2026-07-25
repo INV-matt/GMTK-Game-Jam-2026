@@ -26,5 +26,6 @@ signal killed_enough_enemies()
 ## Rewards signals
 signal rewards_opened()
 signal rewards_closed()
+signal reward_selected(reward: Reward)
 
 @warning_ignore_restore("unused_signal")
