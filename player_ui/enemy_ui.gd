@@ -1,8 +1,9 @@
 extends Control
 
-@onready var txt_waves: Label = %wave_counter
-@onready var txt_enemy: Label = %enemy_counter
-@onready var txt_kills: Label = %kills_needed
+@onready var wave_num: CustomNum = %wave_num
+@onready var enemy_num: CustomNum = %enemy_num
+@onready var kill_num: CustomNum = %kill_num
+
 @onready var wave_countdown: Label = %wave_countdown
 @onready var wave_label: Label = %wave_label
 
@@ -33,10 +34,10 @@ func update_timer(time: float) -> void:
   wave_countdown.text = "%.1f" % time
 
 func update_waves(wave: int, max_waves: int) -> void:
-  txt_waves.text = str(max_waves - wave)
+  wave_num.number = max_waves - wave
 
 func update_enemy(left: int, _tot: int) -> void:
-  txt_enemy.text = str(left)
+  enemy_num.number = left
 
 func update_kills(got: int, needed: int):
-  txt_kills.text = str(needed - got)
+  kill_num.number = needed - got

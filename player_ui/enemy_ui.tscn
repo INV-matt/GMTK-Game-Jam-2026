@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bhxuhe5c7010n" path="res://player_ui/enemy_ui.gd" id="1_hilve"]
 [ext_resource type="Texture2D" uid="uid://cvwas3oxqytnu" path="res://assets/sprites/UI_hud-Sheet.png" id="2_j1ui6"]
 [ext_resource type="Texture2D" uid="uid://k73xhdyu8w3e" path="res://assets/sprites/Wave_Counter-Sheet-1.png" id="3_bh808"]
+[ext_resource type="PackedScene" uid="uid://b71khpxy8nflg" path="res://custom_num/custom_num.tscn" id="4_gsrpv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1ui6"]
 atlas = ExtResource("2_j1ui6")
@@ -63,10 +64,11 @@ offset_transform_position = Vector2(51, 0)
 texture = SubResource("AtlasTexture_wbm84")
 stretch_mode = 4
 
-[node name="wave_counter" type="Label" parent="bg/HBoxContainer" unique_id=2031771148]
+[node name="wave_num" parent="bg/HBoxContainer" unique_id=1922221853 instance=ExtResource("4_gsrpv")]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-text = "3"
+color = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="bg" unique_id=1003123120]
 layout_mode = 0
@@ -83,10 +85,10 @@ offset_transform_position = Vector2(16, 0)
 texture = SubResource("AtlasTexture_tfrds")
 stretch_mode = 4
 
-[node name="enemy_counter" type="Label" parent="bg/HBoxContainer2" unique_id=1275493679]
+[node name="enemy_num" parent="bg/HBoxContainer2" unique_id=1263527703 instance=ExtResource("4_gsrpv")]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-text = "6/7"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="bg" unique_id=88856865]
 layout_mode = 0
@@ -103,10 +105,11 @@ offset_transform_position = Vector2(18, 0)
 texture = SubResource("AtlasTexture_xg1ay")
 stretch_mode = 4
 
-[node name="kills_needed" type="Label" parent="bg/HBoxContainer3" unique_id=587570330]
+[node name="kill_num" parent="bg/HBoxContainer3" unique_id=874471407 instance=ExtResource("4_gsrpv")]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-text = "6/7"
+color = 2
 
 [node name="wave_label" type="Label" parent="." unique_id=972376079]
 unique_name_in_owner = true

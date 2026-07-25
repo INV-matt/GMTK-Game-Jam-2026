@@ -1,6 +1,6 @@
 [gd_resource type="Resource" format=3 uid="uid://ct17xgiemgqd2"]
 
-[ext_resource type="Texture2D" uid="uid://cdfe2b5r8syff" path="res://assets/sprites/SKull-Sheet.png" id="1_5efj4"]
+[ext_resource type="Texture2D" uid="uid://ce6vatb73mvox" path="res://assets/sprites/Punch_Abilty_UI_icon.png" id="1_5efj4"]
 [ext_resource type="Script" uid="uid://dmbtej21hcr61" path="res://abilities/punch/punch.gd" id="1_yphw0"]
 
 [resource]

@@ -1,5 +1,7 @@
 extends Control
 
+const CUSTOM_NUM = preload("uid://b71khpxy8nflg")
+
 @onready var anim: AnimationPlayer = %anim
 @onready var stat_holder: VBoxContainer = %stat_holder
 @onready var success_label: RichTextLabel = %success_label
@@ -44,14 +46,24 @@ func add_stat(stat_name: String):
   
   h.add_child(icon)
   
-  var r: RichTextLabel = RichTextLabel.new()
-  r.fit_content = true
-  r.text = "%s" % ScoreMngr[stat_name.replace(" ", "_")]
-  r.size_flags_vertical = Control.SIZE_EXPAND_FILL
-  r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-  r.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+  var num: CustomNum = CUSTOM_NUM.instantiate()
+  num.number = ScoreMngr[stat_name.replace(" ", "_")]
+  num.offset_transform_enabled = true
+  num.offset_transform_position.y = 12
+  num.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+  if stat_name == "total score":
+    num.color = CustomNum.Colors.Blue
   
-  h.add_child(r)
+  h.add_child(num)
+  
+  #var r: RichTextLabel = RichTextLabel.new()
+  #r.fit_content = true
+  #r.text = "%s" % ScoreMngr[stat_name.replace(" ", "_")]
+  #r.size_flags_vertical = Control.SIZE_EXPAND_FILL
+  #r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+  #r.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+  #
+  #h.add_child(r)
 
   stat_holder.add_child(h)
 

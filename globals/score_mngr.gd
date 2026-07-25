@@ -9,12 +9,15 @@ var waves_survived: int = 0
 
 var total_score: int = 0:
   get():
-    return  enemies_killed * 20 + \
-            damage_dealt * 5 + \
-            damage_recieved * -10 + \
-            rewards_taken * -5 + \
-            upgrades_taken * -1 + \
-            waves_survived * 20
+    return max(
+      enemies_killed * 20 + \
+      damage_dealt * 5 + \
+      damage_recieved * -10 + \
+      rewards_taken * -5 + \
+      upgrades_taken * -1 + \
+      waves_survived * 20,
+      0
+    )
 
 func _ready() -> void:
   process_mode = Node.PROCESS_MODE_ALWAYS
