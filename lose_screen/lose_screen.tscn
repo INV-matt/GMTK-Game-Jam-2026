@@ -10,26 +10,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:scale")
+tracks/0/path = NodePath("VBoxContainer/content/RichTextLabel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/path = NodePath("VBoxContainer/content/RichTextLabel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(288, 160)]
+"values": [Vector2(864, 156)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -46,7 +46,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RichTextLabel:visible")
+tracks/3/path = NodePath("VBoxContainer/content/RichTextLabel:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -58,7 +58,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ColorRect2:material:shader_parameter/strength")
+tracks/4/path = NodePath("VBoxContainer/content/ColorRect2:material:shader_parameter/strength")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -70,14 +70,38 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ColorRect2:position")
+tracks/5/path = NodePath("VBoxContainer/spacer1:size_flags_stretch_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer/spacer2:size_flags_stretch_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VBoxContainer/content/MarginContainer:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_grjri"]
@@ -86,26 +110,26 @@ length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:scale")
+tracks/0/path = NodePath("VBoxContainer/content/RichTextLabel:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/path = NodePath("VBoxContainer/content/RichTextLabel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 3, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(576, 320), Vector2(0, 0), Vector2(0, 0), Vector2(0, -280)]
+"values": [Vector2(864, 156), Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -122,7 +146,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RichTextLabel:visible")
+tracks/3/path = NodePath("VBoxContainer/content/RichTextLabel:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -134,7 +158,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("ColorRect2:material:shader_parameter/strength")
+tracks/4/path = NodePath("VBoxContainer/content/ColorRect2:material:shader_parameter/strength")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -146,14 +170,52 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("ColorRect2:position")
+tracks/5/path = NodePath("VBoxContainer/spacer1:size_flags_stretch_ratio")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(-0.03333336, 5, 6),
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer/spacer2:size_flags_stretch_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 2.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VBoxContainer/content/MarginContainer:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -336)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"display_stats"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y03jr"]
@@ -169,6 +231,13 @@ shader_parameter/strength = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jd3ek"]
 shader = ExtResource("4_y03jr")
 shader_parameter/strength = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbm84"]
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="lose_screen" type="Control" unique_id=1913292421]
 process_mode = 3
@@ -194,7 +263,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=296657032]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1455807547]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="spacer1" type="Control" parent="VBoxContainer" unique_id=1928343138]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="content" type="Control" parent="VBoxContainer" unique_id=560713596]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/content" unique_id=296657032]
 material = SubResource("ShaderMaterial_jd3ek")
 layout_mode = 1
 anchors_preset = 15
@@ -203,18 +288,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=923130848]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/content" unique_id=923130848]
 visible = false
+custom_minimum_size = Vector2(1152, 210)
+custom_maximum_size = Vector2(1152, 210)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 288.0
-offset_top = 160.0
-offset_right = 288.0
-offset_bottom = 160.0
+offset_left = 864.0
+offset_top = 156.0
+offset_right = 864.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 64
 text = "THE GARDEN WAS DESTROYED"
@@ -222,21 +310,32 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1714484913]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/content" unique_id=1714484913]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 136.0
+offset_top = 192.0
+offset_bottom = 430.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=777265072]
+[node name="ColorRect" type="Panel" parent="VBoxContainer/content/MarginContainer" unique_id=61344502]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wbm84")
+
+[node name="stat_holder" type="VBoxContainer" parent="VBoxContainer/content/MarginContainer" unique_id=777265072]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=468010700]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/content/MarginContainer/stat_holder" unique_id=468010700]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 24
 text = "Post-game stats"
 fit_content = true
 horizontal_alignment = 1
+
+[node name="spacer2" type="Control" parent="VBoxContainer" unique_id=1574815973]
+layout_mode = 2
+size_flags_vertical = 3

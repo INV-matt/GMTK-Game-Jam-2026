@@ -30,5 +30,7 @@ signal reward_selected(reward: Reward)
 
 ## Misc signals
 signal all_plants_died
+signal damage_dealt(amt: int)
+signal damage_recieved(amt: int)
 
 @warning_ignore_restore("unused_signal")

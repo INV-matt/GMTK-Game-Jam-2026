@@ -31,4 +31,7 @@ func deal_dmg(to_what: Hurtbox) -> void:
   var final_damage = damage
   if team == Teams.Player: final_damage *= Globals.PLAYER_DAMAGE_MULTIPLIER
   
+  if team == Teams.Player: Signals.damage_dealt.emit(final_damage)
+  elif team == Teams.Enemy: Signals.damage_recieved.emit(final_damage)
+  
   hp_comp.damage(final_damage)

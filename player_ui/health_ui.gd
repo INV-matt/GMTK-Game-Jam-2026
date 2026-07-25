@@ -35,7 +35,6 @@ func update_plant_bar() -> void:
     if hp_comp:
       total += hp_comp.max_hp
       curr += hp_comp.hp
-      print("%s / %s" % [curr, total])
   bar_plant.value = clamp(curr, 0, total)
   bar_plant.max_value = total
   
