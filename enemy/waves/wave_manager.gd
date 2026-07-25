@@ -97,7 +97,6 @@ func on_enemy_died() -> void:
   if enemy_alive == 0:
     while waves_spawned > 0:
       Signals.ended_wave.emit()
-      print(waves_spawned)
       waves_spawned -= 1
       
       await Signals.upgrade_ui_closed
