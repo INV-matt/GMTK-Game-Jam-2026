@@ -21,6 +21,3 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_jd3ek")
 scale = Vector2(0.62499994, 0.62499994)
 texture = ExtResource("3_ygesp")
-
-[connection signal="screen_entered" from="." to="." method="_on_screen_entered"]
-[connection signal="screen_exited" from="." to="." method="_on_screen_exited"]

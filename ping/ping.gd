@@ -1,3 +1,5 @@
+@tool
+
 extends VisibleOnScreenNotifier2D
 class_name Ping
 
@@ -13,9 +15,9 @@ const PADDING: float = 50.0
 @export var show_onscreen: bool = true
 @export var onscreen_offset: Vector2
 
-var on_screen: bool = true
-
 func _ready() -> void:
+  if !Engine.is_editor_hint(): visible = true
+  
   sprite.material = sprite.material.duplicate()
   (sprite.material as ShaderMaterial).set_shader_parameter("ping_tex", icon)
   (sprite.material as ShaderMaterial).set_shader_parameter("border_col", border_color)
@@ -50,7 +52,13 @@ func lineLine(x1: float, y1: float, x2: float, y2: float, x3: float, y3: float, 
   return Vector2(PI, PI)
 
 func _process(_delta: float) -> void:
-  if !on_screen:
+  if Engine.is_editor_hint():
+    (sprite.material as ShaderMaterial).set_shader_parameter("ping_tex", icon)
+    (sprite.material as ShaderMaterial).set_shader_parameter("border_col", border_color)
+    (sprite.material as ShaderMaterial).set_shader_parameter("urgency", urgency)
+    return
+  
+  if !is_on_screen():
     sprite.visible = true
     
     var maincam: Camera2D = get_viewport().get_camera_2d()
@@ -73,11 +81,3 @@ func _process(_delta: float) -> void:
   else:
     sprite.visible = show_onscreen
     sprite.position = onscreen_offset
-
-func _on_screen_entered() -> void:
-  print("on screen!")
-  on_screen = true
-
-func _on_screen_exited() -> void:
-  print("off screen!")
-  on_screen = false

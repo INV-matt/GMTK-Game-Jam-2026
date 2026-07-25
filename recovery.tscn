@@ -3,12 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="1_h4ksw"]
 [ext_resource type="PackedScene" uid="uid://dfvqnd5to5toi" path="res://enemy/waves/wave_manager.tscn" id="1_p7xvm"]
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="3_x6o6c"]
-[ext_resource type="PackedScene" uid="uid://rmg2fmg32306" path="res://ping/ping.tscn" id="6_4dne6"]
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="6_8u4lp"]
-[ext_resource type="Texture2D" uid="uid://6wwwci3d02mv" path="res://icon.svg" id="7_0b73r"]
 [ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="7_8u4lp"]
 
 [node name="recovery" type="Node2D" unique_id=220602187]
+y_sort_enabled = true
 
 [node name="WaveManager" parent="." unique_id=158709167 instance=ExtResource("1_p7xvm")]
 
@@ -27,12 +26,3 @@ position_smoothing_enabled = true
 [node name="seed_packet" parent="." unique_id=426246522 instance=ExtResource("6_8u4lp")]
 position = Vector2(104, 200)
 plant = ExtResource("7_8u4lp")
-
-[node name="ping" parent="." unique_id=235871701 instance=ExtResource("6_4dne6")]
-position = Vector2(-88, 240)
-onscreen_offset = Vector2(0, 48)
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1267439917]
-position = Vector2(-88, 240)
-scale = Vector2(0.625, 0.625)
-texture = ExtResource("7_0b73r")

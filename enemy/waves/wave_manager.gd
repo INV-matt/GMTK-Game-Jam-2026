@@ -111,7 +111,6 @@ func on_enemy_spawned() -> void:
 
 func on_enemy_died() -> void:
   enemy_alive = max(enemy_alive - 1, 0)
-  Globals.enemy_killed += 1
 
   enemies_killed += 1
   print(enemies_killed)

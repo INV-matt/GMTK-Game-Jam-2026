@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="3_pmsee"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="4_p200p"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://d3njw231n6btx" path="res://enemy/walk_blend_space.tres" id="5_pmsee"]
+[ext_resource type="PackedScene" uid="uid://rmg2fmg32306" path="res://ping/ping.tscn" id="6_1wwld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ffra"]
 radius = 29.0
@@ -628,6 +629,12 @@ parameters/Walk/blend_position = Vector2(0.022146463, -0.24324322)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1814641663]
 libraries/ = SubResource("AnimationLibrary_qvnj8")
+
+[node name="ping" parent="." unique_id=235871701 instance=ExtResource("6_1wwld")]
+visible = false
+border_color = Color(1, 0, 0, 1)
+urgency = 3.0
+show_onscreen = false
 
 [connection signal="body_entered" from="TargetPlayerZone" to="." method="on_player_entered"]
 [connection signal="body_exited" from="TargetPlayerZone" to="." method="on_player_exited"]
