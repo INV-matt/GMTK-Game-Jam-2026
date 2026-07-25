@@ -1,51 +1,71 @@
 extends Control
 
+const CUSTOM_NUM = preload("uid://b71khpxy8nflg")
+
 @onready var anim: AnimationPlayer = %anim
 @onready var stat_holder: VBoxContainer = %stat_holder
+@onready var success_label: RichTextLabel = %success_label
 
-var enemies_killed: int = 0
-var damage_dealt: int = 0
-var damage_recieved: int = 0
-var rewards_taken: int = 0
-var upgrades_taken: int = 0
-var waves_survived: int = 0
-
-var total_score: int = 0:
-  get():
-    return  enemies_killed * 20 + \
-            damage_dealt * 5 + \
-            damage_recieved * -10 + \
-            rewards_taken * -5 + \
-            upgrades_taken * -1 + \
-            waves_survived * 20
+@export var stat_icons: Dictionary[String, Texture2D] = {}
 
 func _ready() -> void:
   visible = false
   anim.play("RESET")
   
   Signals.all_plants_died.connect(show_lose_screen)
-  
-  Signals.enemy_died.connect(func(): enemies_killed += 1)
-  Signals.damage_dealt.connect(func(amt: int): damage_dealt += amt)
-  Signals.damage_recieved.connect(func(amt: int): damage_recieved += amt)
-  Signals.reward_selected.connect(func(_x: Reward): rewards_taken += 1)
-  Signals.killed_enough_enemies.connect(func(): upgrades_taken += 1)
-  Signals.started_wave.connect(func(num: int): waves_survived = num - 1)
+  Signals.all_waves_finished.connect(show_win_screen)
 
 func show_lose_screen():
   Qol.pause_game()
   visible = true
   anim.play("you died")
+  success_label.text = "THE GARDEN WAS DESTROYED"
+  success_label.add_theme_color_override("default_color", Color.RED)
 
+func show_win_screen():
+  Qol.pause_game()
+  visible = true
+  anim.play("you died")
+  success_label.text = "THE ENEMIES ARE GONE"
+  success_label.add_theme_color_override("default_color", Color.GREEN)
+  
 func add_stat(stat_name: String):
-  var r: RichTextLabel = RichTextLabel.new()
-  r.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-  r.fit_content = true
-  r.text = "%s: %s" % [stat_name.capitalize(), self[stat_name.replace(" ", "_")]]
-  r.size_flags_vertical = Control.SIZE_EXPAND_FILL
-  r.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+  var h: HBoxContainer = HBoxContainer.new()
+  
+  h.size_flags_vertical = Control.SIZE_EXPAND_FILL
+  
+  var icon: TextureRect = TextureRect.new()
+  icon.texture = stat_icons[stat_name]
+  icon.offset_transform_enabled = true
+  icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+  icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+  icon.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+  icon.offset_transform_enabled = true
+  icon.offset_transform_position.x = -icon.texture.get_width()
+  icon.offset_transform_position_ratio.x = 1.0
+  
+  h.add_child(icon)
+  
+  var num: CustomNum = CUSTOM_NUM.instantiate()
+  num.number = ScoreMngr[stat_name.replace(" ", "_")]
+  num.offset_transform_enabled = true
+  num.offset_transform_position.y = 12
+  num.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+  if stat_name == "total score":
+    num.color = CustomNum.Colors.Blue
+  
+  h.add_child(num)
+  
+  #var r: RichTextLabel = RichTextLabel.new()
+  #r.fit_content = true
+  #r.text = "%s" % ScoreMngr[stat_name.replace(" ", "_")]
+  #r.size_flags_vertical = Control.SIZE_EXPAND_FILL
+  #r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+  #r.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+  #
+  #h.add_child(r)
 
-  stat_holder.add_child(r)
+  stat_holder.add_child(h)
 
 func display_stats():
   add_stat("enemies killed")

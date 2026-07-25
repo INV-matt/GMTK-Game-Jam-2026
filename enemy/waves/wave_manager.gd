@@ -8,7 +8,7 @@ var current_wave: int = 0:
   set(value):
     budget = calculate_budget(value)
     current_wave = value
-    Signals.started_wave.emit(value)
+    Signals.started_wave.emit(value, max_waves)
 
 
 @export var enemy_types: Dictionary[PackedScene, int]
@@ -19,11 +19,13 @@ var current_wave: int = 0:
 @export_range(1, 20, 1, "or_greater") var WAVES_BETWEEN_HEALTH_INCREASE: int = 10
 
 var elapsed_time: float
+var max_waves: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
   current_wave = 0
   elapsed_time = TIME_BETWEEN_ENEMIES
+  max_waves = int(20 * Globals.difficulty_mult)
   Signals.enemy_died.connect(on_enemy_died)
   Signals.kills_update.emit(enemies_killed, kills_needed)
 
@@ -33,7 +35,7 @@ var spawned_this_wave: int = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-  if wave_has_spawned:
+  if wave_has_spawned and !waves_finished:
     next_wave_in -= delta
     Signals.wave_timer_update.emit(next_wave_in)
     if next_wave_in <= 0:
@@ -52,6 +54,8 @@ func _process(delta: float) -> void:
   if enemy_alive > 0:
     MusicMngr.play_track("battle")
   else:
+    if waves_finished and wave_has_spawned:
+      Signals.all_waves_finished.emit()
     MusicMngr.play_track("chill")
 
 func spawn_enemy() -> void:
@@ -88,14 +92,20 @@ func spawn_enemy() -> void:
 func calculate_budget(value: int) -> int:
   return int(value * (value + 1) * Globals.difficulty_mult)
 
+var waves_finished: bool = false
+
 func next_wave() -> void:
   Signals.wave_timer_update.emit(0.0)
   waves_spawned += 1
   current_wave += 1
   wave_has_spawned = false
   spawned_this_wave = 0
-  Signals.started_wave.emit(current_wave)
-
+  Signals.started_wave.emit(current_wave, max_waves)
+  
+  if current_wave >= max_waves:
+    print("last wave")
+    Signals.last_wave.emit()
+    waves_finished = true
 
 var enemy_alive: int = 0
 var enemy_total_wave: int = 0
@@ -124,7 +134,7 @@ func on_enemy_died() -> void:
   
   Signals.kills_update.emit(enemies_killed, kills_needed)
 
-  if enemy_alive == 0:
+  if enemy_alive == 0 and !waves_finished:
     while upgrades_to_give > 0:
       Signals.killed_enough_enemies.emit()
       upgrades_to_give -= 1

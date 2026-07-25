@@ -25,7 +25,7 @@ func _ready() -> void:
     var t: Timer = Timer.new()
     t.autostart = true
     t.wait_time = lifetime
-    t.timeout.connect(expired.emit)
+    t.timeout.connect(expire)
     add_child(t)
   
   if !Engine.is_editor_hint() and iframe_group == "":
@@ -50,6 +50,7 @@ func expire():
   if shape:
     shape.set_deferred("disabled", true)
   expired.emit()
+  queue_free()
 
 func _process(_delta: float) -> void:
   collision_mask = team

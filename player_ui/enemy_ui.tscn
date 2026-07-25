@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bhxuhe5c7010n" path="res://player_ui/enemy_ui.gd" id="1_hilve"]
 [ext_resource type="Texture2D" uid="uid://cvwas3oxqytnu" path="res://assets/sprites/UI_hud-Sheet.png" id="2_j1ui6"]
+[ext_resource type="Texture2D" uid="uid://k73xhdyu8w3e" path="res://assets/sprites/Wave_Counter-Sheet-1.png" id="3_bh808"]
+[ext_resource type="PackedScene" uid="uid://b71khpxy8nflg" path="res://custom_num/custom_num.tscn" id="4_gsrpv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1ui6"]
 atlas = ExtResource("2_j1ui6")
@@ -9,6 +11,24 @@ region = Rect2(3258.5635, 0, 2933.4365, 855)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hilve"]
 texture = SubResource("AtlasTexture_j1ui6")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm84"]
+atlas = ExtResource("3_bh808")
+region = Rect2(0, 0, 131, 36)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gsrpv"]
+load_path = "res://.godot/imported/Wave_Counter-Sheet-1.png-c38675aab6cda6a7f0f0070cb930cb67.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfrds"]
+atlas = SubResource("CompressedTexture2D_gsrpv")
+region = Rect2(207, 12, 183, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4n05"]
+load_path = "res://.godot/imported/Wave_Counter-Sheet-1.png-c38675aab6cda6a7f0f0070cb930cb67.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg1ay"]
+atlas = SubResource("CompressedTexture2D_s4n05")
+region = Rect2(0, 48, 207, 24)
 
 [node name="enemy_ui" type="Control" unique_id=1133864387]
 layout_mode = 3
@@ -36,15 +56,19 @@ offset_top = 13.200001
 offset_right = 271.0
 offset_bottom = 36.2
 
-[node name="wave_label" type="Label" parent="bg/HBoxContainer" unique_id=79630301]
+[node name="TextureRect" type="TextureRect" parent="bg/HBoxContainer" unique_id=1086801211]
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Wave"
+offset_transform_enabled = true
+offset_transform_position = Vector2(51, 0)
+texture = SubResource("AtlasTexture_wbm84")
+stretch_mode = 4
 
-[node name="wave_counter" type="Label" parent="bg/HBoxContainer" unique_id=2031771148]
+[node name="wave_num" parent="bg/HBoxContainer" unique_id=1922221853 instance=ExtResource("4_gsrpv")]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-text = "3"
+color = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="bg" unique_id=1003123120]
 layout_mode = 0
@@ -53,15 +77,18 @@ offset_top = 40.2
 offset_right = 271.0
 offset_bottom = 63.2
 
-[node name="enemy_label" type="Label" parent="bg/HBoxContainer2" unique_id=1234264120]
+[node name="TextureRect" type="TextureRect" parent="bg/HBoxContainer2" unique_id=1579814669]
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Enemies left"
+offset_transform_enabled = true
+offset_transform_position = Vector2(16, 0)
+texture = SubResource("AtlasTexture_tfrds")
+stretch_mode = 4
 
-[node name="enemy_counter" type="Label" parent="bg/HBoxContainer2" unique_id=1275493679]
+[node name="enemy_num" parent="bg/HBoxContainer2" unique_id=1263527703 instance=ExtResource("4_gsrpv")]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-text = "6/7"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="bg" unique_id=88856865]
 layout_mode = 0
@@ -70,17 +97,22 @@ offset_top = 67.2
 offset_right = 271.0
 offset_bottom = 90.2
 
-[node name="kills_label" type="Label" parent="bg/HBoxContainer3" unique_id=1177614220]
+[node name="TextureRect" type="TextureRect" parent="bg/HBoxContainer3" unique_id=413281571]
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Enemy kills"
+offset_transform_enabled = true
+offset_transform_position = Vector2(18, 0)
+texture = SubResource("AtlasTexture_xg1ay")
+stretch_mode = 4
 
-[node name="kills_needed" type="Label" parent="bg/HBoxContainer3" unique_id=587570330]
+[node name="kill_num" parent="bg/HBoxContainer3" unique_id=874471407 instance=ExtResource("4_gsrpv")]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(-1, 22)
 layout_mode = 2
-text = "6/7"
+color = 2
 
-[node name="Label" type="Label" parent="." unique_id=972376079]
+[node name="wave_label" type="Label" parent="." unique_id=972376079]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

@@ -11,6 +11,7 @@ load_path = "res://.godot/imported/Tomato_Abilty_UI_icon.png-a46dd29695792a7b36f
 script = ExtResource("1_04jax")
 ability_name = "Tomato Toss"
 icon = SubResource("CompressedTexture2D_c5yha")
+is_offensive = true
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvume"]
 load_path = "res://.godot/imported/Tomato-Sheet.png-3299a281e15dd9a6caa3cc5d32db6c6f.ctex"

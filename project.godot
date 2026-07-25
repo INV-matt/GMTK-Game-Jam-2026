@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GMTK Recovery"
+config/name="GardenFence"
 run/main_scene="uid://ty0tblji2he1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
@@ -25,6 +25,7 @@ Qol="*uid://bish2xdvkgvur"
 Signals="*uid://doy3dc6tgqq0u"
 Globals="*uid://b8qd2unv6rnrq"
 MusicMngr="*uid://5jjursi1msjj"
+ScoreMngr="*uid://bycdil4tv2b66"
 
 [display]
 

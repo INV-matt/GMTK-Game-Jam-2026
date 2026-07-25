@@ -3,14 +3,61 @@
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="1_2nexd"]
 [ext_resource type="Shader" uid="uid://b5kkqthlfsu1x" path="res://lose_screen/lose_screen_blur.gdshader" id="2_gp1o1"]
 [ext_resource type="Script" uid="uid://drb5dr3ut25yb" path="res://lose_screen/lose_screen.gd" id="2_grjri"]
+[ext_resource type="Texture2D" uid="uid://me2sfpseld8l" path="res://assets/sprites/End_Game_Stats_Textures-Sheet.png" id="3_5qfmt"]
 [ext_resource type="Shader" uid="uid://8vs266vgbkrh" path="res://lose_screen/lose_screen_black.gdshader" id="4_y03jr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukekk"]
+load_path = "res://.godot/imported/End_Game_Stats_Textures-Sheet.png-9ca2bc0b9d0084cb20837fea1b4405b5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk8mj"]
+atlas = SubResource("CompressedTexture2D_ukekk")
+region = Rect2(328, 4, 226, 55)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ffq35"]
+load_path = "res://.godot/imported/End_Game_Stats_Textures-Sheet.png-9ca2bc0b9d0084cb20837fea1b4405b5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biqjc"]
+atlas = SubResource("CompressedTexture2D_ffq35")
+region = Rect2(554, 6, 277, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qfmt"]
+atlas = ExtResource("3_5qfmt")
+region = Rect2(20, 8, 257, 48)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pnpm7"]
+load_path = "res://.godot/imported/End_Game_Stats_Textures-Sheet.png-9ca2bc0b9d0084cb20837fea1b4405b5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njyg8"]
+atlas = SubResource("CompressedTexture2D_pnpm7")
+region = Rect2(21, 69, 256, 52)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1j8yl"]
+load_path = "res://.godot/imported/End_Game_Stats_Textures-Sheet.png-9ca2bc0b9d0084cb20837fea1b4405b5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo6pq"]
+atlas = SubResource("CompressedTexture2D_1j8yl")
+region = Rect2(36, 131, 241, 55)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sdpvf"]
+load_path = "res://.godot/imported/End_Game_Stats_Textures-Sheet.png-9ca2bc0b9d0084cb20837fea1b4405b5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7goj"]
+atlas = SubResource("CompressedTexture2D_sdpvf")
+region = Rect2(285, 71, 269, 50)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_60sjh"]
+load_path = "res://.godot/imported/End_Game_Stats_Textures-Sheet.png-9ca2bc0b9d0084cb20837fea1b4405b5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa47q"]
+atlas = SubResource("CompressedTexture2D_60sjh")
+region = Rect2(557, 62, 273, 60)
 
 [sub_resource type="Animation" id="Animation_gp1o1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/content/RichTextLabel:scale")
+tracks/0/path = NodePath("VBoxContainer/content/success_label:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22,7 +69,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/content/RichTextLabel:position")
+tracks/1/path = NodePath("VBoxContainer/content/success_label:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -46,7 +93,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/content/RichTextLabel:visible")
+tracks/3/path = NodePath("VBoxContainer/content/success_label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -110,7 +157,7 @@ length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/content/RichTextLabel:scale")
+tracks/0/path = NodePath("VBoxContainer/content/success_label:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -122,7 +169,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/content/RichTextLabel:position")
+tracks/1/path = NodePath("VBoxContainer/content/success_label:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -146,7 +193,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/content/RichTextLabel:visible")
+tracks/3/path = NodePath("VBoxContainer/content/success_label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -249,6 +296,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2nexd")
 script = ExtResource("2_grjri")
+stat_icons = Dictionary[String, Texture2D]({
+"damage dealt": SubResource("AtlasTexture_rk8mj"),
+"damage recieved": SubResource("AtlasTexture_biqjc"),
+"enemies killed": SubResource("AtlasTexture_5qfmt"),
+"rewards taken": SubResource("AtlasTexture_njyg8"),
+"total score": SubResource("AtlasTexture_eo6pq"),
+"upgrades taken": SubResource("AtlasTexture_g7goj"),
+"waves survived": SubResource("AtlasTexture_sa47q")
+})
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=264108553]
 unique_name_in_owner = true
@@ -288,7 +344,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/content" unique_id=923130848]
+[node name="success_label" type="RichTextLabel" parent="VBoxContainer/content" unique_id=923130848]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(1152, 210)
 custom_maximum_size = Vector2(1152, 210)
@@ -299,7 +356,7 @@ anchor_bottom = 1.0
 offset_left = 864.0
 offset_top = 156.0
 offset_right = 864.0
-offset_bottom = 155.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1e-05, 1e-05)

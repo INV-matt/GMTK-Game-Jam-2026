@@ -15,8 +15,11 @@ func _process(_delta: float) -> void:
     player = Qol.player
     if player:
       player.ability_list_changed.connect(update_ability_tray)
+      print(player)
 
 func update_ability_tray() -> void:
+  print(player.abilities)
+  
   for i in ability_tray.get_children():
     i.queue_free()
   

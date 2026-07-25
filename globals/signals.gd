@@ -4,8 +4,10 @@ extends Node
 
 ## Wave Manager Signals
 signal spawned_enemy(pos: Vector2)
-signal started_wave(wave: int)
+signal started_wave(wave: int, max_waves: int)
 signal ended_wave(wave: int)
+signal last_wave
+signal all_waves_finished
 signal kills_update(got: int, needed: int)
 signal wave_timer_update(time: float)
 signal enemy_change(alive: int, total_in_wave: int)
@@ -30,6 +32,7 @@ signal reward_selected(reward: Reward)
 
 ## Misc signals
 signal all_plants_died
+signal waves_finished
 signal damage_dealt(amt: int)
 signal damage_recieved(amt: int)
 

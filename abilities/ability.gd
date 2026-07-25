@@ -5,6 +5,7 @@ class_name Ability
 @export var ability_name: String
 @export_multiline() var description: String
 @export var icon: Texture2D
+@export var is_offensive: bool = false
 
 var plant_stage: int = 0
 

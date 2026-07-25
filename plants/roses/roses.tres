@@ -16,6 +16,7 @@ script = ExtResource("1_mfjlr")
 ability_name = "Piercing Petal"
 description = "Shoot a piercing petal"
 icon = SubResource("AtlasTexture_xpfc5")
+is_offensive = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfjlr"]
 atlas = ExtResource("2_01d5x")
