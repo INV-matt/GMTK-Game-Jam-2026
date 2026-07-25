@@ -62,3 +62,5 @@ texture_normal = SubResource("GradientTexture2D_4o4m5")
 unique_name_in_owner = true
 layout_mode = 2
 text = "DEBUG BTN"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/debug" to="." method="on_pressed"]

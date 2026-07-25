@@ -26,6 +26,7 @@ func _ready() -> void:
   elapsed_time = TIME_BETWEEN_ENEMIES
   Signals.enemy_died.connect(on_enemy_died)
   next_wave()
+  Signals.kills_update.emit(enemies_killed, kills_needed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -83,7 +84,10 @@ func next_wave() -> void:
 var enemy_alive: int = 0
 var enemy_total_wave: int = 0
 var waves_spawned: int = 0
-#var enemy_killed: int = 0
+var kills_needed: int = 2
+var kill_increase: int = 1
+var enemies_killed: int = 0
+var upgrades_to_give: int = 0
 func on_enemy_spawned() -> void:
   enemy_alive += 1
   enemy_total_wave += 1
@@ -92,11 +96,29 @@ func on_enemy_spawned() -> void:
 func on_enemy_died() -> void:
   enemy_alive = max(enemy_alive - 1, 0)
   Globals.enemy_killed += 1
-  Signals.enemy_change.emit(enemy_alive, enemy_total_wave)
+
+  enemies_killed += 1
+  print(enemies_killed)
+  
+  if enemies_killed >= kills_needed:
+    enemies_killed -= kills_needed
+    kills_needed += kill_increase
+    kill_increase += 1
+    upgrades_to_give += 1
+    print("kills needed: ", kills_needed)
+  
+  Signals.kills_update.emit(enemies_killed, kills_needed)
 
   if enemy_alive == 0:
+    while upgrades_to_give > 0:
+      Signals.killed_enough_enemies.emit()
+      upgrades_to_give -= 1
+      await Signals.upgrade_ui_closed
+      
     while waves_spawned > 0:
       Signals.ended_wave.emit()
       waves_spawned -= 1
-      
-      await Signals.upgrade_ui_closed
+    
+    enemy_total_wave = 0
+
+  Signals.enemy_change.emit(enemy_alive, enemy_total_wave)
