@@ -629,6 +629,13 @@ parameters/Walk/blend_position = Vector2(0.022146463, -0.24324322)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1814641663]
 libraries/ = SubResource("AnimationLibrary_qvnj8")
 
+[node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=421194169]
+unique_name_in_owner = true
+avoidance_enabled = true
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.23921569, 0.23921569, 0.23921569, 0.5176471)
+
 [connection signal="body_entered" from="TargetPlayerZone" to="." method="on_player_entered"]
 [connection signal="body_exited" from="TargetPlayerZone" to="." method="on_player_exited"]
 [connection signal="died" from="HpComp" to="." method="_on_hp_comp_died"]

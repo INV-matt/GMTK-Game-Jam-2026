@@ -13,6 +13,7 @@ class_name BaseEnemy
 @onready var hp_comp: HpComp = %HpComp
 @onready var player_hitbox: DmgHitbox = %PlayerHitbox
 @onready var hurtbox: Hurtbox = %Hurtbox
+@onready var nav_agent: NavigationAgent2D = %nav_agent
 
 var speed_mult: float = 1.0
 
@@ -26,17 +27,29 @@ func _ready() -> void:
   hp_comp.max_hp = MAX_HEALTH
   animation_tree.active = true
 
+  nav_agent.target_position = DEFAULT_TARGET
+  nav_agent.velocity_computed.connect(Callable(on_velocity_computed))
+  nav_agent.max_speed = SPEED * 1.2
+
+var target_velocity: Vector2
+var delta_pos: float # |v*dt|
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-  var direction: Vector2 = target - global_position
-  if following_player and !Qol.player.is_dead:
-    var vec_to_player = Qol.player.global_position - global_position
-    if direction.length_squared() > vec_to_player.length_squared(): direction = vec_to_player
-  
-  velocity = direction.normalized() * SPEED * delta * 60
-  
-  if !hit_something and !is_dead:
-    move_and_slide()
+  # var direction: Vector2 = target - global_position
+  # if following_player and !Qol.player.is_dead:
+  #   var vec_to_player = Qol.player.global_position - global_position
+  #   if direction.length_squared() > vec_to_player.length_squared(): direction = vec_to_player
+  # velocity = direction.normalized() * SPEED * delta * 60
+  # if !hit_something and !is_dead:
+  #   move_and_slide()
+
+  if nav_agent.is_navigation_finished(): return
+  var next_pos: Vector2 = nav_agent.get_next_path_position()
+  print("DIR: ", global_position.direction_to(next_pos))
+  var new_vel: Vector2 = global_position.direction_to(next_pos) * SPEED * delta
+
+  nav_agent.set_velocity(new_vel)
 
 
 func on_player_entered(body: Node2D) -> void:
@@ -62,3 +75,8 @@ func _on_player_hitbox_hit(_what: Hurtbox) -> void:
 
 func reset_hit():
   hit_something = false
+
+func on_velocity_computed(safe_velocity: Vector2) -> void:
+  velocity = safe_velocity
+  print(velocity)
+  move_and_slide()
