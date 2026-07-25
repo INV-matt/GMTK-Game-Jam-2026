@@ -20,6 +20,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8296, -5304, 8632, -55
 [node name="pot" parent="." unique_id=1943167055 instance=ExtResource("1_h4ksw")]
 position = Vector2(56, 48)
 
+[node name="pot2" parent="." unique_id=942593800 instance=ExtResource("1_h4ksw")]
+position = Vector2(-726, -80)
+
 [node name="Player" parent="." unique_id=386552564 instance=ExtResource("3_x6o6c")]
 position = Vector2(232, 192)
 
