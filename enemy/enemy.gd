@@ -44,6 +44,8 @@ func _physics_process(delta: float) -> void:
   # if !hit_something and !is_dead:
   #   move_and_slide()
 
+  delta_pos = SPEED * delta
+
   if nav_agent.is_navigation_finished(): return
   var next_pos: Vector2 = nav_agent.get_next_path_position()
   print("DIR: ", global_position.direction_to(next_pos))
@@ -51,6 +53,9 @@ func _physics_process(delta: float) -> void:
 
   nav_agent.set_velocity(new_vel)
 
+  velocity = velocity * .9 + target_velocity * .1
+
+  move_and_slide()
 
 func on_player_entered(body: Node2D) -> void:
   if body is Player: following_player = true
@@ -77,6 +82,4 @@ func reset_hit():
   hit_something = false
 
 func on_velocity_computed(safe_velocity: Vector2) -> void:
-  velocity = safe_velocity
-  print(velocity)
-  move_and_slide()
+  target_velocity = safe_velocity * delta_pos * 20.0
