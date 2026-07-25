@@ -41,6 +41,8 @@ func update_stats() -> void:
   
   if !plant: return
   
+  growth = plant.growth_time - 5.0
+  
   growth_progress.visible = true
   growth_progress.max_value = plant.growth_time
   

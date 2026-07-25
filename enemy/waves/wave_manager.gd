@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
       elapsed_time -= delta
   elif !wave_has_spawned:
     wave_has_spawned = true
-    next_wave_in = spawned_this_wave / 20.0
+    next_wave_in = spawned_this_wave / (2.0 + current_wave * 5.0)
   
   if enemy_alive > 0:
     MusicMngr.play_track("battle")
@@ -82,7 +82,7 @@ func spawn_enemy() -> void:
   on_enemy_spawned()
   add_child(enemy_node)
   
-  spawned_this_wave += enemy_node.MAX_HEALTH
+  spawned_this_wave += int(enemy_node.MAX_HEALTH)
 
 
 func calculate_budget(value: int) -> int:
