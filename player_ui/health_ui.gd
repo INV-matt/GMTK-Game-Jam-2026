@@ -1,7 +1,7 @@
 extends Control
 
-@onready var bar_player: ProgressBar = %player_bar
-@onready var bar_plant: ProgressBar = %plant_bar
+@onready var bar_player: TextureProgressBar = %player_bar
+@onready var bar_plant: TextureProgressBar = %plant_bar
 
 @onready var pl: Player = Qol.player
 var pl_connected = false

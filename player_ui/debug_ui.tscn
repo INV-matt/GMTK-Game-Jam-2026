@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dh0xnfu4byre5"]
+
+[ext_resource type="Script" uid="uid://bcybir62mhw3c" path="res://player_ui/debug_ui.gd" id="1_i8gei"]
+
+[node name="debug_ui" type="Control" unique_id=1535893346]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_i8gei")
+
+[node name="fps" type="Label" parent="." unique_id=1290884020]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "104 fps"
+horizontal_alignment = 2
