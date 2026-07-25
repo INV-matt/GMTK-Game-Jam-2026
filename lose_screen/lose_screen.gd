@@ -4,6 +4,8 @@ extends Control
 @onready var stat_holder: VBoxContainer = %stat_holder
 @onready var success_label: RichTextLabel = %success_label
 
+@export var stat_icons: Dictionary[String, Texture2D] = {}
+
 func _ready() -> void:
   visible = false
   anim.play("RESET")
@@ -26,14 +28,33 @@ func show_win_screen():
   success_label.add_theme_color_override("default_color", Color.GREEN)
   
 func add_stat(stat_name: String):
+  var h: HBoxContainer = HBoxContainer.new()
+  
+  h.size_flags_vertical = Control.SIZE_EXPAND_FILL
+  
+  var icon: TextureRect = TextureRect.new()
+  icon.texture = stat_icons[stat_name]
+  icon.offset_transform_enabled = true
+  icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+  icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+  icon.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+  icon.offset_transform_enabled = true
+  icon.offset_transform_position.x = -icon.texture.get_width()
+  icon.offset_transform_position_ratio.x = 1.0
+  
+  h.add_child(icon)
+  
   var r: RichTextLabel = RichTextLabel.new()
-  r.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
   r.fit_content = true
-  r.text = "%s: %s" % [stat_name.capitalize(), ScoreMngr[stat_name.replace(" ", "_")]]
+  r.text = "%s" % ScoreMngr[stat_name.replace(" ", "_")]
   r.size_flags_vertical = Control.SIZE_EXPAND_FILL
-  r.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+  r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+  r.offset_transform_enabled = true
+  r.offset_transform_position.y = 9.0
 
-  stat_holder.add_child(r)
+  h.add_child(r)
+
+  stat_holder.add_child(h)
 
 func display_stats():
   add_stat("enemies killed")
