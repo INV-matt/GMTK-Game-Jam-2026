@@ -66,18 +66,12 @@ func _process(_delta: float) -> void:
   var dir: String = ""
   var max_dot: float = -1.0
   
-  print(last_move_dir)
-  
   for i in directions:
     var d: float = last_move_dir.dot(directions[i])
-    
-    print(i, " ", d)
     
     if d > max_dot:
       max_dot = d
       dir = i
-  
-  print(dir)
   
   if dir == "left":
     sprite.flip_h = true
