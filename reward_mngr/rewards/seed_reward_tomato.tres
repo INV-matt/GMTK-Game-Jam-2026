@@ -1,0 +1,19 @@
+[gd_resource type="Resource" format=3 uid="uid://bt2r1vc8ynmpt"]
+
+[ext_resource type="Resource" uid="uid://c4rre62tr73ji" path="res://plants/tomato/tomato.tres" id="2_ayhtf"]
+[ext_resource type="Script" uid="uid://d20wifmcnfqaq" path="res://reward_mngr/rewards/seed_packet_reward.gd" id="3_wawr8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_elo15"]
+load_path = "res://.godot/imported/Tomato_Seed_Packet.png-3061628c335b339d89deabc79dfe5ca2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayhtf"]
+atlas = SubResource("CompressedTexture2D_elo15")
+region = Rect2(45, 21, 158, 158)
+
+[resource]
+script = ExtResource("3_wawr8")
+plant = ExtResource("2_ayhtf")
+icon = SubResource("AtlasTexture_ayhtf")
+name = "Seed Packet (Tomato)"
+description = "Spawn a tomato seed packet randomly on the map"
+metadata/_custom_type_script = "uid://yygn3t6o678j"

@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://yygn3t6o678j" path="res://reward_mngr/reward.gd" id="3_gyffc"]
 [ext_resource type="Resource" uid="uid://dd6iriixdnoad" path="res://reward_mngr/rewards/seed_reward_sunflower.tres" id="4_lj3c2"]
 [ext_resource type="Resource" uid="uid://c2jyoasd5oy36" path="res://reward_mngr/rewards/pot_reward.tres" id="5_pnlkj"]
+[ext_resource type="Resource" uid="uid://du72jhtw2ill5" path="res://reward_mngr/rewards/seed_reward_chili_pepper.tres" id="5_u240b"]
+[ext_resource type="Resource" uid="uid://55qc0gbfjpld" path="res://reward_mngr/rewards/seed_reward_lavender.tres" id="6_r2ypg"]
+[ext_resource type="Resource" uid="uid://bukjhynmpspn" path="res://reward_mngr/rewards/seed_reward_roses.tres" id="7_fjodx"]
+[ext_resource type="Resource" uid="uid://bt2r1vc8ynmpt" path="res://reward_mngr/rewards/seed_reward_tomato.tres" id="9_ajx5p"]
 
 [node name="reward_mngr" type="Control" unique_id=1094337275]
 process_mode = 3
@@ -17,7 +21,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_jodpp")
 script = ExtResource("1_m0obp")
-possible_rewards = Array[ExtResource("3_gyffc")]([ExtResource("4_lj3c2"), ExtResource("5_pnlkj")])
+possible_rewards = Array[ExtResource("3_gyffc")]([ExtResource("5_pnlkj"), ExtResource("5_u240b"), ExtResource("6_r2ypg"), ExtResource("7_fjodx"), ExtResource("4_lj3c2"), ExtResource("9_ajx5p")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=712789831]
 layout_mode = 1

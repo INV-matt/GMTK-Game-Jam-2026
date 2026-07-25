@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://bukjhynmpspn"]
+
+[ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="1_1j6k7"]
+[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="2_1j6k7"]
+[ext_resource type="Script" uid="uid://d20wifmcnfqaq" path="res://reward_mngr/rewards/seed_packet_reward.gd" id="3_ym0hs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0abl"]
+atlas = ExtResource("1_1j6k7")
+region = Rect2(158, 0, 158, 153)
+
+[resource]
+script = ExtResource("3_ym0hs")
+plant = ExtResource("2_1j6k7")
+icon = SubResource("AtlasTexture_a0abl")
+name = "Seed Packet (Roses)"
+description = "Spawn a roses seed packet randomly on the map"
+metadata/_custom_type_script = "uid://yygn3t6o678j"

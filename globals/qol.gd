@@ -77,18 +77,28 @@ func atlas_to_texture(atlas: AtlasTexture) -> ImageTexture:
     if i.atlas == atlas.atlas and i.region == atlas.region:
       return i.result
   
-  var height: int = int(atlas.region.size.x)
-  var width: int = int(atlas.region.size.y)
+  print("Converting atlas %s to image texture" % atlas)
+  
+  var height: int = int(atlas.get_height())
+  var width: int = int(atlas.get_width())
   
   var new_tex: Image = Image.create_empty(width, height, false, Image.FORMAT_BPTC_RGBA)
   new_tex.decompress()
   
+  print(width, " ", height)
+  
+  var atlas_img: Image = atlas.atlas.get_image()
+  
+  var max_height: int = int(atlas_img.get_height())
+  var max_width: int = int(atlas_img.get_width())
+  
   for x in range(width):
     for y in range(height):
-      new_tex.set_pixel(x,y, atlas.atlas.get_image().get_pixel(
-        x + int(atlas.region.position.x),
-        y + int(atlas.region.position.y)
-      ))
+      var px: int = x + int(atlas.region.position.x)
+      var py: int = y + int(atlas.region.position.y)
+      
+      if px < max_width and py < max_height:
+        new_tex.set_pixel(x,y, atlas.atlas.get_image().get_pixel(px,py))
   
   var img: ImageTexture = ImageTexture.create_from_image(new_tex)
 
