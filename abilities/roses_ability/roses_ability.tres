@@ -12,4 +12,4 @@ script = ExtResource("2_banmd")
 ability_name = "Piercing Petal"
 description = "Shoot a piercing petal"
 icon = SubResource("AtlasTexture_828tj")
-metadata/_custom_type_script = "uid://q72vwqcaw71u"
+is_offensive = true

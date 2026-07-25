@@ -6,6 +6,8 @@ class_name Player
 @warning_ignore("unused_signal")
 signal ability_list_changed
 
+@export var starting_ability: Ability
+
 @export var abilities: Array[Ability]
 @export var primary_ability_idx: int = 0
 @export var secondary_ability_idx: int = 1
@@ -55,6 +57,18 @@ var directions: Dictionary[String, Vector2] = {
 }
 
 func _process(_delta: float) -> void:
+  if Qol.wave_mngr.current_wave > 0:
+    var offense: Array[Ability] = abilities.filter(func(x: Ability): return x.is_offensive)
+    
+    if len(offense) == 0:
+      abilities.append(starting_ability)
+      ability_list_changed.emit()
+    if len(offense) > 1 and starting_ability in abilities:
+      abilities.erase(starting_ability)
+      ability_list_changed.emit()
+      print("remove punch")
+    print(abilities.map(func(x: Ability): return "%s/%s" % [x.ability_name, x.is_offensive]))
+  
   # ts is disgusting
   if len(abilities) > primary_ability_idx and Input.is_action_pressed("primary"):
     abilities[primary_ability_idx].use_ability(self, get_global_mouse_position())

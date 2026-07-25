@@ -7,4 +7,4 @@
 script = ExtResource("2_tjo0m")
 ability_name = "Tomato Toss"
 icon = ExtResource("1_rmtww")
-metadata/_custom_type_script = "uid://cey2j6m6u71a8"
+is_offensive = true
