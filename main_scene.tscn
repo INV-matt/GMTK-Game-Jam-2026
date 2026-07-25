@@ -119,6 +119,28 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Enemy kills: 6/7"
 
+[node name="Label" type="Label" parent="hud/enemy_ui" unique_id=441271313]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Next wave in"
+horizontal_alignment = 1
+
+[node name="wave_countdown" type="Label" parent="hud/enemy_ui" unique_id=1065310833]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 24.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "0.0"
+horizontal_alignment = 1
+
 [node name="upgrade_ui" type="Control" parent="hud" unique_id=1651740873]
 process_mode = 3
 visible = false
