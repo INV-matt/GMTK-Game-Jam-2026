@@ -61,13 +61,11 @@ func _process(_delta: float) -> void:
     var offense: Array[Ability] = abilities.filter(func(x: Ability): return x.is_offensive)
     
     if len(offense) == 0:
-      abilities.append(starting_ability)
+      abilities.insert(0, starting_ability)
       ability_list_changed.emit()
     if len(offense) > 1 and starting_ability in abilities:
       abilities.erase(starting_ability)
       ability_list_changed.emit()
-      print("remove punch")
-    print(abilities.map(func(x: Ability): return "%s/%s" % [x.ability_name, x.is_offensive]))
   
   # ts is disgusting
   if len(abilities) > primary_ability_idx and Input.is_action_pressed("primary"):
