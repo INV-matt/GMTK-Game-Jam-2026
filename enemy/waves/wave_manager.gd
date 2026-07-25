@@ -82,11 +82,11 @@ func spawn_enemy() -> void:
   on_enemy_spawned()
   add_child(enemy_node)
   
-  spawned_this_wave += int(enemy_node.MAX_HEALTH)
+  spawned_this_wave += int(enemy_node.MAX_HEALTH / Globals.difficulty_mult)
 
 
 func calculate_budget(value: int) -> int:
-  return value * (value + 1)
+  return int(value * (value + 1) * Globals.difficulty_mult)
 
 func next_wave() -> void:
   Signals.wave_timer_update.emit(0.0)
