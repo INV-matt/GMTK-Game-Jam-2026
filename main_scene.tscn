@@ -31,6 +31,7 @@ script = ExtResource("2_7ycvg")
 starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("4_42l1d"), ExtResource("5_2jcla"), ExtResource("6_m35m6"), ExtResource("7_u0ygc")])
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=1522350986]
+visible = false
 script = ExtResource("8_2jcla")
 
 [node name="ability_ui" parent="hud" unique_id=44532813 instance=ExtResource("3_gyfs4")]
@@ -61,3 +62,4 @@ process_mode = 3
 [node name="start_menu" parent="menu_manager" unique_id=1824902138 instance=ExtResource("2_2c62f")]
 
 [node name="settings_menu" parent="menu_manager" unique_id=1161945723 instance=ExtResource("15_2jcla")]
+visible = false
