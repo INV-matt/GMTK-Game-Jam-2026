@@ -31,7 +31,6 @@ func _ready() -> void:
   nav_agent.velocity_computed.connect(Callable(on_velocity_computed))
   nav_agent.max_speed = SPEED * 1.2
 
-  
 var target_velocity: Vector2
 var delta_pos: float
 
