@@ -22,10 +22,8 @@ var opened: bool = false
 func on_start() -> void:
   if !opened:
     anim.play("open_difficulty")
-    print("open")
   else:
     anim.play_backwards("open_difficulty")
-    print("close")
   
   opened = !opened
 

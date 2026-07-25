@@ -1,6 +1,6 @@
 extends Control
 
-const WAVE_TEXT: String = "%s"
+const WAVE_TEXT: String = "%s/%s"
 const ENEMY_TEXT: String = "%s/%s"
 const KILLS_TEXT: String = "%s/%s"
 
@@ -8,12 +8,18 @@ const KILLS_TEXT: String = "%s/%s"
 @onready var txt_enemy: Label = %enemy_counter
 @onready var txt_kills: Label = %kills_needed
 @onready var wave_countdown: Label = %wave_countdown
+@onready var wave_label: Label = %wave_label
 
 func _ready() -> void:
   Signals.started_wave.connect(update_waves)
   Signals.enemy_change.connect(update_enemy)
   Signals.kills_update.connect(update_kills)
   Signals.wave_timer_update.connect(update_timer)
+  Signals.last_wave.connect(last_wave)
+
+func last_wave():
+  wave_countdown.visible = false
+  wave_label.text = "Last wave, good luck!"
 
 func update_timer(time: float) -> void:
   var minutes: int = int(time / 60)
@@ -30,8 +36,8 @@ func update_timer(time: float) -> void:
     
   wave_countdown.text = "%.1f" % time
 
-func update_waves(wave: int) -> void:
-  txt_waves.text = WAVE_TEXT % wave
+func update_waves(wave: int, max_waves: int) -> void:
+  txt_waves.text = WAVE_TEXT % [wave, max_waves]
 
 func update_enemy(left: int, tot: int) -> void:
   txt_enemy.text = ENEMY_TEXT % [left, tot]
