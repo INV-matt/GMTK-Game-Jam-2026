@@ -7,13 +7,8 @@ const ENEMY_TEXT: String = "Enemies left: %s/%s"
 @onready var txt_enemy: Label = %enemy_counter
 
 func _ready() -> void:
-  visible = false
-  Signals.start_game.connect(on_start)
   Signals.started_wave.connect(update_waves)
   Signals.enemy_change.connect(update_enemy)
-
-func on_start() -> void:
-  visible = true
 
 func update_waves(wave: int) -> void:
   txt_waves.text = WAVE_TEXT % wave

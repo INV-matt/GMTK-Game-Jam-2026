@@ -6,10 +6,6 @@ extends Control
 @onready var pl: Player = Qol.player
 var connected = false
 
-func _ready():
-  visible = false
-  Signals.start_game.connect(on_start)
-
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
   if !pl:
@@ -31,6 +27,3 @@ func update_player_bar(amount: float) -> void:
 
 func update_plant_bar() -> void:
   bar_plant.value = clamp(randi() % 100, 0, 100)
-
-func on_start() -> void:
-  visible = true
