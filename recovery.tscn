@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="6_8u4lp"]
 [ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="7_8u4lp"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_p7xvm"]
+vertices = PackedVector2Array(10812.172, 7118.3203, -7558.5625, 7637.7188, -8285.43, -5294.117, 8623.602, -5501.8906)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8296, -5304, 8632, -5512, 10824, 7128, -7568, 7648)])
+
 [node name="recovery" type="Node2D" unique_id=220602187]
 y_sort_enabled = true
 
@@ -34,3 +39,7 @@ plant = ExtResource("5_4dne6")
 [node name="seed_packet2" parent="." unique_id=2123793455 instance=ExtResource("6_8u4lp")]
 position = Vector2(-64, 200)
 plant = ExtResource("7_8u4lp")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=422916688]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_p7xvm")

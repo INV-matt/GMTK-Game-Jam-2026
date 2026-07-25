@@ -179,7 +179,6 @@ alignment = 1
 [node name="start_menu" parent="menu_manager" unique_id=1824902138 instance=ExtResource("2_2c62f")]
 
 [node name="settings_menu" type="CanvasLayer" parent="menu_manager" unique_id=1128695489]
-visible = false
 script = ExtResource("4_d5x1h")
 
 [node name="bg" type="Panel" parent="menu_manager/settings_menu" unique_id=949664396]
@@ -227,4 +226,23 @@ text = "Fullscreen"
 [node name="btn_fullscreen" type="CheckButton" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1969707529]
 layout_mode = 2
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer" unique_id=609245381]
+layout_mode = 2
+
+[node name="txt_volume" type="Label" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1651335567]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volume"
+
+[node name="slider_volume" type="HSlider" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1899703359]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.5
+max_value = 1.0
+step = 0.01
+page = 0.05
+value = 0.5
+
 [connection signal="toggled" from="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer/btn_fullscreen" to="menu_manager/settings_menu" method="toggle_fullscreen"]
+[connection signal="value_changed" from="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer2/slider_volume" to="menu_manager/settings_menu" method="change_audio"]
