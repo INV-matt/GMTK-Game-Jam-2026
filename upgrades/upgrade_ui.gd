@@ -16,7 +16,6 @@ func on_open() -> void:
   for node in btn_container.get_children(): node.queue_free()
   
   var upgrades: Array[BaseUpgrade] = Qol.game_mngr.choose_random_upgrades()
-  print(upgrades)
 
   for upgrade: BaseUpgrade in upgrades:
     var btn_upgrade: UpgradeButton = scn_upgrade_btn.instantiate() as UpgradeButton
