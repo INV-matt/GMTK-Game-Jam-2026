@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="Reward" format=3 uid="uid://dd6iriixdnoad"]
+[gd_resource type="Resource" format=3 uid="uid://dd6iriixdnoad"]
 
-[ext_resource type="Script" uid="uid://yygn3t6o678j" path="res://reward_mngr/reward.gd" id="1_a0abl"]
 [ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="1_ne8l3"]
+[ext_resource type="Resource" uid="uid://lxyvloc2urdi" path="res://plants/sunflower/sunflower.tres" id="2_wlbka"]
+[ext_resource type="Script" uid="uid://d20wifmcnfqaq" path="res://reward_mngr/rewards/seed_packet_reward.gd" id="3_oh5ao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0abl"]
 atlas = ExtResource("1_ne8l3")
 region = Rect2(0, 0, 158, 153)
 
 [resource]
-script = ExtResource("1_a0abl")
+script = ExtResource("3_oh5ao")
+plant = ExtResource("2_wlbka")
 icon = SubResource("AtlasTexture_a0abl")
 name = "Seed Packet (Sunflower)"
 description = "Spawn a sunflower seed packet randomly on the map"

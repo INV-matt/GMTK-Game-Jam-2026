@@ -62,3 +62,4 @@ func reward_selected(reward: Reward):
   else:
     Qol.unpause_game()
     visible = false
+    showing_rewards = false

@@ -1,4 +1,5 @@
 extends Node
+class_name LevelMngr
 
 var game_scene: PackedScene = preload("uid://bv0qgb712vbh3") # TODO: put game scene here, this is the debug scene
 

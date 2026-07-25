@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="Reward" format=3 uid="uid://c2jyoasd5oy36"]
+[gd_resource type="Resource" format=3 uid="uid://c2jyoasd5oy36"]
 
-[ext_resource type="Script" uid="uid://yygn3t6o678j" path="res://reward_mngr/reward.gd" id="1_m3txt"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://assets/sprites/Lone_Pot-Sheet.png" id="1_qihwd"]
+[ext_resource type="Script" uid="uid://bwomy3cqn3re1" path="res://reward_mngr/rewards/pot_reward.gd" id="2_qihwd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3txt"]
 atlas = ExtResource("1_qihwd")
 region = Rect2(0, 0, 745, 306)
 
 [resource]
-script = ExtResource("1_m3txt")
+script = ExtResource("2_qihwd")
 icon = SubResource("AtlasTexture_m3txt")
 name = "Pot"
 description = "Get a new plant pot to plant you plants"

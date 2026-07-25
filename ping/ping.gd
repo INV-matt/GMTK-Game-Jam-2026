@@ -1,5 +1,3 @@
-@tool
-
 extends VisibleOnScreenNotifier2D
 class_name Ping
 
@@ -15,13 +13,21 @@ const PADDING: float = 50.0
 @export var show_onscreen: bool = true
 @export var onscreen_offset: Vector2
 
-func _ready() -> void:
-  if !Engine.is_editor_hint(): visible = true
+func update_info():
+  if !icon: return
   
-  sprite.material = sprite.material.duplicate()
+  if icon is AtlasTexture:
+    icon = Qol.atlas_to_texture(icon)
+  
   (sprite.material as ShaderMaterial).set_shader_parameter("ping_tex", icon)
   (sprite.material as ShaderMaterial).set_shader_parameter("border_col", border_color)
   (sprite.material as ShaderMaterial).set_shader_parameter("urgency", urgency)
+
+func _ready() -> void:
+  sprite.material = sprite.material.duplicate()
+  
+  visible = true
+  update_info()
 
 # Thanks to the GOAT
 # https://www.jeffreythompson.org/collision-detection/line-line.php
@@ -52,12 +58,6 @@ func lineLine(x1: float, y1: float, x2: float, y2: float, x3: float, y3: float, 
   return Vector2(PI, PI)
 
 func _process(_delta: float) -> void:
-  if Engine.is_editor_hint():
-    (sprite.material as ShaderMaterial).set_shader_parameter("ping_tex", icon)
-    (sprite.material as ShaderMaterial).set_shader_parameter("border_col", border_color)
-    (sprite.material as ShaderMaterial).set_shader_parameter("urgency", urgency)
-    return
-  
   if !is_on_screen():
     sprite.visible = true
     
