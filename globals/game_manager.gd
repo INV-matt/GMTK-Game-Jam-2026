@@ -6,8 +6,6 @@ var available_upgrades: Array[BaseUpgrade]
 
 func _ready() -> void:
   available_upgrades = starter_upgrades.duplicate_deep()
-  print(available_upgrades)
-
 
 func handle_upgrade(upgrade: BaseUpgrade) -> void:
   upgrade.upgrade_stats()
@@ -15,7 +13,6 @@ func handle_upgrade(upgrade: BaseUpgrade) -> void:
   for up: BaseUpgrade in upgrade.descendant_upgrades: available_upgrades.push_back(up)
 
   Signals.close_upgrades.emit()
-
 
 var num_upgrades_to_display = 3
 func choose_random_upgrades() -> Array[BaseUpgrade]:
