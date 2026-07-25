@@ -1,9 +1,5 @@
 extends Control
 
-const WAVE_TEXT: String = "%s/%s"
-const ENEMY_TEXT: String = "%s/%s"
-const KILLS_TEXT: String = "%s/%s"
-
 @onready var txt_waves: Label = %wave_counter
 @onready var txt_enemy: Label = %enemy_counter
 @onready var txt_kills: Label = %kills_needed
@@ -37,10 +33,10 @@ func update_timer(time: float) -> void:
   wave_countdown.text = "%.1f" % time
 
 func update_waves(wave: int, max_waves: int) -> void:
-  txt_waves.text = WAVE_TEXT % [wave, max_waves]
+  txt_waves.text = str(max_waves - wave)
 
-func update_enemy(left: int, tot: int) -> void:
-  txt_enemy.text = ENEMY_TEXT % [left, tot]
+func update_enemy(left: int, _tot: int) -> void:
+  txt_enemy.text = str(left)
 
 func update_kills(got: int, needed: int):
-  txt_kills.text = KILLS_TEXT % [got, needed]
+  txt_kills.text = str(needed - got)

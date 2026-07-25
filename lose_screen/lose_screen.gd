@@ -49,9 +49,8 @@ func add_stat(stat_name: String):
   r.text = "%s" % ScoreMngr[stat_name.replace(" ", "_")]
   r.size_flags_vertical = Control.SIZE_EXPAND_FILL
   r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-  r.offset_transform_enabled = true
-  r.offset_transform_position.y = 9.0
-
+  r.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+  
   h.add_child(r)
 
   stat_holder.add_child(h)
