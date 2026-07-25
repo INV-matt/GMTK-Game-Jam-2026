@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
     if !connected:
       pl.hp_comp.hurt.connect(update_player_bar)
       pl.hp_comp.healed.connect(update_player_bar)
-      pl.hp_comp.died.connect(update_player_bar)
+      #pl.hp_comp.died.connect(update_player_bar)
 
       update_player_bar(0)
       connected = true
