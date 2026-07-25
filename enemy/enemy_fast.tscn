@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="1_wtg4x"]
 [ext_resource type="Texture2D" uid="uid://cf85qcq8d0l5r" path="res://assets/sprites/Fast_Enemy_-_Mira_Mira_II-Sheet.png" id="2_w0o27"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0o27"]
+radius = 37.0
+
 [sub_resource type="Animation" id="Animation_wtg4x"]
 length = 0.001
 tracks/0/type = "value"
@@ -485,6 +488,9 @@ _data = {
 [node name="EnemyFast" unique_id=478211698 instance=ExtResource("1_wtg4x")]
 SPEED = 100.0
 MAX_HEALTH = 50.0
+
+[node name="PlayerHitbox" parent="." index="3" unique_id=163459591]
+custom_shape = SubResource("CircleShape2D_w0o27")
 
 [node name="AnimationTree" parent="." index="7" unique_id=663359280]
 parameters/Walk/blend_position = Vector2(-0.015332222, 0.018018007)
