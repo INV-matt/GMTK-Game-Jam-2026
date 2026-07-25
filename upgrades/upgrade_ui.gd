@@ -6,7 +6,7 @@ extends Control
 func _ready() -> void:
   visible = false
   #Signals.open_upgrades.connect(on_open)
-  Signals.ended_wave.connect(on_open)
+  Signals.killed_enough_enemies.connect(on_open)
   Signals.close_upgrades.connect(on_close)
 
 func on_open() -> void:

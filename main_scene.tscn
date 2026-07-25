@@ -32,6 +32,9 @@ script = ExtResource("8_2jcla")
 
 [node name="ability_ui" parent="hud" unique_id=44532813 instance=ExtResource("3_gyfs4")]
 
+[node name="seed_mngr" parent="hud" unique_id=364425271 instance=ExtResource("12_42l1d")]
+offset_top = 88.0
+
 [node name="health_ui" type="Control" parent="hud" unique_id=1437993052]
 layout_mode = 3
 anchors_preset = 15
@@ -87,7 +90,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -300.0
-offset_bottom = 80.0
+offset_bottom = 104.0
 grow_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="hud/enemy_ui/bg" unique_id=1709301424]
@@ -110,6 +113,11 @@ text = "Wave: 3"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Enemies left: 6/7"
+
+[node name="kills_needed" type="Label" parent="hud/enemy_ui/bg/VBoxContainer" unique_id=1989503183]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Enemy kills: 0/0"
 
 [node name="upgrade_ui" type="Control" parent="hud" unique_id=1651740873]
 process_mode = 3
@@ -140,9 +148,6 @@ anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="seed_mngr" parent="hud" unique_id=364425271 instance=ExtResource("12_42l1d")]
-offset_top = 88.0
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 

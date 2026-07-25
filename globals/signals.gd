@@ -14,5 +14,7 @@ signal enemy_change(alive: int, total_in_wave: int)
 signal enemy_died()
 signal stats_change()
 signal upgrade_ui_closed()
+signal killed_enough_enemies()
+signal kills_update(got: int, needed: int)
 
 @warning_ignore_restore("unused_signal")
