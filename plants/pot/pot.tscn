@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_828tj"]
-radius = 15.0
-height = 81.0
+radius = 18.0
+height = 84.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wnhti"]
 radius = 12.0
@@ -71,6 +71,7 @@ animation = &"0dmg"
 
 [node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
 unique_name_in_owner = true
+visible = false
 position = Vector2(3, -6)
 scale = Vector2(0.1, 0.1)
 texture = SubResource("AtlasTexture_g0hop")

@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://3ai8v5acr4am" path="res://components/dmg_hitbox.gd" id="3_pmsee"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="4_p200p"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://d3njw231n6btx" path="res://enemy/walk_blend_space.tres" id="5_pmsee"]
+[ext_resource type="PackedScene" uid="uid://rmg2fmg32306" path="res://ping/ping.tscn" id="6_1wwld"]
+[ext_resource type="Texture2D" uid="uid://bcs4gdpicson3" path="res://assets/sprites/Tomato_Seed_Packet.png" id="7_y5vj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ffra"]
 radius = 29.0
@@ -629,6 +631,11 @@ parameters/Walk/blend_position = Vector2(0.022146463, -0.24324322)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1814641663]
 libraries/ = SubResource("AnimationLibrary_qvnj8")
 
+[node name="ping" parent="." unique_id=235871701 instance=ExtResource("6_1wwld")]
+icon = ExtResource("7_y5vj3")
+border_color = Color(1, 0, 0, 1)
+urgency = 3.0
+show_onscreen = false
 [node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=421194169]
 unique_name_in_owner = true
 avoidance_enabled = true

@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="7_u0ygc"]
 [ext_resource type="Script" uid="uid://ckm588bp6i5d2" path="res://hud.gd" id="8_2jcla"]
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="12_42l1d"]
+[ext_resource type="PackedScene" uid="uid://ddpt813aplg1v" path="res://reward_mngr/reward_mngr.tscn" id="14_m35m6"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -170,6 +171,8 @@ anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="reward_mngr" parent="hud" unique_id=1094337275 instance=ExtResource("14_m35m6")]
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 
