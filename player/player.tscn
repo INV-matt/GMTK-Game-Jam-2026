@@ -7,8 +7,8 @@
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="5_qjkh3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
-radius = 24.13
-height = 122.61
+radius = 20.13
+height = 86.61
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yw30f"]
 radius = 24.0
@@ -345,7 +345,7 @@ collision_mask = 7
 script = ExtResource("1_oul6g")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1828331245]
-position = Vector2(0, -37)
+position = Vector2(0, -24)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("2_rkbax")

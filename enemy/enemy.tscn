@@ -10,10 +10,10 @@
 radius = 29.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pmsee"]
-radius = 250.0
+radius = 400.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p200p"]
-radius = 29.0
+radius = 34.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pmsee"]
 animation = &"attack"
@@ -628,6 +628,12 @@ parameters/Walk/blend_position = Vector2(0.022146463, -0.24324322)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1814641663]
 libraries/ = SubResource("AnimationLibrary_qvnj8")
+
+[node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=421194169]
+unique_name_in_owner = true
+avoidance_enabled = true
+radius = 32.0
+debug_enabled = true
 
 [connection signal="body_entered" from="TargetPlayerZone" to="." method="on_player_entered"]
 [connection signal="body_exited" from="TargetPlayerZone" to="." method="on_player_exited"]

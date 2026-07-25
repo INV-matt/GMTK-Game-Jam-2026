@@ -22,21 +22,32 @@ var elapsed_time: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-  current_wave = 1
+  current_wave = 0
   elapsed_time = TIME_BETWEEN_ENEMIES
   Signals.enemy_died.connect(on_enemy_died)
+  Signals.kills_update.emit(enemies_killed, kills_needed)
 
+var next_wave_in: float = 0.0
+var wave_has_spawned: bool = false
+var spawned_this_wave: int = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+  if wave_has_spawned:
+    next_wave_in -= delta
+    Signals.wave_timer_update.emit(next_wave_in)
+    if next_wave_in <= 0:
+      next_wave()
+  
   if budget > 0:
     if elapsed_time < 0:
       elapsed_time = TIME_BETWEEN_ENEMIES
       spawn_enemy()
     else:
       elapsed_time -= delta
-
-  if Input.is_action_just_pressed("ui_accept"): next_wave()
+  elif !wave_has_spawned:
+    wave_has_spawned = true
+    next_wave_in = spawned_this_wave / 20.0
   
   if enemy_alive > 0:
     MusicMngr.play_track("battle")
@@ -45,12 +56,13 @@ func _process(delta: float) -> void:
 
 func spawn_enemy() -> void:
   var possible_enemies: Array[PackedScene]
-  for key in enemy_types.keys():
-    if enemy_types.get(key, budget) <= budget: possible_enemies.push_back(key)
+  for key in enemy_types:
+    if enemy_types[key] <= budget: possible_enemies.push_back(key)
   
   if possible_enemies.size() == 0:
     print("No possible enemies: ")
     print("Budget: ", budget)
+    budget = 0
     return
     
   var chosen: PackedScene = possible_enemies.pick_random() as PackedScene
@@ -69,22 +81,29 @@ func spawn_enemy() -> void:
   Signals.spawned_enemy.emit(pos) # TODO: possibly implement ui indicator telling the player where the enemy spawned (like a small arrow)
   on_enemy_spawned()
   add_child(enemy_node)
+  
+  spawned_this_wave += enemy_node.MAX_HEALTH
 
 
 func calculate_budget(value: int) -> int:
   return value * (value + 1)
 
 func next_wave() -> void:
-  enemy_alive = 0
-  enemy_total_wave = 0
-  Signals.enemy_change.emit(0, 0)
+  Signals.wave_timer_update.emit(0.0)
+  waves_spawned += 1
   current_wave += 1
+  wave_has_spawned = false
+  spawned_this_wave = 0
   Signals.started_wave.emit(current_wave)
 
 
 var enemy_alive: int = 0
 var enemy_total_wave: int = 0
-#var enemy_killed: int = 0
+var waves_spawned: int = 0
+var kills_needed: int = 2
+var kill_increase: int = 1
+var enemies_killed: int = 0
+var upgrades_to_give: int = 0
 func on_enemy_spawned() -> void:
   enemy_alive += 1
   enemy_total_wave += 1
@@ -93,7 +112,29 @@ func on_enemy_spawned() -> void:
 func on_enemy_died() -> void:
   enemy_alive = max(enemy_alive - 1, 0)
   Globals.enemy_killed += 1
-  Signals.enemy_change.emit(enemy_alive, enemy_total_wave)
+
+  enemies_killed += 1
+  print(enemies_killed)
+  
+  if enemies_killed >= kills_needed:
+    enemies_killed -= kills_needed
+    kills_needed += kill_increase
+    kill_increase += 1
+    upgrades_to_give += 1
+    print("kills needed: ", kills_needed)
+  
+  Signals.kills_update.emit(enemies_killed, kills_needed)
 
   if enemy_alive == 0:
-    Signals.ended_wave.emit()
+    while upgrades_to_give > 0:
+      Signals.killed_enough_enemies.emit()
+      upgrades_to_give -= 1
+      await Signals.upgrade_ui_closed
+      
+    while waves_spawned > 0:
+      Signals.ended_wave.emit()
+      waves_spawned -= 1
+    
+    enemy_total_wave = 0
+
+  Signals.enemy_change.emit(enemy_alive, enemy_total_wave)

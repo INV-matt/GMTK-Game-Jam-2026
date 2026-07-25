@@ -6,7 +6,7 @@ extends Control
 func _ready() -> void:
   visible = false
   #Signals.open_upgrades.connect(on_open)
-  Signals.ended_wave.connect(on_open)
+  Signals.killed_enough_enemies.connect(on_open)
   Signals.close_upgrades.connect(on_close)
 
 func on_open() -> void:
@@ -16,7 +16,6 @@ func on_open() -> void:
   for node in btn_container.get_children(): node.queue_free()
   
   var upgrades: Array[BaseUpgrade] = Qol.game_mngr.choose_random_upgrades()
-  print(upgrades)
 
   for upgrade: BaseUpgrade in upgrades:
     var btn_upgrade: UpgradeButton = scn_upgrade_btn.instantiate() as UpgradeButton
@@ -26,3 +25,4 @@ func on_open() -> void:
 func on_close() -> void:
   visible = false
   Qol.unpause_game()
+  Signals.upgrade_ui_closed.emit()
