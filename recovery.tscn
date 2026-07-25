@@ -32,4 +32,5 @@ position = Vector2(104, 200)
 plant = ExtResource("7_8u4lp")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=422916688]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_p7xvm")

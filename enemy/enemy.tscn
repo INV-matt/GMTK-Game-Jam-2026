@@ -10,7 +10,7 @@
 radius = 29.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pmsee"]
-radius = 250.0
+radius = 400.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p200p"]
 radius = 34.0

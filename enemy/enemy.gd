@@ -46,14 +46,22 @@ func _physics_process(delta: float) -> void:
 
   delta_pos = SPEED * delta
 
+  if (following_player):
+    if (Qol.player.is_dead):
+      following_player = false
+      target = DEFAULT_TARGET
+      nav_agent.target_position = target
+    else:
+      target = Qol.player.global_position
+      nav_agent.target_position = target
+
   if nav_agent.is_navigation_finished(): return
   var next_pos: Vector2 = nav_agent.get_next_path_position()
-  print("DIR: ", global_position.direction_to(next_pos))
-  var new_vel: Vector2 = global_position.direction_to(next_pos) * SPEED * delta
+  var new_vel: Vector2 = global_position.direction_to(next_pos) * delta_pos
 
   nav_agent.set_velocity(new_vel)
 
-  velocity = velocity * .9 + target_velocity * .1
+  velocity = velocity * 0.8 + target_velocity * 0.2
 
   move_and_slide()
 
@@ -61,7 +69,10 @@ func on_player_entered(body: Node2D) -> void:
   if body is Player: following_player = true
 
 func on_player_exited(body: Node2D) -> void:
-   if body is Player: following_player = false
+   if body is Player:
+    following_player = false
+    target = DEFAULT_TARGET
+    nav_agent.target_position = target
 
 func _on_hp_comp_died() -> void:
   Signals.enemy_died.emit()
