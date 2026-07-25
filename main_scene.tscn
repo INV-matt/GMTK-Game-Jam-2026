@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="3_gyfs4"]
 [ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="3_mo76n"]
 [ext_resource type="Resource" uid="uid://bnou6pjqcse6n" path="res://upgrades/resources/Player_Health_1.tres" id="4_42l1d"]
-[ext_resource type="Script" uid="uid://dms1ki4k2oy32" path="res://menus/settings_menu.gd" id="4_d5x1h"]
 [ext_resource type="Resource" uid="uid://ctfjmbeickb5m" path="res://upgrades/resources/Bullet_Speed_1.tres" id="5_2jcla"]
 [ext_resource type="Resource" uid="uid://dk4mtwgm8nmjw" path="res://upgrades/resources/Player_Speed_1.tres" id="6_m35m6"]
 [ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="7_u0ygc"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bi7ahm3cybjw3" path="res://player_ui/enemy_ui.tscn" id="12_2jcla"]
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="12_42l1d"]
 [ext_resource type="PackedScene" uid="uid://cscpho4jnlr7y" path="res://player_ui/upgrade_ui.tscn" id="13_2jcla"]
+[ext_resource type="PackedScene" uid="uid://d7656423bbia" path="res://menus/settings_menu.tscn" id="15_2jcla"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -42,74 +42,8 @@ offset_top = 88.0
 [node name="upgrade_ui" parent="hud" unique_id=447222242 instance=ExtResource("13_2jcla")]
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
+process_mode = 3
 
 [node name="start_menu" parent="menu_manager" unique_id=1824902138 instance=ExtResource("2_2c62f")]
 
-[node name="settings_menu" type="CanvasLayer" parent="menu_manager" unique_id=1128695489]
-script = ExtResource("4_d5x1h")
-
-[node name="bg" type="Panel" parent="menu_manager/settings_menu" unique_id=949664396]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="menu_manager/settings_menu/bg" unique_id=2091714355]
-custom_minimum_size = Vector2(500, 300)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.5
-offset_top = -150.0
-offset_right = 70.5
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 32
-
-[node name="Label" type="Label" parent="menu_manager/settings_menu/bg/VBoxContainer" unique_id=454573402]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "OPTIONS"
-horizontal_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="menu_manager/settings_menu/bg/VBoxContainer" unique_id=150696555]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer" unique_id=1989783382]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 8
-
-[node name="txt_fullscreen" type="Label" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1522209471]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Fullscreen"
-
-[node name="btn_fullscreen" type="CheckButton" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1969707529]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer" unique_id=609245381]
-layout_mode = 2
-
-[node name="txt_volume" type="Label" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1651335567]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Volume"
-
-[node name="slider_volume" type="HSlider" parent="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1899703359]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.5
-max_value = 1.0
-step = 0.01
-page = 0.05
-value = 0.5
-
-[connection signal="toggled" from="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer/btn_fullscreen" to="menu_manager/settings_menu" method="toggle_fullscreen"]
-[connection signal="value_changed" from="menu_manager/settings_menu/bg/VBoxContainer/VBoxContainer/HBoxContainer2/slider_volume" to="menu_manager/settings_menu" method="change_audio"]
+[node name="settings_menu" parent="menu_manager" unique_id=1161945723 instance=ExtResource("15_2jcla")]
