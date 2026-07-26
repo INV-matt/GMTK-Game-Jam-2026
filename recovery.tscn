@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="3_x6o6c"]
 [ext_resource type="Resource" uid="uid://cuqqq0wjip7ww" path="res://plants/lavender/lavender.tres" id="5_4dne6"]
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="6_8u4lp"]
+[ext_resource type="PackedScene" uid="uid://chdxeci3s66ns" path="res://tutorial/tutorial_glyph.tscn" id="7_0b73r"]
 [ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="7_8u4lp"]
+[ext_resource type="Texture2D" uid="uid://6wwwci3d02mv" path="res://icon.svg" id="8_0b73r"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p7xvm"]
 vertices = PackedVector2Array(10812.172, 7118.3203, -7558.5625, 7637.7188, -8285.43, -5294.117, 8623.602, -5501.8906)
@@ -43,3 +45,25 @@ plant = ExtResource("7_8u4lp")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=422916688]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_p7xvm")
+
+[node name="move_up_glyph" parent="." unique_id=730296164 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(400, 112)
+action_name = "move_up"
+action_icon = ExtResource("8_0b73r")
+action_desc = "Move"
+action_group = [NodePath("../move_left_glyph"), NodePath("../move_right_glyph"), NodePath("../move_down_glyph")]
+
+[node name="move_left_glyph" parent="." unique_id=1036907509 instance=ExtResource("7_0b73r")]
+position = Vector2(360, 152)
+action_name = "move_left"
+action_icon = ExtResource("8_0b73r")
+
+[node name="move_right_glyph" parent="." unique_id=1299714421 instance=ExtResource("7_0b73r")]
+position = Vector2(440, 152)
+action_name = "move_right"
+action_icon = ExtResource("8_0b73r")
+
+[node name="move_down_glyph" parent="." unique_id=245837591 instance=ExtResource("7_0b73r")]
+position = Vector2(400, 152)
+action_name = "move_down"
+action_icon = ExtResource("8_0b73r")
