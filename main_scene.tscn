@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://d7656423bbia" path="res://menus/settings_menu.tscn" id="15_2jcla"]
 [ext_resource type="PackedScene" uid="uid://cynvhfbu8vrlt" path="res://lose_screen/lose_screen.tscn" id="15_u0ygc"]
 [ext_resource type="PackedScene" uid="uid://dh0xnfu4byre5" path="res://player_ui/debug_ui.tscn" id="16_7th4q"]
-[ext_resource type="PackedScene" uid="uid://bsj2pcejpl248" path="res://pre_cache/pre_cache_scene.tscn" id="17_6jybn"]
 
 [node name="main_scene" type="Node" unique_id=1252985010]
 
@@ -66,5 +65,3 @@ process_mode = 3
 visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1276630750]
-
-[node name="pre_cache_scene" parent="CanvasLayer" unique_id=1489888858 instance=ExtResource("17_6jybn")]

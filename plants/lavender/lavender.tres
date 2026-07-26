@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b81aoi7vt2tbn" path="res://abilities/lavender_ability/lavender_ability.gd" id="1_ectno"]
 [ext_resource type="Script" uid="uid://dchfkdb5xlvnb" path="res://plants/plant_resource.gd" id="1_kblpm"]
-[ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="2_boy7l"]
+[ext_resource type="Texture2D" uid="uid://bj5wh5v3v1y50" path="res://assets/sprites/icon_lavander_packet.png" id="2_boy7l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vjfx8"]
 load_path = "res://.godot/imported/Abilty_UI_icons-Sheet-1.png-e5acad4896716ed36cb0671aa16ce08e.ctex"
@@ -37,14 +37,10 @@ load_path = "res://.godot/imported/Lavender_Station-Sheet.png-1b9b56d76cf994cf16
 atlas = SubResource("CompressedTexture2D_lcym3")
 region = Rect2(0, 849, 684, 849)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_boy7l"]
-atlas = ExtResource("2_boy7l")
-region = Rect2(0, 158, 158, 158)
-
 [resource]
 script = ExtResource("1_kblpm")
 name = "Lavender"
-packet_sprite = SubResource("AtlasTexture_boy7l")
+packet_sprite = ExtResource("2_boy7l")
 sprite_offset = Vector2(0, -22)
 growth_stage_textures = Array[Texture2D]([SubResource("AtlasTexture_ectno"), SubResource("AtlasTexture_vjfx8"), SubResource("AtlasTexture_3pabc")])
 give_ability = true
