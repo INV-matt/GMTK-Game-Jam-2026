@@ -562,7 +562,6 @@ _data = {
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_ppra6")
-SPEED = 50.0
 size = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010759488]
