@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var was_game_running: bool = true
+
 func _ready() -> void:
   visible = false
   Signals.open_options.connect(open_options)
@@ -17,11 +19,12 @@ func _input(event: InputEvent) -> void:
 
 func open_options() -> void:
   visible = true
+  was_game_running = !get_tree().paused
   Qol.pause_game()
 
 func close_options() -> void:
   visible = false
-  Qol.unpause_game()
+  if was_game_running: Qol.unpause_game()
 
 func toggle_fullscreen(value: bool) -> void:
   if value:
