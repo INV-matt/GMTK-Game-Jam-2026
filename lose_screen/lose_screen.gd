@@ -9,10 +9,12 @@ const MAIN_SCENE = preload("uid://ty0tblji2he1")
 @onready var winjingle: AudioStreamPlayer = %winjingle
 @onready var losejungle: AudioStreamPlayer = %losejungle
 @onready var pg_stats: RichTextLabel = %pg_stats
+@onready var trophy: TextureRect = %trophy
 
 @export var stat_icons: Dictionary[String, Texture2D] = {}
 
 func _ready() -> void:
+  trophy.visible = false
   visible = false
   anim.play("RESET")
   
@@ -44,6 +46,7 @@ func show_win_screen():
     pg_stats.text = "Post-game stats (New Highscore!)"
     pg_stats.add_theme_color_override("default_color", Color.YELLOW)
     SaveMngr.highscore = ScoreMngr.total_score
+    trophy.visible = true
   
 func add_stat(stat_name: String):
   var h: HBoxContainer = HBoxContainer.new()

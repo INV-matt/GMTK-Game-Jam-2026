@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dpcr0mvdjxkvc" path="res://assets/sprites/Lavender_Station-Sheet.png" id="4_hys1b"]
 [ext_resource type="Texture2D" uid="uid://qay8dv8xjpsq" path="res://assets/sprites/Title.png" id="5_yhcmu"]
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="6_ostuc"]
+[ext_resource type="Texture2D" uid="uid://c30jwoslyp3py" path="res://assets/sprites/Difficulty_Icons-Sheet.png" id="8_54tpi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b72g3"]
 texture = ExtResource("2_h6phu")
@@ -74,6 +75,24 @@ region = Rect2(324, 0, 324, 72)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ostuc"]
 atlas = ExtResource("4_b72g3")
 region = Rect2(63, 81, 180, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm84"]
+atlas = ExtResource("8_54tpi")
+region = Rect2(0, 0, 135, 150)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kli5o"]
+load_path = "res://.godot/imported/Difficulty_Icons-Sheet.png-a8c2bb6e5441702d4cae3eb0aca52106.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajri6"]
+atlas = SubResource("CompressedTexture2D_kli5o")
+region = Rect2(135, 0, 135, 150)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5v1ot"]
+load_path = "res://.godot/imported/Difficulty_Icons-Sheet.png-a8c2bb6e5441702d4cae3eb0aca52106.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w3p6"]
+atlas = SubResource("CompressedTexture2D_5v1ot")
+region = Rect2(0, 150, 135, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2tgm"]
 atlas = ExtResource("3_w3tic")
@@ -281,6 +300,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_w3tic")
 text = "Hard"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="buttons" unique_id=192799030]
+custom_minimum_size = Vector2(0, 212)
 layout_mode = 2
 theme_override_constants/separation = 16
 
@@ -310,7 +330,7 @@ icon = SubResource("AtlasTexture_ostuc")
 icon_alignment = 1
 
 [node name="Panel" type="Panel" parent="buttons/HBoxContainer2" unique_id=98527552]
-custom_minimum_size = Vector2(149, 0)
+custom_minimum_size = Vector2(215, 212)
 layout_mode = 2
 theme = ExtResource("6_ostuc")
 
@@ -334,29 +354,68 @@ text = "Highscores"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="high_easy" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=658002018]
+[node name="HBoxContainer" type="HBoxContainer" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=1575705875]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1539298468]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_wbm84")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="high_easy" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=658002018]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 1, 0, 1)
-text = "Easy - 0"
+text = "Easy - 027591705"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="high_normal" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=1847316040]
+[node name="HBoxContainer2" type="HBoxContainer" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=314888763]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1171001225]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ajri6")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="high_normal" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1847316040]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(1, 1, 0, 1)
-text = "Normal - 0"
+text = "Norm - 12375981490"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="high_hard" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=732343139]
+[node name="HBoxContainer3" type="HBoxContainer" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=876264797]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=181917743]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, -1)
+layout_mode = 2
+texture = SubResource("AtlasTexture_1w3p6")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="high_hard" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=732343139]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/default_color = Color(1, 0, 0, 1)
-text = "Hard - 0"
+text = "Hard - 145791479"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="pot1" type="Control" parent="." unique_id=482312050]
 layout_mode = 3

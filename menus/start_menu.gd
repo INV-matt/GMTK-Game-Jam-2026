@@ -12,7 +12,7 @@ extends CanvasLayer
 @onready var high_normal: RichTextLabel = %high_normal
 @onready var high_hard: RichTextLabel = %high_hard
 
-func _ready():  
+func _ready():
   btn_start.pressed.connect(on_start)
   btn_options.pressed.connect(on_options)
   btn_quit.pressed.connect(on_quit)
@@ -27,7 +27,7 @@ func _ready():
   await get_tree().process_frame
   
   high_easy.text = "Easy - %s" % SaveMngr.save.highscore_easy
-  high_normal.text = "Normal - %s" % SaveMngr.save.highscore_normal
+  high_normal.text = "Norm - %s" % SaveMngr.save.highscore_normal
   high_hard.text = "Hard - %s" % SaveMngr.save.highscore_hard
 
 var opened: bool = false

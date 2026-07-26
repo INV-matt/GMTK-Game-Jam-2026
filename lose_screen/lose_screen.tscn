@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://drb5dr3ut25yb" path="res://lose_screen/lose_screen.gd" id="2_grjri"]
 [ext_resource type="Texture2D" uid="uid://me2sfpseld8l" path="res://assets/sprites/End_Game_Stats_Textures-Sheet.png" id="3_5qfmt"]
 [ext_resource type="Shader" uid="uid://8vs266vgbkrh" path="res://lose_screen/lose_screen_black.gdshader" id="4_y03jr"]
+[ext_resource type="Texture2D" uid="uid://c1lda6n88tuun" path="res://assets/sprites/Score_Trophy.png" id="6_ffq35"]
 [ext_resource type="AudioStream" uid="uid://b0ftmqdvp5iyf" path="res://assets/sfx/SUCCESS CHEERS Win Claps Applause 01.ogg" id="6_rk8mj"]
 [ext_resource type="AudioStream" uid="uid://6ydbd1i3feh5" path="res://assets/sfx/NEGATIVE Failure Beeps Oh No 07.ogg" id="7_ffq35"]
 
@@ -403,16 +404,36 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="pg_stats" type="RichTextLabel" parent="VBoxContainer/content/MarginContainer/stat_holder" unique_id=468010700]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/content/MarginContainer/stat_holder" unique_id=856512818]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="pg_stats" type="RichTextLabel" parent="VBoxContainer/content/MarginContainer/stat_holder/HBoxContainer" unique_id=468010700]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 24
 text = "Post-game stats"
 fit_content = true
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/content/MarginContainer/stat_holder/HBoxContainer" unique_id=370942828]
+layout_mode = 2
+alignment = 1
+
+[node name="trophy" type="TextureRect" parent="VBoxContainer/content/MarginContainer/stat_holder/HBoxContainer/VBoxContainer" unique_id=1582940596]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("6_ffq35")
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="VBoxContainer/content/MarginContainer/stat_holder/HBoxContainer" unique_id=897250096]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="spacer2" type="Control" parent="VBoxContainer/content/MarginContainer/stat_holder" unique_id=1849800951]
 layout_mode = 2
