@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ct5ehol4o2vkq" path="res://assets/sprites/Terracota_Idle_Sheet.png" id="4_yw30f"]
 [ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="5_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://ciluupcjsai00" path="res://assets/sprites/Terracota_Walk-Sheet.png" id="6_boad6"]
+[ext_resource type="AudioStream" uid="uid://cu7pwk551nxad" path="res://assets/sfx/FOOTSTEPS (A) Running Loop 01.ogg" id="8_rgyib"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
 radius = 20.13
@@ -528,3 +529,8 @@ offset_bottom = 40.0
 theme = ExtResource("5_qjkh3")
 value = 99.96
 show_percentage = false
+
+[node name="footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1333916514]
+unique_name_in_owner = true
+stream = ExtResource("8_rgyib")
+volume_db = 10.0

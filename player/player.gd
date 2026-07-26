@@ -16,6 +16,7 @@ signal ability_list_changed
 @onready var hp_comp: HpComp = %HpComp
 @onready var death_timer: Timer = %DeathTimer
 @onready var sprite: AnimatedSprite2D = %sprite
+@onready var footsteps: AudioStreamPlayer2D = %footsteps
 
 var is_dead: bool = false
 
@@ -95,3 +96,7 @@ func _process(_delta: float) -> void:
     sprite.play("%s_right" % anim_name)
   else:
     sprite.play("%s_%s" % [anim_name, dir])
+
+  var to_play: bool = velocity != Vector2.ZERO
+  if footsteps.playing != to_play:
+    footsteps.playing = to_play
