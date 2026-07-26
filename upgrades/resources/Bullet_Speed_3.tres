@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_q6r3d")
 name = "Speed 3"
-description = "Increasess bullet speed by 50%, bullets can pierce one more enemy"
+description = "Increases bullet speed by 50%, bullets can pierce one more enemy"
 metadata/_custom_type_script = "uid://d2l08puw71raw"

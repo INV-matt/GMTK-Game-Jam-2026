@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource("2_56qv7")
 name = "Green Thumb 1"
-description = "Increasse plant health by 10%"
+description = "Increases plant health by 10%"
 descendant_upgrades = Array[ExtResource("1_56qv7")]([ExtResource("2_cntgc")])

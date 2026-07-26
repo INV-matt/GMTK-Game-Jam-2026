@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("2_2lmuf")
 name = "Green Thumb 3"
-description = "Increase plant health by 25% and decrease growth time by 10%"
+description = "Increases plant health by 25% and decrease growth time by 10%"

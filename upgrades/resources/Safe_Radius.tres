@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_31dnc")
 name = "Safe And Sound"
-description = "Increases safe zone radiuss by 20%"
+description = "Increases safe zone radius by 20%"
 metadata/_custom_type_script = "uid://d3q3emfvxqftt"

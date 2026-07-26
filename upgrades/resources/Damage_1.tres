@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_1k8ge")
 name = "Damage 1"
-description = "Increase bullet damage by 20%"
+description = "Increases bullet damage by 20%"
 kill_to_unlock = 10
 descendant_upgrades = Array[ExtResource("1_cs45l")]([ExtResource("2_yio33")])
 metadata/_custom_type_script = "uid://b0n5o23amahlk"

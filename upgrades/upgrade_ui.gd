@@ -1,7 +1,7 @@
 extends Control
 
 @onready var scn_upgrade_btn: PackedScene = preload("uid://by6wbcyexcmhn")
-@onready var btn_container: HBoxContainer = $Panel/btn_container
+@onready var btn_container: VBoxContainer = $Panel/btn_container
 
 func _ready() -> void:
   visible = false
