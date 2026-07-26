@@ -17,6 +17,7 @@ signal enemy_died()
 signal start_game()
 signal open_options()
 signal close_options()
+signal return_to_main_menu()
 
 ## Upgrade signals
 signal open_upgrades()

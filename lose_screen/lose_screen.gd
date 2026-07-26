@@ -14,6 +14,7 @@ func _ready() -> void:
   
   Signals.all_plants_died.connect(show_lose_screen)
   Signals.all_waves_finished.connect(show_win_screen)
+  (%btn_main_menu as Button).pressed.connect(func(): hide(); Signals.return_to_main_menu.emit())
 
 func show_lose_screen():
   Qol.pause_game()

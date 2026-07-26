@@ -6,13 +6,19 @@ extends Control
 @onready var pl: Player = Qol.player
 var pl_connected = false
 
+func _ready() -> void:
+  Signals.return_to_main_menu.connect(_reset)
+
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
   if !pl: pl = Qol.player
   if pl && !pl_connected:
-    pl.hp_comp.hurt.connect(update_player_bar)
-    pl.hp_comp.healed.connect(update_player_bar)
-    #pl.hp_comp.died.connect(update_player_bar)
+    var t: HpComp = pl.hp_comp
+    if t.hurt.is_connected(update_player_bar): t.hurt.disconnect(update_player_bar)
+    if t.healed.is_connected(update_player_bar): t.healed.disconnect(update_player_bar)
+
+    pl.hp_comp.hurt.connect(update_player_bar, ConnectFlags.CONNECT_REFERENCE_COUNTED)
+    pl.hp_comp.healed.connect(update_player_bar, ConnectFlags.CONNECT_REFERENCE_COUNTED)
 
     update_player_bar(0)
     pl_connected = true
@@ -42,3 +48,8 @@ func update_plant_bar() -> void:
     Signals.all_plants_died.emit()
     has_lost = true
     print("hi")
+
+func _reset() -> void:
+  has_lost = false
+  pl = null
+  pl_connected = false
