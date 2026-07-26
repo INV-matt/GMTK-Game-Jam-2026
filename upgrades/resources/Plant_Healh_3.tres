@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlantHealth_3" format=3 uid="uid://oyu0cvraujiu"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_2lmuf"]
+[ext_resource type="Script" uid="uid://cmp4cn7tcbr6r" path="res://upgrades/derived_upgrades/plant_heath_3.gd" id="2_2lmuf"]
+
+[resource]
+script = ExtResource("2_2lmuf")
+name = "Green Thumb 3"
+description = "Increase plant health by 25% and decrease growth time by 10%"

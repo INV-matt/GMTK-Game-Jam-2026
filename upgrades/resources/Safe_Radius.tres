@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SafeRadius" format=3 uid="uid://cviebfugsq8e4"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_xyg6o"]
+[ext_resource type="Script" uid="uid://d3q3emfvxqftt" path="res://upgrades/derived_upgrades/safe_radius.gd" id="2_31dnc"]
+
+[resource]
+script = ExtResource("2_31dnc")
+name = "Safe And Sound"
+description = "Increases safe zone radiuss by 20%"
+metadata/_custom_type_script = "uid://d3q3emfvxqftt"
