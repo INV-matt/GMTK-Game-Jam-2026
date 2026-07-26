@@ -432,7 +432,9 @@ mouse_filter = 2
 [node name="winjingle" type="AudioStreamPlayer" parent="." unique_id=412409512]
 unique_name_in_owner = true
 stream = ExtResource("6_rk8mj")
+bus = &"SFX"
 
 [node name="losejungle" type="AudioStreamPlayer" parent="." unique_id=1410788697]
 unique_name_in_owner = true
 stream = ExtResource("7_ffq35")
+bus = &"SFX"

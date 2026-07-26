@@ -648,6 +648,7 @@ debug_enabled = true
 unique_name_in_owner = true
 stream = ExtResource("8_5ffra")
 volume_db = 10.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="TargetPlayerZone" to="." method="on_player_entered"]
 [connection signal="body_exited" from="TargetPlayerZone" to="." method="on_player_exited"]

@@ -534,3 +534,4 @@ show_percentage = false
 unique_name_in_owner = true
 stream = ExtResource("8_rgyib")
 volume_db = 10.0
+bus = &"SFX"
