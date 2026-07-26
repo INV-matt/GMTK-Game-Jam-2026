@@ -4,13 +4,19 @@ class_name AbilityUI
 const ABILITY_ICON = preload("uid://cnvk0rkj0bwqg")
 
 @onready var ability_tray: HBoxContainer = %ability_tray
-@onready var fullscreen_ability: Control = %fullscreen_ability
+@onready var fullscreen: HBoxContainer = %fullscreen
+@onready var bg_col: ColorRect = %bg_col
 
 var player: Player
 
+var can_open: bool = true
+
 func _ready() -> void:
-  fullscreen_ability.visible = false
+  fullscreen.visible = false
+  bg_col.visible = false
   Signals.start_game.connect(on_game_start)
+  Signals.focus_grabbed.connect(func(_x: InteractionComp): can_open = false)
+  Signals.focus_lost.connect(func(): can_open = true)
 
 func _process(_delta: float) -> void:
   if !player:
@@ -18,6 +24,15 @@ func _process(_delta: float) -> void:
     if player:
       player.ability_list_changed.connect(update_ability_tray)
       print(player)
+  elif can_open:
+    if Input.is_action_just_pressed("interact"):
+      fullscreen.visible = !fullscreen.visible
+      bg_col.visible = fullscreen.visible
+    
+      if fullscreen.visible:
+        Qol.pause_game()
+      else:
+        Qol.unpause_game()
 
 func update_ability_tray() -> void:
   print(player.abilities)
