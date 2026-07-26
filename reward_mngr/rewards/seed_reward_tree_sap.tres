@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://bsfcn6y5juhvv"]
+
+[ext_resource type="Texture2D" uid="uid://b285j4t0cvy0c" path="res://assets/sprites/icon_sapper_packet.png" id="1_kpkla"]
+[ext_resource type="Script" uid="uid://d20wifmcnfqaq" path="res://reward_mngr/rewards/seed_packet_reward.gd" id="2_kpkla"]
+[ext_resource type="Resource" uid="uid://dxiuksgw4i84q" path="res://plants/sap/sap.tres" id="2_py3wy"]
+
+[resource]
+script = ExtResource("2_kpkla")
+plant = ExtResource("2_py3wy")
+icon = ExtResource("1_kpkla")
+name = "Seed Packet (Sap Plant)"
+description = "When planted sap plant will slow nearby enemies with tree sap, the more grown they are the more enemies they can slow simultaneously"
+metadata/_custom_type_script = "uid://yygn3t6o678j"

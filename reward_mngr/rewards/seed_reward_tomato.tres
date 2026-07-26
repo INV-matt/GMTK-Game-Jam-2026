@@ -15,5 +15,5 @@ script = ExtResource("3_wawr8")
 plant = ExtResource("2_ayhtf")
 icon = SubResource("AtlasTexture_ayhtf")
 name = "Seed Packet (Tomato)"
-description = "Spawn a tomato seed packet randomly on the map"
+description = "The tomato gives the ability to shoot a lobbing projectiles that leaves a damaging area that scales with plant grown"
 metadata/_custom_type_script = "uid://yygn3t6o678j"

@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://55qc0gbfjpld" path="res://reward_mngr/rewards/seed_reward_lavender.tres" id="6_r2ypg"]
 [ext_resource type="Resource" uid="uid://bukjhynmpspn" path="res://reward_mngr/rewards/seed_reward_roses.tres" id="7_fjodx"]
 [ext_resource type="Resource" uid="uid://bt2r1vc8ynmpt" path="res://reward_mngr/rewards/seed_reward_tomato.tres" id="9_ajx5p"]
+[ext_resource type="Resource" uid="uid://bsfcn6y5juhvv" path="res://reward_mngr/rewards/seed_reward_tree_sap.tres" id="10_r2ypg"]
 
 [node name="reward_mngr" type="Control" unique_id=1094337275]
 process_mode = 3
@@ -22,7 +23,7 @@ mouse_filter = 2
 theme = ExtResource("1_jodpp")
 script = ExtResource("1_m0obp")
 guaranteed_reward = ExtResource("5_pnlkj")
-possible_rewards = Array[ExtResource("3_gyffc")]([ExtResource("5_u240b"), ExtResource("6_r2ypg"), ExtResource("7_fjodx"), ExtResource("4_lj3c2"), ExtResource("9_ajx5p")])
+possible_rewards = Array[ExtResource("3_gyffc")]([ExtResource("5_u240b"), ExtResource("6_r2ypg"), ExtResource("7_fjodx"), ExtResource("4_lj3c2"), ExtResource("9_ajx5p"), ExtResource("10_r2ypg")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=712789831]
 layout_mode = 1

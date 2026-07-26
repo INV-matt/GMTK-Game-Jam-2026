@@ -13,5 +13,5 @@ script = ExtResource("3_oh5ao")
 plant = ExtResource("2_wlbka")
 icon = SubResource("AtlasTexture_a0abl")
 name = "Seed Packet (Sunflower)"
-description = "Spawn a sunflower seed packet randomly on the map"
+description = "Sunflowers heal plants and the player in an area around them, the more grown they are the larger tha AoE"
 metadata/_custom_type_script = "uid://yygn3t6o678j"

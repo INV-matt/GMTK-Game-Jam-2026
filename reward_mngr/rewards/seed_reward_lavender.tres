@@ -13,5 +13,5 @@ script = ExtResource("3_2yqkf")
 plant = ExtResource("2_pp0ce")
 icon = SubResource("AtlasTexture_a0abl")
 name = "Seed Packet (Lavender)"
-description = "Spawn a lavender seed packet randomly on the map"
+description = "Lavander gives the ability to teleport short distances, the more grown the plant is the shorter the cooldown is"
 metadata/_custom_type_script = "uid://yygn3t6o678j"

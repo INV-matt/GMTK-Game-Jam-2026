@@ -15,5 +15,5 @@ script = ExtResource("3_md76j")
 plant = ExtResource("1_0085m")
 icon = SubResource("AtlasTexture_5am2b")
 name = "Seed Packet (Chili Pepper)"
-description = "Spawn a chili pepper seed packet randomly on the map"
+description = "When planted chili peppers burn nearby enemies, the more grown they are the larger the AoE"
 metadata/_custom_type_script = "uid://yygn3t6o678j"
