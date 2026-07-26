@@ -14,19 +14,19 @@ texture = SubResource("AtlasTexture_pxvk6")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_feem0"]
 atlas = ExtResource("3_3f7nq")
-region = Rect2(0, 0, 928, 156)
+region = Rect2(0, 0, 1856, 312)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uv8xw"]
 atlas = ExtResource("3_3f7nq")
-region = Rect2(928, 0, 924, 156)
+region = Rect2(1856, 0, 1840, 312)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3f7nq"]
 atlas = ExtResource("4_feem0")
-region = Rect2(0, 0, 928, 156)
+region = Rect2(0, 0, 1856, 312)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1tne"]
 atlas = ExtResource("4_feem0")
-region = Rect2(928, 0, 928, 156)
+region = Rect2(1856, 0, 1840, 312)
 
 [node name="health_ui" type="Control" unique_id=1956581867]
 layout_mode = 3
