@@ -60,10 +60,15 @@ var level_mngr: LevelMngr
 
 func _process(_delta: float) -> void:
   if !player: player = find_with_criteria(tree_root(), func(x: Node): return x is Player)
+  elif !is_instance_valid(player): player = null
   if !wave_mngr: wave_mngr = find_with_criteria(tree_root(), func(x: Node): return x is WaveMngr)
+  elif !is_instance_valid(wave_mngr): player = null
   if !seed_mngr: seed_mngr = find_with_criteria(tree_root(), func(x: Node): return x is SeedMngr)
+  elif !is_instance_valid(seed_mngr): player = null
   if !game_mngr: game_mngr = find_with_criteria(tree_root(), func(x: Node): return x is GameMngr)
+  elif !is_instance_valid(game_mngr): player = null
   if !level_mngr: level_mngr = find_with_criteria(tree_root(), func(x: Node): return x is LevelMngr)
+  elif !is_instance_valid(level_mngr): player = null
 
 class AtlasConversion:
   var atlas: Texture2D
