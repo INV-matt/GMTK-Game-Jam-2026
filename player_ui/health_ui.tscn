@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://blkxugot78i1o" path="res://player_ui/health_ui.gd" id="1_thc2b"]
 [ext_resource type="Texture2D" uid="uid://cvwas3oxqytnu" path="res://assets/sprites/UI_hud-Sheet.png" id="2_pxvk6"]
-[ext_resource type="Texture2D" uid="uid://c3wpc83g036ny" path="res://assets/sprites/temp_bar_fill.png" id="3_b2w5a"]
-[ext_resource type="Texture2D" uid="uid://dyiwsbyd2pigs" path="res://assets/sprites/temp_bar_bg.png" id="3_uv8xw"]
+[ext_resource type="Texture2D" uid="uid://d3lgu0515db48" path="res://assets/sprites/HP_Bar-Sheet.png" id="3_3f7nq"]
+[ext_resource type="Texture2D" uid="uid://hcm6s0q0u314" path="res://assets/sprites/Plant_Bar-Sheet.png" id="4_feem0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxvk6"]
 atlas = ExtResource("2_pxvk6")
@@ -11,6 +11,22 @@ region = Rect2(0, 0, 2987.8572, 855)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thc2b"]
 texture = SubResource("AtlasTexture_pxvk6")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feem0"]
+atlas = ExtResource("3_3f7nq")
+region = Rect2(0, 0, 928, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv8xw"]
+atlas = ExtResource("3_3f7nq")
+region = Rect2(928, 0, 924, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f7nq"]
+atlas = ExtResource("4_feem0")
+region = Rect2(0, 0, 928, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1tne"]
+atlas = ExtResource("4_feem0")
+region = Rect2(928, 0, 928, 156)
 
 [node name="health_ui" type="Control" unique_id=1956581867]
 layout_mode = 3
@@ -33,7 +49,7 @@ unique_name_in_owner = true
 layout_mode = 0
 offset_left = 10.0
 offset_top = 6.0
-offset_right = 282.0
+offset_right = 267.0
 offset_bottom = 37.0
 size_flags_vertical = 3
 value = 100.0
@@ -41,16 +57,15 @@ nine_patch_stretch = true
 stretch_margin_left = 1
 stretch_margin_top = 1
 stretch_margin_bottom = 1
-texture_under = ExtResource("3_uv8xw")
-texture_progress = ExtResource("3_b2w5a")
-tint_progress = Color(0.72, 0.26712, 0.1872, 1)
+texture_under = SubResource("AtlasTexture_feem0")
+texture_progress = SubResource("AtlasTexture_uv8xw")
 
 [node name="plant_bar" type="TextureProgressBar" parent="bg" unique_id=305100097]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 10.0
 offset_top = 42.0
-offset_right = 251.0
+offset_right = 239.0
 offset_bottom = 73.0
 size_flags_vertical = 3
 value = 100.0
@@ -58,6 +73,5 @@ nine_patch_stretch = true
 stretch_margin_left = 1
 stretch_margin_top = 1
 stretch_margin_bottom = 1
-texture_under = ExtResource("3_uv8xw")
-texture_progress = ExtResource("3_b2w5a")
-tint_progress = Color(0.2346284, 0.49, 0.20090002, 1)
+texture_under = SubResource("AtlasTexture_3f7nq")
+texture_progress = SubResource("AtlasTexture_u1tne")

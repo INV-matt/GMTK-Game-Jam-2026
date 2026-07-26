@@ -1,6 +1,28 @@
 [gd_scene format=3 uid="uid://7l3epf0oy8g0"]
 
 [ext_resource type="Script" uid="uid://bgcglculo0ell" path="res://menus/start_menu.gd" id="1_qdmhb"]
+[ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://assets/sprites/Lone_Pot-Sheet.png" id="2_1t8nw"]
+[ext_resource type="Texture2D" uid="uid://8fcb4t53myr5" path="res://assets/sprites/Title_Background.png" id="2_h6phu"]
+[ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://assets/sprites/Sunflower_Station-Sheet-2.png" id="3_w3tic"]
+[ext_resource type="Texture2D" uid="uid://cqs8viao4umh1" path="res://assets/sprites/Main_menu_UI_icons-Sheet.png" id="4_b72g3"]
+[ext_resource type="Texture2D" uid="uid://dpcr0mvdjxkvc" path="res://assets/sprites/Lavender_Station-Sheet.png" id="4_hys1b"]
+[ext_resource type="Texture2D" uid="uid://qay8dv8xjpsq" path="res://assets/sprites/Title.png" id="5_yhcmu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b72g3"]
+texture = ExtResource("2_h6phu")
+modulate_color = Color(0.4, 0.4, 0.4, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kg5v"]
+atlas = ExtResource("2_1t8nw")
+region = Rect2(0, -6.904274, 748.8111, 297.2525)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b72g3"]
+atlas = ExtResource("4_hys1b")
+region = Rect2(-11.354614, 833.1555, 722.8126, 906.8445)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6phu"]
+atlas = ExtResource("4_b72g3")
+region = Rect2(33, 0, 252, 72)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbm84"]
 bg_color = Color(0.12941177, 0.7254902, 0, 1)
@@ -43,6 +65,18 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhcmu"]
+atlas = ExtResource("4_b72g3")
+region = Rect2(324, 0, 324, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostuc"]
+atlas = ExtResource("4_b72g3")
+region = Rect2(63, 81, 180, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2tgm"]
+atlas = ExtResource("3_w3tic")
+region = Rect2(-11.354614, 833.1555, 977.08875, 906.8445)
 
 [sub_resource type="Animation" id="Animation_3kg5v"]
 length = 0.001
@@ -139,43 +173,80 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b72g3")
+
+[node name="pot2" type="Control" parent="." unique_id=1465422767]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1056.0
+offset_top = 583.0
+offset_right = 1056.0
+offset_bottom = 583.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="pot2" unique_id=212322615]
+texture = SubResource("AtlasTexture_3kg5v")
+
+[node name="Sprite2D2" type="Sprite2D" parent="pot2" unique_id=1963933580]
+position = Vector2(93.99997, -454)
+scale = Vector2(1.1076741, 1.1076741)
+texture = SubResource("AtlasTexture_b72g3")
 
 [node name="title" type="Label" parent="." unique_id=73549972]
-anchors_preset = 11
-anchor_left = 1.0
+visible = false
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -412.0
-offset_right = -121.0
-grow_horizontal = 0
-grow_vertical = 2
+offset_top = 83.0
+offset_bottom = 217.0
+grow_horizontal = 2
+rotation = 0.0295662
 theme_override_font_sizes/font_size = 96
-text = "GOOD
-TITEL"
+text = "GARDENFENCE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="buttons" type="VBoxContainer" parent="." unique_id=1209307363]
-anchors_preset = 4
-anchor_top = 0.5
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1505661062]
+anchors_preset = -1
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 53.0
-offset_top = -160.0
-offset_right = 565.0
-offset_bottom = 160.0
-grow_vertical = 2
+offset_left = 130.0
+offset_top = 40.0
+offset_right = -101.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("5_yhcmu")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="buttons" type="VBoxContainer" parent="." unique_id=1209307363]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -331.0
+offset_top = -364.0
+offset_right = 332.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/separation = 16
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="buttons" unique_id=1994878809]
 layout_mode = 2
+offset_transform_enabled = true
 
 [node name="start" type="Button" parent="buttons/HBoxContainer" unique_id=1480517634]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+offset_transform_position_ratio = Vector2(-0.1, 0)
 theme_override_font_sizes/font_size = 64
-text = "START"
+text = "
+"
+icon = SubResource("AtlasTexture_h6phu")
+icon_alignment = 1
 
 [node name="difficulty" type="VBoxContainer" parent="buttons/HBoxContainer" unique_id=315030622]
 unique_name_in_owner = true
@@ -211,14 +282,39 @@ text = "Hard"
 [node name="options" type="Button" parent="buttons" unique_id=1579156257]
 unique_name_in_owner = true
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 64
-text = "OPTIONS"
+text = "
+"
+icon = SubResource("AtlasTexture_yhcmu")
+icon_alignment = 1
 
 [node name="quit" type="Button" parent="buttons" unique_id=1608286814]
 unique_name_in_owner = true
 layout_mode = 2
+offset_transform_position_ratio = Vector2(0.1, 0)
 theme_override_font_sizes/font_size = 64
-text = "QUIT"
+text = "
+"
+icon = SubResource("AtlasTexture_ostuc")
+icon_alignment = 1
+
+[node name="pot1" type="Control" parent="." unique_id=482312050]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 190.0
+offset_top = 594.0
+offset_right = 190.0
+offset_bottom = 594.0
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="pot1" unique_id=377405206]
+texture = SubResource("AtlasTexture_3kg5v")
+
+[node name="Sprite2D2" type="Sprite2D" parent="pot1" unique_id=511171125]
+position = Vector2(-7.9999924, -207)
+scale = Vector2(0.8995585, 0.8995585)
+texture = SubResource("AtlasTexture_i2tgm")
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=987620199]
 unique_name_in_owner = true
