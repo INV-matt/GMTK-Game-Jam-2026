@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bltdb3e414u56" path="res://level_manager.gd" id="1_2c62f"]
 [ext_resource type="PackedScene" uid="uid://7l3epf0oy8g0" path="res://menus/start_menu.tscn" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://d368p4knx57wt" path="res://globals/game_manager.gd" id="2_7ycvg"]
-[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui.tscn" id="3_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://bm4fx0hm4nhdf" path="res://player_ui/ability_ui/ability_ui.tscn" id="3_gyfs4"]
 [ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="3_mo76n"]
 [ext_resource type="Resource" uid="uid://bnou6pjqcse6n" path="res://upgrades/resources/Player_Health_1.tres" id="4_42l1d"]
 [ext_resource type="Resource" uid="uid://ctfjmbeickb5m" path="res://upgrades/resources/Bullet_Speed_1.tres" id="5_2jcla"]
@@ -35,8 +35,6 @@ starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("4_42l1d"), ExtRes
 visible = false
 script = ExtResource("8_2jcla")
 
-[node name="ability_ui" parent="hud" unique_id=44532813 instance=ExtResource("3_gyfs4")]
-
 [node name="seed_mngr" parent="hud" unique_id=364425271 instance=ExtResource("12_42l1d")]
 offset_top = 88.0
 
@@ -57,6 +55,8 @@ offset_left = 1056.0
 offset_top = 121.0
 offset_right = 1137.0
 offset_bottom = 161.0
+
+[node name="ability_ui" parent="hud" unique_id=44532813 instance=ExtResource("3_gyfs4")]
 
 [node name="menu_manager" type="Node" parent="." unique_id=1831034801]
 process_mode = 3

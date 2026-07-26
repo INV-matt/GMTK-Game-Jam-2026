@@ -37,4 +37,8 @@ signal waves_finished
 signal damage_dealt(amt: int)
 signal damage_recieved(amt: int)
 
+## Interaction signals
+signal focus_grabbed(who: InteractionComp)
+signal focus_lost
+
 @warning_ignore_restore("unused_signal")
