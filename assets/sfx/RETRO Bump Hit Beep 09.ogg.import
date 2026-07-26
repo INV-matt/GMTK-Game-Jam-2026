@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dequiknlqcywt"
+path="res://.godot/imported/RETRO Bump Hit Beep 09.ogg-2e11e93cf9c0c73a2de6ca0956bb3c43.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/RETRO Bump Hit Beep 09.ogg"
+dest_files=["res://.godot/imported/RETRO Bump Hit Beep 09.ogg-2e11e93cf9c0c73a2de6ca0956bb3c43.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

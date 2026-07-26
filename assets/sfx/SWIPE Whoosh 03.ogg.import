@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cn5l7b66urkwc"
+path="res://.godot/imported/SWIPE Whoosh 03.ogg-5e10723e8e0ae4dd55096cb5bd04c59c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/SWIPE Whoosh 03.ogg"
+dest_files=["res://.godot/imported/SWIPE Whoosh 03.ogg-5e10723e8e0ae4dd55096cb5bd04c59c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

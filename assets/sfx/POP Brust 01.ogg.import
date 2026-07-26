@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://eu1u7o2fqj37"
+path="res://.godot/imported/POP Brust 01.ogg-3cad1d23888ea4093201f4cfa1a29d7e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/POP Brust 01.ogg"
+dest_files=["res://.godot/imported/POP Brust 01.ogg-3cad1d23888ea4093201f4cfa1a29d7e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

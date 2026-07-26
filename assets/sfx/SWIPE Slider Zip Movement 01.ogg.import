@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxrqbyjb02nhn"
+path="res://.godot/imported/SWIPE Slider Zip Movement 01.ogg-5df2663a0299e7c57fb48fbd8b983b06.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/SWIPE Slider Zip Movement 01.ogg"
+dest_files=["res://.godot/imported/SWIPE Slider Zip Movement 01.ogg-5df2663a0299e7c57fb48fbd8b983b06.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

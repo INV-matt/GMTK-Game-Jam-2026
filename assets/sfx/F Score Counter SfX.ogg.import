@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c8t76c3v8i2o7"
+path="res://.godot/imported/F Score Counter SfX.ogg-cbfddf35e96c9ecb46b8994d42f88c3f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/F Score Counter SfX.ogg"
+dest_files=["res://.godot/imported/F Score Counter SfX.ogg-cbfddf35e96c9ecb46b8994d42f88c3f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

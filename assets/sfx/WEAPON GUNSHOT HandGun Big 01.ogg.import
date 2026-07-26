@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmmwhcetyag75"
+path="res://.godot/imported/WEAPON GUNSHOT HandGun Big 01.ogg-2d7af393dcb2e2d60b2f35690e8769c9.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/WEAPON GUNSHOT HandGun Big 01.ogg"
+dest_files=["res://.godot/imported/WEAPON GUNSHOT HandGun Big 01.ogg-2d7af393dcb2e2d60b2f35690e8769c9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
