@@ -16,6 +16,7 @@ func _ready():
   easy.pressed.connect(start_easy)
   normal.pressed.connect(start_normal)
   hard.pressed.connect(start_hard)
+  Signals.return_to_main_menu.connect(on_return_to_main_menu)
 
   if OS.has_feature("web"):
     btn_quit.visible = false
@@ -49,3 +50,7 @@ func on_options() -> void:
 
 func on_quit() -> void:
   get_tree().quit()
+
+func on_return_to_main_menu() -> void:
+  visible = true
+  Qol.unpause_game()

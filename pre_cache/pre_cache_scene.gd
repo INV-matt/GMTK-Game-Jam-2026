@@ -30,7 +30,7 @@ var elapsed: float = 0.0
 func _process(delta: float) -> void:
   elapsed += delta
   
-  if elapsed < 1: return
+  if elapsed <= .1: return
   
   Qol.atlas_to_texture(atlases_to_cache[idx])
   

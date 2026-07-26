@@ -1,6 +1,7 @@
 extends Control
 
 const CUSTOM_NUM = preload("uid://b71khpxy8nflg")
+const MAIN_SCENE = preload("uid://ty0tblji2he1")
 
 @onready var anim: AnimationPlayer = %anim
 @onready var stat_holder: VBoxContainer = %stat_holder
@@ -14,6 +15,11 @@ func _ready() -> void:
   
   Signals.all_plants_died.connect(show_lose_screen)
   Signals.all_waves_finished.connect(show_win_screen)
+  (%btn_main_menu as Button).pressed.connect(return_to_menu)
+  
+func return_to_menu():
+  Qol.unpause_game()
+  get_tree().reload_current_scene()
 
 func show_lose_screen():
   Qol.pause_game()
@@ -66,6 +72,7 @@ func add_stat(stat_name: String):
   #h.add_child(r)
 
   stat_holder.add_child(h)
+  stat_holder.move_child(h, -3)
 
 func display_stats():
   add_stat("enemies killed")
