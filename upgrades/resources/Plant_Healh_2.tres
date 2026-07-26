@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantHealth" format=3 uid="uid://c4jjmrt4gttyv"]
+
+[ext_resource type="Script" uid="uid://diopoi01eerip" path="res://upgrades/base_upgrade.gd" id="1_r3hhp"]
+[ext_resource type="Script" uid="uid://u7maxjav5dmx" path="res://upgrades/derived_upgrades/plant_heath.gd" id="2_r3hhp"]
+[ext_resource type="Resource" uid="uid://oyu0cvraujiu" path="res://upgrades/resources/Plant_Healh_3.tres" id="2_svym5"]
+[ext_resource type="Resource" uid="uid://cviebfugsq8e4" path="res://upgrades/resources/Safe_Radius.tres" id="3_ejah8"]
+
+[resource]
+script = ExtResource("2_r3hhp")
+multiplier = 1.15
+name = "Green Thumb 2"
+description = "Increases plant health by 15%"
+level = 2
+descendant_upgrades = Array[ExtResource("1_r3hhp")]([ExtResource("2_svym5"), ExtResource("3_ejah8")])

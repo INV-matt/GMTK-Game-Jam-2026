@@ -19,6 +19,7 @@ func _input(event: InputEvent) -> void:
 
 func open_options() -> void:
   visible = true
+  (%btn_fullscreen as CheckButton).button_pressed = DisplayServer.window_get_mode() == DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN
   was_game_running = !get_tree().paused
   Qol.pause_game()
 
