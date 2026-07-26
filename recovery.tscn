@@ -57,6 +57,8 @@ load_path = "res://.godot/imported/tutorial_icon_placeholder.png-311f338e63ebc1f
 atlas = SubResource("CompressedTexture2D_weq30")
 region = Rect2(64, 32, 64, 32)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wbm84"]
+
 [node name="recovery" type="Node2D" unique_id=220602187]
 y_sort_enabled = true
 
@@ -79,7 +81,6 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=422916688]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_p7xvm")
 
 [node name="move_up_glyph" parent="." unique_id=730296164 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
@@ -88,42 +89,42 @@ action_name = "move_up"
 action_icon = SubResource("AtlasTexture_0b73r")
 sprite_scale = Vector2(1, 1)
 action_desc = "Move"
-action_group = [NodePath("../move_left_glyph"), NodePath("../move_right_glyph"), NodePath("../move_down_glyph"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("../move_left_glyph"), NodePath("../move_right_glyph"), NodePath("../move_down_glyph"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="move_left_glyph" parent="." unique_id=1036907509 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(360, 152)
 action_name = "move_left"
 action_icon = SubResource("AtlasTexture_lnwmu")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="move_right_glyph" parent="." unique_id=1299714421 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(440, 152)
 action_name = "move_right"
 action_icon = SubResource("AtlasTexture_j6b7t")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="move_down_glyph" parent="." unique_id=245837591 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(400, 152)
 action_name = "move_down"
 action_icon = SubResource("AtlasTexture_weq30")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="ability_primary" parent="." unique_id=1598414680 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(568, 152)
 action_name = "primary"
 action_icon = SubResource("AtlasTexture_5goxn")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="ability_secondary" parent="." unique_id=667353777 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(680, 152)
 action_name = "secondary"
 action_icon = SubResource("AtlasTexture_7xwcc")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="ability_tertiary" parent="." unique_id=743962003 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(624, 152)
@@ -131,4 +132,26 @@ action_name = "tertiary"
 action_icon = SubResource("AtlasTexture_bbkc1")
 sprite_scale = Vector2(1, 1)
 action_desc = "Abilities"
-action_group = [NodePath("."), NodePath("../ability_secondary"), NodePath("../ability_primary"), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("../ability_secondary"), NodePath("../ability_primary"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=948358589]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1076275634]
+position = Vector2(-16, 2976)
+shape = SubResource("WorldBoundaryShape2D_wbm84")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=352461853]
+position = Vector2(40, -2928)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_wbm84")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1544100006]
+position = Vector2(-3704, -72)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_wbm84")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=652103504]
+position = Vector2(3968, 192)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_wbm84")
