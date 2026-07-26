@@ -85,11 +85,13 @@ func _process(_delta: float) -> void:
       max_dot = d
       dir = i
   
+  var anim_name: String = "walk" if velocity else "idle" 
+  
   if dir == "left":
     sprite.flip_h = true
-    sprite.play("idle_right")
+    sprite.play("%s_right" % anim_name)
   elif dir == "right":
     sprite.flip_h = false
-    sprite.play("idle_right")
+    sprite.play("%s_right" % anim_name)
   else:
-    sprite.play("idle_%s" % dir)
+    sprite.play("%s_%s" % [anim_name, dir])
