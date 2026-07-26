@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bgcglculo0ell" path="res://menus/start_menu.gd" id="1_qdmhb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbm84"]
-bg_color = Color(0.12894133, 0.72449565, 0, 1)
+bg_color = Color(0.12941177, 0.7254902, 0, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -17,7 +17,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jd3ek"]
-bg_color = Color(0.79397124, 0.5449869, 0, 1)
+bg_color = Color(0.7921569, 0.54509807, 0, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -31,7 +31,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aoqm3"]
-bg_color = Color(1, 0, 0.086104214, 1)
+bg_color = Color(1, 0, 0.08627451, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3

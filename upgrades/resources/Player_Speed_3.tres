@@ -7,4 +7,5 @@
 script = ExtResource("2_cfnhg")
 name = "Agility 3"
 description = "Increases player speed by 50%"
+level = 3
 metadata/_custom_type_script = "uid://buc2f0x7nscmk"

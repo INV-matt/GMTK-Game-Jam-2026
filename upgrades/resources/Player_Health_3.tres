@@ -7,4 +7,5 @@
 script = ExtResource("2_hl448")
 name = "Health 3"
 description = "Increases player health by 25%"
+level = 3
 metadata/_custom_type_script = "uid://cultbw7lmkau5"

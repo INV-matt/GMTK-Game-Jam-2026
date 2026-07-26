@@ -8,5 +8,6 @@
 script = ExtResource("2_8ujie")
 name = "Health 2"
 description = "Increases player health by 15%"
+level = 2
 descendant_upgrades = Array[ExtResource("1_pouhu")]([ExtResource("2_f5guo")])
 metadata/_custom_type_script = "uid://bbtli8y5xgk1l"

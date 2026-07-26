@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://by6wbcyexcmhn"]
 
 [ext_resource type="Script" uid="uid://b3b5o2dju8o6y" path="res://upgrades/upgrade_button.gd" id="1_4o4m5"]
+[ext_resource type="Texture2D" uid="uid://dyr7wh6j3p3mi" path="res://assets/sprites/upgrade_button_texture.png" id="2_ebbir"]
+[ext_resource type="Texture2D" uid="uid://dkkkmmj517vvv" path="res://assets/sprites/upgrade_button_texture_pressed.png" id="3_hgf67"]
+[ext_resource type="Texture2D" uid="uid://67wcws8x2voy" path="res://assets/sprites/upgrade_button_texture_hover.png" id="4_f1gvc"]
 
-[sub_resource type="Gradient" id="Gradient_4o4m5"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4o4m5"]
-gradient = SubResource("Gradient_4o4m5")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebbir"]
+bg_color = Color(0.182, 0.261, 0.151, 1)
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="upgrade_button" type="Control" unique_id=336027523]
 layout_mode = 3
@@ -18,15 +26,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_4o4m5")
 
-[node name="Panel" type="Panel" parent="." unique_id=1568029272]
+[node name="bg" type="Panel" parent="." unique_id=1568029272]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ebbir")
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1991939816]
+[node name="MarginContainer" type="MarginContainer" parent="bg" unique_id=1991939816]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,18 +48,18 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=851391393]
+[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer" unique_id=851391393]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer" unique_id=121558981]
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer/HBoxContainer" unique_id=121558981]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="title" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1712630670]
+[node name="title" type="Label" parent="bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1712630670]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -57,7 +67,7 @@ text = "Upgrade"
 vertical_alignment = 1
 uppercase = true
 
-[node name="desc" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=971168223]
+[node name="desc" type="Label" parent="bg/MarginContainer/HBoxContainer/VBoxContainer" unique_id=971168223]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 1)
 layout_mode = 2
@@ -67,15 +77,12 @@ text = "Lorem ipsum dolor sit amet"
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="btn" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer" unique_id=783599275]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = SubResource("GradientTexture2D_4o4m5")
-
-[node name="select" type="Button" parent="Panel/MarginContainer/HBoxContainer" unique_id=222464833]
+[node name="select" type="TextureButton" parent="bg/MarginContainer/HBoxContainer" unique_id=1701577678]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-text = "SELECT"
+texture_normal = ExtResource("2_ebbir")
+texture_pressed = ExtResource("3_hgf67")
+texture_hover = ExtResource("4_f1gvc")
+ignore_texture_size = true
+stretch_mode = 5

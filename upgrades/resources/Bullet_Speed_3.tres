@@ -7,4 +7,5 @@
 script = ExtResource("2_q6r3d")
 name = "Speed 3"
 description = "Increases bullet speed by 50%, bullets can pierce one more enemy"
+level = 3
 metadata/_custom_type_script = "uid://d2l08puw71raw"

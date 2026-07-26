@@ -8,5 +8,6 @@
 script = ExtResource("2_8i33x")
 name = "Agility 2"
 description = "Increases player speed by 30%"
+level = 2
 descendant_upgrades = Array[ExtResource("1_s6w3u")]([ExtResource("2_eyyal")])
 metadata/_custom_type_script = "uid://c310sfd5nneux"

@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://by5tamgopadrv" path="res://upgrades/resources/Damage_1.tres" id="7_u0ygc"]
 [ext_resource type="Script" uid="uid://ckm588bp6i5d2" path="res://hud.gd" id="8_2jcla"]
 [ext_resource type="Resource" uid="uid://bymdo04ltgkyy" path="res://upgrades/resources/Plant_Healh_1.tres" id="8_6jybn"]
+[ext_resource type="Resource" uid="uid://cviebfugsq8e4" path="res://upgrades/resources/Safe_Radius.tres" id="9_ak604"]
+[ext_resource type="Resource" uid="uid://daxugoy1cnngo" path="res://upgrades/resources/Player_Health_2.tres" id="10_vimvf"]
 [ext_resource type="PackedScene" uid="uid://chi3ep3cai88s" path="res://player_ui/health_ui.tscn" id="11_2jcla"]
 [ext_resource type="PackedScene" uid="uid://bi7ahm3cybjw3" path="res://player_ui/enemy_ui.tscn" id="12_2jcla"]
 [ext_resource type="PackedScene" uid="uid://v3w4qsk5yw1a" path="res://seed_packet/seed_mngr.tscn" id="12_42l1d"]
@@ -30,6 +32,7 @@ unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("2_7ycvg")
 starter_upgrades = Array[ExtResource("3_mo76n")]([ExtResource("4_42l1d"), ExtResource("5_2jcla"), ExtResource("6_m35m6"), ExtResource("7_u0ygc"), ExtResource("8_6jybn")])
+starter_upgrades2 = Array[ExtResource("3_mo76n")]([ExtResource("7_u0ygc"), ExtResource("9_ak604"), ExtResource("10_vimvf")])
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=1522350986]
 visible = false
