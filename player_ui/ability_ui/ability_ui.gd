@@ -23,20 +23,21 @@ func _process(_delta: float) -> void:
     player = Qol.player
     if player:
       player.ability_list_changed.connect(update_ability_tray)
-      print(player)
   elif can_open:
     if Input.is_action_just_pressed("interact"):
       fullscreen.visible = !fullscreen.visible
-      bg_col.visible = fullscreen.visible
     
       if fullscreen.visible:
-        Qol.pause_game()
+        if get_tree().paused:
+          fullscreen.visible = false
+        else:
+          Qol.pause_game()
       else:
         Qol.unpause_game()
+        
+      bg_col.visible = fullscreen.visible
 
 func update_ability_tray() -> void:
-  print(player.abilities)
-  
   for i in ability_tray.get_children():
     i.queue_free()
   
@@ -45,9 +46,13 @@ func update_ability_tray() -> void:
     var icon: AbilityIcon = ABILITY_ICON.instantiate()
     icon.ability = i
     icon.ability_idx = idx
+    icon.pressed.connect(clicked_ability.bind(i))
     ability_tray.add_child(icon)
     ability_tray.move_child(icon, 0)
     
     idx += 1
+
+func clicked_ability(ability: Ability):
+  print(ability.ability_name)
 
 func on_game_start() -> void: visible = true

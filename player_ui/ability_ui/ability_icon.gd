@@ -1,7 +1,7 @@
-extends Control
+extends Button
 class_name AbilityIcon
 
-@onready var icon: TextureRect = %icon
+@onready var ability_icon: TextureRect = %icon
 @onready var countdown: RichTextLabel = %countdown
 @onready var button_hint: TextureRect = %button_hint
 
@@ -9,8 +9,8 @@ class_name AbilityIcon
 var ability_idx: int = 0
 
 func _ready() -> void:
-  icon.texture = ability.icon
-  icon.material = icon.material.duplicate()
+  ability_icon.texture = ability.icon
+  ability_icon.material = ability_icon.material.duplicate()
   button_hint.texture = button_hint.texture.duplicate()
   button_hint.visible = true
   if ability_idx == Qol.player.primary_ability_idx:
@@ -31,14 +31,14 @@ var was_ready: bool = true
 func _process(_delta: float) -> void:
   var progress: float = 1.0
   
-  icon.position = shake
+  ability_icon.position = shake
   shake = Vector2.from_angle(randf_range(0, PI * 4)) * shake.length() * .8
   
   if ability.cooldown:
     countdown.text = "%.1f" % ability.cooldown.time_left
     progress = (ability.cooldown.wait_time - ability.cooldown.time_left) / ability.cooldown.wait_time
 
-  (icon.material as ShaderMaterial).set_shader_parameter("progress", progress)
+  (ability_icon.material as ShaderMaterial).set_shader_parameter("progress", progress)
   
   # Shake both when the ability is used and when it recharges
   if progress >= 1.0 != was_ready:
