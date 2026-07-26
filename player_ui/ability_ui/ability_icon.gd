@@ -8,7 +8,17 @@ class_name AbilityIcon
 @export var ability: Ability
 var ability_idx: int = 0
 
+var stylebox: StyleBoxFlat = StyleBoxFlat.new()
+
 func _ready() -> void:
+  stylebox.bg_color = Color.TRANSPARENT
+  stylebox.corner_radius_bottom_left = 3
+  stylebox.corner_radius_bottom_right = 3
+  stylebox.corner_radius_top_left = 3
+  stylebox.corner_radius_top_right = 3
+  add_theme_stylebox_override("normal", stylebox)
+  add_theme_stylebox_override("hover", stylebox)
+  
   ability_icon.texture = ability.icon
   ability_icon.material = ability_icon.material.duplicate()
   button_hint.texture = button_hint.texture.duplicate()
@@ -47,3 +57,17 @@ func _process(_delta: float) -> void:
   was_ready = progress >= 1.0
 
   countdown.visible = ability.cooldown and ability.cooldown.time_left > 0
+
+var selected: bool = false
+
+func toggle_select():
+  selected = !selected
+  
+  if selected:
+    stylebox.bg_color = Color.YELLOW
+    stylebox.bg_color.a = .75
+  else:
+    stylebox.bg_color = Color.TRANSPARENT
+  
+  add_theme_stylebox_override("normal", stylebox)
+  add_theme_stylebox_override("hover", stylebox)

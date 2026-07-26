@@ -47,19 +47,23 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="ability_change" parent="MarginContainer/VBoxContainer/fullscreen" unique_id=1646238857 instance=ExtResource("3_1pus5")]
+[node name="swap_primary" parent="MarginContainer/VBoxContainer/fullscreen" unique_id=1646238857 instance=ExtResource("3_1pus5")]
 layout_mode = 2
 
-[node name="ability_change2" parent="MarginContainer/VBoxContainer/fullscreen" unique_id=904142522 instance=ExtResource("3_1pus5")]
+[node name="swap_secondary" parent="MarginContainer/VBoxContainer/fullscreen" unique_id=904142522 instance=ExtResource("3_1pus5")]
 layout_mode = 2
 ability_idx = 1
 
-[node name="ability_change3" parent="MarginContainer/VBoxContainer/fullscreen" unique_id=1951837966 instance=ExtResource("3_1pus5")]
+[node name="swap_tertiary" parent="MarginContainer/VBoxContainer/fullscreen" unique_id=1951837966 instance=ExtResource("3_1pus5")]
 layout_mode = 2
-ability_idx = 1
+ability_idx = 2
 
 [node name="ability_tray" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=944177523]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 alignment = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/fullscreen/swap_primary" to="." method="_on_swap_primary_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/fullscreen/swap_secondary" to="." method="_on_swap_secondary_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/fullscreen/swap_tertiary" to="." method="_on_swap_tertiary_pressed"]

@@ -157,6 +157,7 @@ func create_plantables():
         plantables.visible = false
         for f in plantables.get_children():
           f.queue_free()
+        interaction_comp.queue_free()
     )
     interact.inherit_focus = interaction_comp
     

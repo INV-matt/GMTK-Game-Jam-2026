@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://eqn41yj3b65e" path="res://player_ui/ability_ui/ability_icon.gd" id="1_jobo3"]
 [ext_resource type="Shader" uid="uid://d4cpuy71jimyu" path="res://player_ui/ability_ui/ability_icon.gdshader" id="3_y4qu4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jd3ek"]
-bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y4qu4"]
 shader = ExtResource("3_y4qu4")
 shader_parameter/progress = 0.0
@@ -26,7 +23,6 @@ region = Rect2(0, 240, 290, 238)
 custom_minimum_size = Vector2(96.2, 64.8)
 offset_right = 96.2
 offset_bottom = 64.8
-theme_override_styles/normal = SubResource("StyleBoxFlat_jd3ek")
 script = ExtResource("1_jobo3")
 
 [node name="icon" type="TextureRect" parent="." unique_id=1317943573]
