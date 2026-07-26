@@ -7,6 +7,7 @@ const REWARD_NUM: int = 3
 @onready var rewards: HBoxContainer = %rewards
 @onready var reward_num: RichTextLabel = %reward_num
 
+@export var guaranteed_reward: Reward
 @export var possible_rewards: Array[Reward] = []
 
 var rewards_to_give: int = 0:
@@ -24,7 +25,6 @@ func _ready() -> void:
   Signals.reward_selected.connect(reward_selected)
 
 func show_rewards():
-  print("rewards")
   Qol.pause_game()
   if !showing_rewards:
     pick_rewards()
@@ -36,7 +36,14 @@ var showing_rewards: bool = false
 func pick_rewards():
   var already_picked: Array[Reward] = []
   
-  for i in range(REWARD_NUM):
+  already_picked.append(guaranteed_reward)
+  
+  var guaranteed_disp: RewardDisplay = REWARD_DISPLAY.instantiate()
+  guaranteed_disp.reward = guaranteed_reward
+  
+  rewards.add_child(guaranteed_disp)
+  
+  for i in range(REWARD_NUM - 1):
     if len(already_picked) >= len(possible_rewards): break
     
     var r: Reward = possible_rewards.filter(func(x: Reward): return !x in already_picked).pick_random()
@@ -50,7 +57,6 @@ func pick_rewards():
 
 func reward_selected(reward: Reward):
   reward.give_reward()
-  print(reward.name)
   
   for i in rewards.get_children():
     i.queue_free()

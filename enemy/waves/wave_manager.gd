@@ -64,8 +64,6 @@ func spawn_enemy() -> void:
     if enemy_types[key] <= budget: possible_enemies.push_back(key)
   
   if possible_enemies.size() == 0:
-    print("No possible enemies: ")
-    print("Budget: ", budget)
     budget = 0
     return
     
@@ -103,7 +101,6 @@ func next_wave() -> void:
   Signals.started_wave.emit(current_wave, max_waves)
   
   if current_wave >= max_waves:
-    print("last wave")
     Signals.last_wave.emit()
     waves_finished = true
 
@@ -123,14 +120,12 @@ func on_enemy_died() -> void:
   enemy_alive = max(enemy_alive - 1, 0)
 
   enemies_killed += 1
-  print(enemies_killed)
   
   if enemies_killed >= kills_needed:
     enemies_killed -= kills_needed
     kills_needed += kill_increase
     kill_increase += 1
     upgrades_to_give += 1
-    print("kills needed: ", kills_needed)
   
   Signals.kills_update.emit(enemies_killed, kills_needed)
 
