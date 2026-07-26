@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fcvwumov76il"
+path="res://.godot/imported/BONG Bell Timer Hit 08.ogg-161c3d0aed837b2456950d0b831b037d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/BONG Bell Timer Hit 08.ogg"
+dest_files=["res://.godot/imported/BONG Bell Timer Hit 08.ogg-161c3d0aed837b2456950d0b831b037d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

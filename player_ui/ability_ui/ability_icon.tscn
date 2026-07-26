@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://colnm174k7wli" path="res://assets/sprites/Abilty_UI_icons-Sheet-1.png" id="1_c47ew"]
 [ext_resource type="Script" uid="uid://eqn41yj3b65e" path="res://player_ui/ability_ui/ability_icon.gd" id="1_jobo3"]
 [ext_resource type="Shader" uid="uid://d4cpuy71jimyu" path="res://player_ui/ability_ui/ability_icon.gdshader" id="3_y4qu4"]
+[ext_resource type="AudioStream" uid="uid://fcvwumov76il" path="res://assets/sfx/BONG Bell Timer Hit 08.ogg" id="4_122ie"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y4qu4"]
 shader = ExtResource("3_y4qu4")
@@ -71,3 +72,9 @@ mouse_filter = 2
 text = "13.0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="recharge_sfx" type="AudioStreamPlayer" parent="." unique_id=261414582]
+unique_name_in_owner = true
+stream = ExtResource("4_122ie")
+volume_db = -15.0
+pitch_scale = 2.0

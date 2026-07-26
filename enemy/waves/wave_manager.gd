@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
   if wave_has_spawned and !waves_finished:
     next_wave_in -= delta
     Signals.wave_timer_update.emit(next_wave_in)
-    if next_wave_in <= 20:
+    if next_wave_in <= 20 and current_wave > 0:
       countdown_sfx.play(20 - next_wave_in)
     if next_wave_in <= 0:
       next_wave()

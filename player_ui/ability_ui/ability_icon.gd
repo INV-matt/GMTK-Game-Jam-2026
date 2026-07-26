@@ -4,6 +4,7 @@ class_name AbilityIcon
 @onready var ability_icon: TextureRect = %icon
 @onready var countdown: RichTextLabel = %countdown
 @onready var button_hint: TextureRect = %button_hint
+@onready var recharge_sfx: AudioStreamPlayer = %recharge_sfx
 
 @export var ability: Ability
 var ability_idx: int = 0
@@ -53,6 +54,10 @@ func _process(_delta: float) -> void:
   # Shake both when the ability is used and when it recharges
   if progress >= 1.0 != was_ready:
     shake = Vector2.from_angle(randf_range(0, PI * 4)) * 30
+    
+    if progress >= 1.0:
+      recharge_sfx.pitch_scale = 2.0 + randf_range(-.3, .3)
+      recharge_sfx.play()
   
   was_ready = progress >= 1.0
 
