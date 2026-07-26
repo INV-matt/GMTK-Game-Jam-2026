@@ -4,10 +4,12 @@ class_name AbilityUI
 const ABILITY_ICON = preload("uid://cnvk0rkj0bwqg")
 
 @onready var ability_tray: HBoxContainer = %ability_tray
+@onready var fullscreen_ability: Control = %fullscreen_ability
 
 var player: Player
 
 func _ready() -> void:
+  fullscreen_ability.visible = false
   Signals.start_game.connect(on_game_start)
 
 func _process(_delta: float) -> void:
