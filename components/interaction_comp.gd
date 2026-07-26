@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
       player_inside = true
       target_a = 1.0
       Signals.focus_grabbed.emit(self)
-    else :
+    else:
       player_inside = false
       target_a = 0.0
       Signals.focus_lost.emit()

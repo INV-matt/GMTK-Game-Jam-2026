@@ -166,11 +166,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "BACK"
 
+[node name="btn_restart" type="Button" parent="bg/VBoxContainer/VBoxContainer/menu_buttons" unique_id=432812794]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "QUIT TO MENU"
+
 [node name="btn_quit" type="Button" parent="bg/VBoxContainer/VBoxContainer/menu_buttons" unique_id=805805213]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "QUIT"
+text = "EXIT GAME"
 
 [connection signal="toggled" from="bg/VBoxContainer/VBoxContainer/graphics/HBoxContainer/btn_fullscreen" to="." method="toggle_fullscreen"]
 [connection signal="item_selected" from="bg/VBoxContainer/VBoxContainer/graphics/HBoxContainer1/btn_msaa" to="." method="change_msaa"]
@@ -179,4 +185,5 @@ text = "QUIT"
 [connection signal="value_changed" from="bg/VBoxContainer/VBoxContainer/audio/HBoxContainer20/slider_volume" to="." method="change_audio"]
 [connection signal="value_changed" from="bg/VBoxContainer/VBoxContainer/audio/HBoxContainer21/slider_sfx" to="." method="change_sfx"]
 [connection signal="pressed" from="bg/VBoxContainer/VBoxContainer/menu_buttons/btn_back" to="." method="back_pressed"]
+[connection signal="pressed" from="bg/VBoxContainer/VBoxContainer/menu_buttons/btn_restart" to="." method="return_to_main"]
 [connection signal="pressed" from="bg/VBoxContainer/VBoxContainer/menu_buttons/btn_quit" to="." method="quit_pressed"]

@@ -9,6 +9,11 @@ func _ready() -> void:
   (%slider_volume as Slider).value = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Master"))
   (%slider_sfx as Slider).value = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX"))
 
+  %btn_restart.hide()
+  Signals.start_game.connect(func(): %btn_restart.show())
+  Signals.return_to_main_menu.connect(func(): %btn_restart.hide())
+
+
   if OS.has_feature("web"):
     %btn_quit.visible = false
 
@@ -57,3 +62,7 @@ func quit_pressed() -> void: get_tree().quit()
 
 func toggle_debug(value: bool) -> void:
   Globals.DEBUG = value
+
+func return_to_main() -> void:
+  Qol.unpause_game()
+  get_tree().reload_current_scene()
