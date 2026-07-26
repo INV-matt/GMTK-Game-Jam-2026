@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://qfesgsqgwsj4" path="res://enemy/waves/wave_manager.gd" id="1_c8nl1"]
 [ext_resource type="PackedScene" uid="uid://dnw0kia48axt5" path="res://enemy/enemy.tscn" id="2_vxa6s"]
 [ext_resource type="PackedScene" uid="uid://y6bhqih6basq" path="res://enemy/enemy_fast.tscn" id="3_pfeq5"]
+[ext_resource type="AudioStream" uid="uid://b0pmh4bvamor0" path="res://assets/sfx/freesound_community-countdown-boom-76577.mp3" id="4_pfeq5"]
 
 [node name="WaveManager" type="Node" unique_id=158709167]
 script = ExtResource("1_c8nl1")
@@ -12,3 +13,7 @@ ExtResource("3_pfeq5"): 5
 })
 MINIMUM_DISTANCE = 800
 MAXIMUM_DISTANCE = 2000
+
+[node name="countdown_sfx" type="AudioStreamPlayer" parent="." unique_id=555957125]
+unique_name_in_owner = true
+stream = ExtResource("4_pfeq5")

@@ -1,6 +1,8 @@
 extends Node
 class_name WaveMngr
 
+@onready var countdown_sfx: AudioStreamPlayer = %countdown_sfx
+
 var budget: int = 0
 var current_wave: int = 0:
   get:
@@ -38,6 +40,8 @@ func _process(delta: float) -> void:
   if wave_has_spawned and !waves_finished:
     next_wave_in -= delta
     Signals.wave_timer_update.emit(next_wave_in)
+    if next_wave_in <= 20:
+      countdown_sfx.play(20 - next_wave_in)
     if next_wave_in <= 0:
       next_wave()
   
