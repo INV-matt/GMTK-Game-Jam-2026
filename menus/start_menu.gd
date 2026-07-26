@@ -17,6 +17,9 @@ func _ready():
   normal.pressed.connect(start_normal)
   hard.pressed.connect(start_hard)
 
+  if OS.has_feature("web"):
+    btn_quit.visible = false
+
 var opened: bool = false
 
 func on_start() -> void:

@@ -7,6 +7,9 @@ func _ready() -> void:
   (%slider_volume as Slider).value = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Master"))
   (%slider_sfx as Slider).value = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX"))
 
+  if OS.has_feature("web"):
+    %btn_quit.visible = false
+
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("ui_cancel"):
     if visible: Signals.close_options.emit()
