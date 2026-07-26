@@ -45,6 +45,7 @@ offset_top = 88.0
 [node name="enemy_ui" parent="hud" unique_id=1133864387 instance=ExtResource("12_2jcla")]
 
 [node name="upgrade_ui" parent="hud" unique_id=447222242 instance=ExtResource("13_2jcla")]
+visible = false
 
 [node name="reward_mngr" parent="hud" unique_id=1094337275 instance=ExtResource("14_m35m6")]
 
