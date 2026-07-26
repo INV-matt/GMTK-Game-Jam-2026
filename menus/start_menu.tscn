@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bgcglculo0ell" path="res://menus/start_menu.gd" id="1_qdmhb"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://assets/sprites/Lone_Pot-Sheet.png" id="2_1t8nw"]
+[ext_resource type="Texture2D" uid="uid://8fcb4t53myr5" path="res://assets/sprites/Title_Background.png" id="2_h6phu"]
 [ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://assets/sprites/Sunflower_Station-Sheet-2.png" id="3_w3tic"]
 [ext_resource type="Texture2D" uid="uid://cqs8viao4umh1" path="res://assets/sprites/Main_menu_UI_icons-Sheet.png" id="4_b72g3"]
 [ext_resource type="Texture2D" uid="uid://dpcr0mvdjxkvc" path="res://assets/sprites/Lavender_Station-Sheet.png" id="4_hys1b"]
+[ext_resource type="Texture2D" uid="uid://qay8dv8xjpsq" path="res://assets/sprites/Title.png" id="5_yhcmu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b72g3"]
+texture = ExtResource("2_h6phu")
+modulate_color = Color(0.4, 0.4, 0.4, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kg5v"]
 atlas = ExtResource("2_1t8nw")
@@ -167,6 +173,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b72g3")
 
 [node name="pot2" type="Control" parent="." unique_id=1465422767]
 layout_mode = 3
@@ -186,6 +193,7 @@ scale = Vector2(1.1076741, 1.1076741)
 texture = SubResource("AtlasTexture_b72g3")
 
 [node name="title" type="Label" parent="." unique_id=73549972]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 83.0
@@ -196,6 +204,19 @@ theme_override_font_sizes/font_size = 96
 text = "GARDENFENCE"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1505661062]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 130.0
+offset_top = 40.0
+offset_right = -101.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("5_yhcmu")
+expand_mode = 1
+stretch_mode = 3
 
 [node name="buttons" type="VBoxContainer" parent="." unique_id=1209307363]
 anchors_preset = 7
