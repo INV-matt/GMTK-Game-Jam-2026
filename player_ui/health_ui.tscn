@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://blkxugot78i1o" path="res://player_ui/health_ui.gd" id="1_thc2b"]
 [ext_resource type="Texture2D" uid="uid://cvwas3oxqytnu" path="res://assets/sprites/UI_hud-Sheet.png" id="2_pxvk6"]
 [ext_resource type="Texture2D" uid="uid://d3lgu0515db48" path="res://assets/sprites/HP_Bar-Sheet.png" id="3_3f7nq"]
+[ext_resource type="Texture2D" uid="uid://hcm6s0q0u314" path="res://assets/sprites/Plant_Bar-Sheet.png" id="4_feem0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxvk6"]
 atlas = ExtResource("2_pxvk6")
@@ -19,18 +20,12 @@ region = Rect2(0, 0, 928, 156)
 atlas = ExtResource("3_3f7nq")
 region = Rect2(928, 0, 924, 156)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b2w5a"]
-load_path = "res://.godot/imported/HP_Bar-Sheet.png-82697855dfaf08958360770da9ac7b2e.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3f7nq"]
-atlas = SubResource("CompressedTexture2D_b2w5a")
+atlas = ExtResource("4_feem0")
 region = Rect2(0, 0, 928, 156)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ymrrs"]
-load_path = "res://.godot/imported/HP_Bar-Sheet.png-82697855dfaf08958360770da9ac7b2e.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1tne"]
-atlas = SubResource("CompressedTexture2D_ymrrs")
+atlas = ExtResource("4_feem0")
 region = Rect2(928, 0, 928, 156)
 
 [node name="health_ui" type="Control" unique_id=1956581867]
@@ -64,7 +59,6 @@ stretch_margin_top = 1
 stretch_margin_bottom = 1
 texture_under = SubResource("AtlasTexture_feem0")
 texture_progress = SubResource("AtlasTexture_uv8xw")
-tint_progress = Color(0.9999966, 0.29930994, 0.33210588, 1)
 
 [node name="plant_bar" type="TextureProgressBar" parent="bg" unique_id=305100097]
 unique_name_in_owner = true
@@ -81,4 +75,3 @@ stretch_margin_top = 1
 stretch_margin_bottom = 1
 texture_under = SubResource("AtlasTexture_3f7nq")
 texture_progress = SubResource("AtlasTexture_u1tne")
-tint_progress = Color(0.2346284, 0.49, 0.20090002, 1)
