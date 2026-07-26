@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b81aoi7vt2tbn" path="res://abilities/lavender_ability/lavender_ability.gd" id="1_ectno"]
 [ext_resource type="Script" uid="uid://dchfkdb5xlvnb" path="res://plants/plant_resource.gd" id="1_kblpm"]
+[ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="2_boy7l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vjfx8"]
 load_path = "res://.godot/imported/Abilty_UI_icons-Sheet-1.png-e5acad4896716ed36cb0671aa16ce08e.ctex"
@@ -36,11 +37,8 @@ load_path = "res://.godot/imported/Lavender_Station-Sheet.png-1b9b56d76cf994cf16
 atlas = SubResource("CompressedTexture2D_lcym3")
 region = Rect2(0, 849, 684, 849)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ectno"]
-load_path = "res://.godot/imported/Seed_Packets-Sheet.png-37f417aa0f27f6221362618b76684941.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_boy7l"]
-atlas = SubResource("CompressedTexture2D_ectno")
+atlas = ExtResource("2_boy7l")
 region = Rect2(0, 158, 158, 158)
 
 [resource]
