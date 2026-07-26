@@ -7,6 +7,7 @@
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://d3njw231n6btx" path="res://enemy/walk_blend_space.tres" id="5_pmsee"]
 [ext_resource type="PackedScene" uid="uid://rmg2fmg32306" path="res://ping/ping.tscn" id="6_1wwld"]
 [ext_resource type="Texture2D" uid="uid://cdfe2b5r8syff" path="res://assets/sprites/SKull-Sheet.png" id="7_y5vj3"]
+[ext_resource type="AudioStream" uid="uid://3b06q3mhg5kh" path="res://assets/sfx/SWIPE Slash Splat 03.ogg" id="8_5ffra"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ffra"]
 radius = 29.0
@@ -642,6 +643,11 @@ unique_name_in_owner = true
 avoidance_enabled = true
 radius = 32.0
 debug_enabled = true
+
+[node name="atk_sfx" type="AudioStreamPlayer2D" parent="." unique_id=697462065]
+unique_name_in_owner = true
+stream = ExtResource("8_5ffra")
+volume_db = 10.0
 
 [connection signal="body_entered" from="TargetPlayerZone" to="." method="on_player_entered"]
 [connection signal="body_exited" from="TargetPlayerZone" to="." method="on_player_exited"]
