@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cqs8viao4umh1" path="res://assets/sprites/Main_menu_UI_icons-Sheet.png" id="4_b72g3"]
 [ext_resource type="Texture2D" uid="uid://dpcr0mvdjxkvc" path="res://assets/sprites/Lavender_Station-Sheet.png" id="4_hys1b"]
 [ext_resource type="Texture2D" uid="uid://qay8dv8xjpsq" path="res://assets/sprites/Title.png" id="5_yhcmu"]
+[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="6_ostuc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b72g3"]
 texture = ExtResource("2_h6phu")
@@ -279,7 +280,16 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_aoqm3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w3tic")
 text = "Hard"
 
-[node name="options" type="Button" parent="buttons" unique_id=1579156257]
+[node name="HBoxContainer2" type="HBoxContainer" parent="buttons" unique_id=192799030]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons/HBoxContainer2" unique_id=1398984250]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="options" type="Button" parent="buttons/HBoxContainer2/VBoxContainer" unique_id=1579156257]
 unique_name_in_owner = true
 layout_mode = 2
 offset_transform_enabled = true
@@ -289,7 +299,7 @@ text = "
 icon = SubResource("AtlasTexture_yhcmu")
 icon_alignment = 1
 
-[node name="quit" type="Button" parent="buttons" unique_id=1608286814]
+[node name="quit" type="Button" parent="buttons/HBoxContainer2/VBoxContainer" unique_id=1608286814]
 unique_name_in_owner = true
 layout_mode = 2
 offset_transform_position_ratio = Vector2(0.1, 0)
@@ -299,13 +309,62 @@ text = "
 icon = SubResource("AtlasTexture_ostuc")
 icon_alignment = 1
 
+[node name="Panel" type="Panel" parent="buttons/HBoxContainer2" unique_id=98527552]
+custom_minimum_size = Vector2(149, 0)
+layout_mode = 2
+theme = ExtResource("6_ostuc")
+
+[node name="MarginContainer" type="MarginContainer" parent="buttons/HBoxContainer2/Panel" unique_id=1508512229]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons/HBoxContainer2/Panel/MarginContainer" unique_id=530285312]
+z_index = 1
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=2005358305]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Highscores"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="high_easy" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=658002018]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+text = "Easy - 0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="high_normal" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=1847316040]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+text = "Normal - 0"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="high_hard" type="RichTextLabel" parent="buttons/HBoxContainer2/Panel/MarginContainer/VBoxContainer" unique_id=732343139]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+text = "Hard - 0"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="pot1" type="Control" parent="." unique_id=482312050]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 190.0
-offset_top = 594.0
-offset_right = 190.0
-offset_bottom = 594.0
+offset_left = 128.0
+offset_top = 600.0
+offset_right = 128.0
+offset_bottom = 600.0
 scale = Vector2(0.4, 0.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="pot1" unique_id=377405206]

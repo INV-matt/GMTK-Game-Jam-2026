@@ -8,6 +8,7 @@ const MAIN_SCENE = preload("uid://ty0tblji2he1")
 @onready var success_label: RichTextLabel = %success_label
 @onready var winjingle: AudioStreamPlayer = %winjingle
 @onready var losejungle: AudioStreamPlayer = %losejungle
+@onready var pg_stats: RichTextLabel = %pg_stats
 
 @export var stat_icons: Dictionary[String, Texture2D] = {}
 
@@ -38,6 +39,11 @@ func show_win_screen():
   success_label.text = "THE ENEMIES ARE GONE"
   success_label.add_theme_color_override("default_color", Color.GREEN)
   winjingle.play()
+  
+  if ScoreMngr.total_score > SaveMngr.highscore:
+    pg_stats.text = "Post-game stats (New Highscore!)"
+    pg_stats.add_theme_color_override("default_color", Color.YELLOW)
+    SaveMngr.highscore = ScoreMngr.total_score
   
 func add_stat(stat_name: String):
   var h: HBoxContainer = HBoxContainer.new()
