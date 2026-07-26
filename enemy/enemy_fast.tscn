@@ -486,7 +486,7 @@ _data = {
 }
 
 [node name="EnemyFast" unique_id=478211698 instance=ExtResource("1_wtg4x")]
-SPEED = 100.0
+SPEED = 150.0
 MAX_HEALTH = 50.0
 
 [node name="PlayerHitbox" parent="." index="3" unique_id=163459591]
