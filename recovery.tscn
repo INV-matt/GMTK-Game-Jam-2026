@@ -3,11 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bcxdguaoswcyf" path="res://plants/pot/pot.tscn" id="1_h4ksw"]
 [ext_resource type="PackedScene" uid="uid://dfvqnd5to5toi" path="res://enemy/waves/wave_manager.tscn" id="1_p7xvm"]
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="3_x6o6c"]
-[ext_resource type="Resource" uid="uid://cuqqq0wjip7ww" path="res://plants/lavender/lavender.tres" id="5_4dne6"]
-[ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="6_8u4lp"]
 [ext_resource type="PackedScene" uid="uid://chdxeci3s66ns" path="res://tutorial/tutorial_glyph.tscn" id="7_0b73r"]
-[ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="7_8u4lp"]
-[ext_resource type="Resource" uid="uid://c4rre62tr73ji" path="res://plants/tomato/tomato.tres" id="7_lnwmu"]
 [ext_resource type="Texture2D" uid="uid://bxan64yxjvhg7" path="res://assets/sprites/tutorial_icon_placeholder.png" id="8_lnwmu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p7xvm"]
@@ -74,35 +70,12 @@ position = Vector2(56, 48)
 [node name="pot2" parent="." unique_id=30374922 instance=ExtResource("1_h4ksw")]
 position = Vector2(-72, 48)
 
-[node name="pot4" parent="." unique_id=40992186 instance=ExtResource("1_h4ksw")]
-position = Vector2(-408, 40)
-
 [node name="Player" parent="." unique_id=386552564 instance=ExtResource("3_x6o6c")]
 position = Vector2(232, 192)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=876777589]
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
-
-[node name="seed_packet" parent="." unique_id=426246522 instance=ExtResource("6_8u4lp")]
-position = Vector2(104, 200)
-plant = ExtResource("5_4dne6")
-
-[node name="seed_packet2" parent="." unique_id=2123793455 instance=ExtResource("6_8u4lp")]
-position = Vector2(-64, 200)
-plant = ExtResource("7_8u4lp")
-
-[node name="seed_packet3" parent="." unique_id=1249793934 instance=ExtResource("6_8u4lp")]
-position = Vector2(-224, 200)
-plant = ExtResource("7_lnwmu")
-
-[node name="seed_packet4" parent="." unique_id=1695138651 instance=ExtResource("6_8u4lp")]
-position = Vector2(-416, 200)
-plant = ExtResource("7_lnwmu")
-
-[node name="seed_packet5" parent="." unique_id=400915512 instance=ExtResource("6_8u4lp")]
-position = Vector2(-416, 200)
-plant = ExtResource("7_lnwmu")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=422916688]
 visible = false
@@ -114,42 +87,42 @@ action_name = "move_up"
 action_icon = SubResource("AtlasTexture_0b73r")
 sprite_scale = Vector2(1, 1)
 action_desc = "Move"
-action_group = [NodePath("../move_left_glyph"), NodePath("../move_right_glyph"), NodePath("../move_down_glyph"), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("../move_left_glyph"), NodePath("../move_right_glyph"), NodePath("../move_down_glyph"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="move_left_glyph" parent="." unique_id=1036907509 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(360, 152)
 action_name = "move_left"
 action_icon = SubResource("AtlasTexture_lnwmu")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="move_right_glyph" parent="." unique_id=1299714421 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(440, 152)
 action_name = "move_right"
 action_icon = SubResource("AtlasTexture_j6b7t")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="move_down_glyph" parent="." unique_id=245837591 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(400, 152)
 action_name = "move_down"
 action_icon = SubResource("AtlasTexture_weq30")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="ability_primary" parent="." unique_id=1598414680 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(568, 152)
 action_name = "primary"
 action_icon = SubResource("AtlasTexture_5goxn")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="ability_secondary" parent="." unique_id=667353777 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(680, 152)
 action_name = "secondary"
 action_icon = SubResource("AtlasTexture_7xwcc")
 sprite_scale = Vector2(1, 1)
-action_group = [NodePath("."), NodePath("."), NodePath(".")]
+action_group = [NodePath("."), NodePath("."), NodePath("."), NodePath(".")]
 
 [node name="ability_tertiary" parent="." unique_id=743962003 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
 position = Vector2(624, 152)
@@ -157,7 +130,4 @@ action_name = "tertiary"
 action_icon = SubResource("AtlasTexture_bbkc1")
 sprite_scale = Vector2(1, 1)
 action_desc = "Abilities"
-action_group = [NodePath("."), NodePath("../ability_secondary"), NodePath("../ability_primary"), NodePath("."), NodePath(".")]
-
-[node name="pot3" parent="." unique_id=606946194 instance=ExtResource("1_h4ksw")]
-position = Vector2(-224, 48)
+action_group = [NodePath("."), NodePath("../ability_secondary"), NodePath("../ability_primary"), NodePath("."), NodePath("."), NodePath(".")]
