@@ -3,10 +3,9 @@ class_name GameMngr
 
 var available_upgrades: Array[BaseUpgrade]
 @export var starter_upgrades: Array[BaseUpgrade]
-@export var starter_upgrades2: Array[BaseUpgrade]
 
 func _ready() -> void:
-  available_upgrades = starter_upgrades2.duplicate_deep()
+  available_upgrades = starter_upgrades.duplicate_deep()
 
 func handle_upgrade(upgrade: BaseUpgrade) -> void:
   upgrade.upgrade_stats()
