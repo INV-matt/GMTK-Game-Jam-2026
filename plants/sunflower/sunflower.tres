@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://assets/sprites/Sunflower_Station-Sheet-2.png" id="1_70jrp"]
 [ext_resource type="Script" uid="uid://nlre7hudml4c" path="res://plants/sunflower/sunflower.gd" id="2_70jrp"]
-[ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="2_hbnwm"]
+[ext_resource type="Texture2D" uid="uid://bqrk0fv7tn15r" path="res://assets/sprites/icon_sunflower_packet.png" id="2_hbnwm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbnwm"]
 atlas = ExtResource("1_70jrp")
@@ -16,15 +16,11 @@ region = Rect2(954, 0, 954, 870)
 atlas = ExtResource("1_70jrp")
 region = Rect2(0, 870, 954, 870)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p114n"]
-atlas = ExtResource("2_hbnwm")
-region = Rect2(0, 0, 158, 158)
-
 [resource]
 script = ExtResource("2_70jrp")
 name = "Sunflower"
 desc = "When planted the sunflower gives a little passive healing to you and nearby plants"
 stationary = false
-packet_sprite = SubResource("AtlasTexture_p114n")
+packet_sprite = ExtResource("2_hbnwm")
 growth_stage_textures = Array[Texture2D]([SubResource("AtlasTexture_hbnwm"), SubResource("AtlasTexture_vis1r"), SubResource("AtlasTexture_o1lr7")])
 growth_time = 20.0
