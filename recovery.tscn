@@ -5,12 +5,60 @@
 [ext_resource type="PackedScene" uid="uid://cpxllxa1xe7k3" path="res://player/player.tscn" id="3_x6o6c"]
 [ext_resource type="Resource" uid="uid://cuqqq0wjip7ww" path="res://plants/lavender/lavender.tres" id="5_4dne6"]
 [ext_resource type="PackedScene" uid="uid://bcd41okr0r845" path="res://seed_packet/seed_packet.tscn" id="6_8u4lp"]
+[ext_resource type="PackedScene" uid="uid://chdxeci3s66ns" path="res://tutorial/tutorial_glyph.tscn" id="7_0b73r"]
 [ext_resource type="Resource" uid="uid://cny6rblyix2du" path="res://plants/roses/roses.tres" id="7_8u4lp"]
+[ext_resource type="Texture2D" uid="uid://bxan64yxjvhg7" path="res://assets/sprites/tutorial_icon_placeholder.png" id="8_lnwmu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p7xvm"]
 vertices = PackedVector2Array(10812.172, 7118.3203, -7558.5625, 7637.7188, -8285.43, -5294.117, 8623.602, -5501.8906)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8296, -5304, 8632, -5512, 10824, 7128, -7568, 7648)])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b73r"]
+atlas = ExtResource("8_lnwmu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0b73r"]
+load_path = "res://.godot/imported/tutorial_icon_placeholder.png-311f338e63ebc1f2939f72114f974850.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnwmu"]
+atlas = SubResource("CompressedTexture2D_0b73r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5goxn"]
+load_path = "res://.godot/imported/tutorial_icon_placeholder.png-311f338e63ebc1f2939f72114f974850.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6b7t"]
+atlas = SubResource("CompressedTexture2D_5goxn")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7xwcc"]
+load_path = "res://.godot/imported/tutorial_icon_placeholder.png-311f338e63ebc1f2939f72114f974850.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weq30"]
+atlas = SubResource("CompressedTexture2D_7xwcc")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lnwmu"]
+load_path = "res://.godot/imported/tutorial_icon_placeholder.png-311f338e63ebc1f2939f72114f974850.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5goxn"]
+atlas = SubResource("CompressedTexture2D_lnwmu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j6b7t"]
+load_path = "res://.godot/imported/tutorial_icon_placeholder.png-311f338e63ebc1f2939f72114f974850.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xwcc"]
+atlas = SubResource("CompressedTexture2D_j6b7t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_weq30"]
+load_path = "res://.godot/imported/tutorial_icon_placeholder.png-311f338e63ebc1f2939f72114f974850.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbkc1"]
+atlas = SubResource("CompressedTexture2D_weq30")
+region = Rect2(64, 32, 64, 32)
 
 [node name="recovery" type="Node2D" unique_id=220602187]
 y_sort_enabled = true
@@ -43,3 +91,54 @@ plant = ExtResource("7_8u4lp")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=422916688]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_p7xvm")
+
+[node name="move_up_glyph" parent="." unique_id=730296164 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(400, 112)
+action_name = "move_up"
+action_icon = SubResource("AtlasTexture_0b73r")
+sprite_scale = Vector2(1, 1)
+action_desc = "Move"
+action_group = [NodePath("../move_left_glyph"), NodePath("../move_right_glyph"), NodePath("../move_down_glyph"), NodePath("."), NodePath(".")]
+
+[node name="move_left_glyph" parent="." unique_id=1036907509 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(360, 152)
+action_name = "move_left"
+action_icon = SubResource("AtlasTexture_lnwmu")
+sprite_scale = Vector2(1, 1)
+action_group = [NodePath("."), NodePath(".")]
+
+[node name="move_right_glyph" parent="." unique_id=1299714421 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(440, 152)
+action_name = "move_right"
+action_icon = SubResource("AtlasTexture_j6b7t")
+sprite_scale = Vector2(1, 1)
+action_group = [NodePath("."), NodePath(".")]
+
+[node name="move_down_glyph" parent="." unique_id=245837591 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(400, 152)
+action_name = "move_down"
+action_icon = SubResource("AtlasTexture_weq30")
+sprite_scale = Vector2(1, 1)
+action_group = [NodePath("."), NodePath(".")]
+
+[node name="ability_primary" parent="." unique_id=1598414680 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(568, 152)
+action_name = "primary"
+action_icon = SubResource("AtlasTexture_5goxn")
+sprite_scale = Vector2(1, 1)
+action_group = [NodePath(".")]
+
+[node name="ability_secondary" parent="." unique_id=667353777 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(680, 152)
+action_name = "secondary"
+action_icon = SubResource("AtlasTexture_7xwcc")
+sprite_scale = Vector2(1, 1)
+action_group = [NodePath(".")]
+
+[node name="ability_tertiary" parent="." unique_id=743962003 node_paths=PackedStringArray("action_group") instance=ExtResource("7_0b73r")]
+position = Vector2(624, 152)
+action_name = "tertiary"
+action_icon = SubResource("AtlasTexture_bbkc1")
+sprite_scale = Vector2(1, 1)
+action_desc = "Abilities"
+action_group = [NodePath("."), NodePath("../ability_secondary"), NodePath("../ability_primary")]
