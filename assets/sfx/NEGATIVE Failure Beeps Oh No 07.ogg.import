@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6ydbd1i3feh5"
+path="res://.godot/imported/NEGATIVE Failure Beeps Oh No 07.ogg-a054fbbc225ebb15cd897ffd60924bad.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/NEGATIVE Failure Beeps Oh No 07.ogg"
+dest_files=["res://.godot/imported/NEGATIVE Failure Beeps Oh No 07.ogg-a054fbbc225ebb15cd897ffd60924bad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

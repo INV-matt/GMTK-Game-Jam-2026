@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1l1f7dd3lvc6"
+path="res://.godot/imported/IMPACT Thump Thud 01.ogg-d5b852df64229adbc8599fdb6c062caf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/IMPACT Thump Thud 01.ogg"
+dest_files=["res://.godot/imported/IMPACT Thump Thud 01.ogg-d5b852df64229adbc8599fdb6c062caf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://drb5dr3ut25yb" path="res://lose_screen/lose_screen.gd" id="2_grjri"]
 [ext_resource type="Texture2D" uid="uid://me2sfpseld8l" path="res://assets/sprites/End_Game_Stats_Textures-Sheet.png" id="3_5qfmt"]
 [ext_resource type="Shader" uid="uid://8vs266vgbkrh" path="res://lose_screen/lose_screen_black.gdshader" id="4_y03jr"]
+[ext_resource type="AudioStream" uid="uid://b0ftmqdvp5iyf" path="res://assets/sfx/SUCCESS CHEERS Win Claps Applause 01.ogg" id="6_rk8mj"]
+[ext_resource type="AudioStream" uid="uid://6ydbd1i3feh5" path="res://assets/sfx/NEGATIVE Failure Beeps Oh No 07.ogg" id="7_ffq35"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ukekk"]
 load_path = "res://.godot/imported/End_Game_Stats_Textures-Sheet.png-9ca2bc0b9d0084cb20837fea1b4405b5.ctex"
@@ -426,3 +428,11 @@ text = "RETURN TO MAIN MENU"
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="winjingle" type="AudioStreamPlayer" parent="." unique_id=412409512]
+unique_name_in_owner = true
+stream = ExtResource("6_rk8mj")
+
+[node name="losejungle" type="AudioStreamPlayer" parent="." unique_id=1410788697]
+unique_name_in_owner = true
+stream = ExtResource("7_ffq35")

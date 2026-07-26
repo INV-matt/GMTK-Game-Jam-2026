@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3b06q3mhg5kh"
+path="res://.godot/imported/SWIPE Slash Splat 03.ogg-01c2422579aa60ee6c96f9f6fde5a6e1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/SWIPE Slash Splat 03.ogg"
+dest_files=["res://.godot/imported/SWIPE Slash Splat 03.ogg-01c2422579aa60ee6c96f9f6fde5a6e1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

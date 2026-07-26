@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bfn4wjryc2sey" path="res://components/interaction_comp.gd" id="2_g0hop"]
 [ext_resource type="Texture2D" uid="uid://brejr64edyvqa" path="res://assets/sprites/Lone_Pot-Sheet.png" id="3_wnhti"]
 [ext_resource type="Script" uid="uid://bfuubedgq33em" path="res://components/hurtbox.gd" id="5_wnhti"]
+[ext_resource type="AudioStream" uid="uid://b1l1f7dd3lvc6" path="res://assets/sfx/IMPACT Thump Thud 01.ogg" id="6_g0hop"]
 [ext_resource type="Script" uid="uid://d1jlu0g173ory" path="res://components/hp_comp.gd" id="6_q0ont"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_828tj"]
@@ -18,6 +19,18 @@ height = 72.0
 atlas = ExtResource("3_wnhti")
 region = Rect2(0, 0, 745, 306)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ispg6"]
+atlas = ExtResource("3_wnhti")
+region = Rect2(745, 0, 745, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u7gl"]
+atlas = ExtResource("3_wnhti")
+region = Rect2(0, 306, 745, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jlr2"]
+atlas = ExtResource("3_wnhti")
+region = Rect2(745, 306, 745, 306)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbm84"]
 animations = [{
 "frames": [{
@@ -26,6 +39,30 @@ animations = [{
 }],
 "loop": 1,
 "name": &"0dmg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ispg6")
+}],
+"loop": 1,
+"name": &"1dmg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u7gl")
+}],
+"loop": 1,
+"name": &"2dmg",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jlr2")
+}],
+"loop": 1,
+"name": &"3dmg",
 "speed": 5.0
 }]
 
@@ -67,7 +104,7 @@ unique_name_in_owner = true
 position = Vector2(8.4703295e-22, 2.2737368e-13)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_wbm84")
-animation = &"0dmg"
+animation = &"3dmg"
 
 [node name="plant_icon" type="Sprite2D" parent="." unique_id=273778564]
 unique_name_in_owner = true
@@ -112,5 +149,10 @@ vertical_alignment = 2
 [node name="plantables" type="Node2D" parent="." unique_id=1458141310]
 unique_name_in_owner = true
 visible = false
+
+[node name="break" type="AudioStreamPlayer2D" parent="." unique_id=1886208408]
+unique_name_in_owner = true
+stream = ExtResource("6_g0hop")
+volume_db = 24.0
 
 [connection signal="interacted" from="interaction_comp" to="." method="_on_interaction_comp_interacted"]

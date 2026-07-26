@@ -14,6 +14,7 @@ class_name BaseEnemy
 @onready var player_hitbox: DmgHitbox = %PlayerHitbox
 @onready var hurtbox: Hurtbox = %Hurtbox
 @onready var nav_agent: NavigationAgent2D = %nav_agent
+@onready var atk_sfx: AudioStreamPlayer2D = %atk_sfx
 
 var speed_mult: float = 1.0
 
@@ -72,6 +73,7 @@ var hit_something: bool = false
 
 func _on_player_hitbox_hit(_what: Hurtbox) -> void:
   hit_something = true
+  atk_sfx.play()
 
 func reset_hit():
   hit_something = false

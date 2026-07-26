@@ -7,6 +7,7 @@ class_name Pot
 @onready var hp_comp: HpComp = %hp_comp
 @onready var interaction_comp: InteractionComp = %interaction_comp
 @onready var plantables: Node2D = %plantables
+@onready var break_sfx: AudioStreamPlayer2D = %break
 
 var is_dead = false
 
@@ -65,6 +66,13 @@ var growth_stage: int = 0:
 func _ready() -> void:
   update_stats()
   hp_comp.died.connect(on_death)
+  hp_comp.hurt.connect(on_hurt)
+  pot_icon.play("0dmg")
+
+func on_hurt(_amt: int):
+  var num: int = min(3, int(((hp_comp.max_hp - hp_comp.hp) * 4.0) / hp_comp.max_hp))
+  
+  pot_icon.play("%sdmg" % num)
 
 var fully_grown: bool = false
 
@@ -116,6 +124,10 @@ func on_death() -> void:
   is_dead = true
   hp_comp.disabled = true
   
+  break_sfx.playing = true
+  break_sfx.finished.connect(break_sfx.queue_free)
+  break_sfx.reparent(get_parent())
+  
   queue_free()
   
   if plant:
@@ -123,8 +135,6 @@ func on_death() -> void:
     if plant.give_ability:
       Qol.player.abilities.erase(plant.ability)
       Qol.player.ability_list_changed.emit()
-
-  print("Plant died")
 
 var push_dist: float = 75
 

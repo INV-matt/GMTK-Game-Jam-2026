@@ -6,6 +6,8 @@ const MAIN_SCENE = preload("uid://ty0tblji2he1")
 @onready var anim: AnimationPlayer = %anim
 @onready var stat_holder: VBoxContainer = %stat_holder
 @onready var success_label: RichTextLabel = %success_label
+@onready var winjingle: AudioStreamPlayer = %winjingle
+@onready var losejungle: AudioStreamPlayer = %losejungle
 
 @export var stat_icons: Dictionary[String, Texture2D] = {}
 
@@ -27,6 +29,7 @@ func show_lose_screen():
   anim.play("you died")
   success_label.text = "THE GARDEN WAS DESTROYED"
   success_label.add_theme_color_override("default_color", Color.RED)
+  losejungle.play()
 
 func show_win_screen():
   Qol.pause_game()
@@ -34,6 +37,7 @@ func show_win_screen():
   anim.play("you died")
   success_label.text = "THE ENEMIES ARE GONE"
   success_label.add_theme_color_override("default_color", Color.GREEN)
+  winjingle.play()
   
 func add_stat(stat_name: String):
   var h: HBoxContainer = HBoxContainer.new()

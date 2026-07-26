@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b0ftmqdvp5iyf"
+path="res://.godot/imported/SUCCESS CHEERS Win Claps Applause 01.ogg-518ba2de31209ef0a305e14e2732e43d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sfx/SUCCESS CHEERS Win Claps Applause 01.ogg"
+dest_files=["res://.godot/imported/SUCCESS CHEERS Win Claps Applause 01.ogg-518ba2de31209ef0a305e14e2732e43d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
