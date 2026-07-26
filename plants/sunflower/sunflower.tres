@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqxxa5o7idd78" path="res://assets/sprites/Sunflower_Station-Sheet-2.png" id="1_70jrp"]
 [ext_resource type="Script" uid="uid://nlre7hudml4c" path="res://plants/sunflower/sunflower.gd" id="2_70jrp"]
+[ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="2_hbnwm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbnwm"]
 atlas = ExtResource("1_70jrp")
@@ -15,11 +16,8 @@ region = Rect2(954, 0, 954, 870)
 atlas = ExtResource("1_70jrp")
 region = Rect2(0, 870, 954, 870)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_70jrp"]
-load_path = "res://.godot/imported/Seed_Packets-Sheet.png-37f417aa0f27f6221362618b76684941.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_p114n"]
-atlas = SubResource("CompressedTexture2D_70jrp")
+atlas = ExtResource("2_hbnwm")
 region = Rect2(0, 0, 158, 158)
 
 [resource]

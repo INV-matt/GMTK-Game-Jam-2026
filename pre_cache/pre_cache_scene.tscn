@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bsj2pcejpl248"]
+
+[ext_resource type="Theme" uid="uid://do3colsru7pqn" path="res://main_theme.tres" id="1_t23rd"]
+[ext_resource type="Script" uid="uid://chu62hd63r5i0" path="res://pre_cache/pre_cache_scene.gd" id="2_lmmhv"]
+[ext_resource type="Texture2D" uid="uid://i6juthvdogns" path="res://assets/sprites/Seed_Packets-Sheet2.png" id="3_5dq1i"]
+[ext_resource type="Texture2D" uid="uid://bcs4gdpicson3" path="res://assets/sprites/Tomato_Seed_Packet.png" id="4_27501"]
+[ext_resource type="Texture2D" uid="uid://dlse7swh0cp6j" path="res://assets/sprites/Seed_Packets-Sheet.png" id="4_ke22y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke22y"]
+atlas = ExtResource("3_5dq1i")
+region = Rect2(0, 0, 188, 159)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebcdf"]
+atlas = ExtResource("4_ke22y")
+region = Rect2(0, 158, 158, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3xy8"]
+atlas = ExtResource("4_ke22y")
+region = Rect2(158, 0, 158, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iysyh"]
+atlas = ExtResource("3_5dq1i")
+region = Rect2(0, 159, 188, 159)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmdw2"]
+atlas = ExtResource("4_ke22y")
+region = Rect2(0, 0, 158, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q22wo"]
+atlas = ExtResource("4_27501")
+region = Rect2(45, 21, 158, 158)
+
+[node name="pre_cache_scene" type="Control" unique_id=1489888858]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t23rd")
+script = ExtResource("2_lmmhv")
+atlases_to_cache = Array[AtlasTexture]([SubResource("AtlasTexture_ke22y"), SubResource("AtlasTexture_ebcdf"), SubResource("AtlasTexture_n3xy8"), SubResource("AtlasTexture_iysyh"), SubResource("AtlasTexture_tmdw2"), SubResource("AtlasTexture_q22wo")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=775000459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=754311318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="container" type="VBoxContainer" parent="MarginContainer" unique_id=422917400]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/container" unique_id=1751169637]
+layout_mode = 2
+text = "Caching textures..."
+fit_content = true
+
+[node name="progress" type="ProgressBar" parent="MarginContainer/container" unique_id=1741428816]
+unique_name_in_owner = true
+layout_mode = 2
