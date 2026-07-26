@@ -5,7 +5,7 @@ class_name SeedMngr
 
 var seeds: Dictionary[PlantResource, int] = {}
 
-func update_seed_display() :
+func update_seed_display():
   for i in seed_container.get_children():
     i.queue_free()
   

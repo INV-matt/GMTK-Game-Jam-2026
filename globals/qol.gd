@@ -77,6 +77,8 @@ class AtlasConversion:
 
 var conversion_cache: Array[AtlasConversion] = []
 
+# var counter = 0
+
 func atlas_to_texture(atlas: AtlasTexture) -> ImageTexture:
   for i in conversion_cache:
     if i.atlas == atlas.atlas and i.region == atlas.region:
@@ -101,7 +103,7 @@ func atlas_to_texture(atlas: AtlasTexture) -> ImageTexture:
       var py: int = y + int(atlas.region.position.y)
       
       if px < max_width and py < max_height:
-        new_tex.set_pixel(x,y, atlas.atlas.get_image().get_pixel(px,py))
+        new_tex.set_pixel(x, y, atlas.atlas.get_image().get_pixel(px, py))
   
   var img: ImageTexture = ImageTexture.create_from_image(new_tex)
 
@@ -111,5 +113,9 @@ func atlas_to_texture(atlas: AtlasTexture) -> ImageTexture:
   conv.result = img
   
   conversion_cache.append(conv)
+
+  # DirAccess.open("user://").make_dir("images")
+  # new_tex.save_png("user://images/%s.png" % counter)
+  # counter += 1
 
   return img
